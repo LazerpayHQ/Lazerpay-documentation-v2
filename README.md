@@ -1,2 +1,2 @@
-# Lazerpay-documenttion-v2
+# Lazerpay-documention-v2
 Official LazerpayFinance documentation and API reference manual
