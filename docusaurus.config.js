@@ -6,8 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Lazerpay Documentation',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -19,7 +18,7 @@ const config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   plugins: [
-    async function myPlugin(context, options) {
+    async function myPlugin() {
       return {
         name: "docusaurus-tailwindcss",
         configurePostCss(postcssOptions) {
@@ -70,7 +69,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -80,9 +78,23 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            to: '/quick-links',
+            label: 'Quick Start',
+            position: 'right',
+          },
+          {
+            to: '/quick-links',
+            label: 'APIs',
+            position: 'right',
+          },
+          {
+            to: '/quick-links',
+            label: 'Support',
+            position: 'right',
+          },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -94,41 +106,81 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Lazerpay',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'About',
+                href: 'https://lazerpay.finance/about-us',
+              },
+              {
+                label: 'Products',
+                href: 'https://lazerpay.finance',
+              },
+              {
+                label: 'Pricing',
+                href: 'https://lazerpay.finance/pricing',
+              },
+              {
+                label: 'Careers',
+                href: 'https://lazerpay.finance/careers',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Resources',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Docs',
+                to: '/docs',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'API Reference',
+                to: '/docs',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'API Explorer',
+                to: '/docs',
+              },
+              {
+                label: 'Github',
+                to: '/docs',
+              },
+              {
+                label: 'SDK Reference',
+                to: '/docs',
+              },
+              {
+                label: 'Sample Apps',
+                to: '/docs',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Support',
             items: [
               {
-                label: 'Blog',
+                label: 'Developer Forum',
                 to: '/blog',
               },
               {
-                label: 'GitHub',
+                label: 'Contact Support',
                 href: 'https://github.com/facebook/docusaurus',
+              },
+              {
+                label: 'Tech blog',
+                href: 'https://github.com/facebook/docusaurus',
+              },
+              {
+                label: 'Slack Community',
+                href: 'https://github.com/facebook/docusaurus',
+              },
+              {
+                label: 'YouTube',
+                href: 'https://github.com/facebook/docusaurus',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/lazerpay',
               },
             ],
           },
