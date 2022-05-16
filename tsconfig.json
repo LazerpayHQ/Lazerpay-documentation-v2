@@ -18,5 +18,5 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "."
   },
-  "include": ["src"]
+  "include": ["src", "./declaration.d.ts"]
 }

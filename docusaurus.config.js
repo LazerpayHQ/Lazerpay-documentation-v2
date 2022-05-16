@@ -18,6 +18,7 @@ const config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   plugins: [
+    "docusaurus-plugin-sass",
     async function myPlugin() {
       return {
         name: "docusaurus-tailwindcss",
@@ -30,10 +31,6 @@ const config = {
       };
     },
   ],
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -46,8 +43,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
@@ -59,7 +54,7 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       }),
     ],
