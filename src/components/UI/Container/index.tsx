@@ -6,12 +6,12 @@ interface IProps {
     fluid?: Boolean
 }
 
-const LzContainer = ({ children, fluid }: IProps)=> (
+const LzContainer = ({ children, fluid=false}: IProps)=> (
     <div className={clsx(
         {
-            'xl:px-20 md:px-6 lg:px-10': !fluid
+            'xl:px-20 md:px-6 lg:px-10 mx-auto md:max-w-screen-lg lg:max-w-screen-2xl 2xl:max-w-screen-3xl': !fluid
         },
-        "max-w-full px-4 mx-auto md:max-w-screen-lg lg:max-w-screen-2xl 2xl:max-w-screen-3xl")}>
+        "max-w-full w-full mx-auto")}>
         {children}
     </div>
 )

@@ -17,18 +17,16 @@ const LzLink = React.forwardRef(({ to="#", passHref= false, anchor, children, cl
     const isExternalLink = to.includes('http') ? {target: '_blank'} : {};
 
     return (
-        <Link to={to}>
-            <a ref={ref} {...rest} {...isExternalLink} className={classNames('hover:text-pri-500 relative group w-fit transition duration-200 text-nue-800', className,{
-                'text-nue-900': isActive,
-                'flex items-center space-x-2': anchor
-            })}>
-                {children}
-                {anchor && (
-                    <span className='absolute hidden text-xl text-neu-500 -right-8 group-hover:block'>
-                        #
-                    </span>
-                )}
-            </a>
+        <Link to={to} ref={ref} {...rest} {...isExternalLink} className={classNames('hover:text-pri-500 !no-underline relative group w-fit transition duration-200 text-nue-800', className,{
+            'text-nue-900': isActive,
+            'flex items-center space-x-2': anchor
+        })}>
+            {children}
+            {anchor && (
+                <span className='absolute hidden text-xl text-neu-500 -right-8 group-hover:block'>
+                    #
+                </span>
+            )}
         </Link>
     )
 })
