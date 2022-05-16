@@ -5,7 +5,6 @@
  */
 export default {
   "title": "Lazerpay Documentation",
-  "tagline": "Dinosaurs are cool",
   "url": "https://your-docusaurus-test-site.com",
   "baseUrl": "/",
   "onBrokenLinks": "throw",
@@ -13,6 +12,9 @@ export default {
   "favicon": "img/favicon.ico",
   "organizationName": "facebook",
   "projectName": "docusaurus",
+  "plugins": [
+    null
+  ],
   "i18n": {
     "defaultLocale": "en",
     "locales": [
@@ -28,7 +30,10 @@ export default {
           "sidebarPath": "/Users/macbook/jobs/lazerpay/Lazerpay-documention-v2/sidebars.js",
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
-        "blog": false,
+        "blog": {
+          "showReadingTime": true,
+          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+        },
         "theme": {
           "customCss": "/Users/macbook/jobs/lazerpay/Lazerpay-documention-v2/src/css/custom.css"
         }
@@ -37,7 +42,6 @@ export default {
   ],
   "themeConfig": {
     "navbar": {
-      "title": "Lazerpay Finance",
       "logo": {
         "alt": "My Site Logo",
         "src": "img/logo.svg"
@@ -50,7 +54,22 @@ export default {
           "label": "Docs"
         },
         {
-          "href": "https://github.com/LazerPay-Finance/Lazerpay-documention-v2",
+          "to": "/quick-links",
+          "label": "Quick Start",
+          "position": "right"
+        },
+        {
+          "to": "/quick-links",
+          "label": "APIs",
+          "position": "right"
+        },
+        {
+          "to": "/quick-links",
+          "label": "Support",
+          "position": "right"
+        },
+        {
+          "href": "https://github.com/facebook/docusaurus",
           "label": "GitHub",
           "position": "right"
         }
@@ -61,41 +80,81 @@ export default {
       "style": "dark",
       "links": [
         {
-          "title": "Docs",
+          "title": "Lazerpay",
           "items": [
             {
-              "label": "Tutorial",
-              "to": "/docs/intro"
+              "label": "About",
+              "href": "https://lazerpay.finance/about-us"
+            },
+            {
+              "label": "Products",
+              "href": "https://lazerpay.finance"
+            },
+            {
+              "label": "Pricing",
+              "href": "https://lazerpay.finance/pricing"
+            },
+            {
+              "label": "Careers",
+              "href": "https://lazerpay.finance/careers"
             }
           ]
         },
         {
-          "title": "Community",
+          "title": "Resources",
           "items": [
             {
-              "label": "Stack Overflow",
-              "href": "https://stackoverflow.com/questions/tagged/docusaurus"
+              "label": "Docs",
+              "to": "/docs"
             },
             {
-              "label": "Discord",
-              "href": "https://discordapp.com/invite/docusaurus"
+              "label": "API Reference",
+              "to": "/docs"
             },
             {
-              "label": "Twitter",
-              "href": "https://twitter.com/docusaurus"
+              "label": "API Explorer",
+              "to": "/docs"
+            },
+            {
+              "label": "Github",
+              "to": "/docs"
+            },
+            {
+              "label": "SDK Reference",
+              "to": "/docs"
+            },
+            {
+              "label": "Sample Apps",
+              "to": "/docs"
             }
           ]
         },
         {
-          "title": "More",
+          "title": "Support",
           "items": [
             {
-              "label": "Blog",
+              "label": "Developer Forum",
               "to": "/blog"
             },
             {
-              "label": "GitHub",
+              "label": "Contact Support",
               "href": "https://github.com/facebook/docusaurus"
+            },
+            {
+              "label": "Tech blog",
+              "href": "https://github.com/facebook/docusaurus"
+            },
+            {
+              "label": "Slack Community",
+              "href": "https://github.com/facebook/docusaurus"
+            },
+            {
+              "label": "YouTube",
+              "href": "https://github.com/facebook/docusaurus"
+            },
+            {
+              "label": "Twitter",
+              "href": "https://twitter.com/lazerpay"
             }
           ]
         }
@@ -330,11 +389,11 @@ export default {
     "static"
   ],
   "customFields": {},
-  "plugins": [],
   "themes": [],
   "scripts": [],
   "stylesheets": [],
   "clientModules": [],
+  "tagline": "",
   "titleDelimiter": "|",
   "noIndex": false
 };
