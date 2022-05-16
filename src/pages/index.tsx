@@ -9,9 +9,7 @@ export default function Home(): JSX.Element {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-        <LzContainer>
-          <h2 className='font-semibold text-pri-500 heading-6-s'>Hello world</h2>
-        </LzContainer>
+        
     </Layout>
   );
 }
