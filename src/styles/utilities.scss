@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .divider {
+      border-bottom: 0.5px solid #E2E8F0;
+      &-dashed {
+         opacity: .8;
+         border-bottom: 1px dashed #E2E8F0;
+      }
+    }
+ }

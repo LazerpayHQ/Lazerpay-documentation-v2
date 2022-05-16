@@ -1,0 +1,43 @@
+/**
+ * Lazerpay Design System - https://www.figma.com/file/1ruX4BnkL8HE2FM4B9SgoI/LazerPay-Design-System?node-id=0%3A1
+ */
+
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+ @layer components {
+    .lz-btn {
+        @apply w-auto font-semibold transition duration-200 flex text-white justify-center items-center rounded-5 font-proxima;
+        &:hover {@apply font-semibold}
+        &:disabled {
+            @apply bg-neu-200 font-semibold text-neu-400 cursor-not-allowed pointer-events-none;
+            & svg {@apply stroke-neu-400}
+        }
+        
+        /* Sizes */
+        &-sm {height: 34px; padding: 0 12px}
+        &-md {height: 41px; padding: 0 18px}
+        &-lg {height: 50px; padding:  0 24px}
+
+        /* Variants */
+        &-pri {
+            @apply bg-pri-500;
+            &:hover {@apply bg-pri-600;}
+            &:active {@apply bg-pri-700;}
+        }
+        &-sec {
+            @apply bg-sec-500;
+            &:hover{@apply bg-sec-600;}
+            &:active{@apply bg-sec-700;}
+        }
+        &-gho {
+            @apply text-pri-500 border border-pri-500;
+            &-dar {@apply border-neu-700 text-neu-700};
+            &:hover {@apply text-pri-300 border-pri-500}
+            &:active {@apply bg-pri-50 text-pri-300 border-pri-400}
+            &:disabled {@apply bg-pri-100 text-neu-400 fill-neu-400}
+        }
+    }
+ }
+ 
