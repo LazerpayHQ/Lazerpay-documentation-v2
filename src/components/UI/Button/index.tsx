@@ -1,6 +1,6 @@
+import React, { useRef } from "react";
 import classNames from "classnames";
 import { BsArrowRight, BsChevronRight } from 'react-icons/bs'
-import { useRef } from "react";
 import LzLink from "../Link";
 
 interface IProps {
@@ -71,7 +71,7 @@ const LzButton = ({ leftIcon, isDisabled, rightIcon, ghost, asLink, children, va
                 className={classNames('lz-btn group whitespace-pre', sizes[size], className, variants[variant])}>
                 {
                     leftIcon && (
-                        <span className="duration-200 transform group-hover:translate-x-1">
+                        <span>
                             {leftIcon && icon[leftIcon] || leftIcon}
                         </span>
                     )
@@ -83,7 +83,7 @@ const LzButton = ({ leftIcon, isDisabled, rightIcon, ghost, asLink, children, va
                 
                 {
                     rightIcon && (
-                        <span className="duration-200 transform group-hover:translate-x-1">
+                        <span>
                             {rightIcon && icon[rightIcon] || rightIcon}
                         </span>
                     )

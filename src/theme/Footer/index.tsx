@@ -1,15 +1,17 @@
 import React, {ComponentProps} from 'react';
 import type FooterType from '@theme/Footer';
-import { LzContainer, LzLink } from '@site/src/components';
+import { LzContainer, LzDivider, LzLink, Rating } from '@site/src/components';
 import { footerData } from '@site/src/data';
 
 type Props = ComponentProps<typeof FooterType>;
 
 export default function FooterWrapper(props: Props): JSX.Element {
   return (
-    <footer className='w-full max-w-3xl mx-auto mt-10 border-t px-7 border-neu-200 py-14'>
-      <LzContainer fluid>
-        <div className='grid w-full grid-cols-3 gap-20 mx-auto'>
+    <footer className='w-full max-w-3xl px-6 mx-auto mt-10 py-14'>
+      <Rating />
+      <LzDivider className='mt-14' />
+      <LzContainer className="px-8 mt-16" fluid>
+        <div className='grid w-full grid-cols-3 mx-auto gap-36'>
           {
             Object.entries(footerData).map(([key, links])=> (
               <div key={key}>
@@ -31,6 +33,6 @@ export default function FooterWrapper(props: Props): JSX.Element {
           All rights Reserved. © {new Date().getFullYear()} Lazerpay Inc.
         </span>
       </LzContainer>
-    </footer>
+  </footer>
   );
 }
