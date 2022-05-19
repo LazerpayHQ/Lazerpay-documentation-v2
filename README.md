@@ -1,2 +1,0 @@
-# Lazerpay-documentation-v2
- 
