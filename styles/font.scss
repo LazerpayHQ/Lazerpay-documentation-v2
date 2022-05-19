@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Proxima */
+  @font-face {
+    font-family: proxima;
+    src: url("/static/fonts/proxima/ProximaNovaA-Regular.woff") format("woff"),
+      url("/static/fonts/proxima/ProximaNovaA-Regular.woff2") format("woff2");
+    font-weight: normal;
+  }
+  @font-face {
+    font-family: proxima;
+    src: url("/static/fonts/proxima/ProximaNovaA-Semibold.woff") format("woff"),
+      url("/static/fonts/proxima/ProximaNovaA-Semibold.woff2") format("woff2");
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: proxima;
+    src: url("/static/fonts/proxima/ProximaNovaA-Bold.woff") format("woff"),
+      url("/static/fonts/proxima/ProximaNovaA-Bold.woff2") format("woff2");
+    font-weight: bold;
+  }
+
+  /* TTFirsNeue - This should do for now, other weights like thin can be added when required */
+  @font-face {
+    font-family: ttfirs;
+    src: url("/static/fonts/ttfirs/TTFirsNeue/normal_normal_normal.woff")
+        format("woff"),
+      url("/static/fonts/ttfirs/TTFirsNeue/normal_normal_normal.woff2") format("woff2");
+    font-weight: normal;
+  }
+  @font-face {
+    font-family: ttfirs;
+    src: url("/static/fonts/ttfirs/TTFirsNeueMedium/font.woff") format("woff"),
+      url("/static/fonts/ttfirs/TTFirsNeueMedium/font.woff2") format("woff2");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: ttfirs;
+    src: url("/static/fonts/ttfirs/TTFirsNeueDemiBold/font.woff") format("woff"),
+      url("/static/fonts/ttfirs/TTFirsNeueDemiBold/font.woff2") format("woff2");
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: ttfirs;
+    src: url("/static/fonts/ttfirs/TTFirsNeue/normal_normal_bold.woff") format("woff"),
+      url("/static/fonts/ttfirs/TTFirsNeue/normal_normal_bold.woff2") format("woff2");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: ttfirs;
+    src: url("/static/fonts/ttfirs/TTFirsNeueExtraBold/font.woff") format("woff"),
+      url("/static/fonts/ttfirs/TTFirsNeueExtraBold/font.woff2") format("woff2");
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: ttfirs;
+    src: url("/static/fonts/ttfirs/TTFirsNeueBlack/font.woff") format("woff"),
+      url("/static/fonts/ttfirs/TTFirsNeueBlack/font.woff2") format("woff2");
+    font-weight: 900;
+  }
+
+  /* Sohne */
+  @font-face {
+    font-family: "sohne";
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    src: url("/static/fonts/sohne/Sohne-Buch.woff2") format("woff2"),
+      url("/static/fonts/sohne/Sohne-Buch.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "sohne";
+    font-style: normal;
+    font-weight: 500;
+    font-stretch: normal;
+    src: url("/static/fonts/sohne/Sohne-Kraftig.woff2") format("woff2"),
+      url("/static/fonts/sohne/Sohne-Kraftig.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "sohne";
+    font-style: normal;
+    font-weight: 600;
+    font-stretch: normal;
+    src: url("/static/fonts/sohne/Sohne-Halbfett.woff2") format("woff2"),
+      url("/static/fonts/sohne/Sohne-Halbfett.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "sohne";
+    font-style: normal;
+    font-weight: 700;
+    font-stretch: normal;
+    src: url("/static/fonts/sohne/Sohne-Dreiviertelfett.woff2") format("woff2"),
+      url("/static/fonts/sohne/Sohne-Dreiviertelfett.woff") format("woff");
+  }
+}
