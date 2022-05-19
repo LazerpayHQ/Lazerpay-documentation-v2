@@ -1,5 +1,5 @@
-import { LzContainer, LzLink } from 'components';
 import React from 'react';
+import { LzContainer, LzLink } from 'components';
 import { footerData } from './data';
 
 export default function FooterWrapper(props: any): JSX.Element {

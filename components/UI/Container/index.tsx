@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import classNames from "classnames";
 import React from "react";
 
 interface IProps { 
@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const LzContainer = ({ children, fluid=false}: IProps)=> (
-    <div className={clsx(
+    <div className={classNames(
         {
             'xl:px-20 md:px-6 lg:px-10 mx-auto md:max-w-screen-lg lg:max-w-screen-2xl 2xl:max-w-screen-3xl': !fluid
         },
