@@ -1,12 +1,12 @@
-import FooterWrapper from 'components/Footer'
-import type { NextPage } from 'next'
+import { getLayout } from 'components';
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <FooterWrapper />
+    <div className="min-h-screen">
+      
     </div>
-  )
-}
+  );
+};
 
-export default Home
+Home.getLayout = getLayout;
+export default Home;
