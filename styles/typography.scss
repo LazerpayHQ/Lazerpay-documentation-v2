@@ -1,0 +1,413 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .display {
+    &-1 {
+      line-height: 80px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.6xl");
+      font-weight: theme("fontWeight.normal");
+      &-s {
+        line-height: 80px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.6xl");
+        font-weight: theme("fontWeight.semibold");
+      }
+      &-b {
+        line-height: 80px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.6xl");
+        font-weight: theme("fontWeight.bold");
+      }
+    }
+
+    &-2 {
+      line-height: 72px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.5xl");
+      font-weight: theme("fontWeight.normal");
+      &-s {
+        line-height: 72px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.5xl");
+        font-weight: theme("fontWeight.semibold");
+      }
+      &-b {
+        line-height: 72px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.5xl");
+        font-weight: theme("fontWeight.bold");
+      }
+    }
+  }
+
+  .heading {
+    &-1 {
+      line-height: 56px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.4xl");
+      font-weight: theme("fontWeight.normal");
+      &-sm {
+        line-height: 40px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.2xl2");
+        font-weight: theme("fontWeight.normal");
+      }
+    }
+    &-1-s {
+      line-height: 56px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.4xl");
+      font-weight: theme("fontWeight.semibold");
+      &-sm {
+        line-height: 40px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.2xl2");
+        font-weight: theme("fontWeight.semibold");
+      }
+      &-sm-1 {
+        line-height: 40px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.3xl");
+        font-weight: theme("fontWeight.semibold");
+      }
+    }
+    &-1-b {
+      line-height: 56px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.4xl");
+      font-weight: theme("fontWeight.bold");
+      &-sm {
+        line-height: 40px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.2xl2");
+        font-weight: theme("fontWeight.bold");
+      }
+    }
+
+    &-2 {
+      line-height: 47px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.3xl");
+      font-weight: theme("fontWeight.normal");
+      &-sm {
+        line-height: 40px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.2xl");
+        font-weight: theme("fontWeight.normal");
+      }
+    }
+    &-2-s {
+      line-height: 47px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.3xl");
+      font-weight: theme("fontWeight.semibold");
+      &-sm {
+        line-height: 40px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.2xl");
+        font-weight: theme("fontWeight.semibold");
+      }
+    }
+    &-2-b {
+      line-height: 47px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.3xl");
+      font-weight: theme("fontWeight.bold");
+      &-sm {
+        line-height: 40px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.2xl");
+        font-weight: theme("fontWeight.bold");
+      }
+    }
+
+    &-3 {
+      line-height: 40px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.2xl");
+      font-weight: theme("fontWeight.normal");
+      &-sm {
+        line-height: 34px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.xl");
+        font-weight: theme("fontWeight.normal");
+      }
+    }
+    &-3-s {
+      line-height: 40px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.2xl");
+      font-weight: theme("fontWeight.semibold");
+      &-sm {
+        line-height: 34px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.xl");
+        font-weight: theme("fontWeight.semibold");
+      }
+      &-md {
+        line-height: 40px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.2xl");
+        font-weight: theme("fontWeight.semibold");
+      }
+    }
+    &-3-b {
+      line-height: 40px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.2xl");
+      font-weight: theme("fontWeight.bold");
+      &-sm {
+        line-height: 34px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.xl");
+        font-weight: theme("fontWeight.bold");
+      }
+    }
+
+    &-4 {
+      line-height: 34px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.xl");
+      font-weight: theme("fontWeight.normal");
+      &-sm {
+        line-height: 28px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.lg2");
+        font-weight: theme("fontWeight.normal");
+      }
+    }
+    &-4-s {
+      line-height: 34px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.xl");
+      font-weight: theme("fontWeight.semibold");
+      &-sm {
+        line-height: "28px";
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.lg2");
+        font-weight: theme("fontWeight.semibold");
+      }
+    }
+    &-4-b {
+      line-height: 34px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.xl");
+      font-weight: theme("fontWeight.bold");
+      &-sm {
+        line-height: 28px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.lg2");
+        font-weight: theme("fontWeight.bold");
+      }
+    }
+
+    &-5 {
+      line-height: 28px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.lg2");
+      font-weight: theme("fontWeight.normal");
+      &-sm {
+        line-height: 23px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.md2");
+        font-weight: theme("fontWeight.normal");
+      }
+      &-md {
+        line-height: 28px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.lg2");
+        font-weight: theme("fontWeight.normal");
+      }
+    }
+    &-5-s {
+      line-height: 28px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.lg2");
+      font-weight: theme("fontWeight.semibold");
+      &-sm {
+        line-height: 23px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.md2");
+        font-weight: theme("fontWeight.semibold");
+      }
+    }
+    &-5-b {
+      line-height: "28px";
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.lg2");
+      font-weight: theme("fontWeight.bold");
+      &-sm {
+        line-height: "23px";
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.md2");
+        font-weight: theme("fontWeight.bold");
+      }
+    }
+
+    &-6 {
+      line-height: "23px";
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.md2");
+      font-weight: theme("fontWeight.normal");
+      &-md {
+        line-height: "23px";
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.md2");
+        font-weight: theme("fontWeight.medium");
+      }
+      &-sm {
+        line-height: "20px";
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.sm");
+        font-weight: theme("fontWeight.normal");
+      }
+    }
+    &-6-s {
+      line-height: "23px";
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.md2");
+      font-weight: theme("fontWeight.semibold");
+      &-base {
+        line-height: 20px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.base");
+        font-weight: theme("fontWeight.semibold");
+      }
+      &-sm {
+        line-height: 20px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.sm");
+        font-weight: theme("fontWeight.semibold");
+      }
+    }
+    &-6-b {
+      line-height: 23px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.md2");
+      font-weight: theme("fontWeight.bold");
+      &-sm {
+        line-height: 20px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.sm");
+        font-weight: theme("fontWeight.bold");
+      }
+    }
+    &-7-b {
+      line-height: 21px;
+      font-family: theme("fontFamily.ttfirs");
+      font-size: theme("fontSize.base");
+      font-weight: theme("fontWeight.bold");
+      &-sm {
+        line-height: 18px;
+        font-family: theme("fontFamily.ttfirs");
+        font-size: theme("fontSize.sm");
+        font-weight: theme("fontWeight.bold");
+      }
+    }
+  }
+
+  .subheading {
+    line-height: "28px";
+    font-family: theme("fontFamily.proxima");
+    font-size: theme("fontSize.lg");
+    font-weight: theme("fontWeight.normal");
+    &-s {
+      line-height: "28px";
+      font-family: theme("fontFamily.proxima");
+      font-size: theme("fontSize.lg");
+      font-weight: theme("fontWeight.semibold");
+    }
+  }
+
+  .paragraph {
+    &-1 {
+      line-height: 19px;
+      font-family: theme("fontFamily.proxima");
+      font-size: theme("fontSize.sm");
+      font-weight: theme("fontWeight.normal");
+      &-s {
+        line-height: 19px;
+        font-family: theme("fontFamily.proxima");
+        font-size: theme("fontSize.sm");
+        font-weight: theme("fontWeight.semibold");
+      }
+    }
+    &-2 {
+      line-height: 24px;
+      font-family: theme("fontFamily.proxima");
+      font-size: theme("fontSize.base");
+      font-weight: theme("fontWeight.normal");
+      &-s {
+        line-height: 24px;
+        font-family: theme("fontFamily.proxima");
+        font-size: theme("fontSize.base");
+        font-weight: theme("fontWeight.semibold");
+      }
+    }
+    &-3 {
+      line-height: 26px;
+      font-family: theme("fontFamily.proxima");
+      font-size: theme("fontSize.md");
+      font-weight: theme("fontWeight.normal");
+      &-s {
+        line-height: 26px;
+        font-family: theme("fontFamily.proxima");
+        font-size: theme("fontSize.md");
+        font-weight: theme("fontWeight.semibold");
+      }
+    }
+    &-4 {
+      line-height: 21px;
+      font-family: theme("fontFamily.proxima");
+      font-size: theme("fontSize.sm");
+      font-weight: theme("fontWeight.normal");
+      &-s {
+        line-height: 21px;
+        font-family: theme("fontFamily.proxima");
+        font-size: theme("fontSize.sm");
+        font-weight: theme("fontWeight.semibold");
+      }
+    }
+  }
+
+  .caption {
+    line-height: "18px";
+    font-family: theme("fontFamily.proxima");
+    font-size: theme("fontSize.xs");
+    font-weight: theme("fontWeight.normal");
+    &-s {
+      line-height: "18px";
+      font-family: theme("fontFamily.proxima");
+      font-size: theme("fontSize.xs");
+      font-weight: theme("fontWeight.semibold");
+    }
+  }
+
+  .footer {
+    line-height: 14px;
+    font-family: theme("fontFamily.proxima");
+    font-size: theme("fontSize.xxs");
+    font-weight: theme("fontWeight.normal");
+    &-s {
+      line-height: 14px;
+      font-family: theme("fontFamily.proxima");
+      font-size: theme("fontSize.xxs");
+      font-weight: theme("fontWeight.semibold");
+      &-sm {
+        line-height: 14px;
+        font-family: theme("fontFamily.proxima");
+        font-size: theme("fontSize.sm");
+        font-weight: theme("fontWeight.semibold");
+      }
+      &-sm-1 {
+        line-height: 14px;
+        font-family: theme("fontFamily.proxima");
+        font-size: theme("fontSize.xs2");
+        font-weight: theme("fontWeight.semibold");
+      }
+    }
+  }
+}
