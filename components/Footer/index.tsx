@@ -1,11 +1,8 @@
-import React, {ComponentProps} from 'react';
-import type FooterType from '@theme/Footer';
-import { LzContainer, LzLink } from '@site/src/components';
-import { footerData } from '@site/src/data';
+import { LzContainer, LzLink } from 'components';
+import React from 'react';
+import { footerData } from './data';
 
-type Props = ComponentProps<typeof FooterType>;
-
-export default function FooterWrapper(props: Props): JSX.Element {
+export default function FooterWrapper(props: any): JSX.Element {
   return (
     <footer className='w-full max-w-3xl mx-auto mt-10 border-t px-7 border-neu-200 py-14'>
       <LzContainer fluid>
