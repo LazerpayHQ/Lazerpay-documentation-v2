@@ -1,23 +1,34 @@
-# Next.js + Tailwind CSS Example
+# Zag Docs
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-## Deploy your own
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+Documentation website for [Zag](https://zagjs.com)
 
-## How to use
+## Contributors ✨
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Thanks goes to these wonderful people
+([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-# or
-pnpm create next-app -- --example with-tailwindcss with-tailwindcss-app
-```
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://twitter.com/thesegunadebayo"><img src="https://avatars.githubusercontent.com/u/6916170?v=4?s=32" width="32px;" alt=""/><br /><sub><b>Segun Adebayo</b></sub></a><br /><a href="#maintenance-segunadebayo" title="Maintenance">🚧</a> <a href="https://github.com/chakra-ui/zag/commits?author=segunadebayo" title="Code">💻</a> <a href="https://github.com/chakra-ui/zag/commits?author=segunadebayo" title="Documentation">📖</a> <a href="#content-segunadebayo" title="Content">🖋</a></td>
+    <td align="center"><a href="https://estheragbaje.dev/"><img src="https://avatars.githubusercontent.com/u/53586167?v=4?s=32" width="32px;" alt=""/><br /><sub><b>Folasade Agbaje</b></sub></a><br /><a href="https://github.com/chakra-ui/zag/commits?author=estheragbaje" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/anubra266"><img src="https://avatars.githubusercontent.com/u/30869823?v=4?s=32" width="32px;" alt=""/><br /><sub><b>Abraham</b></sub></a><br /><a href="https://github.com/chakra-ui/zag/commits?author=anubra266" title="Code">💻</a> <a href="#example-anubra266" title="Examples">💡</a></td>
+  </tr>
+</table>
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the
+[all-contributors](https://github.com/all-contributors/all-contributors)
+specification. Contributions of any kind welcome!
