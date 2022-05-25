@@ -11,11 +11,11 @@ export function extractParams(slug: string[]) {
   return { framework: result, slug: slug.join("/") }
 }
 
-export function getOverviewPaths() {
+export function getDocPaths() {
   return allDocs.map((doc) => `/docs/${doc.slug}`)
 }
 
-export function getOverviewDoc(_slug: string | string[]) {
+export function getDoc(_slug: string | string[]) {
   const slug = Array.isArray(_slug) ? _slug[0] : _slug
   return allDocs.find(
     (post) => post.frontmatter.slug === `/docs/${slug}`,

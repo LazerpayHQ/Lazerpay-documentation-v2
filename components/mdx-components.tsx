@@ -1,10 +1,8 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { chakra } from "@chakra-ui/system"
-import { useMDXComponent } from "next-contentlayer/hooks"
-import Link from "next/link"
 import { FC } from "react"
+import { useMDXComponent } from "next-contentlayer/hooks"
 import LzLink from "./UI/Link"
 
+/** Create a map of the HTML elements */
 const components: Record<string, FC<Record<string, any>>> = {
   Admonition(props) {
     return <div {...props} />
@@ -12,10 +10,13 @@ const components: Record<string, FC<Record<string, any>>> = {
   blockquote(props) {
     return <blockquote {...props} />
   },
+  p(props){
+    return <p {...props} />
+  },
   h1(props) {
     return (
       <h1
-        className="hidden text-pri-500"
+        className="heading-3-b"
         id="skip-nav"
         tabIndex={-1}
         {...props}
@@ -50,19 +51,11 @@ const components: Record<string, FC<Record<string, any>>> = {
   },
   a(props) {
     const href = props.href
-    const isInternalLink =
-      href && (href.startsWith("/") || href.startsWith("#"))
-
-    if (isInternalLink) {
-      return (
-        <LzLink to={href} passHref {...props}>
-          {props.children}
-        </LzLink>
-      )
-    }
 
     return (
-      <chakra.a textStyle="link" target="_blank" rel="noopener" {...props} />
+      <LzLink to={href} passHref {...props}>
+        {props.children}
+      </LzLink>
     )
   },
 }
