@@ -1,17 +1,12 @@
 import sidebar from "sidebar.config"
 
-export function formatUrl(group: string, item: string, framework?: string) {
-  const _framework = group === "components" ? framework : undefined
-  return "/" + [group, _framework, item].filter(Boolean).join("/")
-}
-
-export function getPaginationData(framework: string) {
+export function getPaginationData() {
   const result: { label: string; url: string }[] = []
   for (const group of sidebar.docs) {
     if (group.type !== "category") continue
     const items = group.items.map((item) => ({
       label: item.label,
-      url: formatUrl(group.id, item.id, framework),
+      url: item.id,
     }))
     result.push(...items)
   }
@@ -20,8 +15,8 @@ export function getPaginationData(framework: string) {
 
 type PaginationData = { framework: string; current: string }
 
-export function paginate({ framework, current }: PaginationData) {
-  const data = getPaginationData(framework)
+export function paginate({ current }: PaginationData) {
+  const data = getPaginationData()
   const index = data.map((item) => item.url).indexOf(current)
   if (index === -1) return { prev: undefined, next: undefined }
   const prev = index > 0 ? data[index - 1] : undefined

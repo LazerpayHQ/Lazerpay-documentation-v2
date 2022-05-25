@@ -10,30 +10,4 @@
 @tailwind utilities;
 
 html {
-   scroll-behavior: smooth;
-   scroll-padding-top: 100px;
-   overflow-x: hidden; 
 }
-
-
-.slick-slider{
-   &.sass-slick {
-      transition: .3s;
-      & .slick-slide {
-         opacity: .3;
-      }
-      & .slick-active {
-         opacity: 1 !important;
-      }
-   }
-}
-
-.hide-scrollBar::-webkit-scrollbar {
-   display: none;
- }
-
- /* Hide scrollbar for IE, Edge and Firefox */
-.hide-scrollBar {
-   -ms-overflow-style: none;  /* IE and Edge */
-   scrollbar-width: none;  /* Firefox */
- }
