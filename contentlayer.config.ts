@@ -1,59 +1,83 @@
 import {
   ComputedFields,
   defineDocumentType,
+  FieldDefs,
   makeSource,
-} from 'contentlayer/source-files'
-import remarkEmoji from 'remark-emoji'
-import remarkGfm from 'remark-gfm'
-import remarkSlug from 'remark-slug'
-import siteConfig from './configs/site-config'
-import { getTableOfContents } from './src/utils/mdx-utils'
-import { rehypeMdxCodeMeta } from './src/utils/rehype-code-meta'
+} from "contentlayer/source-files"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeCodeTitles from "rehype-code-titles"
+import rehypePrism from "rehype-prism-plus"
+import rehypeSlug from "rehype-slug"
+import remarkGfm from "remark-gfm"
+import remarkDirective from "remark-directive"
+import toc from "markdown-toc"
+import siteConfig from "./site.config"
+import { remarkAdmonition } from "./lib/remark-utils"
+
+const fields: FieldDefs = {
+  title: { type: "string" },
+  description: { type: "string" },
+  package: { type: "string" },
+}
 
 const computedFields: ComputedFields = {
   slug: {
-    type: 'string',
-    resolve: (doc:any) => `/${doc._raw.flattenedPath}`,
+    type: "string",
+    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ""),
   },
   editUrl: {
-    type: 'string',
-    resolve: (doc:any) => `${siteConfig.repo.editUrl}/${doc._id}`,
+    type: "string",
+    resolve: (doc) => `${siteConfig.repo.editUrl}/${doc._id}`,
+  },
+  params: {
+    type: "list",
+    resolve: (doc) => doc._raw.flattenedPath.split("/"),
+  },
+  frontmatter: {
+    type: "json",
+    resolve: (doc) => ({
+      title: doc.title,
+      description: doc.description,
+      tags: doc.tags,
+      author: doc.author,
+      slug: `/${doc._raw.flattenedPath}`,
+      toc: toc(doc.body.raw, { maxdepth: 3 }).json.filter((t) => t.lvl !== 1),
+    }),
   },
 }
 
-const Doc = defineDocumentType(() => ({
-  name: 'Doc',
-  filePathPattern: 'docs/**/*.mdx',
-  contentType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    description: { type: 'string', required: true },
-    image: { type: 'string' },
-    author: { type: 'string' },
-  },
+const Overview = defineDocumentType(() => ({
+  name: "Overview",
+  filePathPattern: "overview/**/*.mdx",
+  contentType: "mdx",
+  fields,
   computedFields: {
     ...computedFields,
-    frontMatter: {
-      type: 'json',
-      resolve: (doc:any) => ({
-        title: doc.title,
-        package: doc.package,
-        description: doc.description,
-        image: doc.image,
-        version: doc.version,
-        slug: `/${doc._raw.flattenedPath}`,
-        headings: getTableOfContents(doc.body.raw),
-      }),
+    pathname: {
+      type: "string",
+      resolve: () => "/overview/[slug]",
     },
   },
 }))
 
 const contentLayerConfig = makeSource({
-  contentDirPath: 'pages',
-  documentTypes: [Doc],
+  contentDirPath: "data",
+  documentTypes: [Overview],
   mdx: {
-    rehypePlugins: [rehypeMdxCodeMeta],
-    remarkPlugins: [remarkSlug, remarkGfm, remarkEmoji],
+    remarkPlugins: [remarkGfm, remarkDirective, remarkAdmonition],
+    rehypePlugins: [
+      rehypeSlug,
+      rehypeCodeTitles,
+      rehypePrism,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "append",
+          test: ["h2", "h3", "h4"],
+          properties: { className: ["anchor"] },
+        },
+      ],
+    ],
   },
 })
 

@@ -1,12 +1,14 @@
-import '../styles/globals.scss';
+import { ChakraProvider } from "@chakra-ui/provider"
+import { DefaultSeo } from "next-seo"
+import theme from "theme"
+import "../styles/prism.css"
+import siteConfig from "site.config"
 
-function MyApp({ Component, pageProps }: any) {
-  const getLayout = Component.getLayout || ((page: JSX.Element) => page);
+export default function App({ Component, pageProps }) {
   return (
-    getLayout(
+    <ChakraProvider theme={theme}>
+      <DefaultSeo {...siteConfig.seo} />
       <Component {...pageProps} />
-    )
-  );
+    </ChakraProvider>
+  )
 }
-
-export default MyApp;
