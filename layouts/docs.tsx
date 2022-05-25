@@ -20,17 +20,17 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
         <main className="float-right w-4/5 min-h-screen">
           <Header />
           <LzContainer>
-            <div className="">
-              <section className='float-left min-h-screen pt-14'>
+            <div className="w-full pt-14">
+              <section className='float-left whitespace-pre w-/3'>
                 {children}
               </section>
-              <div className="float-right">
-                {
-                  !hideToc && (
+              {
+                !hideToc && (
+                  <div className="sticky top-0 float-right h-full w-60">
                     <TableOfContents data={doc.frontmatter.toc} />
-                  )
-                }
-              </div>
+                  </div>
+                )
+              }
               <div className="clear-both" />
             </div>
             <Reaction />
