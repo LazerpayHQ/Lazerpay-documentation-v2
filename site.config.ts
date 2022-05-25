@@ -1,41 +1,27 @@
 const baseConfig = {
-  repo: "https://github.com/chakra-ui/zag-docs",
-  title: "Zag - Rapidly build UI components without sweating over the logic.",
+  repo: "",
+  title: "",
   description:
-    "State machines for accessible, interactive and performant UI components",
-  url: "https://zagjs.com",
+    "",
+  url: "",
 }
 
 const siteConfig = {
   ...baseConfig,
-  projectName: "zag-js",
+  projectName: "lazerpay-docs",
   copyright: `Copyright &copy; ${new Date().getFullYear()}`,
-  openCollective: {
-    url: "https://opencollective.com/chakra-ui",
-  },
-  author: {
-    name: "Segun Adebayo",
-    github: "https://github.com/segunadebayo",
-    twitter: "https://twitter.com/thesegunadebayo",
-    linkedin: "https://linkedin.com/in/thesegunadebayo",
-    polywork: "https://www.polywork.com/segunadebayo",
-    email: "sage@adebayosegun.com",
-  },
   repo: {
-    url: "https://github.com/chakra-ui/zag",
+    url: "",
     editUrl: `${baseConfig.repo}/edit/main/data`,
     blobUrl: `${baseConfig.repo}/blob/main`,
   },
-  discord: {
-    url: "https://zagjs.com/discord",
-  },
   seo: {
     title: baseConfig.title,
-    titleTemplate: "%s - Zag",
+    titleTemplate: "",
     description: baseConfig.description,
     siteUrl: baseConfig.url,
     twitter: {
-      handle: "@zag_js",
+      handle: "@lazerpay",
       site: baseConfig.url,
       cardType: "summary_large_image",
     },
