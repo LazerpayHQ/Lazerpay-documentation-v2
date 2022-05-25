@@ -1,8 +1,13 @@
 async function redirect() {
   return [
     {
+      source: '/',
+      destination: '/docs/quick-start',
+      permanent: true,
+    },
+    {
       source: '/docs',
-      destination: '/docs/getting-started',
+      destination: '/docs/quick-start',
       permanent: true,
     }
   ]

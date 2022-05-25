@@ -1,10 +1,8 @@
 import Icon from "@chakra-ui/icon"
 import { Box, HStack, Spacer } from "@chakra-ui/layout"
 import { chakra } from "@chakra-ui/system"
-import { Search } from "components/search-dialog"
 import { Sidebar } from "components/sidebar"
 import { TableOfContents } from "components/toc"
-import { TopNavigation } from "components/top-navigation"
 import { DocumentTypes } from "contentlayer/generated"
 import React from "react"
 import { HiPencilAlt } from "react-icons/hi"
@@ -19,7 +17,6 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
 
   return (
     <Box>
-      <TopNavigation />
       <chakra.div pt="10">
         <Box maxW="8xl" mx="auto" px={{ sm: "6", base: "4", md: "8" }}>
           <Box
@@ -39,7 +36,6 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
             <Box position="relative">
               <Box position="sticky" top="0" bg="white" pb="8">
                 <Spacer height="10" bg="white" />
-                <Search />
                 <Spacer mt="px" height="5" bg="white" />
               </Box>
               <Sidebar />

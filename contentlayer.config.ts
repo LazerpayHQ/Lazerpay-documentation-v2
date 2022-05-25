@@ -46,23 +46,23 @@ const computedFields: ComputedFields = {
   },
 }
 
-const Overview = defineDocumentType(() => ({
-  name: "Overview",
-  filePathPattern: "overview/**/*.mdx",
+const Docs = defineDocumentType(() => ({
+  name: "Docs",
+  filePathPattern: "docs/**/*.mdx",
   contentType: "mdx",
   fields,
   computedFields: {
     ...computedFields,
     pathname: {
       type: "string",
-      resolve: () => "/overview/[slug]",
+      resolve: () => "/docs/[slug]",
     },
   },
 }))
 
 const contentLayerConfig = makeSource({
-  contentDirPath: "data",
-  documentTypes: [Overview],
+  contentDirPath: "content",
+  documentTypes: [Docs],
   mdx: {
     remarkPlugins: [remarkGfm, remarkDirective, remarkAdmonition],
     rehypePlugins: [

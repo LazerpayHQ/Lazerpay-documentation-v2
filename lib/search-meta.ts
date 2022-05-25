@@ -1,4 +1,4 @@
-import { allOverviews } from "contentlayer/generated"
+import { allDocs } from "contentlayer/generated"
 
 type SearchMetaItem = {
   content: string
@@ -23,7 +23,7 @@ type TOC = {
 }
 
 function getSearchMeta() {
-  const documents = [...allOverviews]
+  const documents = [...allDocs]
 
   const result: SearchMetaResult = []
 

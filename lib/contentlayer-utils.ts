@@ -1,4 +1,4 @@
-import { allOverviews } from "contentlayer/generated"
+import { allDocs } from "contentlayer/generated"
 import { Framework, isFramework } from "./framework-utils"
 
 export function extractParams(slug: string[]) {
@@ -11,17 +11,13 @@ export function extractParams(slug: string[]) {
   return { framework: result, slug: slug.join("/") }
 }
 
-/* -----------------------------------------------------------------------------
- * Overview
- * -----------------------------------------------------------------------------*/
-
 export function getOverviewPaths() {
-  return allOverviews.map((doc) => `/overview/${doc.slug}`)
+  return allDocs.map((doc) => `/docs/${doc.slug}`)
 }
 
 export function getOverviewDoc(_slug: string | string[]) {
   const slug = Array.isArray(_slug) ? _slug[0] : _slug
-  return allOverviews.find(
-    (post) => post.frontmatter.slug === `/overview/${slug}`,
+  return allDocs.find(
+    (post) => post.frontmatter.slug === `/docs/${slug}`,
   )
 }

@@ -4,8 +4,8 @@
 
  module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{jsx,tsx,js,ts}',
+    './pages/**/*.{jsx,tsx,js,ts}',
   ],
   theme: {
     namedGroups: ["foo", "2", "3"],
