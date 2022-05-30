@@ -1,0 +1,7 @@
+.TOC {
+    ul {
+        li[data-selected="true"] {
+           @apply border-pri-500 transition duration-150
+        }
+    }
+}

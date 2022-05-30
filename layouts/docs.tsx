@@ -21,21 +21,23 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
           <Header />
           <LzContainer>
             <div className="w-full pt-14">
-              <section className='float-left whitespace-pre w-/3'>
+              <section className={classNames(Styles.Content, 'float-left break-all break-before-all w-3/4')}>
                 {children}
+                <div className="mt-40">
+                  <Reaction />
+                  <Divider className='mb-10 mt-7' />
+                  <FooterWrapper />
+                </div>
               </section>
               {
                 !hideToc && (
-                  <div className="sticky top-0 float-right h-full w-60">
+                  <div className={classNames(Styles.TOC, "sticky top-24 float-right h-full w-48")}>
                     <TableOfContents data={doc.frontmatter.toc} />
                   </div>
                 )
               }
               <div className="clear-both" />
             </div>
-            <Reaction />
-            <Divider className='mb-10 mt-7' />
-            <FooterWrapper />
           </LzContainer>
         </main>
         <div className='clear-both' />
