@@ -61,7 +61,6 @@ Contributions to lazerpay-documentation-v2 can be made via pull requests on GitH
 
 [cr]: https://img.shields.io/badge/-fixup-critical
 [cs]: https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/signing-commits
-[do]: https://docusaurus.io
 [fe]: https://img.shields.io/badge/-feedback-%23DD0BE1
 [fh]: https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/projects/1
 [fi]: https://img.shields.io/badge/-ui-1d76db
@@ -70,3 +69,4 @@ Contributions to lazerpay-documentation-v2 can be made via pull requests on GitH
 [la]: https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/labels
 [qu]: https://img.shields.io/badge/-question-C0EE59
 [tr]: https://img.shields.io/badge/-troubleshooting-%23FBCA04
+[wi]: https://docs.lazerpay.finance/home/
