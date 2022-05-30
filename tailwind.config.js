@@ -24,7 +24,6 @@
         "9xl": "1500px",
         "screen-3xl": "1650px"
       },
-
       height: {
         "90vh": "90vh"
       },

@@ -12,6 +12,7 @@
     "contributors:gen": "all-contributors generate"
   },
   "dependencies": {
+    "@mdx-js/react": "^2.1.1",
     "autoprefixer": "^10.4.7",
     "babel-plugin-superjson-next": "^0.4.3",
     "classnames": "^2.3.1",

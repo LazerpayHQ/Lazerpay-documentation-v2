@@ -1,9 +1,13 @@
 import { FC } from "react"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import LzLink from "./UI/Link"
+import QuickLinks from "./QuickLinks"
 
 /** Create a map of the HTML elements */
-const components: Record<string, FC<Record<string, any>>> = {
+export const components: Record<string, FC<Record<string, any>>> = {
+  QuickLinks(props){
+    return <QuickLinks {...props} />
+  },
   Admonition(props) {
     return <div {...props} />
   },
@@ -11,7 +15,7 @@ const components: Record<string, FC<Record<string, any>>> = {
     return <blockquote {...props} />
   },
   p(props){
-    return <p {...props} />
+    return <p className="paragraph-3 text-neu-800" {...props} />
   },
   h1(props) {
     return (
@@ -24,7 +28,7 @@ const components: Record<string, FC<Record<string, any>>> = {
     )
   },
   h2(props) {
-    return <h2 {...props} />
+    return <h2 className="heading-5-s" {...props} />
   },
   h3(props) {
     return <h3 {...props} />
