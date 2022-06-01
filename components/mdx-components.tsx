@@ -3,14 +3,18 @@ import { useMDXComponent } from "next-contentlayer/hooks"
 import LzLink from "./UI/Link"
 import QuickLinks from "./QuickLinks"
 import Divider from "./Divider"
+import CodeBlock from "./CodeBlock"
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
-  QuickLinks(props){
+  QuickLinks({ children, ...props}){
     return (<QuickLinks {...props} />)
   },
-  Divider(props){
+  Divider({ children, ...props}){
     return (<Divider {...props} />)
+  },
+  CodeBlock(props){
+    return (<CodeBlock {...props} />)
   },
   Admonition(props) {
     return <div {...props} />

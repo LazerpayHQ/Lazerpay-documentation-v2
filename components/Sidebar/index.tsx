@@ -5,7 +5,7 @@ import { LogoFull } from 'public/icons';
 import sidebar, { SidebarItem } from 'sidebar.config';
 import Styles from './Sidebar.module.scss';
 
-const LzSidebar = ()=> {
+const Sidebar = ()=> {
   const router = useRouter();
   return (
     <aside className={classNames(Styles.Sidebar,'float-left pl-10 py-6 sticky top-0 w-1/5 h-screen')}>
@@ -40,4 +40,4 @@ const LzSidebar = ()=> {
   );
 };
 
-export default LzSidebar;
+export default Sidebar;

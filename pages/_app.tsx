@@ -1,5 +1,5 @@
 import { DefaultSeo } from "next-seo"
-import "../styles/prism.css"
+import "../styles/prism.scss"
 import "../styles/globals.scss"
 import siteConfig from "site.config"
 

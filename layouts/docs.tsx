@@ -3,7 +3,7 @@ import { path } from 'ramda';
 import classNames from "classnames"
 import { MDXProvider } from '@mdx-js/react'
 import { DocumentTypes } from "contentlayer/generated"
-import { Divider, FooterWrapper, Header, LzContainer, LzSidebar, Reaction, TableOfContents } from "components"
+import { Divider, FooterWrapper, Header, LzContainer, Sidebar, Reaction, TableOfContents } from "components"
 import Styles from './Layout.module.scss';
 import { components } from "components/mdx-components";
 
@@ -20,7 +20,7 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
     <MDXProvider components={components}>
       <div className={classNames(Styles.LayoutWrapper)}>
         <section className='w-full'>
-          <LzSidebar />
+          <Sidebar />
           <main className="float-right w-4/5 min-h-screen">
             <Header />
             <LzContainer>
