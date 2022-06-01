@@ -2,11 +2,15 @@ import { FC } from "react"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import LzLink from "./UI/Link"
 import QuickLinks from "./QuickLinks"
+import Divider from "./Divider"
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
   QuickLinks(props){
-    return <QuickLinks {...props} />
+    return (<QuickLinks {...props} />)
+  },
+  Divider(props){
+    return (<Divider {...props} />)
   },
   Admonition(props) {
     return <div {...props} />

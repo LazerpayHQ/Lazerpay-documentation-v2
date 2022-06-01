@@ -13,7 +13,7 @@ type DocsLayoutProps = {
 }
 
 export default function DocsLayout({ children, doc }: DocsLayoutProps) {
-  const hideToc = path(['frontmatter', 'toc', 'length'], doc) < 3;
+  const hideToc = !path(['frontmatter', 'toc', 'length'], doc);
 
   return (
     
