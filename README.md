@@ -9,7 +9,7 @@
 
 ## Contributors ✨
 
-This is a fork of Zag Docs (originally writtin with Chakra-ui as its UI library). Thanks to Chakra-UI team for making their [Zag Docs](https://github.com/chakra-ui/zag-docs) documentation Open source and free to use. 
+Thanks to Chakra-UI team for making their [Zag Docs](https://github.com/chakra-ui/zag-docs) documentation Open source and free to use. 
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
