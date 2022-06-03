@@ -9,8 +9,12 @@ import LzContainer from './UI/Container';
 import LzLink from './UI/Link';
 import QuickLinks from './QuickLinks';
 import CodeBlock from './CodeBlock';
+import AcceptPayments from './AcceptPayments';
+import ExploreDemo from './ExploreDemo';
 
 export {
+  ExploreDemo,
+  AcceptPayments,
   CodeBlock,
   QuickLinks,
   TableOfContents,

@@ -4,11 +4,19 @@ import LzLink from "./UI/Link"
 import QuickLinks from "./QuickLinks"
 import Divider from "./Divider"
 import CodeBlock from "./CodeBlock"
+import AcceptPayments from "./AcceptPayments"
+import ExploreDemo from "./ExploreDemo"
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
   QuickLinks({ children, ...props}){
     return (<QuickLinks {...props} />)
+  },
+  AcceptPayments({ children, ...props }){
+    return <AcceptPayments {...props} />
+  },
+  ExploreDemo(){
+    return <ExploreDemo />
   },
   Divider({ children, ...props}){
     return (<Divider {...props} />)
@@ -23,7 +31,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
     return <blockquote {...props} />
   },
   p(props){
-    return <p className="paragraph-3 text-neu-800" {...props} />
+    return <p className="paragraph-2 text-neu-800" {...props} />
   },
   h1(props) {
     return (
