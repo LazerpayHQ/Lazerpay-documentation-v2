@@ -37,22 +37,23 @@ our issues.
 
 - [Get Started](#get-started)
 - [Editing Content](#editing-content)
-- [Adding Content](#adding-content)
 - [Contributing](#contributing)
 
 ## Get Started
 
-// steps to get started
+- Create a fork of the documentation, install neccessary dependencies by running `yarn`
+- To start your server, run `yarn dev` and you'll have your development server running on **localhost:3000**
 
 ## Editing Content
+To add a new content, eg page, please note this is a NextJS app, a knowledge of NextJS is required to work with files and how pages are routed. 
 
+- All new pages should go to the `content/docs` folder accrodingly. The pages are writting in markdown (MDX - an extension of MD). 
+- MDX allows you to use JSX components in the same file. If you have a section of the page that is written in JSX, please create that component and include it to the existing [mdx-component object](https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/blob/main/components/mdx-components.tsx) so it is properly mapped when rendering. Don't forget to export the component in the entry `index.ts` file before importing anywhere else.
 ### Editing an existing docs page
-
-
-## Adding Content
+- Make your changes to the neccessary files, create your PR following the issue guideline
 
 ### Adding a new docs page to an existing sidebar
-
+- The sidebar is quite comprehensive, after creating your page, update the `sidebar.config.ts` file to include your new route/page if it's not already there. Each sidebar option has a nested structure, so if you are working on a nested link under a particular sidebar item, add that page route in the `items` array of the sidebar config
 
 ## Contributing
 
@@ -74,7 +75,7 @@ Thanks to Chakra-UI team for making their [Zag Docs](https://github.com/chakra-u
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://twitter.com/frontend_io"><img src="https://avatars.githubusercontent.com/u/32682002?v=4?s=32" width="32px;" alt=""/><br /><sub><b>Jefferson Iyobosa</b></sub></a><br /><a href="#maintenance-iyobosajefferson" title="Maintenance">🚧</a> <a href="https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/commits?author=Frontend-io" title="Code">💻</a></td>
+    <td align="center"><a href="https://twitter.com/frontend_io"><img src="https://avatars.githubusercontent.com/u/32682002?v=4?s=32" width="32px;" alt=""/><br /><sub><b>Jefferson Iyobosa</b></sub></a><br /><a href="#maintenance-frontend-io" title="Maintenance">🚧</a> <a href="https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/commits?author=Frontend-io" title="Code">💻</a></td>
   </tr>
 </table>
 
