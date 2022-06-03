@@ -12,6 +12,7 @@
     "contributors:gen": "all-contributors generate"
   },
   "dependencies": {
+    "@mdx-js/react": "^2.1.1",
     "autoprefixer": "^10.4.7",
     "babel-plugin-superjson-next": "^0.4.3",
     "classnames": "^2.3.1",
@@ -23,11 +24,14 @@
     "next-seo": "^5.4.0",
     "plop": "^3.0.5",
     "postcss": "^8.4.14",
+    "prismjs": "^1.28.0",
     "ramda": "^0.28.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
     "sass": "^1.51.0",
+    "sugar": "^2.0.6",
+    "sugarjs": "^0.1.0",
     "superjson": "^1.9.1",
     "tailwindcss": "^3.0.24"
   },

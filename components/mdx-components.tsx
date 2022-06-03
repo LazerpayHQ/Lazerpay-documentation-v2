@@ -1,9 +1,37 @@
 import { FC } from "react"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import LzLink from "./UI/Link"
+import QuickLinks from "./QuickLinks"
+import Divider from "./Divider"
+import CodeBlock from "./CodeBlock"
+import AcceptPayments from "./AcceptPayments"
+import ExploreDemo from "./ExploreDemo"
+import WhatsNew from "./WhatsNew"
+import ConnectCommunity from "./Connect"
 
 /** Create a map of the HTML elements */
-const components: Record<string, FC<Record<string, any>>> = {
+export const components: Record<string, FC<Record<string, any>>> = {
+  QuickLinks({ children, ...props}){
+    return (<QuickLinks {...props} />)
+  },
+  AcceptPayments({ children, ...props }){
+    return <AcceptPayments {...props} />
+  },
+  ExploreDemo(){
+    return <ExploreDemo />
+  },
+  WhatsNew(){
+    return <WhatsNew />
+  },
+  ConnectCommunity(){
+    return <ConnectCommunity />
+  },
+  Divider({ children, ...props}){
+    return (<Divider {...props} />)
+  },
+  CodeBlock(props){
+    return (<CodeBlock {...props} />)
+  },
   Admonition(props) {
     return <div {...props} />
   },
@@ -11,7 +39,7 @@ const components: Record<string, FC<Record<string, any>>> = {
     return <blockquote {...props} />
   },
   p(props){
-    return <p {...props} />
+    return <p className="paragraph-2 text-neu-800" {...props} />
   },
   h1(props) {
     return (
@@ -24,7 +52,7 @@ const components: Record<string, FC<Record<string, any>>> = {
     )
   },
   h2(props) {
-    return <h2 {...props} />
+    return <h2 className="heading-5-s" {...props} />
   },
   h3(props) {
     return <h3 {...props} />

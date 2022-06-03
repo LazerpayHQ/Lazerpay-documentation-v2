@@ -31,19 +31,11 @@ export default function Document() {
         <meta name="theme-color" content="#00D163" />
         <link
           rel="preload"
-          href="/fonts/spline-sans.woff2"
+          href="/fonts"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        {process.env.NODE_ENV === "production" && (
-          <script
-            async
-            defer
-            data-domain="zagjs.com"
-            src="https://plausible.io/js/plausible.js"
-          />
-        )}
       </Head>
       <body>
         <Main />
