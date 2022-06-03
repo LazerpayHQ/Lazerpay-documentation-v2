@@ -16,7 +16,7 @@ Thanks to Chakra-UI team for making their [Zag Docs](https://github.com/chakra-u
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://twitter.com/frontend_io"><img src="https://avatars.githubusercontent.com/u/32682002?v=4?s=32" width="32px;" alt=""/><br /><sub><b>Jefferson Iyobosa</b></sub></a><br /><a href="#maintenance-iyobosajefferson" title="Maintenance">🚧</a> <a href="https://github.com/chakra-ui/zag/commits?author=jeffersoniyobosa" title="Code">💻</a></td>
+    <td align="center"><a href="https://twitter.com/frontend_io"><img src="https://avatars.githubusercontent.com/u/32682002?v=4?s=32" width="32px;" alt=""/><br /><sub><b>Jefferson Iyobosa</b></sub></a><br /><a href="#maintenance-iyobosajefferson" title="Maintenance">🚧</a> <a href="https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/commits?author=jeffersoniyobosa" title="Code">💻</a></td>
   </tr>
 </table>
 
