@@ -19,7 +19,7 @@ export function TableOfContents({ data = [] }: { data: TOC }) {
           const content = item.content.length > 20 ? `${item.content.slice(0, 20)}...` : item.content;
           return (
             <li
-              className="py-1 border-l paragraph-1 text-neu-800 border-pri-50 first-letter:capitalize"
+              className="py-1.5 border-l paragraph-1 text-neu-800 border-pri-50 first-letter:capitalize"
               data-selected={activeId === item.slug || undefined}
               key={item.slug}>
               <a href={`#${item.slug}`}>

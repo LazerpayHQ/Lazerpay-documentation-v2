@@ -6,6 +6,8 @@ import Divider from "./Divider"
 import CodeBlock from "./CodeBlock"
 import AcceptPayments from "./AcceptPayments"
 import ExploreDemo from "./ExploreDemo"
+import WhatsNew from "./WhatsNew"
+import ConnectCommunity from "./Connect"
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -17,6 +19,12 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   ExploreDemo(){
     return <ExploreDemo />
+  },
+  WhatsNew(){
+    return <WhatsNew />
+  },
+  ConnectCommunity(){
+    return <ConnectCommunity />
   },
   Divider({ children, ...props}){
     return (<Divider {...props} />)

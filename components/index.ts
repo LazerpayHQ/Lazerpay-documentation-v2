@@ -11,8 +11,11 @@ import QuickLinks from './QuickLinks';
 import CodeBlock from './CodeBlock';
 import AcceptPayments from './AcceptPayments';
 import ExploreDemo from './ExploreDemo';
+import WhatsNew from './WhatsNew';
+
 
 export {
+  WhatsNew,
   ExploreDemo,
   AcceptPayments,
   CodeBlock,

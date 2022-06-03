@@ -23,7 +23,7 @@ export default function ExploreDemo():JSX.Element {
                             </div>
                             <Divider className="w-20 mt-5" />
                             <div className="space-y-2">
-                                <h4 className="caption-s to-neu-600">API USED</h4>
+                                <h4 className="caption-s text-neu-600">API USED</h4>
                                 {data.apiUsed.map((d)=> (
                                     <LzLink className="block paragraph-1-s text-neu-700" to={d.link}>
                                         {d.title}
