@@ -1,6 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 code[class*="language-"],
 pre[class*="language-"] {
-  background: hsl(230, 1%, 98%);
+  @apply bg-neu-700;
+  border-radius: 0 0 8px 8px;
   color: hsl(230, 8%, 24%);
   font-family: var(--fonts-mono);
   direction: ltr;
@@ -29,10 +34,16 @@ pre[class*="language-"] *::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em 0;
+  padding: 1.5em 2em;
   margin: 2em 0;
   overflow: auto;
-  border-radius: 0.3em;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+pre[class*="language-"].line-numbers > code {
+  line-height: 2;
+  left: 15px;
 }
 
 /* Inline code */
@@ -63,8 +74,9 @@ pre[class*="language-"] {
   color: hsl(35, 99%, 36%);
 }
 
-.token.keyword {
-  color: hsl(301, 63%, 40%);
+/* Token colors */
+.token {
+  color: hsl(210, 40%, 96%) !important;
 }
 
 .token.property,
@@ -252,7 +264,6 @@ div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:focus {
 /* Default line numbers in Line Highlight plugin */
 .highlight-line.highlight-line:before,
 .highlight-line.highlight-line[data-end]:after {
-  background: hsl(230, 1%, 90%);
   color: hsl(230, 8%, 24%);
   padding: 0.1em 0.6em;
   border-radius: 0.3em;
@@ -271,6 +282,8 @@ pre[id].linkable-line-numbers.linkable-line-numbers
 /* Line separating gutter from coding area */
 .line-numbers.line-numbers .line-numbers-rows,
 .command-line .command-line-prompt {
+  border: none;
+  top: -4.5px;
   border-right-color: hsla(230, 8%, 24%, 0.2);
 }
 
@@ -278,6 +291,7 @@ pre[id].linkable-line-numbers.linkable-line-numbers
 .line-numbers .line-numbers-rows > span:before,
 .command-line .command-line-prompt > span:before {
   color: hsl(230, 1%, 62%);
+  @apply text-pri-100 font-normal;
 }
 
 /* Match Braces plugin overrides */

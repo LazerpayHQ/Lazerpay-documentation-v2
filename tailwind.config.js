@@ -4,8 +4,10 @@
 
  module.exports = {
   content: [
-    'components/**/*.{jsx,tsx,js,ts}',
-    './pages/**/*.{jsx,tsx,js,ts}',
+    './components/**/*.{jsx,tsx,js,ts,mdx}',
+    './layouts/**/*.{jsx,tsx,js,ts,mdx}',
+    './pages/**/*.{jsx,tsx,js,ts,mdx}',
+    './content/**/*.{jsx,tsx,js,ts,mdx}',
   ],
   theme: {
     namedGroups: ["foo", "2", "3"],
@@ -20,10 +22,10 @@
         20: "20px"
       },
       maxWidth: {
+        "100": "100px",
         "9xl": "1500px",
         "screen-3xl": "1650px"
       },
-
       height: {
         "90vh": "90vh"
       },

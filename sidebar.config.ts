@@ -1,41 +1,62 @@
-import { ElementType } from "react"
-import { AiOutlineCompass } from "react-icons/ai"
+import { GuidesIcon, HomeIcon, PaymentsIcon, TransferIcon, UseCasesIcon } from "public/icons"
+import React, { ElementType } from "react"
 
-type SidebarItem =
-  | {
-      type: "category"
-      icon?: ElementType
-      id: string
-      label: string
-      collapsible?: boolean
-      collapsed?: boolean
-      items: SidebarItem[]
-    }
-  | {
-      type: "doc"
-      id: string
-      label: string
-      new?: boolean
-    }
-  | {
-      type: "link"
-      id: string
-      label: string
-      href: string
-    }
-
-const sidebar: Record<"docs", SidebarItem[]> = {
-  docs: [
-    {
-      type: "category",
-      label: "Overview",
-      icon: AiOutlineCompass,
-      id: "overview",
-      items: [
-        { type: "doc", label: "Introduction", id: "introduction" }
-      ],
-    }
-  ],
+export interface SidebarItem {
+  type: string
+  icon?: ElementType | React.ReactNode
+  route: string
+  label: string
+  collapsible?: boolean
+  collapsed?: boolean
+  items?: SidebarItem[]
 }
+
+const sidebar: SidebarItem[] = [
+  {
+    type: "docs",
+    label: "Quick Start",
+    icon: HomeIcon,
+    route: "quick-start",
+    items: [
+      { type: "docs", label: "Introduction", route: "introduction" }
+    ],
+  },
+  {
+    type: "docs",
+    label: "Payments",
+    icon: PaymentsIcon,
+    route: "payments",
+    items: [
+      { type: "docs", label: "Introduction", route: "introduction" }
+    ],
+  },
+  {
+    type: "docs",
+    label: "Transfers",
+    icon: TransferIcon,
+    route: "transfers",
+    items: [
+      { type: "docs", label: "Introduction", route: "introduction" }
+    ],
+  },
+  {
+    type: "docs",
+    label: "Use Cases",
+    icon: UseCasesIcon,
+    route: "use-cases",
+    items: [
+      { type: "docs", label: "Introduction", route: "introduction" }
+    ],
+  },
+  {
+    type: "docs",
+    label: "Guides and Tutorials",
+    icon: GuidesIcon,
+    route: "guides",
+    items: [
+      { type: "docs", label: "Introduction", route: "introduction" }
+    ],
+  }
+]
 
 export default sidebar

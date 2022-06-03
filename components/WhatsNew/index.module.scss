@@ -1,0 +1,31 @@
+.WhatsNew {
+    .Timeline {
+        span,
+        .Content {
+            position: relative;
+            padding: 20px 0 40px;
+            &:not(span)::before {
+                content: '';
+                left: 50px;
+                top: 25px;
+                background-color: #FFF;
+                position: absolute;
+                height: 14px;
+                width: 14px;
+                border-radius: 100%;
+                border: 2px solid #334155;
+                box-sizing: border-box;
+                z-index: 9;
+            }
+            &:not(span)::after {
+                content: '';
+                left: 56px;
+                top: 0;
+                position: absolute;
+                height: 100%;
+                width: 2px;
+                background-color: #F4F3EE;
+            }
+        }
+    }
+}
