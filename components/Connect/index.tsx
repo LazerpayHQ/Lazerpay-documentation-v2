@@ -8,7 +8,7 @@ export default function ConnectCommunity():JSX.Element {
                 channels.map((c: any) => (
                     <div key={c.title} className="grid items-center content-center justify-center grid-cols-6 gap-8 py-5 -space-x-8 lg:gap-0 lg:grid-cols-3 lg:items-end mx-uto lg:flex lg:p-0 lg:space-x-7">
                         <div className="flex justify-center col-span-3 lg:col-span-1">
-                            {c.icon()}
+                            {c.icon}
                         </div>
                         <div className="col-span-3">
                             <h3 className="heading-5-sm text-neu-900">{c.title}</h3>

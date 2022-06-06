@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { LzLink } from 'components';
 import { useRouter } from 'next/router';
 import { LogoFull } from 'public/icons';
-import sidebar from 'sidebar.config';
+import sidebar, { SidebarItem } from 'sidebar.config';
 import Styles from './Sidebar.module.scss';
 
 const Sidebar = ():JSX.Element => {
@@ -20,14 +20,14 @@ const Sidebar = ():JSX.Element => {
       <div className='mt-16'>
         <ul className='space-y-4'>
           {
-            sidebar.map(({ label, route, icon }: any)=> {
+            sidebar.map(({ label, route, icon }: SidebarItem)=> {
               const isActive = router.asPath.includes(route);
               return (
                 <li key={route}>
                   <LzLink to={route} className={classNames('flex items-center py-2 space-x-3 paragraph-2', {
                     'paragraph-2-s text-pri-500': isActive
                   })}>
-                    <span>{icon()}</span>
+                    <span>{icon}</span>
                     <span>{label}</span>
                   </LzLink>
                 </li>

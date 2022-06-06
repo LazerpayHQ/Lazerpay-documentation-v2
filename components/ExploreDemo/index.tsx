@@ -12,7 +12,7 @@ export default function ExploreDemo():JSX.Element {
             {
                 demos.map((data)=> (
                     <div className={classNames(Styles.Demo, "flex-1 p-8 rounded-8")}>
-                        <span>{data.icon()}</span>
+                        <span>{data.icon}</span>
                         <div>
                             <p className="py-3.5 paragraph-2-s text-neu-900">{data.title}</p>
                             <div className="flex items-center space-x-2 text-neu-800">

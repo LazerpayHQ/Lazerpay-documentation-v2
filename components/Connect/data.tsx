@@ -9,7 +9,7 @@ export interface IChannel {
 
 export const channels:IChannel[] = [
     {
-        icon: NewsPaperIcon,
+        icon: <NewsPaperIcon />,
         title: 'News',
         options: [
             {title: 'Developer Newsletter', link: ''},
@@ -17,7 +17,7 @@ export const channels:IChannel[] = [
         ]
     },
     {
-        icon: CommunityIcon,
+        icon: <CommunityIcon />,
         title: 'Social',
         options: [
             {title: 'Slack', link: ''},
@@ -25,7 +25,7 @@ export const channels:IChannel[] = [
         ]
     },
     {
-        icon: SupportIcon,
+        icon: <SupportIcon />,
         title: 'Help',
         options: [
             {title: 'Slack', link: ''},
