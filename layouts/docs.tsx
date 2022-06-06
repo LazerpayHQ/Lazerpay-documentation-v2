@@ -20,9 +20,7 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
     <MDXProvider components={components}>
       <div className={classNames(Styles.LayoutWrapper)}>
         <section className='w-full'>
-          <div className="hidden lg:block">
-            <Sidebar />
-          </div>
+          <Sidebar />
           <main className="min-h-screen lg:w-4/5 lg:float-right">
             <Header />
             <LzContainer>

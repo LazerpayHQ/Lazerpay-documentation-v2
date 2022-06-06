@@ -8,7 +8,7 @@ import Styles from './Sidebar.module.scss';
 const Sidebar = ():JSX.Element => {
   const router = useRouter();
   return (
-    <aside className={classNames(Styles.Sidebar,'float-left pl-6 xl:pl-10 py-6 sticky top-0 w-1/5 h-screen')}>
+    <aside className={classNames(Styles.Sidebar,'float-left pl-6 xl:pl-10 py-6 sticky top-0 w-1/5 h-screen hidden lg:block')}>
       <div className='flex items-center space-x-3 xl:space-x-4'>
         <LzLink to='/'>
           <LogoFull className="w-24 xl:w-full" />
