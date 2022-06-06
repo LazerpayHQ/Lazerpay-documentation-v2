@@ -44,7 +44,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
   h1(props) {
     return (
       <h1
-        className="heading-3-b"
+        className="heading-3-b-sm break-keep-all lg:heading-3-b"
         id="skip-nav"
         tabIndex={-1}
         {...props}
@@ -52,7 +52,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
     )
   },
   h2(props) {
-    return <h2 className="heading-5-s" {...props} />
+    return <h2 className="heading-5-s break-keep-all" {...props} />
   },
   h3(props) {
     return <h3 {...props} />

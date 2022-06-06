@@ -8,7 +8,7 @@ import Styles from './index.module.scss';
 export default function ExploreDemo():JSX.Element {
     
     return(
-        <div className={classNames(Styles.Demos, "flex space-x-6 mt-4")}>
+        <div className={classNames(Styles.Demos, "flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 mt-4")}>
             {
                 demos.map((data)=> (
                     <div className={classNames(Styles.Demo, "flex-1 p-8 rounded-8")}>

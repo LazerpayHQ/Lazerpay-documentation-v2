@@ -1,6 +1,7 @@
 import CommunityIcon from './community-icon';
 import GuidesIcon from './guides-icon';
 import HomeIcon from './home-icon';
+import SearchIcon from './icon-search';
 import LibrariesIcon from './libraries-icon';
 import LogoFull from './logo';
 import MoneyIcon from './money-icon';
@@ -14,6 +15,7 @@ import TransferIcon from './transfers-icon';
 import UseCasesIcon from './use-cases-icon';
 
 export {
+  SearchIcon,
   CommunityIcon,
   NewsPaperIcon,
   SupportIcon,

@@ -20,12 +20,14 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
     <MDXProvider components={components}>
       <div className={classNames(Styles.LayoutWrapper)}>
         <section className='w-full'>
-          <Sidebar />
-          <main className="float-right w-4/5 min-h-screen">
+          <div className="hidden lg:block">
+            <Sidebar />
+          </div>
+          <main className="min-h-screen lg:w-4/5 lg:float-right">
             <Header />
             <LzContainer>
-              <div className="w-full pt-14">
-                <section className={classNames(Styles.Content, 'float-left break-all break-before-all w-3/4')}>
+              <div className="w-full pt-10 lg:pt-14">
+                <section className={classNames(Styles.Content, 'md:float-left break-all break-before-all xl:w-3/4')}>
                   {children}
                   <div className="mt-40">
                     <Reaction />
@@ -35,7 +37,7 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
                 </section>
                 {
                   !hideToc && (
-                    <div className={classNames(Styles.TOC, "sticky top-24 float-right h-full w-48")}>
+                    <div className={classNames(Styles.TOC, "hidden xl:block sticky top-24 float-right h-full w-48")}>
                       <TableOfContents data={doc.frontmatter.toc} />
                     </div>
                   )

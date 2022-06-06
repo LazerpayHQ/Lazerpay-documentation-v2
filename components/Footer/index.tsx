@@ -3,12 +3,12 @@ import LzContainer from 'components/UI/Container';
 import React from 'react';
 import { footerData } from './data';
 
-export default function FooterWrapper(props: any): JSX.Element {
+export default function FooterWrapper(): JSX.Element {
   return (
     <footer className='w-full mx-auto pb-14'>
       <LzContainer fluid>
-        <div className='px-7'>
-          <div className='grid w-full grid-cols-3 mx-auto gap-28'>
+        <div className='px-2 md:px-7'>
+          <div className='grid w-full grid-cols-1 gap-10 mx-auto md:grid-cols-3 md:gap-28'>
             {
               Object.entries(footerData).map(([key, links])=> (
                 <div key={key}>
@@ -26,7 +26,7 @@ export default function FooterWrapper(props: any): JSX.Element {
               ))
             }
           </div>
-          <span className='block mt-10 paragraph-1 text-neu-900'>
+          <span className='block mt-28 lg:mt-10 paragraph-1 text-neu-900'>
             All rights Reserved. © {new Date().getFullYear()} Lazerpay Inc.
           </span>
         </div>
