@@ -1,5 +1,5 @@
-import { Date } from 'sugar';
+import moment from 'moment';
 
-export function relativeDate(date: Date | string):string {
-    return new Date(date).relative().raw
+export function relativeDate(date: string):string {
+    return moment(date).startOf('day').fromNow()
 }

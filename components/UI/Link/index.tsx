@@ -20,10 +20,9 @@ const LzLink = React.forwardRef(({ to="#", passHref= false, anchor, children, cl
         <Link 
             passHref={passHref} 
             href={to} 
-            ref={ref} 
             {...rest} 
             {...isExternalLink}>
-            <a className={classNames('hover:text-pri-500 !no-underline relative group w-fit transition duration-200 text-nue-800', className,{
+            <a ref={ref} className={classNames('hover:text-pri-500 !no-underline relative group w-fit transition duration-200 text-nue-800', className,{
                 'text-nue-900': isActive,
                 'flex items-center space-x-2': anchor
             })}>

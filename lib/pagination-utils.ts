@@ -2,11 +2,11 @@ import sidebar from "sidebar.config"
 
 export function getPaginationData() {
   const result: { label: string; url: string }[] = []
-  for (const group of sidebar.docs) {
+  for (const group of sidebar) {
     if (group.type !== "category") continue
     const items = group.items.map((item) => ({
       label: item.label,
-      url: item.id,
+      url: item.route,
     }))
     result.push(...items)
   }

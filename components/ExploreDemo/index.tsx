@@ -11,7 +11,7 @@ export default function ExploreDemo():JSX.Element {
         <div className={classNames(Styles.Demos, "flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 mt-4")}>
             {
                 demos.map((data)=> (
-                    <div className={classNames(Styles.Demo, "flex-1 p-8 rounded-8")}>
+                    <div key={data.title} className={classNames(Styles.Demo, "flex-1 p-8 rounded-8")}>
                         <span>{data.icon}</span>
                         <div>
                             <p className="py-3.5 paragraph-2-s text-neu-900">{data.title}</p>
@@ -25,7 +25,7 @@ export default function ExploreDemo():JSX.Element {
                             <div className="space-y-2">
                                 <h4 className="caption-s text-neu-600">API USED</h4>
                                 {data.apiUsed.map((d)=> (
-                                    <LzLink className="block paragraph-1-s text-neu-700" to={d.link}>
+                                    <LzLink key={d.title} className="block paragraph-1-s text-neu-700" to={d.link}>
                                         {d.title}
                                     </LzLink>
                                 ))}

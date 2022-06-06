@@ -1,7 +1,7 @@
 export default function SupportIcon() {
     return (
         <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_2066_7225)">
+            <g clipPath="url(#clip0_2066_7225)">
                 <path d="M14.5 22H7.5V25H14.5V22Z" fill="#125BC9" />
                 <path d="M22.5 29H7.5V31H22.5V29Z" fill="#125BC9" />
                 <path d="M35.5 29H26.5V31H35.5V29Z" fill="#125BC9" />
