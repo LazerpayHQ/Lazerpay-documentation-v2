@@ -77,21 +77,6 @@ Contributions to lazerpay-documentation-v2 can be made via pull requests on GitH
 
 Thanks to Chakra-UI team for making their [Zag Docs](https://github.com/chakra-ui/zag-docs) documentation Open source and free to use. 
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://twitter.com/frontend_io"><img src="https://avatars.githubusercontent.com/u/32682002?v=4?s=32" width="32px;" alt=""/><br /><sub><b>Jefferson Iyobosa</b></sub></a><br /><a href="#maintenance-frontend-io" title="Maintenance">🚧</a> <a href="https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/commits?author=Frontend-io" title="Code">💻</a></td>
-    <td align="center"><a href="https://twitter.com/i_smell_legit"><img src="https://avatars.githubusercontent.com/u/45321074?s=400&u=9929ba88dae276d142875bcbceec4df462f005d2&v=4" width="32px;" alt=""/><br /><sub><b>Justice Eziefule</b></sub></a><br /><a href="#maintenance-meister" title="Maintenance">🚧</a> <a href="https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/commits?author=MeisterJustice" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
 This project follows the
 [all-contributors](https://github.com/all-contributors/all-contributors)
 specification. Contributions of any kind welcome!
