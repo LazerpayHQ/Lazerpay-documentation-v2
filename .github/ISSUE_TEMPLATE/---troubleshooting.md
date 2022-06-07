@@ -1,7 +1,7 @@
 ---
 name: "\U0001F50C Troubleshooting"
 about: for additions to the FAQ and Troubleshooting sections
-title: Troubleshooting
+title: "\U0001F50C [Troubleshooting]"
 labels: ''
 assignees: ''
 

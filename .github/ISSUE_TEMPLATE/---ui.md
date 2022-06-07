@@ -1,7 +1,7 @@
 ---
 name: "\U0001F3A8 UI"
 about: for improvements and fixups related to the look and feel of the docs site
-title: UI
+title: "\U0001F3A8 [UI]"
 labels: ''
 assignees: ''
 

@@ -1,7 +1,7 @@
 ---
 name: "⚙️ Fixup"
 about: for typos, broken links, and other quick fixes
-title: Fixup
+title: "⚙️ [Fixup]"
 labels: ''
 assignees: ''
 

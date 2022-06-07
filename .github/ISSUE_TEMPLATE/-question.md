@@ -1,7 +1,7 @@
 ---
 name: "❓Question"
 about: for questions that can't be answered via documentation
-title: Question
+title: "❓[Question]"
 labels: ''
 assignees: ''
 

@@ -1,13 +1,13 @@
 ---
-name: "\U0001F9D1\U0001F3FD‍\U0001F4BB Feature request"
-about: Suggest an idea for this project
-title: "\U0001F9D1\U0001F3FD‍\U0001F4BB [Feature]"
+name: "✈️ Improvement"
+about: for revisions, rewrites, and larger improvements
+title: "✈️ [Improvement]"
 labels: ''
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
+**Please describe the improvement request**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
 **Describe the solution you'd like**
@@ -19,5 +19,5 @@ A clear and concise description of any alternative solutions or features you've 
 **Does this solution have a figma design url attached to it? paste it here (optional)**
 [Figma URL](https://figma.com/)
 
-**Additional context**
+**Additional context (optional)**
 Add any other context or screenshots about the feature request here.

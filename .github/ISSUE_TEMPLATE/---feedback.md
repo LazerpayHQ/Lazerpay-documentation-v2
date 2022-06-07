@@ -1,7 +1,7 @@
 ---
 name: "\U0001F916 Feedback"
 about: for feedback on structure & content
-title: Feedback
+title: "\U0001F916 [Feedback]"
 labels: ''
 assignees: ''
 
