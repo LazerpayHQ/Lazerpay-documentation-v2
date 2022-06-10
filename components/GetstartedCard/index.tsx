@@ -19,7 +19,7 @@ export const LinkedCard = ({ desc, title, route }) => {
           <h5 className='text-pri-500 py-2 md:py-4 paragraph-2 md:text-md font-bold'>
             {title}
           </h5>
-          <p className=' paragaph-1'>{desc} </p>
+          <p className=' paragaph-1 mr-6'>{desc} </p>
           <span className='pt-3 flex text-xl justify-end'>
             <ArrowRightIcon />
           </span>
@@ -33,12 +33,12 @@ export const LinkedCard = ({ desc, title, route }) => {
 export const PlainCard = ({ desc, title, route }) => {
   return (
     <>
-      <LzLink className='my-2 h-92 ' to={route}>
+      <LzLink className='my-2' to={route}>
         <div className='bg-white text-sm mb-2 px-5 md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 lg:w-92'>
           <h5 className='text-pri-500 py-2 md:py-4 paragraph-2 md:text-md font-bold'>
             {title}
           </h5>
-          <p className='h-12 paragraph-1'>{desc} </p>
+          <p className='h-12 paragraph-1 mr-6'>{desc} </p>
           <span className='py-5 pb-5 flex text-xl justify-end'>
             <ArrowRightIcon />
           </span>
@@ -88,7 +88,7 @@ export function TestAndGoLive(): JSX.Element {
     <section
       className={classNames(
         Styles.GetStarted,
-        'grid md:grid-cols-2 lg:flex-row w-full lg:space-y-1 w-full lg:gap-x-6',
+        'grid md:grid-cols-2 lg:space-y-2 w-full lg:gap-x-6',
       )}
     >
       {testAndGoData.map(({ title, desc, route }) => {

@@ -12,6 +12,7 @@ import AcceptPayments from './AcceptPayments'
 import ExploreDemo from './ExploreDemo'
 import WhatsNew from './WhatsNew'
 import ConnectCommunity from './Connect'
+import { Pagination } from './pagination'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -50,6 +51,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   TestAndGoLive(props) {
     return <TestAndGoLive {...props} />
+  },
+  Pagination(props) {
+    return(<Pagination{...props}/>)
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
