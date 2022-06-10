@@ -1,36 +1,40 @@
-import { FC } from "react"
-import { useMDXComponent } from "next-contentlayer/hooks"
-import LzLink from "./UI/Link"
-import QuickLinks from "./QuickLinks"
-import Divider from "./Divider"
-import CodeBlock from "./CodeBlock"
-import AcceptPayments from "./AcceptPayments"
-import ExploreDemo from "./ExploreDemo"
-import WhatsNew from "./WhatsNew"
-import ConnectCommunity from "./Connect"
+import { FC } from 'react'
+import { useMDXComponent } from 'next-contentlayer/hooks'
+import LzLink from './UI/Link'
+import QuickLinks from './QuickLinks'
+import Divider from './Divider'
+import CodeBlock from './CodeBlock'
+import GetstartedCard from './GetstartedCard'
+import AcceptPayments from './AcceptPayments'
+import ExploreDemo from './ExploreDemo'
+import WhatsNew from './WhatsNew'
+import ConnectCommunity from './Connect'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
-  QuickLinks({ children, ...props}){
-    return (<QuickLinks {...props} />)
+  QuickLinks({ children, ...props }) {
+    return <QuickLinks {...props} />
   },
-  AcceptPayments({ children, ...props }){
+  AcceptPayments({ children, ...props }) {
     return <AcceptPayments {...props} />
   },
-  ExploreDemo(){
+  ExploreDemo() {
     return <ExploreDemo />
   },
-  WhatsNew(){
+  WhatsNew() {
     return <WhatsNew />
   },
-  ConnectCommunity(){
+  ConnectCommunity() {
     return <ConnectCommunity />
   },
-  Divider({ children, ...props}){
-    return (<Divider {...props} />)
+  Divider({ children, ...props }) {
+    return <Divider {...props} />
   },
-  CodeBlock(props){
-    return (<CodeBlock {...props} />)
+  CodeBlock(props) {
+    return <CodeBlock {...props} />
+  },
+  GetstartedCard(props) {
+    return <GetstartedCard {...props} />
   },
   Admonition(props) {
     return <div {...props} />
@@ -38,21 +42,21 @@ export const components: Record<string, FC<Record<string, any>>> = {
   blockquote(props) {
     return <blockquote {...props} />
   },
-  p(props){
-    return <p className="paragraph-2 text-neu-800" {...props} />
+  p(props) {
+    return <p className='paragraph-2 text-neu-800' {...props} />
   },
   h1(props) {
     return (
       <h1
-        className="heading-3-b-sm break-keep-all lg:heading-3-b"
-        id="skip-nav"
+        className='heading-3-b-sm break-keep-all lg:heading-3-b'
+        id='skip-nav'
         tabIndex={-1}
         {...props}
       />
     )
   },
   h2(props) {
-    return <h2 className="heading-5-s break-keep-all" {...props} />
+    return <h2 className='heading-5-s break-keep-all' {...props} />
   },
   h3(props) {
     return <h3 {...props} />
@@ -64,18 +68,16 @@ export const components: Record<string, FC<Record<string, any>>> = {
     return <pre {...props} className={`prose ${props.className}`} />
   },
   li(props) {
-    return (
-      <li {...props} />
-    )
+    return <li {...props} />
   },
   inlineCode(props) {
-    return <code className="prose" {...props} />
+    return <code className='prose' {...props} />
   },
   code(props) {
-    if (typeof props.children === "string") {
+    if (typeof props.children === 'string') {
       return <components.inlineCode {...props} />
     }
-    return <div className="prose">{props.children}</div>
+    return <div className='prose'>{props.children}</div>
   },
   a(props) {
     const href = props.href

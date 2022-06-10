@@ -1,5 +1,11 @@
-import { GuidesIcon, HomeIcon, PaymentsIcon, TransferIcon, UseCasesIcon } from "public/icons"
-import React, { ElementType } from "react"
+import {
+  GuidesIcon,
+  HomeIcon,
+  PaymentsIcon,
+  TransferIcon,
+  UseCasesIcon,
+} from 'public/icons'
+import React, { ElementType } from 'react'
 
 export interface SidebarItem {
   type: string
@@ -13,50 +19,48 @@ export interface SidebarItem {
 
 const sidebar: SidebarItem[] = [
   {
-    type: "docs",
-    label: "Quick Start",
+    type: 'docs',
+    label: 'Quick Start',
     icon: <HomeIcon />,
-    route: "quick-start",
-    items: [
-      { type: "docs", label: "Introduction", route: "introduction" }
-    ],
+    route: 'quick-start',
+    items: [{ type: 'docs', label: 'Introduction', route: 'introduction' }],
   },
   {
-    type: "docs",
-    label: "Payments",
+    type: 'docs',
+    label: 'Payments',
     icon: <PaymentsIcon />,
-    route: "payments",
+    collapsible: true,
+    route: 'payments',
     items: [
-      { type: "docs", label: "Introduction", route: "introduction" }
+      {
+        type: 'docs',
+        label: 'Verify Payments',
+        route: 'verify-payments',
+        items: [{ type: 'docs', label: 'verify payments', route: 'somthing' }],
+      },
     ],
   },
   {
-    type: "docs",
-    label: "Transfers",
+    type: 'docs',
+    label: 'Transfers',
     icon: <TransferIcon />,
-    route: "transfers",
-    items: [
-      { type: "docs", label: "Introduction", route: "introduction" }
-    ],
+    route: 'transfers',
+    items: [{ type: 'docs', label: 'Introduction', route: 'introduction' }],
   },
   {
-    type: "docs",
-    label: "Use Cases",
+    type: 'docs',
+    label: 'Use Cases',
     icon: <UseCasesIcon />,
-    route: "use-cases",
-    items: [
-      { type: "docs", label: "Introduction", route: "introduction" }
-    ],
+    route: 'use-cases',
+    items: [{ type: 'docs', label: 'Introduction', route: 'introduction' }],
   },
   {
-    type: "docs",
-    label: "Guides and Tutorials",
+    type: 'docs',
+    label: 'Guides and Tutorials',
     icon: <GuidesIcon />,
-    route: "guides",
-    items: [
-      { type: "docs", label: "Introduction", route: "introduction" }
-    ],
-  }
+    route: 'guides',
+    items: [{ type: 'docs', label: 'Introduction', route: 'introduction' }],
+  },
 ]
 
 export default sidebar
