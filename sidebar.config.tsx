@@ -34,12 +34,42 @@ const sidebar: SidebarItem[] = [
     items: [
       {
         type: 'docs',
-        label: 'Verify Payments',
-        route: 'verify-payments',
-        items: [{ type: 'docs', label: 'verify payments', route: 'somthing' }],
+        label: 'Get Started',
+        route: 'get-started',
+      },
+      {
+        type: 'docs',
+        label: 'Accept Payments',
+        route: 'accept-payments',
+      },
+      {
+        type: 'docs',
+        label: 'Veritfy Payments',
+        route: 'veritfy-payments',
+      },
+      {
+        type: 'docs',
+        label: 'Webhooks',
+        route: 'setup-webhooks',
+      },
+      {
+        type: 'docs',
+        label: 'Payments Links',
+        route: 'payment-links',
+      },
+      {
+        type: 'docs',
+        label: 'Partial Payments',
+        route: 'partial-payments',
+      },
+      {
+        type: 'docs',
+        label: 'Test Payments',
+        route: 'test-payments',
       },
     ],
   },
+
   {
     type: 'docs',
     label: 'Transfers',
