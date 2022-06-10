@@ -4,7 +4,10 @@ import LzLink from './UI/Link'
 import QuickLinks from './QuickLinks'
 import Divider from './Divider'
 import CodeBlock from './CodeBlock'
-import GetstartedCard from './GetstartedCard'
+import GetstartedCard, {
+  CompleteIntegration,
+  TestAndGoLive,
+} from './GetstartedCard'
 import AcceptPayments from './AcceptPayments'
 import ExploreDemo from './ExploreDemo'
 import WhatsNew from './WhatsNew'
@@ -33,14 +36,20 @@ export const components: Record<string, FC<Record<string, any>>> = {
   CodeBlock(props) {
     return <CodeBlock {...props} />
   },
-  GetstartedCard(props) {
-    return <GetstartedCard {...props} />
-  },
   Admonition(props) {
     return <div {...props} />
   },
   blockquote(props) {
     return <blockquote {...props} />
+  },
+  GetstartedCard(props) {
+    return <GetstartedCard {...props} />
+  },
+  CompleteIntegration(props) {
+    return <CompleteIntegration {...props} />
+  },
+  TestAndGoLive(props) {
+    return <TestAndGoLive {...props} />
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
