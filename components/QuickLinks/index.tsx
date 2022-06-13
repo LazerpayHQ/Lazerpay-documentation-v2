@@ -19,7 +19,7 @@ export default function QuickLinks():JSX.Element {
                             <h3 className='heading-6-s'>{title}</h3>
                             <p className='mt-2 whitespace-normal paragraph-1 text-neu-800'>{desc}</p>
                         </div>
-                        <LzLink className='flex items-center mt-6 space-x-3 lg:mt-0 paragraph-1-s text-pri-500' to={route}>
+                        <LzLink to={route} className='flex items-center mt-6 space-x-3 lg:mt-0 paragraph-1-s text-pri-500'>
                             <span>{label}</span>
                             <FaChevronRight className='h-3 text-pri-500' />
                         </LzLink>

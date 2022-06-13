@@ -23,10 +23,7 @@ const fields: FieldDefs = {
 const computedFields: ComputedFields = {
   slug: {
     type: "string",
-    resolve: (doc) => {
-      console.log(doc, 'her');
-      return doc._raw.sourceFileName.replace(/\.mdx$/, "")
-    },
+    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ""),
   },
   editUrl: {
     type: "string",
@@ -38,17 +35,14 @@ const computedFields: ComputedFields = {
   },
   frontmatter: {
     type: "json",
-    resolve: (doc) => {
-      console.log(doc, 'hererere')
-      return ({
-        title: doc.title,
-        description: doc.description,
-        tags: doc.tags,
-        author: doc.author,
-        slug: `/${doc._raw.flattenedPath}`,
-        toc: toc(doc.body.raw, { maxdepth: 3 }).json.filter((t) => t.lvl !== 1),
-      })
-    },
+    resolve: (doc) => ({
+      title: doc.title,
+      description: doc.description,
+      tags: doc.tags,
+      author: doc.author,
+      slug: `/${doc._raw.flattenedPath}`,
+      toc: toc(doc.body.raw, { maxdepth: 3 }).json.filter((t) => t.lvl !== 1),
+    })
   },
 }
 
