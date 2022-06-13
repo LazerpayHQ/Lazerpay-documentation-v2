@@ -89,6 +89,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
 }
 
 export function useMDX(code: string) {
+  if(!code) return;
   const MDXComponent = useMDXComponent(code)
   return <MDXComponent components={components} />
 }

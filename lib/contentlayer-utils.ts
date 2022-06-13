@@ -15,9 +15,8 @@ export function getDocPaths() {
   return allDocs.map((doc) => `/docs/${doc.slug}`)
 }
 
-export function getDoc(_slug: string | string[]) {
-  const slug = Array.isArray(_slug) ? _slug[0] : _slug
+export function getDoc(_slug: string | string[], nested: string | null | string[] = null) {
   return allDocs.find(
-    (post) => post.frontmatter.slug === `/docs/${slug}`,
+    (post) => post._raw.sourceFileDir === (nested ? `docs/${_slug}/${nested}` : `docs/${_slug}`),
   )
 }

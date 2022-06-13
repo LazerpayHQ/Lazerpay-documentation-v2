@@ -42,7 +42,7 @@ const computedFields: ComputedFields = {
       author: doc.author,
       slug: `/${doc._raw.flattenedPath}`,
       toc: toc(doc.body.raw, { maxdepth: 3 }).json.filter((t) => t.lvl !== 1),
-    }),
+    })
   },
 }
 
@@ -62,6 +62,7 @@ const Docs = defineDocumentType(() => ({
 
 const contentLayerConfig = makeSource({
   contentDirPath: "content",
+  contentDirInclude: [],
   documentTypes: [Docs],
   mdx: {
     remarkPlugins: [remarkGfm, remarkDirective, remarkAdmonition],

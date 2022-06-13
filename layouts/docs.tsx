@@ -25,7 +25,7 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
             <Header />
             <LzContainer>
               <div className="w-full pt-10 lg:pt-14">
-                <section className={classNames(Styles.Content, 'md:float-left break-all break-before-all xl:w-3/4')}>
+                <section className={classNames(Styles.Content, 'md:float-left break-keep-all break-all xl:w-3/4')}>
                   {children}
                   <div className="mt-40">
                     <Reaction />

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.1.1",
+    "@types/ramda": "^0.28.14",
     "autoprefixer": "^10.4.7",
     "babel-plugin-superjson-next": "^0.4.3",
     "classnames": "^2.3.1",
