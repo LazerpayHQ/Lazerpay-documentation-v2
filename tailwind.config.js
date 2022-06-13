@@ -10,7 +10,6 @@
     './content/**/*.{jsx,tsx,js,ts,mdx}',
   ],
   theme: {
-    namedGroups: ["foo", "2", "3"],
     extend: {
       borderRadius: {
         4: "4px",
@@ -54,6 +53,7 @@
       proxima: "proxima",
       ttfirs: "ttfirs",
       sohne: "sohne",
+      code: "Source Code Pro",
       display: "ttfirs",
       body: "proxima"
     },
