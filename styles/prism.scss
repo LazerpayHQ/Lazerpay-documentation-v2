@@ -4,10 +4,9 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  @apply bg-neu-700;
+  @apply bg-neu-700 font-code;
   border-radius: 0 0 8px 8px;
   color: hsl(230, 8%, 24%);
-  font-family: var(--fonts-mono);
   direction: ltr;
   text-align: left;
   white-space: pre;

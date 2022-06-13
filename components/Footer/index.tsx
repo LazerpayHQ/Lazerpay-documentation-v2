@@ -7,7 +7,7 @@ export default function FooterWrapper(): JSX.Element {
   return (
     <footer className='w-full mx-auto pb-14'>
       <LzContainer fluid>
-        <div className='px-2'>
+        <div className='lg:px-12'>
           <div className='grid w-full grid-cols-1 gap-10 mx-auto md:grid-cols-3 md:gap-28'>
             {
               Object.entries(footerData).map(([key, links])=> (
