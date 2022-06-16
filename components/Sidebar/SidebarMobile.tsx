@@ -14,7 +14,7 @@ const SidebarMobile = (): JSX.Element => {
       <ul className='h-[34rem] space-y-4 mb-2'>
         {sidebar.map(({ label, id, icon, children }: SidebarItem) => {
           const isActive = query.slug === id
-          console.log(id)
+          // console.log(id)
           return (
             <li className='' key={id}>
               <LzLink
@@ -37,7 +37,7 @@ const SidebarMobile = (): JSX.Element => {
                 >
                   {children.map((child) => {
                     const isActive = query.id === child.id
-                    console.log(child)
+                    // console.log(child)
 
                     return (
                       <li

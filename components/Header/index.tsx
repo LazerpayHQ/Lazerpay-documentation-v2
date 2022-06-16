@@ -19,19 +19,23 @@ const Header = () => {
   }
   const { query } = useRouter()
 
-  const headerStyles = ''
+  const headerStyles =
+    'pb-3 md:py-3 flex items-top lg:items-center justify-between xl:pr-4 fixed top-0 z-10 '
   return (
     <header
       className={classNames(
         Styles.Header,
         !showSideBar
-          ? 'pb-3 lg:py-3 flex items-top lg:items-center justify-between xl:pr-4 sticky top-0 lg:bg-white z-10 backdrop-blur-[1px] sm:backdrop-blur-none sm:w-full'
-          : 'pb-3 lg:py-3 flex items-top sm:items-center justify-between xl:pr-4 sticky top-0 bg-white z-10 w-full',
+          ? headerStyles +
+              'lg:bg-white backdrop-blur-[1px] sm:backdrop-blur-none w-full'
+          : headerStyles +
+              ' bg-white md:mx-52 md:sticky w-full lg:ml-0 md:w-[562px] lg:w-[1270px]',
       )}
     >
-      <div className='flex items-center pt-10 bg-white w-[75%] justify-between px-4 lg:hidden'>
+      <div className='flex items-center pt-10 bg-white w-[75%] justify-between px-4 md:hidden'>
         <div>
           {showSideBar ? (
+            // TO BE RENERED BY DEFAULT ON MOBILE SCREEN
             <div className='flex items-center space-x-4 lg:hidden flex-nowrap'>
               <button onClick={sideBarHandler} tabIndex={0}>
                 <FaBars />
@@ -54,6 +58,7 @@ const Header = () => {
             </div>
           ) : (
             <>
+              {/* TO BE RENDERED WHEN MANU IS CLICKED ON MOBILE SCREEN */}
               <button onClick={sideBarHandler} tabIndex={0}>
                 <CancleIcon />
               </button>
@@ -63,18 +68,18 @@ const Header = () => {
         </div>
       </div>
 
-      <div className='px-4 pt-10 lg:pt-0' tabIndex={0}>
+      <div className='lg:px-4 px-3 md:absolute pt-10 md:pt-3' tabIndex={0}>
         <SearchIcon />
       </div>
-      <div className='items-center hidden w-full px-4 space-x-20 lg:flex lg:px-6 xl:pl-20'>
+      <div className='items-center hidden w-full lg:px-4 pr-4 md:space-x-7 lg:space-x-20 md:flex lg:px-6 xl:pl-20'>
         {/* TODO - create a standalone component search bar */}
         <input
           placeholder='Quick search'
-          className='flex-1 w-3/6 bg-white lg:border lg:shadow-sm lz-input-sm lz-input rounded-5 border-neu-100'
+          className='flex-1 lg:w-[573px] bg-white lg:border lg:shadow-sm lz-input-sm lz-input rounded-5 placeholder:px-4 border-neu-100'
         />
 
-        <div className='flex items-center justify-between space-x-10'>
-          <ul className='items-center hidden space-x-6 lg:flex'>
+        <div className='flex items-center justify-between md:space-x-4 lg:space-x-10'>
+          <ul className='items-center hidden lg:space-x-6 md:space-x-2 md:flex'>
             {headerLinks.map(({ title, route }) => (
               <li className='paragraph-1-s text-neu-800' key={title}>
                 <LzLink to={route}>{title}</LzLink>
