@@ -12,7 +12,7 @@ import ArrowRightIcon from 'public/icons/arrow-right-icon'
 // card with Icon component
 export const LinkedCard = ({ desc, title, route }) => {
   return (
-    <>
+    <div key={route}>
       <LzLink className='my-2' to={route}>
         <div
           key={route}
@@ -28,14 +28,14 @@ export const LinkedCard = ({ desc, title, route }) => {
           </span>
         </div>
       </LzLink>
-    </>
+    </div>
   )
 }
 
 // card without Icon component
 export const PlainCard = ({ desc, title, route }) => {
   return (
-    <>
+    <div key={route}>
       <LzLink className='my-2' to={route}>
         <div
           key={route}
@@ -50,7 +50,7 @@ export const PlainCard = ({ desc, title, route }) => {
           </span>
         </div>
       </LzLink>
-    </>
+    </div>
   )
 }
 
@@ -66,7 +66,7 @@ export default function GetStarted(props: any): JSX.Element {
       )}
     >
       {startIntegratingData.map(({ title, desc, route }) => {
-        return <LinkedCard title={title} desc={desc} route={route} />
+        return <LinkedCard key={route} title={title} desc={desc} route={route} />
       })}
     </section>
   )
@@ -82,7 +82,7 @@ export function CompleteIntegration(props: any): JSX.Element {
       )}
     >
       {completeYourIntegrationData.map(({ title, desc, route }) => {
-        return <PlainCard title={title} desc={desc} route={route} />
+        return <PlainCard key={route} title={title} desc={desc} route={route} />
       })}
     </section>
   )
@@ -98,7 +98,7 @@ export function TestAndGoLive(props: any): JSX.Element {
       )}
     >
       {testAndGoData.map(({ title, desc, route }) => {
-        return <PlainCard title={title} desc={desc} route={route} />
+        return <PlainCard key={route} title={title} desc={desc} route={route} />
       })}
     </section>
   )
