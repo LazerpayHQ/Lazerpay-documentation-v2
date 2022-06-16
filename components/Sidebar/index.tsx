@@ -1,20 +1,24 @@
-import classNames from 'classnames';
-import { isEmpty } from 'ramda';
-import { useRouter } from 'next/router';
-import { LzLink } from 'components';
-import { LogoFull } from 'public/icons';
-import sidebar, { SidebarItem } from 'sidebar.config';
-import Styles from './Sidebar.module.scss';
+import classNames from 'classnames'
+import { isEmpty } from 'ramda'
+import { useRouter } from 'next/router'
+import { LzLink } from 'components'
+import { LogoFull } from 'public/icons'
+import sidebar, { SidebarItem } from 'sidebar.config'
+import Styles from './Sidebar.module.scss'
 
 const Sidebar = (): JSX.Element => {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
-    <aside className={classNames(Styles.Sidebar, 'float-left pl-6 xl:pl-10 py-6 sticky top-0 w-1/5 h-screen hidden lg:block')}>
-
-      <div className='md:flex items-center space-x-3 hidden xl:space-x-4'>
+    <aside
+      className={classNames(
+        Styles.Sidebar,
+        'float-left pl-6 xl:pl-10 py-6 fixed bg-white lg:sticky top-0 w-1/5 h-screen hidden md:block',
+      )}
+    >
+      <div className='flex items-center space-x-3 xl:space-x-4'>
         <LzLink to='/'>
-          <LogoFull className="w-24 xl:w-full" />
+          <LogoFull className='w-24 xl:w-full' />
         </LzLink>
         <LzLink to='/docs' className='p-2 px-2 py-1 rounded-8 bg-neu-50'>
           <h3 className='heading-6-s-sm'>Docs</h3>
@@ -66,7 +70,7 @@ const Sidebar = (): JSX.Element => {
         </ul>
       </div>
     </aside>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

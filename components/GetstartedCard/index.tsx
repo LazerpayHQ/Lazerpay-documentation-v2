@@ -9,12 +9,15 @@ import LzLink from 'components/UI/Link'
 import LinkIcon from 'public/icons/link-icon'
 import ArrowRightIcon from 'public/icons/arrow-right-icon'
 
-// card with Icon
+// card with Icon component
 export const LinkedCard = ({ desc, title, route }) => {
   return (
     <>
       <LzLink className='my-2' to={route}>
-        <div className='bg-white text-sm mb-2 p-6 md:pt-9 drop-shadow-xs rounded-8 lg:rounded-8 lg:w-92'>
+        <div
+          key={route}
+          className='bg-white text-sm mb-2 p-6 md:pt-9 drop-shadow-xs rounded-8 lg:rounded-8 lg:w-92 z-10'
+        >
           <LinkIcon />
           <h5 className='text-pri-500 py-2 md:py-4 paragraph-2 md:text-md font-bold'>
             {title}
@@ -29,12 +32,15 @@ export const LinkedCard = ({ desc, title, route }) => {
   )
 }
 
-// card without Icon
+// card without Icon component
 export const PlainCard = ({ desc, title, route }) => {
   return (
     <>
       <LzLink className='my-2' to={route}>
-        <div className='bg-white text-sm mb-2 px-5 md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 lg:w-92'>
+        <div
+          key={route}
+          className='bg-white text-sm mb-2 px-5 md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 sm:w-auto lg:w-92 z-10'
+        >
           <h5 className='text-pri-500 py-2 md:py-4 paragraph-2 md:text-md font-bold'>
             {title}
           </h5>
@@ -51,7 +57,7 @@ export const PlainCard = ({ desc, title, route }) => {
 // the difference the 1st function with the rest is it has an icon on the top
 
 // 1 Start integrating
-export default function GetStarted(): JSX.Element {
+export default function GetStarted(props: any): JSX.Element {
   return (
     <section
       className={classNames(
@@ -67,12 +73,12 @@ export default function GetStarted(): JSX.Element {
 }
 
 // 2 Complet your integration
-export function CompleteIntegration(): JSX.Element {
+export function CompleteIntegration(props: any): JSX.Element {
   return (
     <section
       className={classNames(
         Styles.GetStarted,
-        'grid md:grid-cols-2 lg:flex-row w-full lg:space-y-1 w-full lg:gap-x-6',
+        'grid md:grid-cols-2 lg:flex-row w-full lg:space-y-1 w-full lg:gap-x-6 zz-10',
       )}
     >
       {completeYourIntegrationData.map(({ title, desc, route }) => {
@@ -83,7 +89,7 @@ export function CompleteIntegration(): JSX.Element {
 }
 
 // 3 Test and Go Live
-export function TestAndGoLive(): JSX.Element {
+export function TestAndGoLive(props: any): JSX.Element {
   return (
     <section
       className={classNames(
