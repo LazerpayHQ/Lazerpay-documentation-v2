@@ -17,6 +17,6 @@ export function getDocPaths() {
 
 export function getDoc(_slug: string | string[], nested: string | null | string[] = null) {
   return allDocs.find(
-    (post) => post._raw.sourceFileDir === (nested ? `docs/${_slug}/${nested}` : `docs/${_slug}`),
+    (post) => post._raw.flattenedPath === (nested ? `docs/${_slug}/${nested}` : `docs/${_slug}`),
   )
 }
