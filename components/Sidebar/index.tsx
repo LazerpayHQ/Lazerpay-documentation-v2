@@ -7,15 +7,11 @@ import sidebar, { SidebarItem } from 'sidebar.config'
 import Styles from './Sidebar.module.scss'
 
 const Sidebar = (): JSX.Element => {
-  const { query } = useRouter()
+  const router = useRouter();
 
   return (
-    <aside
-      className={classNames(
-        Styles.Sidebar,
-        'float-left pl-6 xl:pl-10 py-6 fixed bg-white lg:sticky top-0 w-1/5 h-screen hidden md:block',
-      )}
-    >
+    <aside className={classNames(Styles.Sidebar, 'float-left pl-6 xl:pl-10 py-6 sticky top-0 w-1/5 h-screen hidden lg:block')}>
+
       <div className='flex items-center space-x-3 xl:space-x-4'>
         <LzLink to='/'>
           <LogoFull className='w-24 xl:w-full' />
@@ -27,55 +23,46 @@ const Sidebar = (): JSX.Element => {
 
       <div className='mt-16'>
         <ul className='space-y-4'>
-          {sidebar.map(({ label, id, icon, children }: SidebarItem) => {
-            const isActive = query.slug === id
-            // console.log(id)
-            return (
-              <li key={id}>
-                <LzLink
-                  to={id}
-                  className={classNames(
-                    'flex items-center py-2 space-x-5 paragraph-2-s',
-                    {
-                      'text-pri-500': isActive,
-                    },
-                  )}
-                >
-                  <span>{icon}</span>
-                  <span>{label}</span>
-                </LzLink>
-                {children && !isEmpty(children) && (
-                  <ul
-                    className={classNames('my-3 ml-6', {
-                      hidden: !isActive,
-                    })}
-                  >
-                    {children.map((child) => {
-                      const isActive = query.id === child.id
-                      // console.log(child)
+          {
+            sidebar.map(({ label, id, icon, children }: SidebarItem) => {
+              const splitPath = router.asPath.split('/');
+              const isActive = splitPath[2] === id;
 
-                      return (
-                        <li
-                          className={classNames(
-                            'py-2 border-l pl-5 paragraph-1 text-neu-800 border-pri-50 first-letter:capitalize',
-                            {
-                              'text-pri-500 paragraph-1-s border-l-pri-500':
-                                isActive,
-                            },
-                          )}
-                          key={child.id}
-                        >
-                          <LzLink to={`${id}/${child.id}`}>
-                            {child.label}
-                          </LzLink>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                )}
-              </li>
-            )
-          })}
+              return (
+                <li key={id}>
+                  <LzLink to={id} className={classNames('flex items-center py-2 space-x-5 paragraph-2-s', {
+                    'text-pri-500': isActive
+                  })}>
+                    <span>{icon}</span>
+                    <span>{label}</span>
+                  </LzLink>
+                  {
+                    (children && !isEmpty(children)) && (
+                      <ul className={classNames('my-3 ml-6', {
+                        'hidden': !isActive
+                      })}>
+                        {
+                          children.map(child => {
+                            const isActive = splitPath[splitPath.length - 1] === child.id;
+                            return (
+                              <li
+                                className={classNames(
+                                  "py-2 border-l pl-5 paragraph-1 text-neu-800 border-pri-50 first-letter:capitalize",
+                                  { 'text-pri-500 paragraph-1-s border-l-pri-500': isActive }
+                                )}
+                                key={child.id}>
+                                <LzLink to={`${id}/${child.id}`}>{child.label}</LzLink>
+                              </li>
+                            )
+                          })
+                        }
+                      </ul>
+                    )
+                  }
+                </li>
+              )
+            })
+          }
         </ul>
       </div>
     </aside>
