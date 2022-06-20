@@ -7,13 +7,14 @@ import sidebar, { SidebarItem } from 'sidebar.config'
 import Styles from './Sidebar.module.scss'
 
 const SidebarMobile = (): JSX.Element => {
-  const { query } = useRouter()
+  const router = useRouter()
 
   return (
     <div className='flex flex-col items-start justify-between space-x-10'>
       <ul className='h-[34rem] space-y-4 mb-2'>
         {sidebar.map(({ label, id, icon, children }: SidebarItem) => {
-          const isActive = query.slug === id
+          const splitPath = router.asPath.split('/')
+          const isActive = splitPath[2] === id
           // console.log(id)
           return (
             <li className='' key={id}>
@@ -36,7 +37,7 @@ const SidebarMobile = (): JSX.Element => {
                   })}
                 >
                   {children.map((child) => {
-                    const isActive = query.id === child.id
+                    const isActive = splitPath[splitPath.length - 1] === child.id
                     // console.log(child)
 
                     return (
