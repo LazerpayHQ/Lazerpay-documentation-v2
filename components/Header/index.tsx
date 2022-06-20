@@ -20,16 +20,16 @@ const Header = () => {
   const { query } = useRouter()
 
   const headerStyles =
-    'pb-3 md:py-3 flex items-top lg:items-center justify-between xl:pr-4 fixed top-0 z-10 '
+    'pb-3 md:py-3 flex items-top lg:items-center justify-between xl:pr-4 sticky top-0 z-10 '
   return (
     <header
       className={classNames(
         Styles.Header,
         !showSideBar
           ? headerStyles +
-              'lg:bg-white backdrop-blur-[1px] sm:backdrop-blur-none w-full'
+          'lg:bg-white backdrop-blur-[1px] sm:backdrop-blur-none w-full'
           : headerStyles +
-              ' bg-white md:mx-52 md:sticky w-full lg:ml-0 md:w-[562px] lg:w-[1270px]',
+          ' bg-white md:mx-52 md:sticky w-full lg:ml-0 md:w-[562px] lg:w-[1270px]',
       )}
     >
       <div className='flex items-center pt-10 bg-white w-[75%] justify-between px-4 md:hidden'>
