@@ -12,7 +12,7 @@ const Sidebar = (): JSX.Element => {
   return (
     <aside className={classNames(Styles.Sidebar, 'float-left pl-6 xl:pl-10 py-6 sticky top-0 w-1/5 h-screen hidden lg:block')}>
 
-      <div className='flex items-center space-x-3 xl:space-x-4'>
+      <div className='md:flex items-center space-x-3 hidden xl:space-x-4'>
         <LzLink to='/'>
           <LogoFull className="w-24 xl:w-full" />
         </LzLink>
@@ -21,8 +21,8 @@ const Sidebar = (): JSX.Element => {
         </LzLink>
       </div>
 
-      <div className='mt-16'>
-        <ul className='space-y-4'>
+      <div className='md:mt-16 md:block flex flex-col items-start justify-between space-x-10 '>
+        <ul className='h-[34rem] md:h-auto mb-2 lg:mb-0 space-y-4'>
           {
             sidebar.map(({ label, id, icon, children }: SidebarItem) => {
               const splitPath = router.asPath.split('/');
