@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import classNames from 'classnames'
 import { LzButton, LzLink } from 'components'
 import { LogoFull, SearchIcon } from 'public/icons'
 import { FaBars, FaChevronDown } from 'react-icons/fa'
@@ -29,7 +28,7 @@ const Header = () => {
           ? headerStyles +
           'lg:bg-white backdrop-blur-[1px] sm:backdrop-blur-none w-full'
           : headerStyles +
-          ' bg-white md:mx-52 md:sticky w-full lg:ml-0 md:w-[562px] lg:w-[1270px]',
+          ' bg-white  md:sticky w-full lg:ml-0 md:w-full lg:w-[1270px]',
       )}
     >
       <div className='flex items-center pt-10 bg-white w-[75%] justify-between px-4 md:hidden'>

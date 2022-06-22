@@ -16,7 +16,7 @@ export const LinkedCard = ({ desc, title, route }) => {
       <LzLink className='my-2' to={route}>
         <div
           key={route}
-          className='bg-white text-sm mb-2 p-6 md:pt-9 drop-shadow-xs rounded-8 lg:rounded-8 lg:w-92 z-10'
+          className='bg-white text-sm mb-2 p-6 md:pt-9 drop-shadow-xs rounded-8 lg:rounded-8 h-[210px] lg:w-92 z-10'
         >
           <LinkIcon />
           <h5 className='text-pri-500 py-2 md:py-4 paragraph-2 md:text-md font-bold'>
@@ -62,7 +62,7 @@ export default function GetStarted(props: any): JSX.Element {
     <section
       className={classNames(
         Styles.GetStarted,
-        'grid md:grid-cols-2 lg:flex-row w-full lg:space-y-1 w-full lg:space-x-6',
+        'grid md:grid-cols-2 items-center lg:flex-row w-full lg:space-y-1 w-full md:space-x-6',
       )}
     >
       {startIntegratingData.map(({ title, desc, route }) => {
@@ -78,7 +78,7 @@ export function CompleteIntegration(props: any): JSX.Element {
     <section
       className={classNames(
         Styles.GetStarted,
-        'grid md:grid-cols-2 lg:flex-row w-full lg:space-y-1 w-full lg:gap-x-6 zz-10',
+        'grid md:grid-cols-2 items-center lg:flex-row w-full md:space-y-1 w-full md:gap-x-6 z-10',
       )}
     >
       {completeYourIntegrationData.map(({ title, desc, route }) => {
@@ -94,7 +94,7 @@ export function TestAndGoLive(props: any): JSX.Element {
     <section
       className={classNames(
         Styles.GetStarted,
-        'grid md:grid-cols-2 lg:space-y-2 w-full lg:gap-x-6',
+        'grid md:grid-cols-2 items-center md:space-y-2 w-full md:gap-x-6',
       )}
     >
       {testAndGoData.map(({ title, desc, route }) => {
