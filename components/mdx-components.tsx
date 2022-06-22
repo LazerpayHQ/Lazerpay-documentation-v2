@@ -17,7 +17,7 @@ import { Pagination } from './pagination'
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
   QuickLinks({ children, ...props }) {
-    return <QuickLinks {...props} />
+    return (<QuickLinks {...props} />)
   },
   AcceptPayments({ children, ...props }) {
     return <AcceptPayments {...props} />
@@ -32,10 +32,10 @@ export const components: Record<string, FC<Record<string, any>>> = {
     return <ConnectCommunity />
   },
   Divider({ children, ...props }) {
-    return <Divider {...props} />
+    return (<Divider {...props} />)
   },
   CodeBlock(props) {
-    return <CodeBlock {...props} />
+    return (<CodeBlock {...props} />)
   },
   Admonition(props) {
     return <div {...props} />
@@ -69,7 +69,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
     )
   },
   h2(props) {
-    return <h2 className='heading-5-s break-keep-all' {...props} />
+    return <h2 className="heading-5-s group break-keep-all" {...props} />
   },
   h3(props) {
     return <h3 {...props} />
@@ -104,7 +104,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
 }
 
 export function useMDX(code: string) {
-  if(!code) return;
+  if (!code) return;
   const MDXComponent = useMDXComponent(code)
   return <MDXComponent components={components} />
 }

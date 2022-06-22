@@ -2,12 +2,12 @@ import redirect from "lib/redirect";
 import { GetServerSidePropsContext } from "next";
 
 export default function Home() {
-  return null
+    return null
 }
 
 export function getServerSideProps(ctx: GetServerSidePropsContext) {
-  redirect(ctx, '/docs/quick-start')
-  return {
-    props: {}
-  }
+    redirect(ctx, '/docs/quick-start')
+    return {
+        props: {}
+    }
 }
