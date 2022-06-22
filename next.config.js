@@ -5,5 +5,13 @@ const { withContentlayer } = require("next-contentlayer")
  */
 module.exports = withContentlayer({
   swcMinify: true,
-  redirects: require('./next-redirect'),
+  redirects: async function redirects() {
+    return [
+      {
+        source: '/docs/getting-started',
+        destination: '/docs/quick-start',
+        permanent: true,
+      }
+    ]
+  },
 })

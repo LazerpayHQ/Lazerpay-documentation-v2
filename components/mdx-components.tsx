@@ -11,25 +11,25 @@ import ConnectCommunity from "./Connect"
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
-  QuickLinks({ children, ...props}){
+  QuickLinks({ children, ...props }) {
     return (<QuickLinks {...props} />)
   },
-  AcceptPayments({ children, ...props }){
+  AcceptPayments({ children, ...props }) {
     return <AcceptPayments {...props} />
   },
-  ExploreDemo(){
+  ExploreDemo() {
     return <ExploreDemo />
   },
-  WhatsNew(){
+  WhatsNew() {
     return <WhatsNew />
   },
-  ConnectCommunity(){
+  ConnectCommunity() {
     return <ConnectCommunity />
   },
-  Divider({ children, ...props}){
+  Divider({ children, ...props }) {
     return (<Divider {...props} />)
   },
-  CodeBlock(props){
+  CodeBlock(props) {
     return (<CodeBlock {...props} />)
   },
   Admonition(props) {
@@ -38,7 +38,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
   blockquote(props) {
     return <blockquote {...props} />
   },
-  p(props){
+  p(props) {
     return <p className="paragraph-2 text-neu-800" {...props} />
   },
   h1(props) {
@@ -52,7 +52,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
     )
   },
   h2(props) {
-    return <h2 className="heading-5-s break-keep-all" {...props} />
+    return <h2 className="heading-5-s group break-keep-all" {...props} />
   },
   h3(props) {
     return <h3 {...props} />
@@ -89,7 +89,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
 }
 
 export function useMDX(code: string) {
-  if(!code) return;
+  if (!code) return;
   const MDXComponent = useMDXComponent(code)
   return <MDXComponent components={components} />
 }

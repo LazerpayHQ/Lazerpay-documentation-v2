@@ -18,6 +18,7 @@
     "babel-plugin-superjson-next": "^0.4.3",
     "classnames": "^2.3.1",
     "contentlayer": "^0.2.3",
+    "framer-motion": "^6.3.13",
     "markdown-toc": "^1.2.0",
     "match-sorter": "^6.3.1",
     "moment": "^2.29.3",

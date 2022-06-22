@@ -7,9 +7,44 @@
 
 html {
     scroll-behavior: smooth;
-   scroll-padding-top: 100px;
+    scroll-padding-top: 100px;
 }
 
 .break-keep-all {
     word-break: keep-all;
+}
+
+/** Link Anchors **/
+.title-anchor {
+    position: relative;
+
+    &:hover {
+        color: initial !important;
+    }
+
+    &::after {
+        content: "#";
+        position: absolute;
+        left: -35px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: inherit;
+        opacity: .2;
+        padding-left: 10px;
+        visibility: hidden;
+
+        @media (max-width: theme('screens.lg')) {
+            left: -28px;
+            font-size: theme('fontSize.md');
+        }
+
+        @media (max-width: theme('screens.sm')) {
+            left: -25px;
+            font-size: theme('fontSize.md');
+        }
+    }
+
+    &:hover::after {
+        visibility: visible;
+    }
 }
