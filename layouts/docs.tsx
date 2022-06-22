@@ -28,7 +28,7 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
 
   return (
     <MDXProvider components={components}>
-      <div className={classNames(Styles.LayoutWrapper, 'overflow-x-hidden')}>
+      <div className={classNames(Styles.LayoutWrapper, { 'overflow-x-hidden': isMobile })}>
         <section className='w-full'>
           <Sidebar isOpen={sideBarIsOpen} toggleSidebar={toggleSidebar} />
           <motion.main
