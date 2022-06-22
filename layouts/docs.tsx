@@ -28,13 +28,13 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
 
   return (
     <MDXProvider components={components}>
-      <div className={classNames(Styles.LayoutWrapper)}>
+      <div className={classNames(Styles.LayoutWrapper, 'overflow-x-hidden')}>
         <section className='w-full'>
           <Sidebar isOpen={sideBarIsOpen} toggleSidebar={toggleSidebar} />
           <motion.main
             animate={{ x: sideBarIsOpen ? 300 : 0 }}
             transition={{ duration: .4 }}
-            className="min-h-screen lg:w-4/5 lg:float-right">
+            className="relative min-h-screen transform lg:w-4/5 lg:float-right">
             <Header toggleSidebar={toggleSidebar} />
             <LzContainer>
               <motion.div
@@ -61,7 +61,7 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
               </motion.div>
             </LzContainer>
           </motion.main>
-          <div className='clear-both' />
+          <div className='hidden lg:block lg:clear-both' />
         </section>
       </div>
     </MDXProvider>

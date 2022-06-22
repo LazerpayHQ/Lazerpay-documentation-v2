@@ -19,11 +19,11 @@ const Sidebar = ({ isOpen }: IProps): JSX.Element => {
 
   return (
     <motion.aside
-      animate={(isMobile ? { x: isOpen ? 0 : -384 } : {})}
+      animate={(isMobile ? { left: isOpen ? 0 : -384 } : {})}
       transition={{ duration: .5 }}
       className={classNames(
         Styles.Sidebar,
-        'float-left pb-20 pl-6 xl:pl-10 py-6 lg:sticky top-0 w-[285px] overflow-y-scroll transform lg:overflow-hidden -translate-x-96 lg:translate-x-0 lg:w-1/5 h-screen fixed lg:block'
+        'float-left pb-20 pl-6 xl:pl-10 py-6 lg:sticky top-0 w-[285px] overflow-y-scroll transform lg:overflow-hidden -left-96 lg:left-0 lg:w-1/5 h-screen fixed lg:block'
       )}>
       <div className='flex items-center space-x-3 xl:space-x-4'>
         <LzLink to='/'>
