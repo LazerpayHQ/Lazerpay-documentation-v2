@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { isEmpty } from 'ramda';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { LzLink } from 'components';
+import { LzLink, LzButton } from 'components';
 import { LogoFull } from 'public/icons';
 import sidebar, { SidebarItem } from 'sidebar.config';
 import { useMediaQuery } from 'lib/use-mediaQuery';
@@ -66,6 +66,7 @@ const Sidebar = ({ isOpen }: IProps): JSX.Element => {
                                 key={child.id}>
                                 <LzLink to={`${id}/${child.id}`}>{child.label}</LzLink>
                               </li>
+
                             )
                           })
                         }
@@ -76,6 +77,7 @@ const Sidebar = ({ isOpen }: IProps): JSX.Element => {
               )
             })
           }
+          <LzButton className='w-full' size='lg'>Dashboard</LzButton>
         </ul>
       </div>
     </motion.aside>

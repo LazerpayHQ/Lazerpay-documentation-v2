@@ -5,10 +5,7 @@ import { FaBars, FaChevronDown } from 'react-icons/fa'
 import { headerLinks } from './data'
 import Styles from './Header.module.scss'
 import CancleIcon from 'public/icons/cancle-icon'
-import SidebarMobile from 'components/Sidebar/SidebarMobile'
-
 import classNames from 'classnames'
-import { useRouter } from 'next/router'
 interface IProps {
   toggleSidebar: Function
 }
@@ -37,10 +34,10 @@ const Header = ({ toggleSidebar }: IProps) => {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className='lg:px-4 px-3 md:absolute pt-10 md:pt-3' tabIndex={0}>
+      <div className='lg:px-4 px-3 md:absolute md:pt-3' tabIndex={0}>
         <SearchIcon />
+      </div>
       </div>
       <div className='items-center hidden w-full lg:px-4 pr-4 md:space-x-7 lg:space-x-20 md:flex lg:px-6 xl:pl-20'>
         {/* TODO - create a standalone component search bar */}
