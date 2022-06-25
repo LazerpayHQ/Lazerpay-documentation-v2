@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { isEmpty } from 'ramda';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { LzLink } from 'components';
+import { LzLink, LzButton } from 'components';
 import { LogoFull } from 'public/icons';
 import sidebar, { SidebarItem } from 'sidebar.config';
 import { useMediaQuery } from 'lib/use-mediaQuery';
@@ -27,7 +27,7 @@ const Sidebar = ({ isOpen }: IProps): JSX.Element => {
       )}>
       <div className='flex items-center space-x-3 xl:space-x-4'>
         <LzLink to='/'>
-          <LogoFull className="w-24 xl:w-full" />
+          <LogoFull className='w-24 xl:w-full' />
         </LzLink>
         <LzLink to='/docs' className='p-2 px-2 py-1 rounded-8 bg-neu-50'>
           <h3 className='heading-6-s-sm'>Docs</h3>
@@ -66,6 +66,7 @@ const Sidebar = ({ isOpen }: IProps): JSX.Element => {
                                 key={child.id}>
                                 <LzLink to={`${id}/${child.id}`}>{child.label}</LzLink>
                               </li>
+
                             )
                           })
                         }
@@ -76,10 +77,11 @@ const Sidebar = ({ isOpen }: IProps): JSX.Element => {
               )
             })
           }
+          <LzButton className='w-full sm:hidden' size='lg' asLink='/'> Dashboard</LzButton>
         </ul>
       </div>
     </motion.aside>
   );
 };
 
-export default Sidebar;
+export default Sidebar

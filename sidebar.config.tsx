@@ -1,5 +1,11 @@
-import { GuidesIcon, HomeIcon, PaymentsIcon, TransferIcon, UseCasesIcon } from "public/icons"
-import React, { ElementType } from "react"
+import {
+  GuidesIcon,
+  HomeIcon,
+  PaymentsIcon,
+  TransferIcon,
+  UseCasesIcon,
+} from 'public/icons'
+import React, { ElementType } from 'react'
 
 export interface SidebarItem {
   type: string
@@ -12,14 +18,14 @@ export interface SidebarItem {
 
 const sidebar: SidebarItem[] = [
   {
-    type: "docs",
-    label: "Quick Start",
+    type: 'docs',
+    label: 'Quick Start',
     icon: <HomeIcon />,
     id: "quick-start"
   },
   {
-    type: "docs",
-    label: "Payments",
+    type: 'docs',
+    label: 'Payments',
     icon: <PaymentsIcon />,
     id: "payments",
     redirect: "payments/get-started",
@@ -33,23 +39,24 @@ const sidebar: SidebarItem[] = [
       { type: "docs", label: "Test payments", id: "test-payments" },
     ],
   },
+
   {
-    type: "docs",
-    label: "Transfers",
+    type: 'docs',
+    label: 'Transfers',
     icon: <TransferIcon />,
     id: "transfers",
     children: [],
   },
   {
-    type: "docs",
-    label: "Use Cases",
+    type: 'docs',
+    label: 'Use Cases',
     icon: <UseCasesIcon />,
     id: "use-cases",
     children: [],
   },
   {
-    type: "docs",
-    label: "Guides and Tutorials",
+    type: 'docs',
+    label: 'Guides and Tutorials',
     icon: <GuidesIcon />,
     id: "guides",
     children: [],

@@ -1,13 +1,15 @@
-import classNames from 'classnames';
-import { LzButton, LzLink } from 'components';
-import { LogoFull, SearchIcon } from 'public/icons';
-import { FaBars, FaChevronDown } from 'react-icons/fa';
-import { headerLinks } from './data';
-import Styles from './Header.module.scss';
-
+import React, { useState } from 'react'
+import { LzButton, LzLink } from 'components'
+import { LogoFull, SearchIcon } from 'public/icons'
+import { FaBars, FaChevronDown } from 'react-icons/fa'
+import { headerLinks } from './data'
+import Styles from './Header.module.scss'
+import CancleIcon from 'public/icons/cancle-icon'
+import classNames from 'classnames'
 interface IProps {
   toggleSidebar: Function
 }
+
 const Header = ({ toggleSidebar }: IProps) => {
 
   return (
@@ -32,11 +34,12 @@ const Header = ({ toggleSidebar }: IProps) => {
             </div>
           </div>
         </div>
-        <div tabIndex={0}>
-          <SearchIcon />
-        </div>
+
+      <div className='lg:px-4 px-3 md:absolute md:pt-3' tabIndex={0}>
+        <SearchIcon />
       </div>
-      <div className="items-center hidden w-full px-4 space-x-20 lg:flex lg:px-6 xl:pl-20">
+      </div>
+      <div className='items-center hidden w-full lg:px-4 pr-4 md:space-x-7 lg:space-x-20 md:flex lg:px-6 xl:pl-20'>
         {/* TODO - create a standalone component search bar */}
         <input placeholder='Quick search' className="flex-1 w-3/6 bg-white lg:border lg:shadow-sm lz-input-sm lz-input rounded-5 border-neu-100" />
 
@@ -52,7 +55,7 @@ const Header = ({ toggleSidebar }: IProps) => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
