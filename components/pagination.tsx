@@ -2,7 +2,6 @@ import { paginate } from 'lib/pagination-utils'
 import { useRouter } from 'next/router'
 import PaginateLeftIcon from 'public/icons/paginate-left-icon'
 import PaginateRightIcon from 'public/icons/paginate-right-icon'
-import LzButton from './UI/Button'
 
 export function usePagination() {
   const { asPath } = useRouter()
@@ -19,14 +18,14 @@ export function Pagination(props: any) {
           <PaginateLeftIcon />
         </button>
         <div>
-          <p className='text-neu-400'>PREVIOUS</p>
-          <p className='font-bold text-pri-900'>Quick start</p>
+          <p className='text-neu-400 caption-s'>PREVIOUS</p>
+          <p className='paragraph-2-s text-pri-900'>Quick start</p>
         </div>
       </div>
-      <div className='flex justify-end space-x-3 text-sm'>
+      <div className='flex justify-end space-x-3'>
         <div className='text-right'>
-          <p className='text-neu-400'>NEXT</p>
-          <p className='font-bold text-pri-900 '>Accept payments</p>
+          <p className='text-neu-400 caption-s'>NEXT</p>
+          <p className='paragraph-2-s text-pri-900 '>Accept payments</p>
         </div>
         <button className='border border-pri-500 rounded-lg p-4  '>
           <PaginateRightIcon />

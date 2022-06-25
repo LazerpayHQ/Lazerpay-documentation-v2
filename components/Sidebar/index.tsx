@@ -77,7 +77,7 @@ const Sidebar = ({ isOpen }: IProps): JSX.Element => {
               )
             })
           }
-          <LzButton className='w-full sm:hidden' size='lg'><LzLink to='/'> Dashboard</LzLink></LzButton>
+          <LzButton className='w-full sm:hidden' size='lg' asLink='/'> Dashboard</LzButton>
         </ul>
       </div>
     </motion.aside>

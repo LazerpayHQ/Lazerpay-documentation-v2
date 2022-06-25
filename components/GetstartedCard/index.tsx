@@ -9,21 +9,27 @@ import LzLink from 'components/UI/Link'
 import LinkIcon from 'public/icons/link-icon'
 import ArrowRightIcon from 'public/icons/arrow-right-icon'
 
+interface MyProps {
+  desc: string,
+  title: string,
+  route: string,
+}
+
 // card with Icon component
-export const LinkedCard = ({ desc, title, route }) => {
+export const LinkedCard = ({ desc, title, route }: MyProps) => {
   return (
     <div key={route}>
       <LzLink className='my-2' to={route}>
         <div
           key={route}
-          className='bg-white text-sm mb-2 p-6 md:pt-9 drop-shadow-xs rounded-8 lg:rounded-8 h-[210px] lg:w-92 z-10'
+          className='bg-white mb-2 p-6 md:pt-9 drop-shadow-xs rounded-8 lg:rounded-8 h-[210px] lg:w-92 z-10'
         >
           <LinkIcon />
-          <h5 className='text-pri-500 py-2 md:py-4 paragraph-2 md:text-md font-bold'>
+          <h5 className='text-pri-500 py-2 md:py-4 paragraph-2 md:paragraph-3-s'>
             {title}
           </h5>
-          <p className=' paragaph-1 mr-6'>{desc} </p>
-          <span className='pt-3 flex text-xl justify-end'>
+          <p className=' paragraph-1 mr-6'>{desc} </p>
+          <span className='pt-3 flex justify-end'>
             <ArrowRightIcon />
           </span>
         </div>
@@ -33,19 +39,19 @@ export const LinkedCard = ({ desc, title, route }) => {
 }
 
 // card without Icon component
-export const PlainCard = ({ desc, title, route }) => {
+export const PlainCard = ({ desc, title, route }: MyProps) => {
   return (
     <div key={route}>
       <LzLink className='my-2' to={route}>
         <div
           key={route}
-          className='bg-white text-sm mb-2 px-5 md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 sm:w-auto lg:w-92 z-10'
+          className='bg-white mb-2 px-5 md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 sm:w-auto lg:w-92 z-10'
         >
-          <h5 className='text-pri-500 py-2 md:py-4 paragraph-2 md:text-md font-bold'>
+          <h5 className='text-pri-500 py-2 md:py-4 paragraph-2 md:paragraph-3-s'>
             {title}
           </h5>
           <p className='h-12 paragraph-1 mr-6'>{desc} </p>
-          <span className='py-5 pb-5 flex text-xl justify-end'>
+          <span className='py-5 pb-5 flex justify-end'>
             <ArrowRightIcon />
           </span>
         </div>
@@ -57,7 +63,7 @@ export const PlainCard = ({ desc, title, route }) => {
 // the difference the 1st function with the rest is it has an icon on the top
 
 // 1 Start integrating
-export default function GetStarted(props: any): JSX.Element {
+export default function GetStarted(): JSX.Element {
   return (
     <section
       className={classNames(
@@ -73,7 +79,7 @@ export default function GetStarted(props: any): JSX.Element {
 }
 
 // 2 Complet your integration
-export function CompleteIntegration(props: any): JSX.Element {
+export function CompleteIntegration(): JSX.Element {
   return (
     <section
       className={classNames(
@@ -89,7 +95,7 @@ export function CompleteIntegration(props: any): JSX.Element {
 }
 
 // 3 Test and Go Live
-export function TestAndGoLive(props: any): JSX.Element {
+export function TestAndGoLive(): JSX.Element {
   return (
     <section
       className={classNames(

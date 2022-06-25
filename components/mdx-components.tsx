@@ -44,16 +44,16 @@ export const components: Record<string, FC<Record<string, any>>> = {
     return <blockquote {...props} />
   },
   GetstartedCard(props) {
-    return <GetstartedCard {...props} />
+    return <GetstartedCard />
   },
   CompleteIntegration(props) {
-    return <CompleteIntegration {...props} />
+    return <CompleteIntegration  />
   },
   TestAndGoLive(props) {
-    return <TestAndGoLive {...props} />
+    return <TestAndGoLive />
   },
   Pagination(props) {
-    return(<Pagination{...props}/>)
+    return (<Pagination{...props} />)
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
