@@ -2,7 +2,7 @@
  * Lazerpay Design System - https://www.figma.com/file/1ruX4BnkL8HE2FM4B9SgoI/LazerPay-Design-System?node-id=0%3A1
  */
 
- module.exports = {
+module.exports = {
   content: [
     './components/**/*.{jsx,tsx,js,ts,mdx}',
     './layouts/**/*.{jsx,tsx,js,ts,mdx}',
@@ -10,7 +10,6 @@
     './content/**/*.{jsx,tsx,js,ts,mdx}',
   ],
   theme: {
-    namedGroups: ["foo", "2", "3"],
     extend: {
       borderRadius: {
         4: "4px",
@@ -54,6 +53,7 @@
       proxima: "proxima",
       ttfirs: "ttfirs",
       sohne: "sohne",
+      code: "Source Code Pro",
       display: "ttfirs",
       body: "proxima"
     },

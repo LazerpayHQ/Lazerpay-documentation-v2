@@ -51,7 +51,7 @@ our issues.
 ## Editing Content
 To add a new content, e.g page, please note this is a NextJS app, a knowledge of NextJS is required to work with files and how pages are routed. 
 
-- All new pages should go to the `content/docs` folder accrodingly. The pages are written in markdown (MDX - an extension of MD). 
+- All new pages should go to the `content/docs` folder accordingly. The pages are written in markdown (MDX - an extension of MD). 
 - MDX allows you to use JSX components in the same file. If you have a section of the page that is written in JSX, please create that component and include it to the existing [mdx-component object](https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/blob/main/components/mdx-components.tsx) so it is properly mapped when rendering. Don't forget to export the component in the entry `index.ts` file before importing anywhere else.
 - UI Reusable components like `LzButton`, `LzLink` and `LzContainer` can be found in [UI-Components](https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/tree/main/components/UI). Use these components when working on any issue. You're welcome to create new UI reusable components in the same project folder. Please make sure your new resuable components follow the same naming convention as the existing components.
 - [Tailwindcss](https://tailwindcss.com/) helps you to build any design, directly in your markup. We implement this css framework in our components, so knowledge of Tailwind is required. Please go through the [Typography-scss-file](https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/blob/main/styles/typography.scss) to understand how to apply the existing typography in our design pattern. Also, see [Tailwind-config](https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/blob/main/tailwind.config.js) for the list of our colors, shadows, font sizes, etc. Check out [Quicklinks](https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/blob/main/components/QuickLinks/index.tsx) for a sample of how these are implemented.
@@ -76,21 +76,6 @@ Contributions to lazerpay-documentation-v2 can be made via pull requests on GitH
 ## Contributors ✨
 
 Thanks to Chakra-UI team for making their [Zag Docs](https://github.com/chakra-ui/zag-docs) documentation Open source and free to use. 
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://twitter.com/frontend_io"><img src="https://avatars.githubusercontent.com/u/32682002?v=4?s=32" width="32px;" alt=""/><br /><sub><b>Jefferson Iyobosa</b></sub></a><br /><a href="#maintenance-frontend-io" title="Maintenance">🚧</a> <a href="https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/commits?author=Frontend-io" title="Code">💻</a></td>
-    <td align="center"><a href="https://twitter.com/i_smell_legit"><img src="https://avatars.githubusercontent.com/u/45321074?s=400&u=9929ba88dae276d142875bcbceec4df462f005d2&v=4" width="32px;" alt=""/><br /><sub><b>Justice Eziefule</b></sub></a><br /><a href="#maintenance-meister" title="Maintenance">🚧</a> <a href="https://github.com/LazerPay-Finance/Lazerpay-documentation-v2/commits?author=MeisterJustice" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the
 [all-contributors](https://github.com/all-contributors/all-contributors)
