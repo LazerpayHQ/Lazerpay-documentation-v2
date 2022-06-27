@@ -67,11 +67,6 @@ To add a new content, e.g page, please note this is a NextJS app, a knowledge of
 Contributions to lazerpay-documentation-v2 can be made via pull requests on GitHub. When opening a PR, please tag any associated parties,
 [@MeisterJustice](https://github.com/MeisterJustice) and [@Frontend-io](https://github.com/Frontend-io)
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
 
