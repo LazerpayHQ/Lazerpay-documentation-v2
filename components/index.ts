@@ -1,9 +1,9 @@
 // UI Components
 import Divider from './Divider'
-import LzButton from './UI/Button'
-import LzContainer from './UI/Container'
-import LzLink from './UI/Link'
-import LzAlert from './UI/Alert'
+import LzButton from './UI/button'
+import LzContainer from './UI/container'
+import LzLink from './UI/link'
+import LzAlert from './UI'
 
 // Page Components
 import FooterWrapper from './Footer'
