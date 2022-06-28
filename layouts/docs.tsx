@@ -36,6 +36,12 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
             transition={{ duration: .4 }}
             className="relative min-h-screen transform lg:w-4/5 lg:float-right">
             <Header toggleSidebar={toggleSidebar} />
+            <motion.div
+              animate={{
+                background: sideBarIsOpen ? 'rgba(0,0,0,.3)' : 'rgba(0,0,0,0)',
+                visibility: sideBarIsOpen ? 'visible' : 'hidden'
+              }}
+              className="fixed z-20 invisible w-full h-screen transition duration-200" />
             <LzContainer>
               <motion.div
                 animate={{ filter: sideBarIsOpen ? 'blur(2.2px)' : 'none' }}

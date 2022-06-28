@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { BsArrowRight, BsChevronRight } from 'react-icons/bs';
 import React, { useRef } from 'react';
-import LzLink from '../Link';
+import LzLink from './link';
 
 interface IProps {
   leftIcon?: any;

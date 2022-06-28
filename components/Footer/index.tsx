@@ -1,5 +1,5 @@
 import { LzLink } from 'components';
-import LzContainer from 'components/UI/Container';
+import LzContainer from 'components/UI/container';
 import React from 'react';
 import { footerData } from './data';
 

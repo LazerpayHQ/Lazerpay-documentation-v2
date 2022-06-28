@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import LzLink from './UI/Link'
+import LzLink from './UI/link'
 import QuickLinks from './QuickLinks'
 import Divider from './Divider'
 import CodeBlock from './CodeBlock'
@@ -13,6 +13,7 @@ import ExploreDemo from './ExploreDemo'
 import WhatsNew from './WhatsNew'
 import ConnectCommunity from './Connect'
 import { Pagination } from './pagination'
+import LzAlert from './UI'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -47,7 +48,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
     return <GetstartedCard />
   },
   CompleteIntegration(props) {
-    return <CompleteIntegration  />
+    return <CompleteIntegration />
   },
   TestAndGoLive(props) {
     return <TestAndGoLive />
@@ -101,6 +102,11 @@ export const components: Record<string, FC<Record<string, any>>> = {
       </LzLink>
     )
   },
+  Alert(props) {
+    return (
+      <LzAlert {...props} />
+    )
+  }
 }
 
 export function useMDX(code: string) {
