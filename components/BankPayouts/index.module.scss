@@ -8,6 +8,10 @@
     border: 1px solid #DFDFDF;
     border-radius: 4px;
 
-    /* Inside auto layout */
+}
 
+@media (max-width: 1024px) {
+    .input {
+        width: 335px;
+    }
 }
