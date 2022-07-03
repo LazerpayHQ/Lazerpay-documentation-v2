@@ -45,7 +45,7 @@ const sidebar: SidebarItem[] = [
     label: 'Transfers',
     icon: <TransferIcon />,
     id: "transfers",
-    children: [],
+    children: [{ type: 'docs', label: 'Bank Transfers', id: 'bank-payouts' }],
   },
   {
     type: 'docs',

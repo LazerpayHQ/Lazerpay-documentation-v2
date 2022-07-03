@@ -14,6 +14,7 @@ import WhatsNew from './WhatsNew'
 import ConnectCommunity from './Connect'
 import { Pagination } from './pagination'
 import LzAlert from './UI'
+import BankPayouts from './BankPayouts'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -55,6 +56,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   Pagination(props) {
     return (<Pagination{...props} />)
+  },
+  BankPayouts() {
+    return <BankPayouts />
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
