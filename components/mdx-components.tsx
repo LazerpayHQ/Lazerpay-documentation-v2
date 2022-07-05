@@ -14,7 +14,6 @@ import WhatsNew from './WhatsNew'
 import ConnectCommunity from './Connect'
 import { Pagination } from './pagination'
 import LzAlert from './UI'
-import GetstartedCard2 from './GetstartedCard2'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -47,9 +46,6 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   GetstartedCard(props) {
     return <GetstartedCard />
-  },
-  GetstartedCard2(props) {
-    return <GetstartedCard2 />
   },
   CompleteIntegration(props) {
     return <CompleteIntegration />

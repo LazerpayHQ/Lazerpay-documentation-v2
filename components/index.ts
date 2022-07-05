@@ -17,7 +17,6 @@ import AcceptPayments from './AcceptPayments'
 import ExploreDemo from './ExploreDemo'
 import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
-import GetStartedCard2 from './GetstartedCard2'
 
 export {
   LzAlert,
@@ -36,5 +35,4 @@ export {
   LzButton,
   LzContainer,
   GetStartedCard,
-  GetStartedCard2,
 }
