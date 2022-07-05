@@ -19,7 +19,6 @@ interface MyProps {
 export const PayoutLHS = ({ title, desc, label, id, type }: MyProps) => {
   return (
     <>
-      <div className='col-span-1 flex flex-col justify-center text-left md:pr-24 space-y-8'>
         <h1 className='heading-3-b lg:heading-2-b'>{title}</h1>
         <p className='paragraph-2'>{desc}</p>
         <form className='flex flex-col space-y-6'>
@@ -44,7 +43,6 @@ export const PayoutLHS = ({ title, desc, label, id, type }: MyProps) => {
             Notify me
           </LzButton>
         </form>
-      </div>
     </>
   )
 }
@@ -52,16 +50,18 @@ export const PayoutLHS = ({ title, desc, label, id, type }: MyProps) => {
 const BankPayouts = () => {
   return (
     <>
-      <section className='grid md:grid-cols-2 md:space-y-0 space-y-12 sticky'>
+      <div className='grid md:grid-cols-2 md:space-y-0 space-y-12 sticky'>
         {periphery.map(({ id, type, label, title, desc }: MyProps) => {
           return (
-            <PayoutLHS
-              id={id}
-              type={type}
-              label={label}
-              title={title}
-              desc={desc}
-            />
+      <div key={title} className='col-span-1 flex flex-col justify-center text-left md:pr-24 space-y-8'>
+              <PayoutLHS
+                id={id}
+                type={type}
+                label={label}
+                title={title}
+                desc={desc}
+              />
+            </div>
           )
         })}
         <div className='col-span-1'>
@@ -72,7 +72,7 @@ const BankPayouts = () => {
             className='w-[412px] h-[392px]'
           />
         </div>
-      </section>
+      </div>
     </>
   )
 }
