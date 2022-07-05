@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import CodeBlock from "components/CodeBlock";
-import LzButton from "components/UI/Button";
+import LzButton from "components/UI/button";
 import Styles from './index.module.scss';
 
-export default function AcceptPayments():JSX.Element {
+export default function AcceptPayments(): JSX.Element {
 
     return (
         <section className={classNames(Styles.AcceptPayments, "flex flex-col lg:flex-row w-full lg:space-y-0 lg:space-x-6")}>
@@ -16,7 +16,7 @@ export default function AcceptPayments():JSX.Element {
                     Let's go
                 </LzButton>
             </div>
-            <div className="max-w-lg xl:max-w-xl xl:w-4/6 bg-pri-50">
+            <div className="lg:max-w-lg xl:max-w-xl xl:w-4/6 bg-pri-50">
                 <CodeBlock id="api" />
             </div>
         </section>
