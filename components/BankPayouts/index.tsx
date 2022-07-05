@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
 import HandWithPenny from 'public/images/handWithPenny.png'
-import LzLink from 'components/UI/link'
 import LzButton from 'components/UI/button'
 import Styles from './index.module.scss'
 import classNames from 'classnames'
