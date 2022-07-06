@@ -63,7 +63,7 @@ export const PlainCard = ({ desc, title, route }: MyProps) => {
 // the difference the 1st function with the rest is it has an icon on the top
 
 // 1 Start integrating
-export default function GetStarted(props: any): JSX.Element {
+export default function GetStarted(): JSX.Element {
   return (
     <section
       className={classNames(
@@ -71,7 +71,7 @@ export default function GetStarted(props: any): JSX.Element {
         'grid md:grid-cols-2 items-center lg:flex-row w-full lg:space-y-1 w-full md:space-x-6',
       )}
     >
-      {startIntegratingData.map(({ title, desc, route }) => {
+      {startIntegratingData.map(({ title, desc, route }: MyProps) => {
         return <LinkedCard key={route} title={title} desc={desc} route={route} />
       })}
     </section>
@@ -79,7 +79,7 @@ export default function GetStarted(props: any): JSX.Element {
 }
 
 // 2 Complet your integration
-export function CompleteIntegration(props: any): JSX.Element {
+export function CompleteIntegration(): JSX.Element {
   return (
     <section
       className={classNames(
@@ -87,7 +87,7 @@ export function CompleteIntegration(props: any): JSX.Element {
         'grid md:grid-cols-2 items-center lg:flex-row w-full md:space-y-1 w-full md:gap-x-6 z-10',
       )}
     >
-      {completeYourIntegrationData.map(({ title, desc, route }) => {
+      {completeYourIntegrationData.map(({ title, desc, route }: MyProps) => {
         return <PlainCard key={route} title={title} desc={desc} route={route} />
       })}
     </section>
@@ -95,7 +95,7 @@ export function CompleteIntegration(props: any): JSX.Element {
 }
 
 // 3 Test and Go Live
-export function TestAndGoLive(props: any): JSX.Element {
+export function TestAndGoLive(): JSX.Element {
   return (
     <section
       className={classNames(
@@ -103,7 +103,7 @@ export function TestAndGoLive(props: any): JSX.Element {
         'grid md:grid-cols-2 items-center md:space-y-2 w-full md:gap-x-6',
       )}
     >
-      {testAndGoData.map(({ title, desc, route }) => {
+      {testAndGoData.map(({ title, desc, route }: MyProps) => {
         return <PlainCard key={route} title={title} desc={desc} route={route} />
       })}
     </section>
