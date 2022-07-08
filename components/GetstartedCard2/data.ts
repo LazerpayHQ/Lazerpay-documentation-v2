@@ -4,7 +4,7 @@ export interface CardWithImage {
     route: string
 }
 
-export const startIntegratingData: CardWithImage[] = [
+export const startPaymentData: CardWithImage[] = [
     {
         title: 'Crypto Transfers',
         desc: 'Withdraw and send crypto to an external wallet using our APIs.',
