@@ -3,7 +3,7 @@ import Divider from './Divider'
 import LzButton from './UI/button'
 import LzContainer from './UI/container'
 import LzLink from './UI/link'
-import LzAlert from './UI'
+import LzAlert from './UI/alert'
 
 // Page Components
 import FooterWrapper from './Footer'
@@ -17,9 +17,10 @@ import AcceptPayments from './AcceptPayments'
 import ExploreDemo from './ExploreDemo'
 import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
-import GetStartedCard2 from './GetstartedCard2'
+import LzInput from './UI/input'
 
 export {
+  LzInput,
   LzAlert,
   WhatsNew,
   ExploreDemo,
@@ -36,5 +37,4 @@ export {
   LzButton,
   LzContainer,
   GetStartedCard,
-  GetStartedCard2,
 }
