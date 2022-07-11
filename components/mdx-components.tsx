@@ -13,7 +13,7 @@ import ExploreDemo from './ExploreDemo'
 import WhatsNew from './WhatsNew'
 import ConnectCommunity from './Connect'
 import { Pagination } from './pagination'
-import LzAlert from './UI'
+import LzAlert from './UI/alert'
 import BankPayouts from './BankPayouts'
 
 /** Create a map of the HTML elements */
