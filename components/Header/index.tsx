@@ -11,6 +11,8 @@ interface IProps {
 
 const Header = ({ toggleSidebar }: IProps) => {
 
+  const headerStyles =
+    'pb-3 md:py-3 flex items-top lg:items-center justify-between xl:pr-4 sticky top-0 z-10 '
   return (
     <header className={classNames(Styles.Header, 'py-5 pb-4 md:py-6 lg:pb-4 lg:py-3 xl:pr-4 sticky top-0 bg-white z-10 w-full')}>
       <div className='flex items-center justify-between px-4 lg:hidden'>

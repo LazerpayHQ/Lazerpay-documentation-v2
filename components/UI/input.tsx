@@ -12,6 +12,7 @@ interface IProps {
     name?: string
     type?: string
     placeholder?: string
+    className?: string
 }
 const LzInput = React.forwardRef(({
     size = 'lg',
@@ -20,6 +21,7 @@ const LzInput = React.forwardRef(({
     rightIcon,
     leftIcon,
     label,
+    className,
     ...rest }: IProps, ref: React.RefObject<HTMLInputElement | any>) => {
     const sizes = {
         'sm': 'lz-input lz-input-sm',
@@ -57,7 +59,7 @@ const LzInput = React.forwardRef(({
 
     return (
         <div className="w-full text-left">
-            {label && <label htmlFor={rest?.name} className="lz-input-label">{label}</label>}
+            {label && <label htmlFor={rest?.name} className="lz-input-label capitalize">{label}</label>}
             <div className="relative w-full">
                 <span className="absolute -translate-y-1/2 text-neu-400 text-md lz-input-icon-left top-1/2 left-5">
                     {leftIcon && icons[leftIcon]}
@@ -70,6 +72,7 @@ const LzInput = React.forwardRef(({
                             sizes[size],
                             { 'pl-12': icons[leftIcon] },
                             { 'pr-12': icons[rightIcon] },
+                            className
                         )}
                     {...rest} />
                 <span className="absolute -translate-y-1/2 text-neu-400 text-md lz-input-icon-right top-1/2 right-5">
