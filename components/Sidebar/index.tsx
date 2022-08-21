@@ -66,7 +66,6 @@ const Sidebar = ({ isOpen }: IProps): JSX.Element => {
                                 key={child.id}>
                                 <LzLink to={`${id}/${child.id}`}>{child.label}</LzLink>
                               </li>
-
                             )
                           })
                         }

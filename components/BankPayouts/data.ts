@@ -11,5 +11,5 @@ export const periphery: MyProps[] = [{
     type: 'email',
     label: 'email',
     title: 'Get Notified When Bank Payout is Live',
-    desc: 'Bank Payout to multiple countries in USD and other local currencies is coming soon. Reach out to developers@lazerpay.finance if you have any questions regarding this'
+    desc: `Bank Payout to multiple countries in USD and other local currencies is coming soon. Reach out to <a href="mailto:developers@lazerpay.finance">developers@lazerpay.finance</a> if you have any questions regarding this`
 }]

@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import Styles from './index.module.scss'
+import { PlainCard, LinkedCard } from './Cards'
 import {
   completeYourIntegrationData,
   startIntegratingData,

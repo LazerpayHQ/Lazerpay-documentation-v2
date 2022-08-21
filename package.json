@@ -12,6 +12,7 @@
     "contributors:gen": "all-contributors generate"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.6",
     "@mdx-js/react": "^2.1.1",
     "@types/ramda": "^0.28.14",
     "autoprefixer": "^10.4.7",
@@ -31,11 +32,13 @@
     "ramda": "^0.28.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.33.1",
     "react-icons": "^4.3.1",
     "sass": "^1.51.0",
     "sugar": "^2.0.6",
     "superjson": "^1.9.1",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "yup": "^0.32.11"
   },
   "resolutions": {
     "@types/react": "^17.0.37"
