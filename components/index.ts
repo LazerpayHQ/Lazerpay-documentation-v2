@@ -18,6 +18,7 @@ import ExploreDemo from './ExploreDemo'
 import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
 import BankPayouts from './BankPayouts'
+import PartialPayments from './PartialPayments'
 
 export {
   LzAlert,
@@ -36,5 +37,6 @@ export {
   LzButton,
   LzContainer,
   GetStartedCard,
-  BankPayouts
+  BankPayouts,
+  PartialPayments
 }

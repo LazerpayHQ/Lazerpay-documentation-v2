@@ -10,21 +10,30 @@ import LinkIcon from 'public/icons/link-icon'
 import ArrowRightIcon from 'public/icons/arrow-right-icon'
 
 interface MyProps {
-  desc: string,
-  title: string,
-  route: string,
+  desc: string
+  title: string
+  route: string
+  icon?: boolean
 }
 
 // card with Icon component
-export const LinkedCard = ({ desc, title, route }: MyProps) => {
+export const LinkedCard = ({ icon, desc, title, route }: MyProps) => {
+ 
+  const frameStyle =
+    'bg-white mb-2 p-6 md:pt-9 h-[210px] drop-shadow-xs rounded-8 lg:rounded-8 lg:w-92 z-10'
+
   return (
     <div key={route}>
       <LzLink className='my-2' to={route}>
         <div
           key={route}
-          className='bg-white mb-2 p-6 md:pt-9 drop-shadow-xs rounded-8 lg:rounded-8 h-[210px] lg:w-92 z-10'
+          className={
+            icon
+              ? frameStyle
+              : 'bg-white mb-2 p-6 drop-shadow-xs rounded-8 h-[185px] lg:rounded-8 lg:w-92 z-10'
+          }
         >
-          <LinkIcon />
+          {icon ? <LinkIcon /> : ''}
           <h5 className='py-2 text-pri-500 md:py-4 paragraph-2 md:paragraph-3-s'>
             {title}
           </h5>
@@ -38,30 +47,6 @@ export const LinkedCard = ({ desc, title, route }: MyProps) => {
   )
 }
 
-// card without Icon component
-export const PlainCard = ({ desc, title, route }: MyProps) => {
-  return (
-    <div key={route}>
-      <LzLink className='my-2' to={route}>
-        <div
-          key={route}
-          className='z-10 px-5 mb-2 bg-white md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 sm:w-auto lg:w-92'
-        >
-          <h5 className='py-2 text-pri-500 md:py-4 paragraph-2 md:paragraph-3-s'>
-            {title}
-          </h5>
-          <p className='h-12 mr-6 paragraph-1'>{desc} </p>
-          <span className='flex justify-end py-5 pb-5'>
-            <ArrowRightIcon />
-          </span>
-        </div>
-      </LzLink>
-    </div>
-  )
-}
-
-// the difference the 1st function with the rest is it has an icon on the top
-
 // 1 Start integrating
 export default function GetStarted(): JSX.Element {
   return (
@@ -72,7 +57,15 @@ export default function GetStarted(): JSX.Element {
       )}
     >
       {startIntegratingData.map(({ title, desc, route }) => {
-        return <LinkedCard key={route} title={title} desc={desc} route={route} />
+        return (
+          <LinkedCard
+            icon={true}
+            key={route}
+            title={title}
+            desc={desc}
+            route={route}
+          />
+        )
       })}
     </section>
   )
@@ -88,7 +81,9 @@ export function CompleteIntegration(): JSX.Element {
       )}
     >
       {completeYourIntegrationData.map(({ title, desc, route }) => {
-        return <PlainCard key={route} title={title} desc={desc} route={route} />
+        return (
+          <LinkedCard key={route} title={title} desc={desc} route={route} />
+        )
       })}
     </section>
   )
@@ -104,7 +99,7 @@ export function TestAndGoLive(): JSX.Element {
       )}
     >
       {testAndGoData.map(({ title, desc, route }) => {
-        return <PlainCard key={route} title={title} desc={desc} route={route} />
+        return <LinkedCard key={route} title={title} desc={desc} route={route} />
       })}
     </section>
   )

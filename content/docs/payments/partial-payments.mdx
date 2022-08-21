@@ -1,0 +1,24 @@
+---
+title: Partial Payments
+description: partail payments page
+---
+
+# Partial Payments
+ Accept partail payments on your platform 
+
+ <Divider className='w-[120px]'/>
+
+ ## Introduction
+
+ With this feature if you attempt to charge someone $100 but the decide to pay $90, the 
+ transaction will be put on hold and tagged <code>incomplete</code> until the person completes the 
+ payments. With partial debits we will not hold the <code>amount paid</code>, instead we will forward it to you
+ (the business) and send a webhook for the transaction, although it'll still have a status of 
+ <code>incomplete</code>
+
+ <Divider className='w-[120px]'/>
+
+## How Does it Work?
+
+You can use the partial payments feature through our <code>accept payment API</code> or through our <code>checkout</code>
+and <code>libraries</code>
