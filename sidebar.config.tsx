@@ -36,7 +36,6 @@ const sidebar: SidebarItem[] = [
       { type: "docs", label: "Webhooks", id: "webhooks" },
       { type: "docs", label: "Payment links", id: "payment-links" },
       { type: "docs", label: "Partial payments", id: "partial-payments" },
-      { type: "docs", label: "Test payments", id: "test-payments" },
     ],
   },
 
@@ -53,7 +52,6 @@ const sidebar: SidebarItem[] = [
       { type: "docs", label: "Partial Payments", id: "partial-payments" },
       { type: "docs", label: "Webhooks", id: "webhooks" },
     ],
-    
   },
   {
     type: 'docs',
