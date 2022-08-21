@@ -14,7 +14,7 @@ import WhatsNew from './WhatsNew'
 import ConnectCommunity from './Connect'
 import { Pagination } from './pagination'
 import LzAlert from './UI/alert'
-import GetstartedCard2 from './GetstartedCard2'
+import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
 
 /** Create a map of the HTML elements */
@@ -49,8 +49,8 @@ export const components: Record<string, FC<Record<string, any>>> = {
   GetstartedCard() {
     return <GetstartedCard />
   },
-  GetstartedCard2() {
-    return <GetstartedCard2 />
+  TransferCard() {
+    return <TransferCard />
   },
   CompleteIntegration() {
     return <CompleteIntegration />
