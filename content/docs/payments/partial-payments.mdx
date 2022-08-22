@@ -1,0 +1,49 @@
+---
+title: Partial Payments
+description: Partial Payments page
+---
+
+
+# Partial Payments
+
+Accept partial payments on your platform.
+
+<Divider className='max-w-100  mb-2' />
+
+
+## Introduction
+
+With this feature, if you attempt to charge someone USD 100 but they only pay USD 90, the
+transaction will be put on hold and tagged <code> incomplete </code>. until the person completes the
+payment. With partial debits, we will not hold the <code>amount_paid </code> instead we will forward it to you
+(the business) and send you a webhook for the transaction althought it’ll still have a status of 
+ <code> incomplete </code>
+
+<Divider className='max-w-100  mb-12' />
+
+## How Does it Work?
+
+You can use the partial payment feature through our accept payment api or through our checkout and Libraries
+
+ <Alert 
+    status="info" 
+    className="mt-8 mb-2 " 
+   content=' When using the partial payment feature, you need to pass the parameter "accept_partial_payment" : 
+   true'/>
+
+<Divider className='max-w-100  mb-14' />
+
+## Verifying Transactions
+When verifying transactions (or implementing webhooks) that involve Partial Payments, there are
+two types of amounts that are returned: <code>actualAmount</code> and <code> actualPaid;</code>.<code> actualPaid</code> is the
+amount (in crypto) that the customer paid while <code>actualAmount</code> is the amount (in crypto) you
+intend to charge.
+
+<Alert 
+    status="info" 
+    className="mt-8 mb-8 " 
+   content='The fiat equivalent for the types of amounts are called fiatAmount and amountPaidFiat'/>
+
+<Divider className='max-w-100  mb-2' />
+
+<Pagination/>
