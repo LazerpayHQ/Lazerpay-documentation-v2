@@ -19,6 +19,7 @@ import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
 import Ecommerce from './UseCases'
 import TransferWebHook from './TransWebhook'
+import BinanceIcon from './BinanceImage'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -67,6 +68,10 @@ export const components: Record<string, FC<Record<string, any>>> = {
   BankPayouts() {
     return <BankPayouts />
   },
+  BinanceIcon() {
+    return <BinanceIcon />
+  },
+
   LinkedCard(MyProps) {
     return <LinkedCard {...MyProps} />
   },

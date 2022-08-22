@@ -39,17 +39,15 @@ const sidebar: SidebarItem[] = [
       { type: "docs", label: "Test payments", id: "test-payments" },
     ],
   },
-
   {
     type: 'docs',
     label: 'Transfers',
     icon: <TransferIcon />,
     id: "transfers",
-    redirect: "transfers/get-started",
     children: [
       { type: "docs", label: "Get started", id: "get-started" },
-      { type: "docs", label: "Crypto transfers", id: "crypto-transfers" },
-      { type: "docs", label: "Bank transfers", id: "bank-transfers" },
+      { type: "docs", label: "Crypto Transfer", id: "crypto-transfers" },
+      { type: "docs", label: "Bank Transfer", id: "bank-transfers" },
       { type: "docs", label: "Webhooks", id: "webhooks" },
     ],
   },
