@@ -16,6 +16,7 @@ import { Pagination } from './pagination'
 import LzAlert from './UI/alert'
 import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
+import BinanceIcon from './BinanceImage'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -64,6 +65,10 @@ export const components: Record<string, FC<Record<string, any>>> = {
   BankPayouts() {
     return <BankPayouts />
   },
+  BinanceIcon() {
+    return <BinanceIcon />
+  },
+
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
   },

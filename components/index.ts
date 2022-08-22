@@ -19,6 +19,7 @@ import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
 import BankPayouts from './BankPayouts'
 import LzInput from './UI/input'
+import BinanceIcon from './BinanceImage'
 
 export {
   LzInput,
@@ -38,5 +39,6 @@ export {
   LzButton,
   LzContainer,
   GetStartedCard,
-  BankPayouts
+  BankPayouts,
+  BinanceIcon
 }
