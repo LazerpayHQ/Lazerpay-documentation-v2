@@ -8,12 +8,12 @@ export const startIntegratingData: CardWithImage[] = [
   {
     title: 'Accept Payments',
     desc: 'Let your customers pay using our support payment system',
-    route:'accept-payments',
+    route: 'accept-payments',
   },
   {
     title: 'Verify payments',
     desc: 'Automatically verify trasactions after payments using lazerpay verify API ',
-    route:'verify-payments',
+    route: 'verify-payments',
   },
 ]
 
@@ -45,5 +45,18 @@ export const testAndGoData: CardWithImage[] = [
     title: 'Go Live',
     desc: 'Learnn about the steps required to make your integration live, and start receiving crypto payments in minutes.',
     route: 'go-live',
+  },
+]
+
+export const startPaymentData: CardWithImage[] = [
+  {
+    title: 'Crypto Transfer',
+    desc: 'Withdraw and send crypto to an external wallet using our APIs.',
+    route: 'crypto-transfers',
+  },
+  {
+    title: 'Bank Transfers',
+    desc: 'Send stable coins directly from your wallet to your local bank account. ',
+    route: 'bank-transfers',
   },
 ]
