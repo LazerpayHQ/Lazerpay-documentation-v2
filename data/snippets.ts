@@ -50,5 +50,27 @@ app.post("/my/webhook/url", function(req, res) {
     }
     res.send(200);
     });
-    `
+    `,
+    
+    cryptoTransferSample3:
+`const Lazerpay = require('lazerpay-node-sdk');
+
+const lazerpay = new Lazerpay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);
+
+const crypto_payout_tx = async () => {
+    const transaction_payload = {
+        amount: 1,
+        recipient: '0x0B4d358D349809037003F96A3593ff9015E89efA', // address must be a bep20 address
+        coin: 'BUSD',
+        blockchain:’Binance Smart Chain’
+    };
+    try {
+        const response = await lazer.Payout.transferCrypto(transaction_payload);
+        console.log(response.error);
+    }   catch (e) {
+        } catch (e) {
+        console.log(e);
+        }
+    };
+`
 }

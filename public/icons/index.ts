@@ -17,6 +17,7 @@ import ThumbsDownIcon from './thumbs-down-icon';
 import ThumbsUpIcon from './thumbs-up-icon';
 import TransferIcon from './transfers-icon';
 import UseCasesIcon from './use-cases-icon';
+import HandsWithPenny from 'public/icons/handsWithPenny';
 
 export {
   InfoIcon,
@@ -37,5 +38,6 @@ export {
   GuidesIcon,
   LogoFull,
   ThumbsDownIcon,
-  ThumbsUpIcon
+  ThumbsUpIcon,
+  HandsWithPenny
 };
