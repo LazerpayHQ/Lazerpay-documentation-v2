@@ -60,8 +60,8 @@ export const components: Record<string, FC<Record<string, any>>> = {
   TestAndGoLive() {
     return <TestAndGoLive />
   },
-  Pagination(props) {
-    return (<Pagination{...props} />)
+  Pagination(IProps) {
+    return (<Pagination {...IProps} />)
   },
   BankPayouts() {
     return <BankPayouts />

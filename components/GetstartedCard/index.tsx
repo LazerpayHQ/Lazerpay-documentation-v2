@@ -7,6 +7,7 @@ import {
   startIntegratingData,
   testAndGoData,
 } from './data'
+import HandsWithPenny from 'public/icons/handsWithPenny'
 
 // 1 Start integrating
 export default function GetStarted(): JSX.Element {
@@ -50,7 +51,7 @@ export function TestAndGoLive(): JSX.Element {
       )}
     >
       {testAndGoData.map(({ title, desc, route }) => {
-        return <PlainCard key={route} title={title} desc={desc} route={route} />
+        return <PlainCard  key={route} title={title} desc={desc} route={route} />
       })}
     </section>
   )
