@@ -16,6 +16,7 @@ import { Pagination } from './pagination'
 import LzAlert from './UI/alert'
 import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
+import TransferWebHook from './TransWebHook'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -63,6 +64,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   BankPayouts() {
     return <BankPayouts />
+  },
+  TransferWebHook() {
+    return <TransferWebHook/>
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />

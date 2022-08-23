@@ -1,0 +1,30 @@
+---
+title: Partial Payments
+description: partail payments page
+---
+
+# Webhooks
+
+Listen to webhook event whenever certain action occurs.
+
+<Divider className='w-20 mt-2 mb-4' />
+
+## What are Webhooks?
+
+Webhooks are a way for you to subscribe to events that occur when an event involving your 
+business occurs. This guide will walk through what webhooks are and how you can use them in
+ order to get started with integrating them into your application.
+
+A webhook URL is an endpoint on your server where you can receive notifications about such
+ events. When an event occurs, we'll make a POST request to that endpoint, with a JSON body
+  containing the details about the event, including the type of event and the data associated with it.
+
+
+<Alert
+   status='info'
+   className='my-7'
+   content='Rather than continuously polling the server to check if the state has changed, webhooks provide 
+   information to you as it becomes available, which is a lot more efficient and beneficial for developers.'
+/>
+
+<TransferWebHook/>
