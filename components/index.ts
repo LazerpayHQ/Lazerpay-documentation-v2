@@ -5,6 +5,10 @@ import LzContainer from './UI/container'
 import LzLink from './UI/link'
 import LzAlert from './UI/alert'
 import LinkedCard from './GetstartedCard/Cards'
+import { PlainCard } from './GetstartedCard/Cards';
+import { ShopifyIcon } from './../public/icons/shopify-icon';
+import { WordPressIcon } from './../public/icons/wordPress-Icon';
+import { WooCommerceIcon } from './../public/icons/wooCommerce-icon';
 
 // Page Components
 import FooterWrapper from './Footer'
@@ -44,5 +48,9 @@ export {
   GetStartedCard,
   BankPayouts,
   LinkedCard,
+  PlainCard,
+  ShopifyIcon,
+  WooCommerceIcon,
+  WordPressIcon,
   TransferWebHook
 }

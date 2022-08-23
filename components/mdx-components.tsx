@@ -14,9 +14,10 @@ import WhatsNew from './WhatsNew'
 import ConnectCommunity from './Connect'
 import { Pagination } from './pagination'
 import LzAlert from './UI/alert'
-import LinkedCard from './GetstartedCard/Cards'
+import LinkedCard, { PlainCard } from './GetstartedCard/Cards'
 import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
+import { ShopifyIcon, WooCommerceIcon, WordPressIcon } from 'public/icons'
 import TransferWebHook from './TransWebhook'
 
 /** Create a map of the HTML elements */
@@ -69,6 +70,12 @@ export const components: Record<string, FC<Record<string, any>>> = {
   LinkedCard(MyProps) {
     return <LinkedCard {...MyProps} />
   },
+  PlainCard(MyProps) {
+    return <PlainCard {...MyProps} />
+  },
+  WooCommerceIcon() { return <WooCommerceIcon /> },
+  WordPressIcon() { return <WordPressIcon /> },
+  ShopifyIcon() { return (<ShopifyIcon />) },
   TransferWebHook() {
     return <TransferWebHook />
   },

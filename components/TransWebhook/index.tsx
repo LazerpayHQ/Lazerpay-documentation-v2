@@ -14,7 +14,7 @@ const TransferWebHook = () => {
         </div>
         <section>
           <h5 className='heading-5-s mt-7'>Enabling WebHooks</h5>
-          <p className='paragraph-2 my-7'>
+          <div className='paragraph-2 my-7'>
             You can specify your webhook URL on <code>your dashboard</code> and
             where we will send <code>POST</code> request whenever an event
             occurs
@@ -34,7 +34,7 @@ const TransferWebHook = () => {
                 <b>Update</b>
               </li>
             </ul>
-          </p>
+          </div>
           <DashboardScreenshot />
           <LzAlert
             className='my-7'
@@ -51,11 +51,11 @@ const TransferWebHook = () => {
             signature in the header which is computed by generating a hash from
             concatenating your API key and request body, using the HMAC SHA256
             hash algorithm.{' '}
-            <p className='my-8'>
+            <text className='my-8'>
               In order to verify this signature came from Lazerpay, you simply
               have to generate the HMAC SHA256 hash and compare it with the
               signature received.
-            </p>
+            </text>
           </p>
           <CodeBlock req='' id='webHookPayload2' className='h-[492px]' />
           <Divider className='w-20 mt-3' />

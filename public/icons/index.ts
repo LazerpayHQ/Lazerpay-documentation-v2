@@ -1,4 +1,4 @@
-import { DashboardScreenshot } from 'public/icons/dashboardScreenshot';
+import DashboardScreenshot from 'public/icons/dashboardScreenshot';
 import AlertIcon from './alert-icon';
 import CommunityIcon from './community-icon';
 import ErrorIcon from './error-icon';
@@ -19,6 +19,9 @@ import ThumbsUpIcon from './thumbs-up-icon';
 import TransferIcon from './transfers-icon';
 import UseCasesIcon from './use-cases-icon';
 import HandsWithPenny from 'public/icons/handsWithPenny';
+import { ShopifyIcon } from './shopify-icon';
+import { WordPressIcon } from './wordPress-Icon';
+import { WooCommerceIcon } from './wooCommerce-icon';
 
 export {
   InfoIcon,
@@ -40,6 +43,9 @@ export {
   LogoFull,
   ThumbsDownIcon,
   ThumbsUpIcon,
+  WordPressIcon,
+  WooCommerceIcon,
+  ShopifyIcon,
   HandsWithPenny,
   DashboardScreenshot
 };
