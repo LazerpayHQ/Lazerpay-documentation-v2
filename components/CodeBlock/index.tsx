@@ -34,7 +34,6 @@ const Label = ({ label }) => {
 
 export default function CodeBlock({ id, req = 'POST', className }: IProps) {
   const codeSnippet = snippets[id] || 'snippet not found'
-  // const title = Object.keys(snippets).find(s => s === id);
 
   useEffect(() => {
     Prism.highlightAll()
@@ -44,7 +43,7 @@ export default function CodeBlock({ id, req = 'POST', className }: IProps) {
     <div
       className={classNames(
         Styles.CodeBlock,
-        'scroll flex pb-2 bg-white flex-col',
+        ' flex pb-2 bg-white flex-col',
       )}
     >
       <div className='flex items-center px-10 py-4 space-x-5 bg-neu-50 head rounded-t-8'>

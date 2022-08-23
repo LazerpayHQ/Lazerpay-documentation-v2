@@ -21,10 +21,77 @@ A webhook URL is an endpoint on your server where you can receive notifications 
 
 
 <Alert
-   status='info'
-   className='my-7'
-   content='Rather than continuously polling the server to check if the state has changed, webhooks provide 
-   information to you as it becomes available, which is a lot more efficient and beneficial for developers.'
+status='info'
+className='my-7'
+content='Rather than continuously polling the server to check if the state has changed, webhooks provide 
+information to you as it becomes available, which is a lot more efficient and beneficial for developers.'
 />
 
-<TransferWebHook/>
+
+Here are some sample webhook paylods for deposit transactions
+
+<CodeBlock req='' id='webHookPayload' className='h-[492px] ' />
+
+<Divider className='w-20 mt-3' />
+
+## Enabling WebHooks
+You can specify your webhook URL on <code>your dashboard</code> and where we will send <code>POST</code> request 
+whenever an event occurs
+
+Here is how to setup a webhooks on your Lazerpay account
+
+<ul className='flex flex-col mt-6 space-y-4'>
+<li>
+<code>1</code> Login to your <code>dashboard</code> and on <b>settings</b>
+</li>
+<li>
+<code>2</code> Navigate to the <b>API Keys and WeebHooks tab</b>
+</li>
+<li>
+<code>3</code> Specify your webhook url and click on <b>Update</b>
+</li>
+</ul>
+
+<DashboardScreenshot />
+
+<Alert
+className='my-7'
+status='info'
+content={`When testing, you can get an instant webhook URL by visiting <code>webhook.site.</code> This will allow you
+to inspect the received payload without having to write any code or set up a server.`}
+/>
+
+<Divider className='w-20 mt-3' />
+   
+## Validating WebHook Signature
+
+
+Every webhook event payload will contain a hashed authentication signature in the header which 
+is computed by generating a hash from concatenating your API key and request body, using the 
+HMAC SHA256 hash algorithm.
+
+In order to verify this signature came from Lazerpay, you simply have to generate the HMAC
+SHA256 hash and compare it with the signature received.
+
+<CodeBlock req='' id='webHookPayload2' className='h-[492px]' />
+
+<Divider className='w-20 mt-3' />
+
+## Responding to WebHooks Request
+
+You must respond with a <code>200 ok</code> status code. Any other response code outside of the <code>2xx</code> 
+range, will be considered as a failure including <code>3xx</code> codes.{' '}<b>We don't 
+care about the response body or headers</b>
+
+<Alert
+status='info'
+className='mt-16'
+content="If we don't get a 200 OK status code, we will retry the webhook every one minute for the next 24hrs"
+/>
+
+<Divider className='w-20 mt-3' />
+
+## Supported Webhook Types
+
+Here are the webhook request type that we support. We will add more to the list as we keep adding
+webhook support for differnt API operations in the future.
