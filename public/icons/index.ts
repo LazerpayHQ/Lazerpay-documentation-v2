@@ -17,6 +17,9 @@ import ThumbsDownIcon from './thumbs-down-icon';
 import ThumbsUpIcon from './thumbs-up-icon';
 import TransferIcon from './transfers-icon';
 import UseCasesIcon from './use-cases-icon';
+import { ShopifyIcon } from './shopify-icon';
+import { WordPressIcon } from './wordPress-Icon';
+import { WooCommerceIcon } from './wooCommerce-icon';
 
 export {
   InfoIcon,
@@ -37,5 +40,8 @@ export {
   GuidesIcon,
   LogoFull,
   ThumbsDownIcon,
-  ThumbsUpIcon
+  ThumbsUpIcon,
+  WordPressIcon,
+  WooCommerceIcon,
+  ShopifyIcon
 };

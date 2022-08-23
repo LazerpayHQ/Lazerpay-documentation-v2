@@ -9,6 +9,7 @@ interface MyProps {
   route?: string
   icon?: boolean
   myIcon?: Object
+  className?: string
   children?: React.ReactNode,
 }
 
@@ -44,15 +45,15 @@ const LinkedCard = ({ icon, desc, title, route, }: MyProps) => {
 
 export default LinkedCard
 
-
 // card with choice Icon
-export const PlainCard = ({ desc, title, route, myIcon }: MyProps) => {
+export const PlainCard = ({ desc, title, route, myIcon, className }: MyProps) => {
   return (
+    <>
     <div key={route}>
       <LzLink className='my-2' to={route}>
         <div
           key={route}
-          className='z-10 px-5 mb-2 bg-white md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 sm:w-auto lg:w-92'
+          className={`z-10 px-5 mb-2 bg-white md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 sm:w-auto lg:w-92 ${className}`}
         >
           {myIcon ? myIcon : ''}
           <h5 className='py-2 text-pri-500 md:py-4 paragraph-2 md:paragraph-3-s'>
@@ -65,5 +66,6 @@ export const PlainCard = ({ desc, title, route, myIcon }: MyProps) => {
         </div>
       </LzLink>
     </div>
+    </>
   )
 }
