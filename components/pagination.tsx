@@ -16,7 +16,7 @@ export function usePagination() {
   return { prev, next, hasPrev: !!prev, hasNext: !!next }
 }
 
-export function Pagination({ nextName, prevName}) {
+export function Pagination({ nextName, prevName}: IProps) {
   const { prev, next } = usePagination()
   return (
     <div className='flex justify-end sm:justify-between proxima'>
