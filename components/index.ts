@@ -4,6 +4,7 @@ import LzButton from './UI/button'
 import LzContainer from './UI/container'
 import LzLink from './UI/link'
 import LzAlert from './UI/alert'
+import LinkedCard from './GetstartedCard/Cards'
 
 // Page Components
 import FooterWrapper from './Footer'
@@ -38,5 +39,6 @@ export {
   LzButton,
   LzContainer,
   GetStartedCard,
-  BankPayouts
+  BankPayouts,
+  LinkedCard
 }
