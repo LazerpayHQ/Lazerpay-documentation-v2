@@ -14,8 +14,10 @@ import WhatsNew from './WhatsNew'
 import ConnectCommunity from './Connect'
 import { Pagination } from './pagination'
 import LzAlert from './UI/alert'
+import LinkedCard from './GetstartedCard/Cards'
 import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
+import { props } from 'ramda'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -58,11 +60,14 @@ export const components: Record<string, FC<Record<string, any>>> = {
   TestAndGoLive() {
     return <TestAndGoLive />
   },
-  Pagination(props) {
-    return (<Pagination{...props} />)
+  Pagination(IProps) {
+    return (<Pagination {...IProps} />)
   },
   BankPayouts() {
     return <BankPayouts />
+  },
+  LinkedCard(MyProps) {
+    return <LinkedCard {...MyProps} />
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
