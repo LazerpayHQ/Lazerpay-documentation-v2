@@ -26,7 +26,7 @@ export const completeYourIntegrationData: CardWithImage[] = [
   {
     title: 'Partial Payments',
     desc: 'Accept partial payments from your customers on your platform',
-    route: 'partial-payments',
+    route: 'payments/partial-payments',
   },
   {
     title: 'Setup Webhooks',
