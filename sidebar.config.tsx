@@ -58,6 +58,7 @@ const sidebar: SidebarItem[] = [
     label: 'Use Cases',
     icon: <UseCasesIcon />,
     id: "use-cases",
+    redirect: 'use-cases/get-started',
     children: [
       { type: 'docs', label: 'Get started', id: 'get-started' },
       { type: 'docs', label: 'Ecommerce', id: 'ecommerce' },
