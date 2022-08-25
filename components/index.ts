@@ -4,6 +4,7 @@ import LzButton from './UI/button'
 import LzContainer from './UI/container'
 import LzLink from './UI/link'
 import LzAlert from './UI/alert'
+import LinkedCard from './GetstartedCard/Cards'
 
 // Page Components
 import FooterWrapper from './Footer'
@@ -19,7 +20,7 @@ import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
 import BankPayouts from './BankPayouts'
 import LzInput from './UI/input'
-import BinanceIcon from './TestPayments'
+import TestPayments from './TestPayments'
 
 export {
   LzInput,
@@ -40,5 +41,6 @@ export {
   LzContainer,
   GetStartedCard,
   BankPayouts,
-  BinanceIcon
+  TestPayments,
+  LinkedCard
 }

@@ -1,11 +1,13 @@
 import classNames from 'classnames'
 import Styles from './index.module.scss'
-import { PlainCard, LinkedCard } from './Cards'
+import { PlainCard } from './Cards'
+import LinkedCard from './Cards'
 import {
   completeYourIntegrationData,
   startIntegratingData,
   testAndGoData,
 } from './data'
+import HandsWithPenny from 'public/icons/handsWithPenny'
 
 // 1 Start integrating
 export default function GetStarted(): JSX.Element {
@@ -17,7 +19,7 @@ export default function GetStarted(): JSX.Element {
       )}
     >
       {startIntegratingData.map(({ title, desc, route }) => {
-        return <LinkedCard key={route} title={title} desc={desc} route={route} />
+        return <LinkedCard icon={true} key={route} title={title} desc={desc} route={route} />
       })}
     </section>
   )
@@ -33,7 +35,7 @@ export function CompleteIntegration(): JSX.Element {
       )}
     >
       {completeYourIntegrationData.map(({ title, desc, route }) => {
-        return <PlainCard key={route} title={title} desc={desc} route={route} />
+        return <LinkedCard key={route} title={title} desc={desc} route={route} />
       })}
     </section>
   )
@@ -49,7 +51,7 @@ export function TestAndGoLive(): JSX.Element {
       )}
     >
       {testAndGoData.map(({ title, desc, route }) => {
-        return <PlainCard key={route} title={title} desc={desc} route={route} />
+        return <PlainCard  key={route} title={title} desc={desc} route={route} />
       })}
     </section>
   )
