@@ -18,6 +18,7 @@ import LinkedCard, { PlainCard } from './GetstartedCard/Cards'
 import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
 import { ShopifyIcon, WooCommerceIcon, WordPressIcon } from 'public/icons'
+import Ecommerce from './UseCases'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -72,9 +73,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
   PlainCard(MyProps) {
     return <PlainCard {...MyProps} />
   },
-  WooCommerceIcon() { return <WooCommerceIcon /> },
-  WordPressIcon() { return <WordPressIcon /> },
-  ShopifyIcon() { return (<ShopifyIcon />) },
+  Ecommerce() {
+    return <Ecommerce />
+  },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
   },

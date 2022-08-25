@@ -8,7 +8,7 @@ interface MyProps {
   title?: string
   route?: string
   icon?: boolean
-  myIcon?: Object
+  customIcom?: Object
   className?: string
   children?: React.ReactNode,
 }
@@ -46,26 +46,26 @@ const LinkedCard = ({ icon, desc, title, route, }: MyProps) => {
 export default LinkedCard
 
 // card with choice Icon
-export const PlainCard = ({ desc, title, route, myIcon, className }: MyProps) => {
+export const PlainCard = ({ desc, title, route, customIcom, className }: MyProps) => {
   return (
     <>
-    <div key={route}>
-      <LzLink className='my-2' to={route}>
-        <div
-          key={route}
-          className={`z-10 px-5 mb-2 bg-white md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 sm:w-auto lg:w-92 ${className}`}
-        >
-          {myIcon ? myIcon : ''}
-          <h5 className='py-2 text-pri-500 md:py-4 paragraph-2 md:paragraph-3-s'>
-            {title}
-          </h5>
-          <p className='h-12 mr-6 paragraph-1'>{desc} </p>
-          <span className='flex justify-end py-5 pb-5'>
-            <ArrowRightIcon />
-          </span>
-        </div>
-      </LzLink>
-    </div>
+      <div key={route}>
+        <LzLink className='my-2' to={route}>
+          <div
+            key={route}
+            className={`z-10 px-5 mb-2 bg-white md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 sm:w-auto lg:w-92 ${className}`}
+          >
+            {customIcom ? customIcom : ''}
+            <h5 className='py-2 text-pri-500 md:py-4 paragraph-2 md:paragraph-3-s'>
+              {title}
+            </h5>
+            <p className='h-12 mr-6 paragraph-1'>{desc} </p>
+            <span className='flex justify-end py-5 pb-5'>
+              <ArrowRightIcon />
+            </span>
+          </div>
+        </LzLink>
+      </div>
     </>
   )
 }
