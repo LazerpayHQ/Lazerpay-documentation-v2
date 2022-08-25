@@ -24,6 +24,7 @@ import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
 import BankPayouts from './BankPayouts'
 import LzInput from './UI/input'
+import Ecommerce from './UseCases'
 import TransferWebHook from './TransWebhook'
 
 // Image import 
@@ -49,8 +50,6 @@ export {
   BankPayouts,
   LinkedCard,
   PlainCard,
-  ShopifyIcon,
-  WooCommerceIcon,
-  WordPressIcon,
+  Ecommerce,
   TransferWebHook
 }

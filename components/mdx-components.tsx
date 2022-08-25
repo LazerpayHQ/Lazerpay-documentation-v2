@@ -18,6 +18,7 @@ import LinkedCard, { PlainCard } from './GetstartedCard/Cards'
 import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
 import { ShopifyIcon, WooCommerceIcon, WordPressIcon } from 'public/icons'
+import Ecommerce from './UseCases'
 import TransferWebHook from './TransWebhook'
 
 /** Create a map of the HTML elements */
@@ -73,9 +74,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
   PlainCard(MyProps) {
     return <PlainCard {...MyProps} />
   },
-  WooCommerceIcon() { return <WooCommerceIcon /> },
-  WordPressIcon() { return <WordPressIcon /> },
-  ShopifyIcon() { return (<ShopifyIcon />) },
+  Ecommerce() {
+    return <Ecommerce />
+  },
   TransferWebHook() {
     return <TransferWebHook />
   },
