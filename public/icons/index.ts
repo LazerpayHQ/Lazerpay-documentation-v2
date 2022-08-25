@@ -1,3 +1,4 @@
+import { DashboardScreenshot } from 'public/icons/dashboardScreenshot';
 import AlertIcon from './alert-icon';
 import CommunityIcon from './community-icon';
 import ErrorIcon from './error-icon';
@@ -39,5 +40,6 @@ export {
   LogoFull,
   ThumbsDownIcon,
   ThumbsUpIcon,
-  HandsWithPenny
+  HandsWithPenny,
+  DashboardScreenshot
 };
