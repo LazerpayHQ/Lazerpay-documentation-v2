@@ -39,7 +39,7 @@ export const testAndGoData: CardWithImage[] = [
   {
     title: 'Make Test Payments',
     desc: "We are goin to describe how you can go about testing Lazerpay's integration",
-    route: 'make-test-payments',
+    route: 'payments/make-test-payments',
   },
   {
     title: 'Go Live',
