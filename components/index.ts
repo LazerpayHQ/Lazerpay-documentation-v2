@@ -19,7 +19,7 @@ import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
 import BankPayouts from './BankPayouts'
 import LzInput from './UI/input'
-import BinanceIcon from './BinanceImage'
+import BinanceIcon from './TestPayments'
 
 export {
   LzInput,
