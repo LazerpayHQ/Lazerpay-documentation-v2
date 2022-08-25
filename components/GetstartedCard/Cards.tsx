@@ -2,6 +2,7 @@
 import LzLink from 'components/UI/link'
 import LinkIcon from 'public/icons/link-icon'
 import ArrowRightIcon from 'public/icons/arrow-right-icon'
+import classNames from 'classnames'
 
 interface MyProps {
   desc?: string
@@ -53,8 +54,8 @@ export const PlainCard = ({ desc, title, route, customIcom, className }: MyProps
         <LzLink className='my-2' to={route}>
           <div
             key={route}
-            className={`z-10 px-5 mb-2 bg-white md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 sm:w-auto lg:w-92 ${className}`}
-          >
+            className={classNames('z-10 px-5 mb-2 bg-white md:pt-4 drop-shadow-xs rounded-8 lg:rounded-8 sm:w-auto lg:w-92', className)}
+            >
             {customIcom ? customIcom : ''}
             <h5 className='py-2 text-pri-500 md:py-4 paragraph-2 md:paragraph-3-s'>
               {title}
