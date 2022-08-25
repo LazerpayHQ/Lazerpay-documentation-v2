@@ -37,7 +37,7 @@ export const tabsData: TabsItem[] = [
     },
     {
         title: "Use Cases",
-        route: "quick-start/use-cases",
+        route: "use-cases/get-started",
         desc: `Learn how we’re powering crypto payments for creators, software providers, stores and startups.`,
         image: '/images/use-cases.svg',
         label: 'Go to Use Cases'
