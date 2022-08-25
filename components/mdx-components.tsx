@@ -17,7 +17,8 @@ import LzAlert from './UI/alert'
 import LinkedCard from './GetstartedCard/Cards'
 import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
-import TransferWebHook from './TransWebhook'
+import TransferWebHook from './Transfer'
+import CryptoTransfer from './Transfer/crypto-transfer'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -71,6 +72,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   TransferWebHook() {
     return <TransferWebHook />
+  },
+  CryptoTransfer() {
+    return <CryptoTransfer />
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />

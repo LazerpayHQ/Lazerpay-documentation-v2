@@ -20,9 +20,8 @@ import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
 import BankPayouts from './BankPayouts'
 import LzInput from './UI/input'
-import TransferWebHook from './TransWebhook'
-
-// Image import 
+import TransferWebHook from './Transfer'
+import CryptoTransfer from './Transfer/crypto-transfer'
 
 export {
   LzInput,
@@ -44,5 +43,6 @@ export {
   GetStartedCard,
   BankPayouts,
   LinkedCard,
-  TransferWebHook
+  TransferWebHook,
+  CryptoTransfer
 }

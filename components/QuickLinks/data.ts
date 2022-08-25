@@ -16,7 +16,7 @@ export const tabsData: TabsItem[] = [
     },
     {
         title: "Transfers",
-        route: "quick-start/transfers",
+        route: "transfers/get-started",
         desc: `Get almost instant payouts to your local bank account, or crypto wallet`,
         image: '/images/transfers.svg',
         label: 'Go to transfers'

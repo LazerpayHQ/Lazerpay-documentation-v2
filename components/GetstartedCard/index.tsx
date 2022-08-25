@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import Styles from './index.module.scss'
-import { PlainCard, LinkedCard } from './Cards'
+import LinkedCard, { PlainCard } from './Cards'
 import {
   completeYourIntegrationData,
   startIntegratingData,
@@ -60,7 +60,9 @@ export function TestAndGoLive(): JSX.Element {
       )}
     >
       {testAndGoData.map(({ title, desc, route }) => {
-        return <LinkedCard key={route} title={title} desc={desc} route={route} />
+        return (
+          <LinkedCard key={route} title={title} desc={desc} route={route} />
+        )
       })}
     </section>
   )
