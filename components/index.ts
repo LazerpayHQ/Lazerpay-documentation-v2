@@ -21,6 +21,7 @@ import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
 import BankPayouts from './BankPayouts'
 import LzInput from './UI/input'
+import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
 
 export {
@@ -42,6 +43,7 @@ export {
   LzContainer,
   GetStartedCard,
   BankPayouts,
+  TestPayments,
   LinkedCard,
   PlainCard,
   Ecommerce
