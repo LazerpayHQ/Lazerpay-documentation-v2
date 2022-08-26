@@ -8,7 +8,7 @@ const Ecommerce = () => {
             <PlainCard
                 key='1'
                 title={"WooCommerce"}
-                customIcom={<WooCommerceIcon />}
+                customIcon={<WooCommerceIcon />}
                 className='md:h-[269px] pt-6 md:pt-12'
                 desc={"Nullam id diam lacinia id ornare. Dui, mattis sit molestie fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
 
@@ -17,14 +17,14 @@ const Ecommerce = () => {
             <PlainCard
                 key='2'
                 title={"Shopify"}
-                customIcom={<ShopifyIcon />}
+                customIcon={<ShopifyIcon />}
                 desc={"Nullam id diam lacinia id ornare. Dui, mattis sit molestie fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
                 route={"#"} />
 
             <PlainCard
                 key='3'
                 title={"WordPress"}
-                customIcom={<WordPressIcon />}
+                customIcon={<WordPressIcon />}
                 className='md:h-[269px] pt-6 md:pt-12'
                 desc={"Nullam id diam lacinia id ornare. Dui, mattis sit molestie fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
                 route={"#"} />
