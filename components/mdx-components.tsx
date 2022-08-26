@@ -17,6 +17,7 @@ import LzAlert from './UI/alert'
 import LinkedCard from './GetstartedCard/Cards'
 import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
+import TestPayments from './TestPayments'
 import { props } from 'ramda'
 
 /** Create a map of the HTML elements */
@@ -65,6 +66,10 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   BankPayouts() {
     return <BankPayouts />
+  },
+
+  TestPayments() {
+    return <TestPayments />
   },
   LinkedCard(MyProps) {
     return <LinkedCard {...MyProps} />

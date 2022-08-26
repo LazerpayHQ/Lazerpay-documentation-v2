@@ -20,6 +20,7 @@ import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
 import BankPayouts from './BankPayouts'
 import LzInput from './UI/input'
+import TestPayments from './TestPayments'
 
 export {
   LzInput,
@@ -40,5 +41,6 @@ export {
   LzContainer,
   GetStartedCard,
   BankPayouts,
+  TestPayments,
   LinkedCard
 }
