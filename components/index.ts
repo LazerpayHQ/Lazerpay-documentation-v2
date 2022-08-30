@@ -5,6 +5,7 @@ import LzContainer from './UI/container'
 import LzLink from './UI/link'
 import LzAlert from './UI/alert'
 import LinkedCard from './GetstartedCard/Cards'
+import { PlainCard } from './GetstartedCard/Cards';
 
 // Page Components
 import FooterWrapper from './Footer'
@@ -21,6 +22,7 @@ import GetStartedCard from './GetstartedCard'
 import BankPayouts from './BankPayouts'
 import LzInput from './UI/input'
 import TestPayments from './TestPayments'
+import Ecommerce from './UseCases'
 
 export {
   LzInput,
@@ -42,5 +44,7 @@ export {
   GetStartedCard,
   BankPayouts,
   TestPayments,
-  LinkedCard
+  LinkedCard,
+  PlainCard,
+  Ecommerce
 }

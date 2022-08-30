@@ -14,11 +14,11 @@ import WhatsNew from './WhatsNew'
 import ConnectCommunity from './Connect'
 import { Pagination } from './pagination'
 import LzAlert from './UI/alert'
-import LinkedCard from './GetstartedCard/Cards'
+import LinkedCard, { PlainCard } from './GetstartedCard/Cards'
 import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
 import TestPayments from './TestPayments'
-import { props } from 'ramda'
+import Ecommerce from './UseCases'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -73,6 +73,12 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   LinkedCard(MyProps) {
     return <LinkedCard {...MyProps} />
+  },
+  PlainCard(MyProps) {
+    return <PlainCard {...MyProps} />
+  },
+  Ecommerce() {
+    return <Ecommerce />
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
