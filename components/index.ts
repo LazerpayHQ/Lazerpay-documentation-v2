@@ -29,8 +29,10 @@ import Ecommerce from './UseCases'
 import TransferWebHook from './TransWebhook'
 
 // Image import 
+import LzTable from './UI/table'
 
 export {
+  LzTable,
   LzInput,
   LzAlert,
   WhatsNew,

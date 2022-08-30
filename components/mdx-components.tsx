@@ -20,6 +20,8 @@ import BankPayouts from './BankPayouts'
 import Ecommerce from './UseCases'
 import TransferWebHook from './TransWebhook'
 import TestPayments from './TestPayments'
+import Ecommerce from './UseCases'
+import LzTable from './UI/table'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -80,6 +82,11 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   Ecommerce() {
     return <Ecommerce />
+  },
+
+  /** Below this line contains all reusable UI components */
+  LzTable({ head, body }) {
+    return <LzTable body={body} head={head} />
   },
   TransferWebHook() {
     return <TransferWebHook />

@@ -31,7 +31,7 @@ const sidebar: SidebarItem[] = [
     redirect: "payments/get-started",
     children: [
       { type: "docs", label: "Get started", id: "get-started" },
-      { type: "docs", label: "Accepts payments", id: "accepts-payments" },
+      { type: "docs", label: "Accepts payments", id: "accept-payments" },
       { type: "docs", label: "Verify payments", id: "verify-payments" },
       { type: "docs", label: "Webhooks", id: "webhooks" },
       { type: "docs", label: "Payment links", id: "payment-links" },
