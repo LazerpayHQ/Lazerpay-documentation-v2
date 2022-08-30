@@ -23,8 +23,10 @@ import BankPayouts from './BankPayouts'
 import LzInput from './UI/input'
 import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
+import LzTable from './UI/table'
 
 export {
+  LzTable,
   LzInput,
   LzAlert,
   WhatsNew,

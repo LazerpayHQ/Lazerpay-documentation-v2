@@ -19,6 +19,7 @@ import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
 import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
+import LzTable from './UI/table'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -79,6 +80,11 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   Ecommerce() {
     return <Ecommerce />
+  },
+
+  /** Below this line contains all reusable UI components */
+  LzTable({ head, body }) {
+    return <LzTable body={body} head={head} />
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
