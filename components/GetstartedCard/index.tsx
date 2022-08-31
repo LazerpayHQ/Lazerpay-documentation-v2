@@ -1,12 +1,11 @@
 import classNames from 'classnames'
 import Styles from './index.module.scss'
-import { PlainCard, LinkedCard } from './Cards'
+import LinkedCard from './Cards'
 import {
   completeYourIntegrationData,
   startIntegratingData,
   testAndGoData,
 } from './data'
-import HandsWithPenny from 'public/icons/handsWithPenny'
 
 // 1 Start integrating
 export default function GetStarted(): JSX.Element {
@@ -60,7 +59,9 @@ export function TestAndGoLive(): JSX.Element {
       )}
     >
       {testAndGoData.map(({ title, desc, route }) => {
-        return <LinkedCard key={route} title={title} desc={desc} route={route} />
+        return (
+          <LinkedCard key={route} title={title} desc={desc} route={route} />
+        )
       })}
     </section>
   )
