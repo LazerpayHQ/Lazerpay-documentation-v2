@@ -24,7 +24,7 @@ const Label = ({ label }) => {
     <div
       className={classNames(
         options[label],
-        'uppercase text-neu-700 caption-s rounded-8 px-2.5 py-1',
+        'space-x-4 uppercase text-neu-700 caption-s rounded-8 px-2.5 py-1',
       )}
     >
       {label}
