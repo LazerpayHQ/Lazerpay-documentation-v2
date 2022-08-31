@@ -11,13 +11,16 @@ const LzTable = ({ head, body }) => {
       <div className="w-full overflow-x-auto border border-neu-200 rounded-8">
         <table className="w-full text-left bg-white shadow-sm">
           <thead className="w-full">
-            {
-              head.map((h: string) => (
-                <th
-                  className="px-8 py-6 border-neu-200 heading-6-s-sm text-pri-500"
-                  key={h}>{h}</th>
-              ))
-            }
+            <tr>
+              {
+                head.map((h: string) => (
+                  <th
+                    key={h}
+                    dangerouslySetInnerHTML={{ __html: h }}
+                    className="px-8 py-6 border-neu-200 heading-6-s-sm text-pri-500" />
+                ))
+              }
+            </tr>
           </thead>
           <tbody>
             {
@@ -26,9 +29,8 @@ const LzTable = ({ head, body }) => {
                   {row.map((c: string) => (
                     <td
                       key={c}
-                      className="px-8 py-8 text-neu-900 first:text-neu-900 paragraph-1">
-                      {c}
-                    </td>
+                      dangerouslySetInnerHTML={{ __html: c }}
+                      className="px-8 py-8 text-neu-900 first:text-neu-900 paragraph-1" />
                   ))}
                 </tr>
               ))
