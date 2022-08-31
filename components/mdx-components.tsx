@@ -14,9 +14,12 @@ import WhatsNew from './WhatsNew'
 import ConnectCommunity from './Connect'
 import { Pagination } from './pagination'
 import LzAlert from './UI/alert'
-import LinkedCard from './GetstartedCard/Cards'
+import LinkedCard, { PlainCard } from './GetstartedCard/Cards'
 import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
+import TestPayments from './TestPayments'
+import Ecommerce from './UseCases'
+import LzTable from './UI/table'
 import TransferWebHook from './Transfer'
 import CryptoTransfer from './Transfer/crypto-transfer'
 
@@ -67,8 +70,23 @@ export const components: Record<string, FC<Record<string, any>>> = {
   BankPayouts() {
     return <BankPayouts />
   },
+
+  TestPayments() {
+    return <TestPayments />
+  },
   LinkedCard(MyProps) {
     return <LinkedCard {...MyProps} />
+  },
+  PlainCard(MyProps) {
+    return <PlainCard {...MyProps} />
+  },
+  Ecommerce() {
+    return <Ecommerce />
+  },
+
+  /** Below this line contains all reusable UI components */
+  LzTable({ head, body }) {
+    return <LzTable body={body} head={head} />
   },
   TransferWebHook() {
     return <TransferWebHook />
