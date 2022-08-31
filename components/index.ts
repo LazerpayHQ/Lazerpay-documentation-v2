@@ -27,8 +27,7 @@ import LzInput from './UI/input'
 import BinanceIcon from './TestPayments'
 import Ecommerce from './UseCases'
 import TransferWebHook from './TransWebhook'
-
-// Image import 
+import TestPayments from './TestPayments'
 import LzTable from './UI/table'
 
 export {
@@ -52,8 +51,9 @@ export {
   GetStartedCard,
   BankPayouts,
   BinanceIcon,
+  TestPayments,
   LinkedCard,
+  TransferWebHook,
   PlainCard,
-  Ecommerce,
-  TransferWebHook
+  Ecommerce
 }
