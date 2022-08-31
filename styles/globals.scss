@@ -55,6 +55,7 @@ code {
     font-family: theme('fontFamily.code');
     font-size: inherit;
     padding: 5px 8px;
+    white-space: nowrap;
     color: theme('colors.pri.500');
     background-color: theme('colors.neu.50');
     border-radius: theme('borderRadius.8');
