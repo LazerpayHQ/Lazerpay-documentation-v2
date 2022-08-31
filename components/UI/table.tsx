@@ -23,7 +23,7 @@ const LzTable = ({ head, body }) => {
             {
               body.map((row: string[], i: number) => (
                 <tr key={i} className="odd:bg-neu-50 border-neu-200">
-                  {row.map((c: any) => (
+                  {row.map((c: string) => (
                     <td
                       key={c}
                       className="px-8 py-8 text-neu-900 first:text-neu-900 paragraph-1">
