@@ -35,6 +35,7 @@ export const snippets = {
 }`,
 
     webHookPayload2:
+
 `var crypto = require('crypto');
 "var secret = process.env.SECRET_KEY;
 // Using Express
@@ -50,9 +51,10 @@ app.post("/my/webhook/url", function(req, res) {
     }
     res.send(200);
     });
-    `,
+`,
     
     cryptoTransferSample3:
+    
 `const Lazerpay = require('lazerpay-node-sdk');
 
 const lazerpay = new Lazerpay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);

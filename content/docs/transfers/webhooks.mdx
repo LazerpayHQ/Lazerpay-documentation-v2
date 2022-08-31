@@ -30,4 +30,58 @@ information to you as it becomes available, which is a lot more efficient and be
 
 Here are some sample webhook paylods for deposit transactions
 
+<CodeBlock req='' id='webHookPayload' className='h-[492px] ' />
+
+<Divider className='w-20 mt-3' />
+
+## Enabling WebHooks
+
 <TransferWebHook/>
+
+
+## Validating WebHook Signature
+
+Every webhook event payload will contain a hashed authentication signature in the header which 
+is computed by generating a hash from concatenating your API key and request body,
+using the HMAC SHA256 hash algorithm.
+
+In order to verify this signature came from Lazerpay, you simply have to generate the HMAC 
+SHA256 hash and compare it with the signature received.
+
+<CodeBlock req='' id='webHookPayload2' className='h-[492px]' />
+
+<Divider className='w-20 mt-3' mb-4 />
+
+## Responding to WebHooks Request
+
+You must respond with a <code>200 ok</code> status code. Any other response code outside of the <code>2xx</code>
+range, will be considered as a failure, including <code>3xx</code> codes. <b>We don't 
+care about the response body or header</b>
+
+<Alert
+status='info'
+content="If we don't get a 200 OK status code, we will retry the webhook every one minute for the next 24hrs"
+/>
+
+<Divider className='w-20 mb-4'/>
+
+
+## Supported Webhook Types
+Here are the webhook request type that we support. We will add more as we keep adding
+webhook support for differnt API operations in the future.
+
+<LzTable
+head={['Webhook Type', 'Description']}
+body={[
+[
+  `CRYPTO_TRANSFER`,
+  `A crypto transfer has occured. It could have a status of <code>pending</code> or <code>confirmed</code>`,
+],
+]}
+/>
+
+<Divider className='w-20 mb-4'/>
+
+<Divider className='w-full'/>
+
+<Pagination prevName='Bank Transfers' nextName='Swaps'/>
