@@ -1,9 +1,11 @@
 // UI Components
+import LzLink from './UI/link'
 import Divider from './Divider'
+import LzTable from './UI/table'
+import LzAlert from './UI/alert'
+import LzInput from './UI/input'
 import LzButton from './UI/button'
 import LzContainer from './UI/container'
-import LzLink from './UI/link'
-import LzAlert from './UI/alert'
 import LinkedCard from './GetstartedCard/Cards'
 import { PlainCard } from './GetstartedCard/Cards';
 
@@ -20,10 +22,10 @@ import ExploreDemo from './ExploreDemo'
 import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
 import BankPayouts from './BankPayouts'
-import LzInput from './UI/input'
 import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
-import LzTable from './UI/table'
+import PaymentAPI from './AcceptPayments/PaymentAPI'
+import InlineCheckout from './AcceptPayments/InlineCheckout'
 
 export {
   LzTable,
@@ -48,5 +50,7 @@ export {
   TestPayments,
   LinkedCard,
   PlainCard,
-  Ecommerce
+  Ecommerce,
+  InlineCheckout,
+  PaymentAPI
 }

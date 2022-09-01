@@ -20,6 +20,8 @@ import BankPayouts from './BankPayouts'
 import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
 import LzTable from './UI/table'
+import InlineCheckout from './AcceptPayments/InlineCheckout'
+import PaymentAPI from './AcceptPayments/PaymentAPI'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -80,6 +82,12 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   Ecommerce() {
     return <Ecommerce />
+  },
+  InlineCheckout() {
+    return <InlineCheckout />
+  },
+  PaymentAPI() {
+    return <PaymentAPI />
   },
 
   /** Below this line contains all reusable UI components */
