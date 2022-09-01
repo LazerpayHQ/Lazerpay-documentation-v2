@@ -29,16 +29,6 @@ export default function Document() {
         />
         <meta name="msapplication-TileColor" content="#00D163" />
         <meta name="theme-color" content="#00D163" />
-        <link
-          rel="preload"
-          href="/fonts"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link href="https://fonts.googleapis.com" />
-        <link href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400&display=swap" rel="stylesheet" />
       </Head>
       <body>
         <Main />
