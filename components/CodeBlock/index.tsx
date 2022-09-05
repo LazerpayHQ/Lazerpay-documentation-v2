@@ -16,7 +16,7 @@ interface IProps {
     children?: React.ReactNode
 }
 
-const Label = ({ label })=> {
+const Label = ({ label }) => {
     const options = {
         'POST': 'bg-suc-100'
     }
