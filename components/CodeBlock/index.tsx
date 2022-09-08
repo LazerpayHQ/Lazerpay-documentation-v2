@@ -1,13 +1,16 @@
 import { useEffect } from 'react'
-import Prism from 'prismjs'
 
+import Prism from 'prismjs'
 import 'prismjs/components/prism-jsx.js'
+import 'prismjs/themes/prism-tomorrow.css'
+import 'prismjs/plugins/toolbar/prism-toolbar.min'
+import 'prismjs/plugins/toolbar/prism-toolbar.min.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
-import 'prismjs/themes/prism-tomorrow.css'
+
+import classNames from 'classnames'
 import Styles from './index.module.scss'
 import { snippets } from 'data/snippets'
-import classNames from 'classnames'
 
 interface IProps {
     id?: string

@@ -1,4 +1,5 @@
 import CodeBlock from 'components/CodeBlock'
+import { ResCodeBlock } from 'components/CodeBlock/ResCodeBlock'
 import Divider from 'components/Divider'
 import LzTable from 'components/UI/table'
 import React from 'react'
@@ -98,7 +99,14 @@ const InlineCheckout = () => {
             below:
           </p>
         </text>
-        <CodeBlock req='HTML' id='acceptPaymentsHTML' />
+        <ResCodeBlock
+          lang='html'
+          options
+          req1='HTML'
+          req2='JSX'
+          id1='acceptPaymentsHTML'
+          id2='nodeJsSdkSample'
+        />
         <p className='paragraph-1 my-6'>In this sample, notice how:</p>
         <ul className='space-y-5 paragraph-2'>
           <li>

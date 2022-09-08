@@ -8,10 +8,7 @@ import LzButton from './UI/button'
 import LzContainer from './UI/container'
 import LinkedCard from './GetstartedCard/Cards'
 import { PlainCard } from './GetstartedCard/Cards';
-import { ShopifyIcon } from './../public/icons/shopify-icon';
-import { WordPressIcon } from './../public/icons/wordPress-Icon';
-import { WooCommerceIcon } from './../public/icons/wooCommerce-icon';
-
+import { ResCodeBlock } from './CodeBlock/ResCodeBlock'
 // Page Components
 import FooterWrapper from './Footer'
 import Header from './Header'
@@ -59,5 +56,6 @@ export {
   PlainCard,
   Ecommerce,
   InlineCheckout,
-  PaymentAPI
+  PaymentAPI,
+  ResCodeBlock
 }
