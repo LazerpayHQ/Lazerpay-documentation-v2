@@ -3,10 +3,53 @@ title: Accept Payments
 description: payment introduction page
 ---
 
-# Payments: Demo table component
+# Accept Payments
 
+
+## Inline Checkout - Popup
+The Lazerpay popup provides a convenient and easy way for developers to accept payments on the web. You can start receiving payments on your website with the checkout easily.
+
+## 1. Add the Inline Checkout
+Add the inline checkout to your website using a script tag, it is delivered through a reliable CDN.
+
+<TextBlock>
+    {'<script> '} 
+    <span className="text-pri-500 underline">https://cdn.jsdelivr.net/gh/Lazerpay-Finance/checkout-build@main/checkout@1.0.1/dist/index.min.js</span> 
+    {' </script>'}
+</TextBlock>
+
+## 2. Collect user Details
+To receive payments you will need to pass some parameters which include some functions and optional customer information. They include:
+
+<LzTable 
+    head={['props', 'Functionality', 'Priority', 'Type']}
+    body={[
+        ["name", "Customers Name", "Optional", "<code>String</code>"],
+        ["email", "Customer email", "Optional", "<code>String</code>"],
+        ["amount", "Customers amount to pay (in USD, AED, GBP, EUR, NGN)", "Required", "<code>String | Number</code>"],
+        ["reference", "Unique case sensitive transaction reference. If you do not pass this parameter, Lazerpay will generate a unique reference for you", "Optional", "<code>String | Number</code>"],
+        ["acceptPartialPayment", "If you want accept partial payment from customers, By default it's false", "Optional", "<code>Boolean</code>"],
+        ["key", 'Lazerpay key. Get you public key from your Lazerpay dashboard. Testnet public keys begin with "pk_test_" and mainnet keys begin with "pk_live_".', "Required", "<code>String</code>"],
+        ["currency", "The currency <code>mount</code> is denominated in. Can be USD, GBP, EUR, AED or NGN", "Required", "<code>String</code>"],
+        ["onClose", "The function called when the payment modal closes", "Optional", "<code>Function</code>"],
+        ["onSuccess", "The function called after the payment is confirmed", "Optional", "<code>Function</code>"],
+        ["onError", "The function that is called if an error occurs during payment confirmation", "Optional", "<code>Function</code>"],
+    ]} 
+/>
+
+When you add the inline checkout script, you immediately have access to the <code>LazerCheckout</code> 
+
+function. Pass the information you get in step 2 to the function in an object inside the 
+
+<code>payWithLazerpay</code> function
+
+
+The customer information can be retrieved from your database if you already have it stored, or from a form like in the example below:
+
+<CodeBlock data={{type: 'tab', item: {heading: ['HTML', 'JAVASCRIPT'], snippet: ['customerInfoHTML', 'customerInfoJS'], lang: ['html', 'js']}}} />
+<CodeBlock data={{type: 'request', item: {method: "POST", requestType: [{name: 'cURL', snippet: 'customerInfoPostCURL'},{name: 'Node', snippet: 'customerInfoPostNode'}], responseType: [{name: '201: Created', snippet: 'customerInfoReq201'}]} }} />
 This is to show the table component Demo
-<Divider className='max-w-100 mb-4' />
+<Divider className='max-w-100 mb-4' /> 
 
 <LzTable 
     head={['Features', 'On site', 'Off site']}

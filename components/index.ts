@@ -15,6 +15,7 @@ import Reaction from './Reaction'
 import { TableOfContents } from './TOC'
 import QuickLinks from './QuickLinks'
 import CodeBlock from './CodeBlock'
+import TextBlock from './TextBlock'
 import AcceptPayments from './AcceptPayments'
 import ExploreDemo from './ExploreDemo'
 import WhatsNew from './WhatsNew'
@@ -33,6 +34,7 @@ export {
   ExploreDemo,
   AcceptPayments,
   CodeBlock,
+  TextBlock,
   QuickLinks,
   TableOfContents,
   Sidebar,

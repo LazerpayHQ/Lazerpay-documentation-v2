@@ -4,6 +4,7 @@ import LzLink from './UI/link'
 import QuickLinks from './QuickLinks'
 import Divider from './Divider'
 import CodeBlock from './CodeBlock'
+import TextBlock from './TextBlock'
 import GetstartedCard, {
   CompleteIntegration,
   TestAndGoLive,
@@ -43,6 +44,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   CodeBlock(props) {
     return (<CodeBlock {...props} />)
+  },
+  TextBlock(props) {
+    return (<TextBlock {...props} />)
   },
   Admonition(props) {
     return <div {...props} />
