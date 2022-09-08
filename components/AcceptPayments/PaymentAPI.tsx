@@ -1,8 +1,7 @@
 import React from 'react'
 import LzTable from 'components/UI/table'
-import CodeBlock, { Label } from 'components/CodeBlock'
 import LzAlert from 'components/UI/alert'
-import { ResCodeBlock } from 'components/CodeBlock/ResCodeBlock'
+import CodeBlock, { Label } from 'components/CodeBlock'
 import { FaAngleDown } from 'react-icons/fa'
 import { ToggleIcon } from 'public/icons'
 
@@ -42,7 +41,7 @@ const PaymentAPI = () => {
       />
 
       {/* cURL CODEBLOCK */}
-      <ResCodeBlock
+      <CodeBlock
         options
         lang='curl'
         req1={<Label label='POST' />}
@@ -62,7 +61,7 @@ const PaymentAPI = () => {
       />
 
       {/* RESPONSE CODE */}
-      <ResCodeBlock
+      <CodeBlock
         options
         lang='json'
         req1='Response'
@@ -73,7 +72,7 @@ const PaymentAPI = () => {
           </span>
         }
         id1='resCode201'
-        className='!bg-white  '
+        className='!bg-white `'
       />
 
       <h6 className='header-6 my-5'>Important Note</h6>

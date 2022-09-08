@@ -23,7 +23,6 @@ import Ecommerce from './UseCases'
 import LzTable from './UI/table'
 import InlineCheckout from './AcceptPayments/InlineCheckout'
 import PaymentAPI from './AcceptPayments/PaymentAPI'
-import { ResCodeBlock } from './CodeBlock/ResCodeBlock'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -90,9 +89,6 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   PaymentAPI() {
     return <PaymentAPI />
-  },
-  ResCodeBlock(props) {
-    return <ResCodeBlock {...props} />
   },
 
   /** Below this line contains all reusable UI components */

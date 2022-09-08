@@ -5,10 +5,11 @@ import LzTable from './UI/table'
 import LzAlert from './UI/alert'
 import LzInput from './UI/input'
 import LzButton from './UI/button'
+import CodeBlock from './CodeBlock'
 import LzContainer from './UI/container'
 import LinkedCard from './GetstartedCard/Cards'
 import { PlainCard } from './GetstartedCard/Cards';
-import { ResCodeBlock } from './CodeBlock/ResCodeBlock'
+
 // Page Components
 import FooterWrapper from './Footer'
 import Header from './Header'
@@ -16,7 +17,6 @@ import Sidebar from './Sidebar'
 import Reaction from './Reaction'
 import { TableOfContents } from './TOC'
 import QuickLinks from './QuickLinks'
-import CodeBlock from './CodeBlock'
 import AcceptPayments from './AcceptPayments'
 import ExploreDemo from './ExploreDemo'
 import WhatsNew from './WhatsNew'
@@ -57,5 +57,4 @@ export {
   Ecommerce,
   InlineCheckout,
   PaymentAPI,
-  ResCodeBlock
 }

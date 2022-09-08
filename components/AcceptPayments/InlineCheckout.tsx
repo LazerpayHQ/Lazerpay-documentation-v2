@@ -1,8 +1,7 @@
-import CodeBlock from 'components/CodeBlock'
-import { ResCodeBlock } from 'components/CodeBlock/ResCodeBlock'
+import React from 'react'
 import Divider from 'components/Divider'
 import LzTable from 'components/UI/table'
-import React from 'react'
+import  CodeBlock  from 'components/CodeBlock'
 
 const InlineCheckout = () => {
   return (
@@ -99,7 +98,7 @@ const InlineCheckout = () => {
             below:
           </p>
         </text>
-        <ResCodeBlock
+        <CodeBlock
           options
           lang='js'
           req1='HTML'
