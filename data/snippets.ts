@@ -28,8 +28,82 @@ export const snippets = {
         </div>
     </form>`,
 
+    acceptPaymentsJS:
+    `<script>
+        https: //cdn.jsdelivr.net/gh/LazerPay-Finance/checkout-build@main/checkout@1.0.1/dist/index.min.js
+    </script>
+
+    <script>
+    const paymentForm = document.getElementById('paymentForm');
+    
+    paymentForm.addEventListener("submit", payWithLazerpay, false);
+
+    function payWithLazerpay(e){
+        e.preventDefault();
+        LazerCheckout({
+            reference: 'W6b8hV55l0435t3545435',
+            name: document.querySelector("#name").value,
+            email: document.querySelector("#email-address").value,
+            amount: document.querySelector("#amount").value,
+            key: "pk_test_xG0EjfzUsGIUDpMeQKZFItGFEBtR5SzHzsqwrzlsdADVzPrjZb",
+            currency: "USD",
+            acceptPartialPayment: true // By default it's false
+            onClose: (data)=>{
+            },
+            onSuccess: (data)=>{
+            },
+            onError: (data)=>{
+            },
+        },
+    },
+    </script>`,
+
+    cRULSnippet:
+`curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+--header 'x-api-key: YOUR_PUBLIC_KEY' \
+--data-raw '{
+--data-raw '{
+    "customer_name": "Abdulfatai Suleiman",
+    "customer_email": "static@gmail.com",
+    "currency": "USD",
+    "coin": "USDT",
+    "amount": "10",
+    accept_partial_payment:"true"
+}’`,
+
+    resCode201:
+`{
+    "message": "Transaction initialized successfully",
+    "status": "success",
+    "data": {
+        "reference": "wfqweweqrtwerwrtwer45354545",
+        "businessName": "Lazerpay Finance",
+        "businessEmail": "abdulfataisuleiman67@gmail.com",
+        "businessLogo": "https://res.cloudinary.com/lazer/image/upload/v1637512933/logo-default_ufyz0x.svg",
+        "customerName": "Abdulfatai Suleiman",
+        "customerEmail": "staticdev20046@gmail.com",
+        "address": "0xcA20e971400F81F97fEc5416A963e8FA7F81aaE3",
+        "coin": "BUSD",
+        "cryptoAmount": 50.5,
+        "currency": "USD",
+        "fiatAmount": 50,
+        "feeInCrypto": 0.5,
+        "network": "testnet",
+        "acceptPartialPayment": true
+    }
+    "statusCode": 201
+}
+}`,
+
+    resCode401:
+`{
+    "statusCode": 401,
+    "message": "Unsupported request, Please read our API documentation",
+    "status": "error"
+}`,
+
     nodeJsSdkSample:
-        `const LazerPay = require('lazerpay-node-sdk');
+    `const LazerPay = require('lazerpay-node-sdk');
 
     const lazerpay = new LazerPay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);
     const payment_tx = async () => {
@@ -95,7 +169,7 @@ export const snippets = {
 
     webHookPayload2:
 
-        `var crypto = require('crypto');
+`var crypto = require('crypto');
 "var secret = process.env.SECRET_KEY;
 // Using Express
 app.post("/my/webhook/url", function(req, res) {

@@ -1,7 +1,10 @@
 import React from 'react'
 import LzTable from 'components/UI/table'
-import CodeBlock from 'components/CodeBlock'
+import CodeBlock, { Label } from 'components/CodeBlock'
 import LzAlert from 'components/UI/alert'
+import { ResCodeBlock } from 'components/CodeBlock/ResCodeBlock'
+import { FaAngleDown } from 'react-icons/fa'
+import { ToggleIcon } from 'public/icons'
 
 const PaymentAPI = () => {
   return (
@@ -37,9 +40,41 @@ const PaymentAPI = () => {
           ],
         ]}
       />
-      <CodeBlock />
 
-      <CodeBlock />
+      {/* cURL CODEBLOCK */}
+      <ResCodeBlock
+        options
+        lang='curl'
+        req1={<Label label='POST' />}
+        req2={
+          <span className='flex space-x-2 items-center'>
+            cURL
+            <FaAngleDown />
+          </span>
+        }
+        sideAct={
+          <span className='flex paragraph-1 space-x-2 items-center'>
+            <p> Hide Response</p>
+            <ToggleIcon />
+          </span>
+        }
+        id1='cRULSnippet'
+      />
+
+      {/* RESPONSE CODE */}
+      <ResCodeBlock
+        options
+        lang='json'
+        req1='Response'
+        sideAct={
+          <span className='flex caption-s space-x-2 items-center'>
+            <p> 201: Created</p>
+            <FaAngleDown />
+          </span>
+        }
+        id1='resCode201'
+        className='!bg-white  '
+      />
 
       <h6 className='header-6 my-5'>Important Note</h6>
 

@@ -100,14 +100,16 @@ const InlineCheckout = () => {
           </p>
         </text>
         <ResCodeBlock
-          lang='html'
           options
+          lang='js'
           req1='HTML'
-          req2='JSX'
+          req2='JAVASCRIPT'
           id1='acceptPaymentsHTML'
-          id2='nodeJsSdkSample'
+          id2='acceptPaymentsJS'
         />
+
         <p className='paragraph-1 my-6'>In this sample, notice how:</p>
+
         <ul className='space-y-5 paragraph-2'>
           <li>
             <code>1</code> The Lazerpay inline javascript is included using a{' '}
