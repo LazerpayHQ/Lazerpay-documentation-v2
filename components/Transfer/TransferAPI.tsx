@@ -57,7 +57,7 @@ const TransferAPI = () => {
         lang='curl'
         req1={header}
         sideAct={
-          <span className='flex paragraph-1 space-x-2 items-center'>
+          <span className='flex space-x-2 items-center'>
             <p> Hide Response</p>
             <ToggleIcon />
           </span>

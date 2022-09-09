@@ -85,7 +85,7 @@ const InlineCheckout = () => {
             ],
           ]}
         />
-        <text className='paragraph-2 my-9'>
+        <div className='paragraph-2 my-9'>
           <p className='my-14'>
             The function that is called if an error occurs during payment
             confirmation <code>LazerCheckout</code> <br />
@@ -97,7 +97,7 @@ const InlineCheckout = () => {
             already have it stored, or <br /> from a form like in the example
             below:
           </p>
-        </text>
+        </div>
         <CodeBlock
           options
           lang='js'

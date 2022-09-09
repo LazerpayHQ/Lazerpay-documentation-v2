@@ -7,7 +7,7 @@ const LzTable = ({ head, body }) => {
   if (!head || !body) return null;
 
   return (
-    <div className="w-full overflow-hidden drop-shadow-subtle">
+    <div className="w-full md:w-[698px] overflow-hidden drop-shadow-subtle">
       <div className="w-full overflow-x-auto border border-neu-200 rounded-8">
         <table className="w-full text-left bg-white shadow-sm">
           <thead className="w-full">

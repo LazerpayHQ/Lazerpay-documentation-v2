@@ -87,7 +87,7 @@ const CodeBlock = ({
   }, [])
 
   return (
-    <div className='my-7'>
+    <div className='my-7 w-full md:w-[700px]'>
       {options ? (
         <div
           className={classNames(
@@ -96,7 +96,7 @@ const CodeBlock = ({
           )}
         >
           <nav className='grid grid-cols-2 paragraph-1-s items-center bg-neu-50 pt-2 my-0 rounded-t-lg'>
-            <div className='flex items-center ml-5 bg-neu-50 col-span-1 pt-2 space-x-5'>
+            <div className='flex items-center md:ml-5 bg-neu-50 col-span-1 pt-2 space-x-5'>
               <TempLabel onClick={codeOpt} children={req1 || ''} />
               <TempLabel onClick={codeOpt2} children={req2 || ''} />
             </div>
@@ -107,9 +107,7 @@ const CodeBlock = ({
           <pre
             className={classNames(className + '!bg-neu-700 !my-0 line-numbers')}
           >
-            <code className={classNames(`language-${lang} `)}>
-              {sample}
-            </code>
+            <code className={classNames(`language-${lang} `)}>{sample}</code>
           </pre>
         </div>
       ) : (
