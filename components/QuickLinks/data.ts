@@ -9,7 +9,7 @@ export interface TabsItem {
 export const tabsData: TabsItem[] = [
     {
         title: "Accept Payments",
-        route: "quick-start/payments",
+        route: "payments/accept-payments",
         desc: `Accepting payments on Lazerpay is as seamless as it gets. Simply integrate a payment link or button.`,
         image: '/images/payments.svg',
         label: 'Go to payments'
