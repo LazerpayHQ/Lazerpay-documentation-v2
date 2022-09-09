@@ -1,9 +1,6 @@
-import CodeBlock from 'components/CodeBlock'
-import Divider from 'components/Divider'
-import LzAlert from 'components/UI/alert'
-import LzTable from 'components/UI/table'
-import DashboardScreenshot from 'public/icons/dashboardScreenshot'
 import React from 'react'
+import LzAlert from 'components/UI/alert'
+import DashboardScreenshot from 'public/icons/dashboardScreenshot'
 
 const TransferWebHook = () => {
   return (

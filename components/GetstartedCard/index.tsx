@@ -6,7 +6,6 @@ import {
   startIntegratingData,
   testAndGoData,
 } from './data'
-import HandsWithPenny from 'public/icons/handsWithPenny'
 
 // 1 Start integrating
 export default function GetStarted(): JSX.Element {
