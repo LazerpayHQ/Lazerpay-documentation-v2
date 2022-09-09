@@ -5,16 +5,27 @@ import CodeBlock, { Label } from 'components/CodeBlock'
 import { FaAngleDown } from 'react-icons/fa'
 import { ToggleIcon } from 'public/icons'
 
+const RESPONSES = {
+  created: '201: Created',
+  unauthorized: '401: Unauthorized',
+}
+const snipId = {
+  success: 'resCode201',
+  failed: 'reCode401',
+}
+
 const PaymentAPI = () => {
+  const [option, setOption] = React.useState(RESPONSES.created)
+
   return (
     <>
       <LzTable
         head={['Parameter name', 'Type', 'Description']}
         body={[
-          ['Header', '', ''],
+          ['Header', '', '.'],
           ['x-api-key*', `<code>String</code>`, 'YOUR_PUBLIC_KEY'],
-          ['Body', '', ''],
-          ['reference', `<code>String</code>`, 'YOUR_REFERENCE'],
+          ['Body', '.', ''],
+          ['reference', `<code>String</code>  `, 'YOUR_REFERENCE'],
           ['customer_name*', `<code>String</code>`, 'Your Customer’s name'],
           ['customer_email*', `<code>String</code>`, 'Your Customer’s email'],
           [
@@ -24,7 +35,7 @@ const PaymentAPI = () => {
           ],
           [
             'currency*',
-            `<code>String</code>`,
+            `<code>String</code> `,
             'Currency should be in the currency you accept on your store, or application',
           ],
           [
@@ -66,12 +77,19 @@ const PaymentAPI = () => {
         lang='json'
         req1='Response'
         sideAct={
-          <span className='flex caption-s space-x-2 items-center'>
-            <p> 201: Created</p>
-            <FaAngleDown />
-          </span>
+          <select
+            name={option}
+            id={option}
+            className='caption-s border-none decoration-none items-center'
+          >
+            <option value={RESPONSES.created}>{RESPONSES.created} </option>
+            <option value={RESPONSES.unauthorized}>
+              {RESPONSES.unauthorized}
+            </option>
+          </select>
         }
-        id1='resCode201'
+        id1={snipId.success}
+        id2={snipId.failed}
         className='!bg-white `'
       />
 
