@@ -1,9 +1,7 @@
 import React from 'react'
-import Divider from 'components/Divider'
 import LzAlert from 'components/UI/alert'
-import CodeBlock from 'components/CodeBlock'
 
-const CryptoTransfer = () => {
+const ImportantThings = () => {
   return (
     <div>
       <ul className='flex flex-col mt-6 space-y-4'>
@@ -26,4 +24,4 @@ in the future.'
   )
 }
 
-export default CryptoTransfer
+export default ImportantThings

@@ -8,6 +8,7 @@ export const snippets = {
             </>
         )
     }`,
+
     acceptPaymentsHTML:
         `<form id="paymentForm">
         <div class="form-group">
@@ -58,6 +59,7 @@ export const snippets = {
     },
     </script>`,
 
+    // for accept payment page
     cRULSnippet:
 `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
 --header 'x-api-key: YOUR_PUBLIC_KEY' \
@@ -71,6 +73,18 @@ export const snippets = {
     accept_partial_payment:"true"
 }’`,
 
+// for crypto payment page
+    cRULSnippet2:
+    `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transfer' \
+    --header 'x-api-key: YOUR_SECRET_KEY' \
+    --data-raw '{
+        "amount": "1",
+        "recipent": "0x0B4d358D349809037003F96A3593ff9015E89efA",
+        "coin": "USDT",
+        "blockchain": "Binance Smart Chain",
+        }’
+    `,
+// response code for accept payment page
     resCode201:
 `{
     "message": "Transaction initialized successfully",
@@ -102,6 +116,32 @@ export const snippets = {
     "status": "error"
 }`,
 
+// response code for crypto payments
+
+cryptResCode400:
+`{
+    "message": "Insufficient funds, check your balance and try again",
+    "statusCode": 400,
+    "status": "error"
+}`,
+cryptResCode200:
+`{
+    "message": "Transfer recipient created successfully",
+    "status": "success",
+    "data": {
+        "id": "926492db-7143-480a-8d3e-15395249329f",
+        "createdAt": "2022-03-04T08:23:15.847Z",
+        "updatedAt": "2022-03-15T14:14:02.871Z",
+        "transactionHash": "0x91a2f4dd90f66b5d24f3e7fe1943c28952b9c93b9d4343dc21933ad55bca34bc",
+        "walletAddress": "0xb826Bc3C775B7ec8a673066502E79B5F9104a426",
+        "coin": "USDT",
+        "amount": 1,
+        "reference": "l3X93c4Ks8",
+        "recipient": "0x0B4d358D349809037003F96A3593ff9015E89efA"
+        },
+    "statusCode": 200
+}`,
+
     nodeJsSdkSample:
     `const LazerPay = require('lazerpay-node-sdk');
 
@@ -124,6 +164,7 @@ export const snippets = {
         } catch (error) {
             console.log(error);
     }`,
+
     nodeJsSdkSampleResponse:
         `{
     "reference": "wfqweweqrtwerwrtwer45354545",
@@ -141,6 +182,7 @@ export const snippets = {
     "network": "testnet",
     "acceptPartialPayment": true
 }`,
+
     webHookPayload:
         `{
     "id": "183f0a97-9de8-4cdc-b130-e8dd5f06caf4",
@@ -168,7 +210,6 @@ export const snippets = {
 }`,
 
     webHookPayload2:
-
 `var crypto = require('crypto');
 "var secret = process.env.SECRET_KEY;
 // Using Express
@@ -188,7 +229,7 @@ app.post("/my/webhook/url", function(req, res) {
 
     cryptoTransferSample3:
 
-        `const Lazerpay = require('lazerpay-node-sdk');
+`const Lazerpay = require('lazerpay-node-sdk');
 
 const lazerpay = new Lazerpay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);
 

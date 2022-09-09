@@ -13,22 +13,11 @@ In order to make cryto transfers, you can use our transfer API endpoints or Node
 
 ## Crypto Transfer API
 
-<LzTable
-head={['Parameter', 'Type', 'Defination']}
-body={[
-    [`<b>Header</b>`,'',''],
-    ['Authorization*', `<code>String</code>`, 'Bearer YOUR_SECRET_KEY'],
-    [`<b>Body</b>`,'',''],
-    ['amount*', `<code>String | Number </code>`, 'The amount you want to send out'],
-    ['recipient*',`<code>String</code>`, 'Wallet address of the recipient'],
-    ['coin*', `<code>String</code>`,'Cryto you want to transfer'],
-    ['blockchain*', `<code>String</code>`, 'The blockchain network you are sending to']
-    ]}
-/>
+<TransferAPI/>
 
 ## Important things to Note
 
-<CryptoTransfer/>
+<ImportantThings/>
 
 <Divider className='w-20' />
 
@@ -37,4 +26,4 @@ body={[
 With the JS SDK, you can transfer the crypto in your Lazerpay account to
 an external address. See the code bellow:
 
-<CodeBlock req={'JavaScript'} id='cryptoTransferSample3' />
+<CodeBlock req1={'JavaScript'} id1='cryptoTransferSample3' />

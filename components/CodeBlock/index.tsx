@@ -44,7 +44,7 @@ export const Label = ({ label }) => {
 
 const TempLabel = ({ onClick, children }) => {
   let labelStyle =
-    'focus:border-b-4 border-pri-400 focus:text-pri-700 bg-neu-100 paragraph-1-s p-2'
+    'focus:border-b-4 border-pri-400 pb-3 focus:text-pri-700 bg-neu-100 paragraph-1-s p-2'
   return (
     <>
       <button onClick={onClick} className={labelStyle}>
@@ -119,7 +119,7 @@ const CodeBlock = ({
             'flex font-code pb-2 bg-white flex-col',
           )}
         >
-          <div className='flex items-center px-10 py-4 space-x-5 bg-neu-50 head rounded-t-8'>
+          <div className='flex items-center text-pri-400 px-10 py-4 space-x-5 bg-neu-50 head rounded-t-8'>
             <Label label={req1} />
           </div>
 

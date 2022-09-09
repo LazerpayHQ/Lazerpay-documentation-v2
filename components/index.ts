@@ -9,9 +9,6 @@ import CodeBlock from './CodeBlock'
 import LzContainer from './UI/container'
 import LinkedCard from './GetstartedCard/Cards'
 import { PlainCard } from './GetstartedCard/Cards';
-import { ShopifyIcon } from './../public/icons/shopify-icon';
-import { WordPressIcon } from './../public/icons/wordPress-Icon';
-import { WooCommerceIcon } from './../public/icons/wooCommerce-icon';
 
 // Page Components
 import FooterWrapper from './Footer'
@@ -28,10 +25,11 @@ import BankPayouts from './BankPayouts'
 import BinanceIcon from './TestPayments'
 import Ecommerce from './UseCases'
 import TransferWebHook from './Transfer'
-import CryptoTransfer from './Transfer/crypto-transfer'
+import ImportantThings from './Transfer/Important-things'
 import TestPayments from './TestPayments'
 import PaymentAPI from './AcceptPayments/PaymentAPI'
 import InlineCheckout from './AcceptPayments/InlineCheckout'
+import TransferAPI from './Transfer/TransferAPI'
 
 export {
   LzTable,
@@ -61,5 +59,6 @@ export {
   Ecommerce,
   InlineCheckout,
   PaymentAPI,
-  CryptoTransfer
+  TransferAPI,
+  ImportantThings
 }

@@ -21,9 +21,10 @@ import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
 import LzTable from './UI/table'
 import TransferWebHook from './Transfer'
-import CryptoTransfer from './Transfer/crypto-transfer'
+import ImportantThings from './Transfer/Important-things'
 import InlineCheckout from './AcceptPayments/InlineCheckout'
 import PaymentAPI from './AcceptPayments/PaymentAPI'
+import TransferAPI from './Transfer/TransferAPI'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -99,8 +100,11 @@ export const components: Record<string, FC<Record<string, any>>> = {
   TransferWebHook() {
     return <TransferWebHook />
   },
-  CryptoTransfer() {
-    return <CryptoTransfer />
+  ImportantThings() {
+    return <ImportantThings />
+  },
+  TransferAPI() {
+    return <TransferAPI />
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
