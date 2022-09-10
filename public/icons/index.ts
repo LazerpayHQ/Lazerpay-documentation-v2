@@ -1,4 +1,5 @@
 import AlertIcon from './alert-icon';
+import ArrowDown from './arrow-down';
 import CommunityIcon from './community-icon';
 import ErrorIcon from './error-icon';
 import GuidesIcon from './guides-icon';
@@ -24,6 +25,7 @@ import { WooCommerceIcon } from './wooCommerce-icon';
 export {
   InfoIcon,
   AlertIcon,
+  ArrowDown,
   SuccessIcon,
   ErrorIcon,
   SearchIcon,

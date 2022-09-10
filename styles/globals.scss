@@ -50,6 +50,64 @@ html {
     }
 }
 
+// PRISM OVERRIDES
+.language-html,
+.language-js {
+    & * {
+        color: #F8FAFC !important;
+    }
+}
+
+.language-json.code--red.response {
+    .token.punctuation {
+        @apply text-neu-900;
+    }
+
+    .token.property,
+    .token.operator,
+    .token.string,
+    .token.number,
+    .token.boolean,
+    .token.null {
+        color: #E1386A;
+    }
+}
+
+.language-json.code--default.response {
+    & * {
+        color: #0F172A !important;
+    }
+}
+
+
+.language-curl.code.default {
+    color: #97CD33;
+
+    .token.url {
+        color: #97CD33;
+    }
+
+    .token.method {
+        color: #F92572;
+    }
+
+    .token.curl,
+    .token.option,
+    .token.punctuation {
+        @apply text-neu-50;
+    }
+}
+
+code[class*="language-"].default,
+pre[class*="language-"].default {
+    @apply bg-neu-700 font-code;
+}
+
+code[class*="language-"].response,
+pre[class*="language-"].response {
+    @apply bg-neu-50 font-code;
+}
+
 // code {
 //     font-size: inherit;
 //     padding: 5px 8px;
@@ -60,6 +118,10 @@ html {
 //     background-color: theme('colors.neu.100');
 // }
 
-.code {
-    color: hsl(210deg, 40%, 96%) !important;
-}
+// .code {
+//     color: hsl(210deg, 40%, 96%) !important;
+// }
+
+// .code--red {
+//     color: #E1386A !important;
+// }

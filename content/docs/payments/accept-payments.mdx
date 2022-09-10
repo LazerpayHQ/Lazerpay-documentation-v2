@@ -45,9 +45,8 @@ function. Pass the information you get in step 2 to the function in an object in
 
 
 The customer information can be retrieved from your database if you already have it stored, or from a form like in the example below:
-
-<CodeBlock data={{type: 'tab', item: {heading: ['HTML', 'JAVASCRIPT'], snippet: ['customerInfoHTML', 'customerInfoJS'], lang: ['html', 'js']}}} />
-<CodeBlock data={{type: 'request', item: {method: "POST", requestType: [{name: 'cURL', snippet: 'customerInfoPostCURL'},{name: 'Node', snippet: 'customerInfoPostNode'}], responseType: [{name: '201: Created', snippet: 'customerInfoReq201'}]} }} />
+<CodeBlock data={{type: 'tab', item: {name: ['HTML', 'JAVASCRIPT'], snippet: ['customerInfoHTML', 'customerInfoJS'], lang: ['html', 'js']}}} />
+<CodeBlock responseTheme="default" responseTitle="Response JSON" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL', 'Node'], snippet: ['customerInfoPostCURL', 'customerInfoPostNode'], lang: ['curl', 'js']}, responseData: {name: ['201: Created', '401: Unauthorized'], snippet: ['customerInfoReq201', 'customerInfoReq401'], lang: ['json', 'json']}} }} />
 This is to show the table component Demo
 <Divider className='max-w-100 mb-4' /> 
 

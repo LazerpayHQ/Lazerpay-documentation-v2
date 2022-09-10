@@ -6,6 +6,8 @@ import LzLink from './UI/link'
 import LzAlert from './UI/alert'
 import LinkedCard from './GetstartedCard/Cards'
 import { PlainCard } from './GetstartedCard/Cards';
+import LzToggle from './UI/toggle';
+import LzCodeSelect from './UI/codeSelect';
 
 // Page Components
 import FooterWrapper from './Footer'
@@ -30,6 +32,8 @@ export {
   LzTable,
   LzInput,
   LzAlert,
+  LzToggle,
+  LzCodeSelect,
   WhatsNew,
   ExploreDemo,
   AcceptPayments,

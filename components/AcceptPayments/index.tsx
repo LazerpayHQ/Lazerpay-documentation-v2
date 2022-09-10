@@ -17,7 +17,7 @@ export default function AcceptPayments(): JSX.Element {
                 </LzButton>
             </div>
             <div className="lg:max-w-lg xl:max-w-xl xl:w-4/6 bg-pri-50">
-                <CodeBlock id="api" />
+                {/* <CodeBlock id="api" /> */}
             </div>
         </section>
     )

@@ -1,8 +1,7 @@
-import { useEffect, useState, MouseEvent } from 'react'
+import { useEffect, useState } from 'react'
 import Prism from 'prismjs';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import cn from 'classnames';
-
 
 import 'prismjs/components/prism-jsx.js'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
@@ -10,104 +9,30 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 import Styles from './index.module.scss';
 import { snippets } from 'data/snippets';
 
-export type CodeTabType = {
-    heading: string[];
-    snippet: string[];
-    lang: string[];
-}
+import { RequestHead, ResponseHead, TabHead } from './components';
+import { ItemType, RequestType, RequestData, DataProp } from './types';
+import { initializePrism } from './configurePrism';
 
-export type RequestType = {
-    method: 'POST' | 'GET';
-}
-
-export type TabProps = {
-    items: string[];
-    onChange: (i: number) => void;
-}
-
-export type DataProp = {
-    type: 'tab' | 'request',
-    item: CodeTabType | RequestType
-}
-interface IProps {
-    id?: string;
-    req?: string;
+initializePrism(Prism);
+export interface CodeBlockProps {
+    responseTheme?: 'default' | 'red';
+    responseTitle?: string;
     lang?: string;
-    data?: DataProp;
-    children?: React.ReactNode
+    data: DataProp;
 }
 
-const Label = ({ label }) => {
-    const options = {
-        'POST': 'bg-suc-100'
-    }
-
-    return (
-        <div className={cn(
-            options[label],
-            'uppercase text-neu-700 caption-s rounded-8 px-2.5 py-1')}>
-            {label}
-        </div>
-    )
-};
-
-const TabHead = (props: TabProps) => {
-    const { items, onChange } = props;
-    const [active, setActive] = useState<number>(0);
-
-    const tabItemClassName = (i: number): string => {
-        return cn('py-3.5 px-2.5 text-neu-400 relative', { 'text-pri-600': i === active })
-    }
-
-    const onTabClicked = (e: MouseEvent<HTMLButtonElement>): void => {
-        e.preventDefault();
-        const { dataset } = e.target as HTMLButtonElement;
-        setActive(Number(dataset.value));
-        onChange(Number(dataset.value))
-    }
-    return (
-        <div className='bg-white'>
-            <ul className='flex items-center px-8'>
-                {items.map((title: string, i: number) => (
-                    <li key={title} className={tabItemClassName(i)}>
-                        <button type='button' aria-label={title} data-value={i} onClick={onTabClicked}>{title}</button>
-                        {i === active && (
-                            <div className='absolute bottom-0 left-0 w-full h-1 bg-pri-500 rounded-t-2xl'></div>
-                        )}
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )
-}
-
-const RequestHead = (props: RequestType) => {
-    const { method } = props;
-    const options = {
-        'POST': 'bg-suc-100',
-        'GET': ''
-    }
-
-    return (
-        <div className='bg-neu-50'>
-            <div className='px-8 py-2.5'>
-                <span className={cn('uppercase text-neu-700 caption-s rounded-8 px-2.5 py-1 text-xs', options[method])}>{method}</span>
-            </div>
-        </div>
-    )
-}
-
-export default function CodeBlock(props: IProps) {
-    const { data } = props;
+export default function CodeBlock(props: CodeBlockProps) {
+    const { data, responseTheme, responseTitle } = props;
     const { type, item } = data as DataProp;
 
     const [codeSnippet, setCodeSnippet] = useState<string>("");
     const [language, setLanguage] = useState<string>("jsx");
     const [copied, setCopied] = useState<boolean>(false);
+    const [showResponse, setShowResponse] = useState<boolean>(true);
 
-    const onTabSwitch = (i: number): void => {
-        setCodeSnippet(snippets[(item as CodeTabType).snippet[i]]);
-        setLanguage((item as CodeTabType).lang[i])
+    const onCodeSwitch = (i: number, items: ItemType | RequestType): void => {
+        setCodeSnippet(snippets[(items as ItemType).snippet[i]]);
+        setLanguage((items as ItemType).lang[i])
     }
 
     const onCopy = (): void => {
@@ -117,10 +42,30 @@ export default function CodeBlock(props: IProps) {
         }, 2000)
     }
 
+    const responseThemeClassname = (): string => {
+        if (type === 'response') {
+            return responseTheme === 'default' ? 'code--default' : 'code--red';
+        }
+        return 'code';
+    }
+
+    const codeBg = (): string => {
+        return type === 'response' ? 'response' : 'default'
+    }
+
     useEffect(() => {
         if (type === 'tab') {
-            setCodeSnippet(snippets[(item as CodeTabType).snippet[0]])
-            setLanguage((item as CodeTabType).lang[0])
+            setCodeSnippet(snippets[(item as ItemType).snippet[0]])
+            setLanguage((item as ItemType).lang[0])
+        }
+        if (type === 'request') {
+            const { requestData } = item as RequestData
+            setCodeSnippet(snippets[(requestData as RequestType).snippet[0]])
+            setLanguage((requestData as RequestType).lang[0])
+        }
+        if (type === 'response') {
+            setCodeSnippet(snippets[(item as ItemType).snippet[0]])
+            setLanguage('json')
         }
     }, [])
 
@@ -131,20 +76,24 @@ export default function CodeBlock(props: IProps) {
     }, [codeSnippet])
 
     return (
-        <div className={cn(Styles.CodeBlock, 'flex font-code pb-2 bg-white flex-col')}>
-            {type === 'tab' && <TabHead items={(item as CodeTabType).heading} onChange={onTabSwitch} />}
-            {type === 'request' && <RequestHead method={(item as RequestType).method} />}
-            <div className='Code p-0 relative'>
-                <CopyToClipboard onCopy={onCopy} text={codeSnippet}>
-                    <button
-                        type='button'
-                        className='text-xs text-white py-1 px-2.5 bg-neu-800 rounded-lg absolute right-8 top-4 z-10 font-proxima'
-                    >{copied ? 'Copied' : 'Copy'}</button>
-                </CopyToClipboard>
-                <pre className="!my-0 line-numbers">
-                    <code className={`language-${language} code`}>{codeSnippet}</code>
-                </pre>
+        <div>
+            <div className={cn(Styles.CodeBlock, 'flex font-code pb-2 bg-white flex-col')}>
+                {type === 'tab' && <TabHead items={(item as ItemType).name} onChange={(i: number) => onCodeSwitch(i, item as ItemType)} />}
+                {type === 'request' && <RequestHead showResponse={showResponse} toggleResponse={(state: boolean) => setShowResponse(state)} {...item as RequestData} onChange={(i: number) => onCodeSwitch(i, (item as RequestData).requestData)} />}
+                {type === 'response' && <ResponseHead title={responseTitle} item={(item as ItemType)} onChange={(i: number) => onCodeSwitch(i, (item as ItemType))} />}
+                <div className='Code p-0 relative'>
+                    <CopyToClipboard onCopy={onCopy} text={codeSnippet}>
+                        <button
+                            type='button'
+                            className='text-xs text-white py-1 px-2.5 bg-neu-800 rounded-lg absolute right-8 top-4 z-[5] font-proxima'
+                        >{copied ? 'Copied' : 'Copy'}</button>
+                    </CopyToClipboard>
+                    <pre className={cn('!my-0 line-numbers', codeBg())}>
+                        <code className={cn(`language-${language}`, responseThemeClassname(), codeBg())}>{codeSnippet}</code>
+                    </pre>
+                </div>
             </div>
+            {(type === 'request' && showResponse) && <div className='mt-5'><CodeBlock responseTheme={responseTheme} responseTitle={responseTitle} data={{ type: 'response', item: (item as RequestData).responseData }} /></div>}
         </div>
     )
 };
