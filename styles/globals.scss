@@ -108,19 +108,46 @@ pre[class*="language-"].response {
     @apply bg-neu-50 font-code;
 }
 
-// code {
-//     font-size: inherit;
-//     padding: 5px 8px;
-//     white-space: nowrap;
-//     color: theme('colors.pri.500');
-//     font-family: theme('fontFamily.code');
-//     border-radius: theme('borderRadius.8');
-//     background-color: theme('colors.neu.100');
-// }
+code {
+    font-size: inherit;
+    padding: 5px 8px;
+    white-space: nowrap;
+    color: theme('colors.pri.500');
+    font-family: theme('fontFamily.code');
+    border-radius: theme('borderRadius.8');
+    background-color: theme('colors.neu.50');
+}
 
-// .code {
-//     color: hsl(210deg, 40%, 96%) !important;
-// }
+.code {
+    font-size: unset;
+    padding: unset;
+    white-space: unset;
+    color: unset;
+    font-family: unset;
+    border-radius: unset;
+    background-color: unset;
+}
+
+.list-custom {
+    position: relative;
+    list-style: none;
+
+    &::marker {
+        content: counter(list-item)"\a0\a0\a0"
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: -23px;
+        width: 16px;
+        height: 23px;
+        z-index: -1;
+        background: #F1F5F9;
+        border-radius: 8px;
+    }
+}
 
 // .code--red {
 //     color: #E1386A !important;

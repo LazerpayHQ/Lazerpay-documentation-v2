@@ -10,7 +10,6 @@ export type ResponseProp = {
 const ResponseHead = (props: ResponseProp) => {
   const { title, item, onChange } = props;
   const { name } = item as ItemType;
-  console.log(props)
   return (
     <div className='bg-neu-50'>
       <div className='px-8 py-2.5 flex justify-between border-b border-neu-200'>

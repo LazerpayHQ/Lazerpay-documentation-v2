@@ -1,9 +1,10 @@
 export interface ITable {
-  body: string[]
-  head: string[]
+  body: string[];
+  head: string[];
+  reverse?: boolean;
 }
 
-const LzTable = ({ head, body }) => {
+const LzTable = ({ head, body, reverse }) => {
   if (!head || !body) return null;
 
   return (
@@ -25,7 +26,7 @@ const LzTable = ({ head, body }) => {
           <tbody>
             {
               body.map((row: string[], i: number) => (
-                <tr key={i} className="odd:bg-neu-50 border-neu-200">
+                <tr key={i} className={`${reverse ? "even" : "odd"}:bg-neu-50 border-neu-200`}>
                   {row.map((c: string) => (
                     <td
                       key={c}

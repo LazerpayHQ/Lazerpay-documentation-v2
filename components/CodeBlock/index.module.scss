@@ -12,12 +12,14 @@
     /* Track */
     ::-webkit-scrollbar-track {
         background-color: #FFF;
+        position: absolute;
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
         background: #C2C2C2;
         border-radius: 50px;
+        position: absolute;
     }
 }
 

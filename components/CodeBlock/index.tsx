@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, FC } from 'react'
 import Prism from 'prismjs';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import cn from 'classnames';
@@ -12,27 +12,26 @@ import { snippets } from 'data/snippets';
 import { RequestHead, ResponseHead, TabHead } from './components';
 import { ItemType, RequestType, RequestData, DataProp } from './types';
 import { initializePrism } from './configurePrism';
+import useStateSnippet from './hooks/useStateSnippet';
 
 initializePrism(Prism);
+
 export interface CodeBlockProps {
     responseTheme?: 'default' | 'red';
     responseTitle?: string;
-    lang?: string;
     data: DataProp;
 }
 
-export default function CodeBlock(props: CodeBlockProps) {
+const CodeBlock = (props: CodeBlockProps) => {
     const { data, responseTheme, responseTitle } = props;
     const { type, item } = data as DataProp;
 
-    const [codeSnippet, setCodeSnippet] = useState<string>("");
-    const [language, setLanguage] = useState<string>("jsx");
+    const { codeSnippet, language, updateSnippet } = useStateSnippet({ type, item });
     const [copied, setCopied] = useState<boolean>(false);
     const [showResponse, setShowResponse] = useState<boolean>(true);
 
     const onCodeSwitch = (i: number, items: ItemType | RequestType): void => {
-        setCodeSnippet(snippets[(items as ItemType).snippet[i]]);
-        setLanguage((items as ItemType).lang[i])
+        updateSnippet(snippets[(items as ItemType).snippet[i]], (items as ItemType).lang[i]);
     }
 
     const onCopy = (): void => {
@@ -54,22 +53,6 @@ export default function CodeBlock(props: CodeBlockProps) {
     }
 
     useEffect(() => {
-        if (type === 'tab') {
-            setCodeSnippet(snippets[(item as ItemType).snippet[0]])
-            setLanguage((item as ItemType).lang[0])
-        }
-        if (type === 'request') {
-            const { requestData } = item as RequestData
-            setCodeSnippet(snippets[(requestData as RequestType).snippet[0]])
-            setLanguage((requestData as RequestType).lang[0])
-        }
-        if (type === 'response') {
-            setCodeSnippet(snippets[(item as ItemType).snippet[0]])
-            setLanguage('json')
-        }
-    }, [])
-
-    useEffect(() => {
         if (typeof window !== undefined) {
             Prism.highlightAll()
         }
@@ -77,7 +60,7 @@ export default function CodeBlock(props: CodeBlockProps) {
 
     return (
         <div>
-            <div className={cn(Styles.CodeBlock, 'flex font-code pb-2 bg-white flex-col')}>
+            <div className={cn(Styles.CodeBlock, 'flex font-code overflow-hidden bg-white flex-col')}>
                 {type === 'tab' && <TabHead items={(item as ItemType).name} onChange={(i: number) => onCodeSwitch(i, item as ItemType)} />}
                 {type === 'request' && <RequestHead showResponse={showResponse} toggleResponse={(state: boolean) => setShowResponse(state)} {...item as RequestData} onChange={(i: number) => onCodeSwitch(i, (item as RequestData).requestData)} />}
                 {type === 'response' && <ResponseHead title={responseTitle} item={(item as ItemType)} onChange={(i: number) => onCodeSwitch(i, (item as ItemType))} />}
@@ -97,3 +80,5 @@ export default function CodeBlock(props: CodeBlockProps) {
         </div>
     )
 };
+
+export default CodeBlock;

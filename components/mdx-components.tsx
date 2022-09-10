@@ -87,8 +87,8 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
 
   /** Below this line contains all reusable UI components */
-  LzTable({ head, body }) {
-    return <LzTable body={body} head={head} />
+  LzTable({ head, body, reverse }) {
+    return <LzTable body={body} head={head} reverse={reverse} />
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
@@ -115,8 +115,11 @@ export const components: Record<string, FC<Record<string, any>>> = {
   pre(props) {
     return <pre {...props} className={`prose ${props.className}`} />
   },
+  ol(props) {
+    return <ol className='list-decimal paragraph-2 text-neu-800' {...props} />
+  },
   li(props) {
-    return <li {...props} />
+    return <li className='list-custom text-neu-800' {...props} />
   },
   inlineCode(props) {
     return <code className='prose' {...props} />

@@ -16,8 +16,10 @@ export function usePagination() {
   return { prev, next, hasPrev: !!prev, hasNext: !!next }
 }
 
-export function Pagination({ nextName, prevName}: IProps) {
-  const { prev, next } = usePagination()
+export function Pagination({ nextName, prevName }: IProps) {
+  const { prev, next } = usePagination();
+
+  console.log(prev, next)
   return (
     <div className='flex justify-end sm:justify-between proxima'>
       <div className='space-x-3 hidden sm:flex'>
@@ -26,13 +28,13 @@ export function Pagination({ nextName, prevName}: IProps) {
         </button>
         <div>
           <p className='text-neu-400 caption-s'>PREVIOUS</p>
-          <p className='paragraph-2-s text-pri-900'>{prevName ? prevName : "Quick start" }</p>
+          <p className='paragraph-2-s text-pri-900'>{prevName ? prevName : "Quick start"}</p>
         </div>
       </div>
       <div className='flex justify-end space-x-3'>
         <div className='text-right'>
           <p className='text-neu-400 caption-s'>NEXT</p>
-          <p className='paragraph-2-s text-pri-900 '>{nextName ? nextName : "Accept payments" }</p>
+          <p className='paragraph-2-s text-pri-900 '>{nextName ? nextName : "Accept payments"}</p>
         </div>
         <button className='border border-pri-500 rounded-lg p-4  '>
           <PaginateRightIcon />

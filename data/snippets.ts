@@ -98,5 +98,48 @@ export const snippets = {
         "status": "failed",
         "statusCode": 401
     }
+    `,
+    nodeSDKSample:
+        `
+    const LazerPay = require('lazerpay-node-sdk');
+
+    const lazerpay = new LazerPay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);
+
+    const payment_tx = async () => {
+        try {
+            const transaction_payload = {
+                reference: 'W6b8hV55l0435t3545435', // Replace with a reference you generated
+                customer_name: 'iamnotstatic.eth',
+                customer_email: 'abdulfataisuleiman67@gmail.com',
+                coin: 'USDC',
+                currency: 'USD',
+                fiatAmount: '100',
+                acceptPartialPayment: true // By default it's false
+            };
+
+            const response = await lazerpay.Payment.initializePayment(transaction_payload);
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
+    `,
+    nodeSDKSampleResponse:
+        `
+    {
+        "reference": "wfqweweqrtwerwrtwer45354545",
+        "businessName": "Lazerpay Finance",
+        "businessEmail": "abdulfataisuleiman67@gmail.com",
+        "businessLogo": "https://res.cloudinary.com/lazer/image/upload/v1637512933/logo-default_ufyz0x.svg",
+        "customerName": "Abdulfatai Suleiman",
+        "customerEmail": "staticdev20046@gmail.com",
+        "address": "0xcA20e971400F81F97fEc5416A963e8FA7F81aaE3",
+        "coin": "BUSD",
+        "cryptoAmount": 50.5,
+        "currency": "USD",
+        "fiatAmount": 50,
+        "feeInCrypto": 0.5,
+        "network": "testnet",
+        "acceptPartialPayment": true
+    }
     `
 }
