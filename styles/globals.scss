@@ -113,7 +113,7 @@ code {
     padding: 5px 8px;
     white-space: nowrap;
     color: theme('colors.pri.500');
-    font-family: theme('fontFamily.code');
+    font-family: theme('fontFamily.code') !important;
     border-radius: theme('borderRadius.8');
     background-color: theme('colors.neu.50');
 }
@@ -123,7 +123,6 @@ code {
     padding: unset;
     white-space: unset;
     color: unset;
-    font-family: unset;
     border-radius: unset;
     background-color: unset;
 }
