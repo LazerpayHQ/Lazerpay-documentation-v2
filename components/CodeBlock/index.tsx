@@ -72,7 +72,7 @@ const CodeBlock: FC<CodeBlockProps<DataProp>> = (props) => {
                         >{copied ? 'Copied' : 'Copy'}</button>
                     </CopyToClipboard>
                     <pre className={cn('!my-0 line-numbers', codeBg())}>
-                        <code className={cn(`language-${language}`, responseThemeClassname(), codeBg())}>{codeSnippet}</code>
+                        <code className={cn(`language-${language} font-code`, responseThemeClassname(), codeBg())}>{codeSnippet}</code>
                     </pre>
                 </div>
             </div>
