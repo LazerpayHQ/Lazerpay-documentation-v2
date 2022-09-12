@@ -16,13 +16,13 @@ import useStateSnippet from './hooks/useStateSnippet';
 
 initializePrism(Prism);
 
-export interface CodeBlockProps {
+export interface CodeBlockProps<DataProp> {
     responseTheme?: 'default' | 'red';
     responseTitle?: string;
     data: DataProp;
 }
 
-const CodeBlock = (props: CodeBlockProps) => {
+const CodeBlock: FC<CodeBlockProps<DataProp>> = (props) => {
     const { data, responseTheme, responseTitle } = props;
     const { type, item } = data as DataProp;
 
