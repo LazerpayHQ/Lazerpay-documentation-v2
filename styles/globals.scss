@@ -113,7 +113,7 @@ code {
     padding: 5px 8px;
     white-space: nowrap;
     color: theme('colors.pri.500');
-    font-family: theme('fontFamily.code') !important;
+    font-family: theme('fontFamily.code');
     border-radius: theme('borderRadius.8');
     background-color: theme('colors.neu.50');
 }
