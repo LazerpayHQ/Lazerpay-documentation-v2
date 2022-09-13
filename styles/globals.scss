@@ -148,6 +148,10 @@ code {
     }
 }
 
+tbody code {
+    background-color: theme('colors.neu.100');
+}
+
 // .code--red {
 //     color: #E1386A !important;
 // }
