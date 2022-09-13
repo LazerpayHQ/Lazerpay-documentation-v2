@@ -1,0 +1,25 @@
+---
+title: Verify Payments
+description: payment introduction page
+---
+
+# Verify Payments
+
+Transactions are being verified using the Verify Payments endpoint from your server using your transaction reference or with the address property whose value is the payment address returned from the <a href="#">initialise payment</a> function.
+
+## Verify Payment API
+
+To verify transactions using the Lazerpay endpoint, you will make a <code>get</code> request to verify transaction endpoint from your server using your transaction reference or with the address property.
+Here’s a code sample for verifying transactions.
+
+<LzTable 
+  head={['Parameter name', 'Type', 'Description']}
+  body={[
+    ['Path', '', ''],
+    ['address_or_reference', '<code>String</code>', 'The transaction <code>Address</code> or <code>reference</code> you want to fetch'],
+    ['Header', '', ''],
+    ['*', '<code>String</code>', 'YOUR_PUBLIC_KEY'],
+  ]}
+  />
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL', 'Node'], snippet: ['verifyPaymentGetCURL', 'verifyPaymentGetCURL'], lang: ['curl', 'curl']}, responseData: {name: ['200: OK', '401: Unauthorized'], snippet: ['customerInfoReq201', 'customerInfoReq401'], lang: ['json', 'json']}} }} />

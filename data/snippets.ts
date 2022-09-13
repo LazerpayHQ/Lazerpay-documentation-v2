@@ -9,8 +9,7 @@ export const snippets = {
         )
     }`,
     customerInfoHTML:
-        `
-        <form id="paymentForm">
+        `       <form id="paymentForm">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" />
@@ -26,22 +25,18 @@ export const snippets = {
             <div class="form-submit">
                 <button type="submit" onclick="payWithLazerpay()"> Pay with Lazerpay </button>
             </div>
-        </form>
-        `,
+        </form>`,
     customerInfoJS:
-        `
-    <script>
+        `   <script>
         https: //cdn.jsdelivr.net/gh/LazerPay-Finance/checkout-build@main/checkout@1.0.1/dist/index.min.js
     </script>
     <script>
         const paymentForm = document.getElementById('paymentForm');
         
         paymentForm.addEventListener("submit", payWithLazerpay, false);
-    </script>
-    `,
+    </script>`,
     customerInfoPostCURL:
-        `
-    curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+        `   curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
     
     --header 'x-api-key: YOUR_PUBLIC_KEY' \
     
@@ -52,11 +47,9 @@ export const snippets = {
         "coin": "USDT",
         "amount": "10",
         accept_partial_payment:"true"
-    }’
-    `,
+    }’`,
     customerInfoPostNode:
-        `
-    suck --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+        `   suck --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
     --header 'x-api-key: YOUR_PUBLIC_KEY' \
     --data-raw '{
         "customer_name": "Abdulfatai Suleiman",
@@ -65,11 +58,9 @@ export const snippets = {
         "coin": "USDT",
         "amount": "10",
         accept_partial_payment:"true"
-    }’
-    `,
+    }’`,
     customerInfoReq201:
-        `
-    {
+        `   {
         "message": "Transaction initialized successfully",
         "status": "success",
         "data": {
@@ -89,19 +80,15 @@ export const snippets = {
             "acceptPartialPayment": true
         }
         "statusCode": 201
-    }
-    `,
+    }`,
     customerInfoReq401:
-        `
-    {
+        `   {
         "message": "Transaction failed",
         "status": "failed",
         "statusCode": 401
-    }
-    `,
+    }`,
     nodeSDKSample:
-        `
-    const LazerPay = require('lazerpay-node-sdk');
+        `    const LazerPay = require('lazerpay-node-sdk');
 
     const lazerpay = new LazerPay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);
 
@@ -121,11 +108,9 @@ export const snippets = {
             console.log(response);
         } catch (error) {
             console.log(error);
-        }
-    `,
+        }`,
     nodeSDKSampleResponse:
-        `
-    {
+        `   {
         "reference": "wfqweweqrtwerwrtwer45354545",
         "businessName": "Lazerpay Finance",
         "businessEmail": "abdulfataisuleiman67@gmail.com",
@@ -140,6 +125,10 @@ export const snippets = {
         "feeInCrypto": 0.5,
         "network": "testnet",
         "acceptPartialPayment": true
-    }
+    }`,
+    verifyPaymentGetCURL:
+        `    curl --location --request GET 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+
+    --header 'x-api-key: YOUR_PUBLIC_KEY' \
     `
 }
