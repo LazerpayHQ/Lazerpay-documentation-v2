@@ -26,7 +26,7 @@ const LzTable = ({ head, body, reverse }) => {
           <tbody>
             {
               body.map((row: string[], i: number) => (
-                <tr key={i} className={`${reverse ? "even" : "odd"}:bg-neu-50 border-neu-200`}>
+                <tr key={i} className={`${reverse ? 'even:bg-neu-50' : 'odd:bg-neu-50'} border-neu-200`}>
                   {row.map((c: string) => (
                     <td
                       key={c}
