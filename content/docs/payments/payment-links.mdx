@@ -1,0 +1,108 @@
+---
+title: Payments Link
+description: Payment Link page
+---
+
+# Payments Link
+
+With payment links, you can share your unique payment link to anyone in the world.
+<Divider className='max-w-100 mt-1 mb-8' />
+
+## How do Payment Links Work?
+
+With Payment Links, you can create a payment page and share a link to it with your customers. Creating Payment links from the dashboard requires no coding and you can share the link as many times as you want on social media, in emails, or any other channel.
+
+You can also create payment links using our APIs or our Libraries.
+<Divider className='max-w-100 mt-1 mb-8' />
+<br />
+
+## Create Payment Links API
+
+<LzTable 
+  reverse
+  head={["Parameter name", "Type", "Description"]}
+  body={[
+    ['<strong>Header</strong>', '', ''],
+    ['Authorization*', '<code>String</code>', 'Bearer YOUR_SECRET_KEY'],
+    ['<strong>Body</strong>', '', ''],
+    ['title*', '<code>String</code>', 'Bearer The title of the link'],
+    ['description*', '<code>String</code>', 'Description of the payment page'],
+    ['amount', '<code>Number</code>', 'Amount the user will pay'],
+    ['type*', '<code>String</code>', 'Payment links type default is <code>"standard"</code>'],
+    ['logo', '<code>String</code>', 'Your logo URL'],
+    ['currency*', '<code>String</code>', 'Payment page currency'],
+    ['redirect_url', '<code>String</code>', ''],
+  ]}
+/>
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL', 'Node'], snippet: ['createPaymentLinkCURL', 'createPaymentLinkCURL'], lang: ['curl', 'curl']}, responseData: {name: ['201: Created', '401: Unauthorized'], snippet: ['createPaymentLinkResponse201', 'createPaymentLinkResponse201'], lang: ['json', 'json']}} }} />
+<br />
+<Alert>When passing amount you also need to pass currency, same thing when you pass currency, you also need to pass amount</Alert>
+<Divider className='max-w-100 mt-1 mb-8' />
+
+## Fetch All Payment Links API
+Get all the payment links using the API.
+
+<LzTable 
+  reverse
+  head={["Parameter name", "Type", "Description"]}
+  body={[
+    ['<strong>Header</strong>', '', ''],
+    ['Authorization*', '<code>String</code>', 'Bearer YOUR_SECRET_KEY'],
+  ]}
+/>
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Node'], snippet: ['fetchAllPaymentLinkCURL', 'fetchAllPaymentLinkCURL'], lang: ['curl', 'curl']}, responseData: {name: ['200: OK', '401: Unauthorized'], snippet: ['fetchAllPaymentLinkResponse200', 'fetchAllPaymentLinkResponse200'], lang: ['json', 'json']}} }} />
+
+<Divider className='max-w-100 mt-1 mb-8' />
+<br />
+
+## Fetch Payment Link API
+Using this endpoint, one can fetch the details of a particular payment link.
+
+<LzTable 
+  reverse
+  head={["Parameter name", "Type", "Description"]}
+  body={[
+    ['<strong>Path</strong>', '', ''],
+    ['id_or_reference*', '<code>String</code>', 'Bearer id_or_reference'],
+    ['<strong>Header</strong>', '', ''],
+    ['Authorization*', '<code>String</code>', 'Bearer YOUR_SECRET_KEY'],
+  ]}
+/>
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Node'], snippet: ['fetchPaymentLinkCURL', 'fetchPaymentLinkCURL'], lang: ['curl', 'curl']}, responseData: {name: ['200: OK', '401: Unauthorized'], snippet: ['fetchPaymentLinkResponse200', 'fetchPaymentLinkResponse200'], lang: ['json', 'json']}} }} />
+
+<Divider className='max-w-100 mt-1 mb-8' />
+<br />
+
+## Update a Payment Link API
+Update a particular payment link with the following endpoint.
+
+<LzTable 
+  reverse
+  head={["Parameter name", "Type", "Description"]}
+  body={[
+    ['<strong>Path</strong>', '', ''],
+    ['id_or_reference*', '<code>String</code>', 'Bearer id_or_reference'],
+    ['<strong>Header</strong>', '', ''],
+    ['Authorization*', '<code>String</code>', 'Bearer YOUR_SECRET_KEY'],
+    ['<strong>Body</strong>', '', ''],
+    ['status*', '<code>String</code>', 'active or inactive (enum)'],
+  ]}
+/>
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "PUT", requestData: {name: ['cURL', 'Node'], snippet: ['updatePaymentLinkCURL', 'updatePaymentLinkCURL'], lang: ['curl', 'curl']}, responseData: {name: ['200: OK', '401: Unauthorized'], snippet: ['updatePaymentLinkResponse200', 'updatePaymentLinkResponse200'], lang: ['json', 'json']}} }} />
+
+<Divider className='max-w-100 mt-1 mb-8' />
+<br />
+
+## Official JS SDK
+With the SDK, You can programmatically create payment links and access all the payment link methods available in the API. Find the guide here.
+
+<Divider className='max-w-100 mt-1 mb-8' />
+<br />
+
+<Divider/>
+
+<Pagination/>
