@@ -72,15 +72,15 @@ The initialize payment endpoint allows you to initiate payment directly to Lazer
 
 <CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL', 'Node'], snippet: ['customerInfoPostCURL', 'customerInfoPostNode'], lang: ['curl', 'js']}, responseData: {name: ['201: Created', '401: Unauthorized'], snippet: ['customerInfoReq201', 'customerInfoReq401'], lang: ['json', 'json']}} }} />
 
-#### Important Note
+## Important Note
 1. The <code>coin</code> field must either be “BUSD”, “DAI”, “USDT”, or “USDC”.
 2. It's ideal to generate a unique <code>reference</code> from your system for every transaction to avoid duplicate attempts.
 3. The <code>accept_partial_payment</code> field is used to enforce payment completion by your customers. A scenario is when a customer is trying to pay for a service worth a fixed <code>amount</code> of $100 USD. When <code>accept_partial_payment</code> is set to true, the customer must pay the exact amount before the funds will be sent to you. Read more about Partial Payments <a href="#">here</a>.
 4. The <code>amount</code> field should be in your fiat currency. The currencies we support are USD, AED, GBP, EUR and NGN. Please reach out to <a href="#">support@lazerpay.finance</a> if you would want us to support a currency.
 5. The <code>amount</code> during initialization is converted to the <code>coin</code> equivalent of the currency specified.
 
-> Never call the Lazerpay API directly from your frontend to avoid exposing your secret key on the frontend. All requests to the Lazerpay API should be initiated from your server, and your frontend gets the response from your server.
-
+<Alert status="warning">Never call the Lazerpay API directly from your frontend to avoid exposing your secret key on the frontend. All requests to the Lazerpay API should be initiated from your server, and your frontend gets the response from your server.</Alert>
+<br />
 ## Lazerpay’s Node JS SDK
 The SDK allows you to initialise a payment transaction and to confirm payment. It's an NPM package so you can use it in a node environment.
 Here's a sample code on how to use the NodeJS SDK:

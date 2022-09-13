@@ -38,7 +38,7 @@ const LzAlert = ({ content, children, status = "info", title, className }: IProp
                 {variants[status]['icon']}
             </span>
             <h4 className="mb-2.5 heading-7-s">{title}</h4>
-            <div dangerouslySetInnerHTML={{ __html: (children || content) }} />
+            <div className="leading-6" dangerouslySetInnerHTML={{ __html: (children || content) }} />
         </div>
     )
 }
