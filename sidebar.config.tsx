@@ -67,7 +67,11 @@ const sidebar: SidebarItem[] = [
     label: 'Guides and Tutorials',
     icon: <GuidesIcon />,
     id: "guides",
-    children: [],
+    children: [
+      { type: 'docs', label: 'Get started', id: 'get-started' },
+      { type: 'docs', label: 'Guides', id: 'guides' },
+      { type: 'docs', label: 'Tutorials', id: 'tutorials' },
+    ],
   }
 ]
 
