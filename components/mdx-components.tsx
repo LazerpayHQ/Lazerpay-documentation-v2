@@ -21,6 +21,9 @@ import BankPayouts from './BankPayouts'
 import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
 import LzTable from './UI/table'
+import LinkCard from './LinkCard'
+import { LibraryGetStarted } from './CardList'
+import LibraryItem from './LibraryItem'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -57,6 +60,12 @@ export const components: Record<string, FC<Record<string, any>>> = {
   GetstartedCard() {
     return <GetstartedCard />
   },
+  LibraryGetStarted() {
+    return <LibraryGetStarted />
+  },
+  LibraryItem({ children, props }) {
+    return <LibraryItem children={children} {...props} />
+  },
   TransferCard() {
     return <TransferCard />
   },
@@ -78,6 +87,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   LinkedCard(MyProps) {
     return <LinkedCard {...MyProps} />
+  },
+  LinkCard({ children, prop }) {
+    return <LinkCard children={children} {...prop} />
   },
   PlainCard(MyProps) {
     return <PlainCard {...MyProps} />

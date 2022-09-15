@@ -27,6 +27,9 @@ import LzInput from './UI/input'
 import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
 import LzTable from './UI/table'
+import LinkCard from './LinkCard'
+import { LibraryGetStarted } from './CardList';
+import LibraryItem from './LibraryItem'
 
 export {
   LzTable,
@@ -54,5 +57,8 @@ export {
   TestPayments,
   LinkedCard,
   PlainCard,
-  Ecommerce
+  Ecommerce,
+  LinkCard,
+  LibraryGetStarted,
+  LibraryItem
 }
