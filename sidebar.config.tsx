@@ -44,6 +44,7 @@ const sidebar: SidebarItem[] = [
     label: 'Transfers',
     icon: <TransferIcon />,
     id: "transfers",
+    redirect: "transfers/get-started",
     children: [
       { type: "docs", label: "Get started", id: "get-started" },
       { type: "docs", label: "Crypto Transfer", id: "crypto-transfers" },
