@@ -7,7 +7,7 @@ const RequestHead = (props: RequestData) => {
   const { name } = requestData as RequestType;
   const options = {
     'POST': 'bg-suc-100',
-    'GET': ''
+    'GET': 'bg-pri-500 text-neu-50'
   }
   return (
     <div className='bg-neu-50'>
