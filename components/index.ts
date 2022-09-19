@@ -29,6 +29,7 @@ import Ecommerce from './UseCases'
 import TransferWebHook from './TransWebhook'
 import TestPayments from './TestPayments'
 import LzTable from './UI/table'
+import Webhooks from './Webhooks'
 
 export {
   LzTable,
@@ -55,5 +56,6 @@ export {
   LinkedCard,
   TransferWebHook,
   PlainCard,
-  Ecommerce
+  Ecommerce,
+  Webhooks
 }
