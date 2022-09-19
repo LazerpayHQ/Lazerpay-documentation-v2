@@ -20,6 +20,7 @@ import BankPayouts from './BankPayouts'
 import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
 import LzTable from './UI/table'
+import Webhooks from './Webhooks'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -80,6 +81,10 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   Ecommerce() {
     return <Ecommerce />
+  },
+
+  Webhooks() {
+    return <Webhooks />
   },
 
   /** Below this line contains all reusable UI components */

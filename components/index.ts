@@ -24,6 +24,7 @@ import LzInput from './UI/input'
 import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
 import LzTable from './UI/table'
+import Webhooks from './Webhooks'
 
 export {
   LzTable,
@@ -48,5 +49,6 @@ export {
   TestPayments,
   LinkedCard,
   PlainCard,
-  Ecommerce
+  Ecommerce,
+  Webhooks
 }
