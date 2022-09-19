@@ -188,6 +188,56 @@ export const snippets = {
             }
         }
     };
+    `,
+    webhookPayload:
+        `{
+        "id": "378b53b2-28fd-4cbd-8fe1-6786d251b7d4",
+        "reference": "MBnOcItpOaP0wkBWzx",
+        "senderAddress": "0x451dEFC27B45808078e875556AF06bCFdC697BA4",
+        "senderAddress": "0x451dEFC27B45808078e875556AF06bCFdC697BA4",
+        "recipientAddress": "0x062FA9157C498C8Ca4E6AF204c132EDE2500e260",
+        "actualAmount": 0.51,
+        "amountPaid": 0.5,
+        "amountPaidFiat": 292.385,
+        "fiatAmount": 300,
+        "amountReceived": 0.52,
+        "amountReceivedFiat": 304.0804,
+        "coin": "BUSD",
+        "currency": "NGN",
+        "hash": "0xe929d55dde3717987191674616a0d3bbcf4b63080434b71fde41ec86aeab5fdd",
+        "blockNumber": 16509617,
+        "type": "received",
+        "acceptPartialPayment": true,
+        "status": "confirmed",
+        "network": "mainnet",
+        "blockchain": "Binance Smart Chain",
+        "paymentLink": {},
+        "paymentButton": {},
+        "customer": {
+            "id": "1c4d885e-4058-45f0-8d74-ff79fe439e75",
+            "customerName": "Abdulfatai Suleiman",
+            "customerEmail": "abdulfataisuleiman67@gmail.com",
+            "customerPhone”:null
+        },
+        "merchantAddress": "0xFdd5352384162C3342aD018AF61d77538Bdb1257",
+        "feeInCrypto": 0.01,
+        "webhookType": "DEPOSIT_TRANSACTION"
+    }`,
+    webhookValidateSignature:
+        `var crypto = require('crypto');
+    "var secret = process.env.SECRET_KEY;
+    // Using Express
+    app.post("/my/webhook/url", function(req, res) {
+        //validate event
+        var hash = crypto.createHmac('sha256', secret).update(JSON.stringify(req.body), 'utf8').digest('hex');
+
+        if (hash == req.headers['x-lazerpay-signature']) {
+            // Retrieve the request's body
+            var event = req.body;
+            // Do something with event
+        } 
+        res.send(200);
+    });
     }
     `, cryptoTransferPostCurl: `
     curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transfer'\
