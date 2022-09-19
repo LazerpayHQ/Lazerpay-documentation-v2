@@ -189,6 +189,124 @@ export const snippets = {
         }
     };
     `,
+    createPaymentLinkCURL:
+        `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/payment-links' \
+    --header 'Authorization: Bearer YOUR_SECRET_KEY' \
+    --data-raw '{
+        "title": "Model Rocket Design and Construction",
+        description": "This is for Model Rocket Design and Construction Book",
+        "amount": 100,
+        "type": "standard",
+        "logo": "https://media.istockphoto.com/photos/dubai-skyline-view-from-the-marasi-marina-in-city-business-bay-area-picture-id1309800132",
+        "currency": "USD",
+        "redirect_url": "https://example.com"
+    }’`,
+    createPaymentLinkResponse201:
+        `{
+        "message": "Payment link created",
+        "data": {
+            "id": "5237aa97-56d2-45fc-923e-1265c227f268",
+            "reference": "msdl",
+            "title": "model rocket design and construction",
+            "description": "This is for Model Rocket Design and Construction Book wqrerertret werewre",
+            "amount": "100",
+            "currency": "USD",
+            "redirectUrl": "https://example.com",
+            "logo": "https://media.istockphoto.com/photos/dubai-skyline-view-from-the-marasi-marina-in-city-business-bay-area-picture-id1309800132",
+            "type": "standard",
+            "network": "mainnet",
+            "status": "active",
+            "paymentUrl": "https://lazerpay.finance/pay/model-rocket-design-and-construction-msdl",
+            "createdAt": "2022-04-15T17:04:20.492Z",
+            "updatedAt": "2022-04-15T17:04:20.492Z",
+        },
+        "statusCode": 201,
+        "status": "success"
+    }`,
+    fetchAllPaymentLinkCURL:
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/payment-links’ \
+
+--header 'Authorization: Bearer YOUR_SECRET_KEY'`,
+    fetchAllPaymentLinkResponse200:
+        `{
+        "status": "success",
+        "statusCode": 200,
+        "data": [
+            {
+                "id": "5237aa97-56d2-45fc-923e-1265c227f268",
+                "reference": "msdl",
+                "title": "model rocket design and construction",
+                "amount": "100",
+                "currency": "USD",
+                "redirectUrl": "https://example.com",
+                "logo": "https://media.istockphoto.com/photos/dubai-skyline-view-from-the-marasi-marina-in-city-business-bay-area-picture-id1309800132",
+                "type": "standard",
+                "network": "mainnet",
+                "status": "active",
+                "paymentUrl": "https://lazerpay.finance/pay/model-rocket-design-and-construction-msdl",
+                "createdAt": "2022-04-15T17:04:20.492Z",
+                "updatedAt": "2022-04-15T17:04:20.492Z",
+            }
+        ],
+        "count": 1,
+        "currentPage": 1,
+        "nextPage": null,
+        "prevPage": null,
+        "lastPage": 1
+    }`,
+    fetchPaymentLinkCURL:
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/transaction/initialize'  \
+
+--header 'Authorization: Bearer YOUR_SECRET_KEY'`,
+    fetchPaymentLinkResponse200:
+        `{
+        "message": "Payment link retrieved",
+        "data": {
+            "id": "5237aa97-56d2-45fc-923e-1265c227f268",
+            "reference": "msdl",
+            "title": "model rocket design and construction",
+            "amount": "100",
+            "currency": "USD",
+            "redirectUrl": "https://example.com",
+            "logo": "https://media.istockphoto.com/photos/dubai-skyline-view-from-the-marasi-marina-in-city-business-bay-area-picture-id1309800132",
+            "type": "standard",
+            "network": "mainnet",
+            "status": "active",
+            "paymentUrl": "https://lazerpay.finance/pay/model-rocket-design-and-construction-msdl",
+            "createdAt": "2022-04-15T17:04:20.492Z",
+            "updatedAt": "2022-04-15T17:04:20.492Z",
+        },
+        "statusCode": 200,
+        "status": "success"
+    }`,
+    updatePaymentLinkCURL:
+        `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+
+--header 'Authorization: Bearer YOUR_SECRET_KEY'
+--data-raw '{
+    "status": "inactive"
+}'`,
+    updatePaymentLinkResponse200:
+        `{
+        "message": "Payment link updated",
+        "data": {
+            "id": "5237aa97-56d2-45fc-923e-1265c227f268",
+            "reference": "msdl",
+            "title": "model rocket design and construction",
+            "amount": "100",
+            "currency": "USD",
+            "redirectUrl": "https://example.com",
+            "logo": "https://media.istockphoto.com/photos/dubai-skyline-view-from-the-marasi-marina-in-city-business-bay-area-picture-id1309800132",
+            "type": "standard",
+            "network": "mainnet",
+            "status": "inactive",
+            "paymentUrl": "https://lazerpay.finance/pay/model-rocket-design-and-construction-msdl",
+            "createdAt": "2022-04-15T17:04:20.492Z",
+            "updatedAt": "2022-04-15T17:04:20.492Z",
+        },
+        "statusCode": 200,
+        "status": "success"
+    }`,
     webhookPayload:
         `{
         "id": "378b53b2-28fd-4cbd-8fe1-6786d251b7d4",
