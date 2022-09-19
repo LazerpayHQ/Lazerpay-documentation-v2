@@ -13,15 +13,15 @@ The Lazerpay popup provides a convenient and easy way for developers to accept p
 Add the inline checkout to your website using a script tag, it is delivered through a reliable CDN.
 
 <TextBlock>
-    {'<script> '} 
-    <span className="text-pri-500 underline">https://cdn.jsdelivr.net/gh/Lazerpay-Finance/checkout-build@main/checkout@1.0.1/dist/index.min.js</span> 
+    {'<script> '}
+    <span className="text-pri-500 underline">https://cdn.jsdelivr.net/gh/Lazerpay-Finance/checkout-build@main/checkout@1.0.1/dist/index.min.js</span>
     {' </script>'}
 </TextBlock>
 
 ## 2. Collect user Details
 To receive payments you will need to pass some parameters which include some functions and optional customer information. They include:
 
-<LzTable 
+<LzTable
     head={['props', 'Functionality', 'Priority', 'Type']}
     body={[
         ["name", "Customers Name", "Optional", "<code>String</code>"],
@@ -34,7 +34,7 @@ To receive payments you will need to pass some parameters which include some fun
         ["onClose", "The function called when the payment modal closes", "Optional", "<code>Function</code>"],
         ["onSuccess", "The function called after the payment is confirmed", "Optional", "<code>Function</code>"],
         ["onError", "The function that is called if an error occurs during payment confirmation", "Optional", "<code>Function</code>"],
-    ]} 
+    ]}
 />
 
 When you add the inline checkout script, you immediately have access to the <code>LazerCheckout</code> function. Pass the information you get in step 2 to the function in an object inside the <code>payWithLazerpay</code> function
