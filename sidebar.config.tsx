@@ -4,7 +4,7 @@ import {
   PaymentsIcon,
   TransferIcon,
   UseCasesIcon,
-  LibrariesIcon
+  LibrariesIcon,
 } from 'public/icons'
 import React, { ElementType } from 'react'
 
@@ -54,19 +54,19 @@ const sidebar: SidebarItem[] = [
     ],
   },
   {
-    type: 'docs',
+    type: 'category',
     label: 'Libraries',
     icon: <LibrariesIcon />,
-    id: "libraries",
+    id: 'libraries',
     redirect: 'libraries/get-started',
     children: [
-      { type: "docs", label: "Get started", id: "get-started" },
-      { type: "docs", label: "Libraries", id: "libraries" },
-      { type: "docs", label: "Plugins", id: "plugins" },
+      { type: 'docs', label: 'Get started', id: 'get-started' },
+      { type: 'docs', label: 'Libraries', id: 'libraries' },
+      { type: 'docs', label: 'Plugins', id: 'plugins' },
     ],
   },
   {
-    type: 'docs',
+    type: 'category',
     label: 'Use Cases',
     icon: <UseCasesIcon />,
     id: 'use-cases',
