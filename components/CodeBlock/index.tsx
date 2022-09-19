@@ -6,6 +6,7 @@ import cn from 'classnames';
 import 'prismjs/components/prism-jsx.js'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+
 import Styles from './index.module.scss';
 import { snippets } from 'data/snippets';
 

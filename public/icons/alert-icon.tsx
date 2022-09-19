@@ -7,7 +7,7 @@ export default function AlertIcon() {
             </g>
             <defs>
                 <filter id="filter0_d_1454_48872" x="0" y="0" width="48" height="48" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feMorphology radius="1" operator="erode" in="SourceAlpha" result="effect1_dropShadow_1454_48872" />
                     <feOffset dy="3" />
