@@ -66,8 +66,8 @@ export const components: Record<string, FC<Record<string, any>>> = {
   TestAndGoLive() {
     return <TestAndGoLive />
   },
-  Pagination(IProps) {
-    return (<Pagination {...IProps} />)
+  Pagination({ children, props }) {
+    return (<Pagination children={children} {...props} />)
   },
   BankPayouts() {
     return <BankPayouts />
