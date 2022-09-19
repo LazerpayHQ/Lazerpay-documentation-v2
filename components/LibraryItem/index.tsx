@@ -17,18 +17,20 @@ export interface LibraryItemProps {
 const Item = (props: ItemProp) => {
   const { type, title, desc, link, linkText } = props;
 
-  return <div className="sm:even:ml-11 mb-4 ">
-    <h5 className="heading-5-sm">{type}</h5>
-    <p className="paragraph-2 font-semibold mt-6">{title}</p>
-    <p className="paragraph-2 mt-2">{desc}</p>
-    <div className='mt-4 flex items-center'>
-      <ArrowRightIcon width={14} fill="#125bc9" />
-      <LzLink className="paragraph-1-s text-pri-500 ml-2" to={link}>
-        {linkText || 'View library'}
-      </LzLink>
+  return (
+    <div className="sm:even:ml-11 mb-4 ">
+      <h5 className="heading-5-sm">{type}</h5>
+      <p className="paragraph-2 font-semibold mt-6">{title}</p>
+      <p className="paragraph-2 mt-2">{desc}</p>
+      <div className='mt-4 flex items-center'>
+        <ArrowRightIcon width={14} fill="#125bc9" />
+        <LzLink className="paragraph-1-s text-pri-500 ml-2" to={link}>
+          {linkText || 'View library'}
+        </LzLink>
+      </div>
+      <Divider className="mt-6" />
     </div>
-    <Divider className="mt-6" />
-  </div>
+  )
 }
 
 const LibraryItem = (props: LibraryItemProps) => {
