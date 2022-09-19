@@ -35,7 +35,20 @@ You can also create payment links using our APIs or our Libraries.
   ]}
 />
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL', 'Node'], snippet: ['createPaymentLinkCURL', 'createPaymentLinkCURL'], lang: ['curl', 'curl']}, responseData: {name: ['201: Created', '401: Unauthorized'], snippet: ['createPaymentLinkResponse201', 'createPaymentLinkResponse201'], lang: ['json', 'json']}} }} />
+<CodeBlock 
+  responseTheme="red" 
+  responseTitle="Response" 
+  data={{type: 'request', item: {method: "POST", requestData: {
+    name: ['cURL', 'Node'], 
+    snippet: ['createPaymentLinkCURL', 'createPaymentLinkCURL'], 
+    lang: ['curl', 'curl']
+    }, 
+    responseData: {
+      name: ['201: Created', '401: Unauthorized'], 
+      snippet: ['createPaymentLinkResponse201', 'createPaymentLinkResponse201'], 
+      lang: ['json', 'json']}} 
+    }} 
+  />
 <br />
 <Alert>When passing amount you also need to pass currency, same thing when you pass currency, you also need to pass amount</Alert>
 <Divider className='max-w-100 mt-1 mb-8' />
@@ -52,7 +65,20 @@ Get all the payment links using the API.
   ]}
 />
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Node'], snippet: ['fetchAllPaymentLinkCURL', 'fetchAllPaymentLinkCURL'], lang: ['curl', 'curl']}, responseData: {name: ['200: OK', '401: Unauthorized'], snippet: ['fetchAllPaymentLinkResponse200', 'fetchAllPaymentLinkResponse200'], lang: ['json', 'json']}} }} />
+<CodeBlock 
+  responseTheme="red" 
+  responseTitle="Response" 
+  data={{type: 'request', item: {method: "GET", requestData: {
+    name: ['cURL', 'Node'], 
+    snippet: ['fetchAllPaymentLinkCURL', 'fetchAllPaymentLinkCURL'], 
+    lang: ['curl', 'curl']
+  }, 
+  responseData: {
+    name: ['200: OK', '401: Unauthorized'], 
+    snippet: ['fetchAllPaymentLinkResponse200', 'fetchAllPaymentLinkResponse200'], 
+    lang: ['json', 'json']}} 
+  }} 
+/>
 
 <Divider className='max-w-100 mt-1 mb-8' />
 <br />
@@ -71,7 +97,20 @@ Using this endpoint, one can fetch the details of a particular payment link.
   ]}
 />
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Node'], snippet: ['fetchPaymentLinkCURL', 'fetchPaymentLinkCURL'], lang: ['curl', 'curl']}, responseData: {name: ['200: OK', '401: Unauthorized'], snippet: ['fetchPaymentLinkResponse200', 'fetchPaymentLinkResponse200'], lang: ['json', 'json']}} }} />
+<CodeBlock 
+  responseTheme="red" 
+  responseTitle="Response" 
+  data={{type: 'request', item: {method: "GET", requestData: {
+    name: ['cURL', 'Node'], 
+    snippet: ['fetchPaymentLinkCURL', 'fetchPaymentLinkCURL'], 
+    lang: ['curl', 'curl']
+  }, 
+  responseData: {
+    name: ['200: OK', '401: Unauthorized'], 
+    snippet: ['fetchPaymentLinkResponse200', 'fetchPaymentLinkResponse200'], 
+    lang: ['json', 'json']}} 
+  }}
+/>
 
 <Divider className='max-w-100 mt-1 mb-8' />
 <br />
@@ -92,7 +131,20 @@ Update a particular payment link with the following endpoint.
   ]}
 />
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "PUT", requestData: {name: ['cURL', 'Node'], snippet: ['updatePaymentLinkCURL', 'updatePaymentLinkCURL'], lang: ['curl', 'curl']}, responseData: {name: ['200: OK', '401: Unauthorized'], snippet: ['updatePaymentLinkResponse200', 'updatePaymentLinkResponse200'], lang: ['json', 'json']}} }} />
+<CodeBlock 
+  responseTheme="red" 
+  responseTitle="Response" 
+  data={{type: 'request', item: {method: "PUT", requestData: {
+    name: ['cURL', 'Node'], 
+    snippet: ['updatePaymentLinkCURL', 'updatePaymentLinkCURL'], 
+    lang: ['curl', 'curl']
+  }, 
+  responseData: {
+    name: ['200: OK', '401: Unauthorized'], 
+    snippet: ['updatePaymentLinkResponse200', 'updatePaymentLinkResponse200'], 
+    lang: ['json', 'json']}} 
+  }} 
+/>
 
 <Divider className='max-w-100 mt-1 mb-8' />
 <br />
@@ -104,5 +156,3 @@ With the SDK, You can programmatically create payment links and access all the p
 <br />
 
 <Divider/>
-
-<Pagination/>
