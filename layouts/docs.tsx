@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { motion } from "framer-motion"
 import { DocumentTypes } from "contentlayer/generated"
 import { Divider, FooterWrapper, Header, LzContainer, Sidebar, Reaction, TableOfContents } from "components"
+import { Pagination } from "components/pagination";
 import Styles from './Layout.module.scss';
 import { components } from "components/mdx-components";
 import { useMediaQuery } from "lib/use-mediaQuery";
@@ -50,7 +51,11 @@ export default function DocsLayout({ children, doc }: DocsLayoutProps) {
                   'xl:w-3/4 md:!float-left': !hideToc
                 })}>
                   {children}
-                  <div className="mt-40">
+                  <div>
+                    <Divider className="w-full mt-4" />
+                    <div className="mb-40 mt-4">
+                      <Pagination />
+                    </div>
                     <Reaction />
                     <Divider className='mb-10 mt-7' />
                     <FooterWrapper />
