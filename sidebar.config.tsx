@@ -25,7 +25,7 @@ const sidebar: SidebarItem[] = [
     id: "quick-start"
   },
   {
-    type: 'docs',
+    type: 'category',
     label: 'Payments',
     icon: <PaymentsIcon />,
     id: "payments",
@@ -41,7 +41,7 @@ const sidebar: SidebarItem[] = [
     ],
   },
   {
-    type: 'docs',
+    type: 'category',
     label: 'Transfers',
     icon: <TransferIcon />,
     id: "transfers",

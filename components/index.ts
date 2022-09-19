@@ -24,8 +24,10 @@ import WhatsNew from './WhatsNew'
 import GetStartedCard from './GetstartedCard'
 import BankPayouts from './BankPayouts'
 import LzInput from './UI/input'
-import TestPayments from './TestPayments'
+import BinanceIcon from './TestPayments'
 import Ecommerce from './UseCases'
+import TransferWebHook from './TransWebhook'
+import TestPayments from './TestPayments'
 import LzTable from './UI/table'
 import LinkCard from './LinkCard'
 import { LibraryGetStarted } from './CardList';
@@ -54,8 +56,10 @@ export {
   LzContainer,
   GetStartedCard,
   BankPayouts,
+  BinanceIcon,
   TestPayments,
   LinkedCard,
+  TransferWebHook,
   PlainCard,
   Ecommerce,
   LinkCard,
