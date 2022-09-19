@@ -22,6 +22,9 @@ import TransferWebHook from './TransWebhook'
 import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
 import LzTable from './UI/table'
+import LinkCard from './LinkCard'
+import { LibraryGetStarted } from './CardList'
+import LibraryItem from './LibraryItem'
 import Webhooks from './Webhooks'
 
 /** Create a map of the HTML elements */
@@ -45,10 +48,10 @@ export const components: Record<string, FC<Record<string, any>>> = {
     return <Divider {...props} />
   },
   CodeBlock({ data, ...props }) {
-    return (<CodeBlock data={data} {...props} />)
+    return <CodeBlock data={data} {...props} />
   },
   TextBlock(props) {
-    return (<TextBlock {...props} />)
+    return <TextBlock {...props} />
   },
   Admonition(props) {
     return <div {...props} />
@@ -58,6 +61,12 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   GetstartedCard() {
     return <GetstartedCard />
+  },
+  LibraryGetStarted() {
+    return <LibraryGetStarted />
+  },
+  LibraryItem({ items, ...props }) {
+    return <LibraryItem items={items} {...props} />
   },
   TransferCard() {
     return <TransferCard />
@@ -69,7 +78,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
     return <TestAndGoLive />
   },
   Pagination({ children, props }) {
-    return (<Pagination children={children} {...props} />)
+    return <Pagination children={children} {...props} />
   },
   BankPayouts() {
     return <BankPayouts />
@@ -80,6 +89,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
 
   LinkedCard(MyProps) {
     return <LinkedCard {...MyProps} />
+  },
+  LinkCard({ children, prop }) {
+    return <LinkCard children={children} {...prop} />
   },
   PlainCard(MyProps) {
     return <PlainCard {...MyProps} />
