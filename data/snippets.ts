@@ -142,22 +142,3 @@ export const snippets = {
         "acceptPartialPayment": true
     }`
 }
-`,
-  webhookpayload4: `var crypto = require('crypto');
-"var secret = process.env.SECRET_KEY;
-// Using Express
-app.post("/my/webhook/url", function(req, res) {
-
-  //validate event
-   var hash = crypto.createHmac('sha256', secret).update(JSON.stringify(req.body), 'utf8').digest('hex');  
-
-   if (hash == req.headers['x-lazerpay-signature']) {
-   // Retrieve the request's body
-  var event = req.body;
-   // Do something with event 
-          }
-          res.send(200);
-      });
-
-`,
-};
