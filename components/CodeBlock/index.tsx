@@ -11,20 +11,25 @@ import classNames from 'classnames'
 interface IProps {
     id?: string;
     req?: string;
+    lang?: string;
     children?: React.ReactNode
 }
 
-const Label = ({ label })=> {
+const Label = ({ label }) => {
     const options = {
         'POST': 'bg-suc-100'
     }
 
     return (
-        <div className={classNames(options[label], 'uppercase text-neu-700 caption-s rounded-8 px-2.5 py-1')}>{label}</div>
+        <div className={classNames(
+            options[label],
+            'uppercase text-neu-700 caption-s rounded-8 px-2.5 py-1')}>
+            {label}
+        </div>
     )
 };
 
-export default function CodeBlock({ id, req = 'POST' }: IProps) {
+export default function CodeBlock({ id, lang = 'jsx', req = 'POST' }: IProps) {
     const codeSnippet = snippets[id] || 'snippet not found';
     // const title = Object.keys(snippets).find(s => s === id);
 
@@ -33,15 +38,15 @@ export default function CodeBlock({ id, req = 'POST' }: IProps) {
     }, [])
 
     return (
-        <div className={classNames(Styles.CodeBlock, 'flex pb-2 bg-white flex-col')}>
+        <div className={classNames(Styles.CodeBlock, 'flex font-code pb-2 bg-white flex-col')}>
             <div className='flex items-center px-10 py-4 space-x-5 bg-neu-50 head rounded-t-8'>
-                <Label label={req} /> 
+                <Label label={req} />
             </div>
             <code>
                 <pre className="!my-0 line-numbers">
-                    <code className="language-jsx">{codeSnippet}</code>
+                    <code className={classNames(`language-${lang}`)}>{codeSnippet}</code>
                 </pre>
             </code>
         </div>
     )
-}
+};
