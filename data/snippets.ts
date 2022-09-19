@@ -140,6 +140,5 @@ export const snippets = {
         "feeInCrypto": 0.5,
         "network": "testnet",
         "acceptPartialPayment": true
-    }
-    `
+    }`
 }
