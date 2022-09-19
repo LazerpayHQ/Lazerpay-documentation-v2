@@ -1,0 +1,88 @@
+---
+title: Partial Payments
+description: partail payments page
+---
+
+
+# Webhooks
+
+Listen to webhook event whenever certain action occurs.
+
+<Divider className='w-20 mt-2 mb-4' />
+
+## What are Webhooks?
+
+Webhooks are a way for you to subscribe to events that occur when an event involving your 
+business occurs. This guide will walk through what webhooks are and how you can use them in
+ order to get started with integrating them into your application.
+
+A webhook URL is an endpoint on your server where you can receive notifications about such
+ events. When an event occurs, we'll make a POST request to that endpoint, with a JSON body
+  containing the details about the event, including the type of event and the data associated with it.
+
+
+<Alert
+status='info'
+className='my-7'
+content='Rather than continuously polling the server to check if the state has changed, webhooks provide 
+information to you as it becomes available, which is a lot more efficient and beneficial for developers.'
+/>
+
+
+Here are some sample webhook paylods for deposit transactions
+
+<CodeBlock req='' id='webHookPayload' lang='json' className='h-[492px] ' />
+
+<Divider className='w-20 mt-3' />
+
+## Enabling WebHooks
+
+<TransferWebHook/>
+
+
+## Validating WebHook Signature
+
+Every webhook event payload will contain a hashed authentication signature in the header which 
+is computed by generating a hash from concatenating your API key and request body,
+using the HMAC SHA256 hash algorithm.
+
+In order to verify this signature came from Lazerpay, you simply have to generate the HMAC 
+SHA256 hash and compare it with the signature received.
+
+<CodeBlock req='' id='webHookPayload2' lang='js' className='h-[492px]' />
+
+<Divider className='w-20 mt-3' mb-4 />
+
+## Responding to WebHooks Request
+
+You must respond with a <code>200 ok</code> status code. Any other response code outside of the <code>2xx</code>
+range, will be considered as a failure, including <code>3xx</code> codes. <b>We don't 
+care about the response body or header</b>
+
+<Alert
+status='info'
+content="If we don't get a 200 OK status code, we will retry the webhook every one minute for the next 24hrs"
+/>
+
+<Divider className='w-20 mb-4'/>
+
+
+## Supported Webhook Types
+Here are the webhook request type that we support. We will add more as we keep adding
+webhook support for differnt API operations in the future.
+
+<LzTable
+head={['Webhook Type', 'Description']}
+body={[
+[
+  'CRYPTO_TRANSFER',
+  `A crypto transfer has occured. It could have a status of <code>pending</code> or <code>confirmed</code>`
+],
+]}
+/>
+
+<Divider className='w-20 mb-4'/>
+
+<Divider className='w-full'/>
+
+<Pagination prevName='Bank Transfers' nextName='Swaps'/>
