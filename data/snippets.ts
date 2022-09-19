@@ -306,7 +306,7 @@ export const snippets = {
         },
         "statusCode": 200,
         "status": "success"
-    }`
+    }`,
     webhookPayload:
         `{
         "id": "378b53b2-28fd-4cbd-8fe1-6786d251b7d4",
