@@ -23,8 +23,21 @@ Here’s a code sample for verifying transactions.
     ['*', '<code>String</code>', 'YOUR_PUBLIC_KEY'],
   ]}
   />
-
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Node'], snippet: ['verifyPaymentGetCURL', 'verifyPaymentGetCURL'], lang: ['curl', 'curl']}, responseData: {name: ['200: OK', '404: Not Found'], snippet: ['verifyPaymentGetResponse200', 'verifyPaymentGetResponse404'], lang: ['json', 'json']}} }} />
+  
+<CodeBlock 
+  responseTheme="red" 
+  responseTitle="Response" 
+  data={{type: 'request', item: {method: "GET", requestData: {
+    name: ['cURL', 'Node'], 
+    snippet: ['verifyPaymentGetCURL', 'verifyPaymentGetCURL'], 
+    lang: ['curl', 'curl']
+  }, 
+  responseData: {
+    name: ['200: OK', '404: Not Found'], 
+    snippet: ['verifyPaymentGetResponse200', 'verifyPaymentGetResponse404'], 
+    lang: ['json', 'json'] }} 
+    }} 
+  />
 
 #### Important Note from the verification response
 1. The <code>actualAmount</code> key is the amount that you intended to charge the customer in crypto.
@@ -39,11 +52,23 @@ Here’s a code sample for verifying transactions.
 ## From Official JS SDK
 With the JS SDK, you have access to the confirmPayment object which is used to verify any payment in the Lazerpay platform.
 
-<CodeBlock responseTheme="red" responseTitle="JSON" data={{type: 'request', item: { requestData: {name: ['Node'], snippet: ['verifyPaymentNodeSDK'], lang: ['js']}, responseData: {name: ['200: OK', '401: Unauthorized'], snippet: ['customerInfoReq201', 'customerInfoReq401'], lang: ['json', 'json']}} }} />
+<CodeBlock 
+  responseTheme="red" 
+  responseTitle="JSON" 
+  data={{type: 'request', item: { requestData: {
+    name: ['Node'], 
+    snippet: ['verifyPaymentNodeSDK'], 
+    lang: ['js']
+  }, 
+  responseData: {
+    name: ['200: OK', '401: Unauthorized'], 
+    snippet: ['customerInfoReq201', 'customerInfoReq401'], 
+    lang: ['json', 'json']}} 
+    }} 
+  />
 
 <br />
 <Alert status="warning">If you offer digital value like airtime, wallet top-up, digital credit, etc, always confirm that you have not already processed the value for that transaction to avoid double fulfillments, especially, if you also use webhooks.</Alert>
 <Divider className='max-w-100 mt-1 mb-8' />
 <br />
 <Divider />
-<Pagination />
