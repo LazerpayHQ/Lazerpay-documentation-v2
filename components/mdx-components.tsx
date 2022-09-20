@@ -17,10 +17,14 @@ import LzAlert from './UI/alert'
 import LinkedCard, { PlainCard } from './GetstartedCard/Cards'
 import TransferCard from './TransferCard'
 import BankPayouts from './BankPayouts'
-import TransferWebHook from './TransWebhook'
 import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
 import LzTable from './UI/table'
+import TransferWebHook from './Transfer'
+import ImportantThings from './Transfer/Important-things'
+import InlineCheckout from './AcceptPayments/InlineCheckout'
+import PaymentAPI from './AcceptPayments/PaymentAPI'
+import TransferAPI from './Transfer/TransferAPI'
 import Webhooks from './Webhooks'
 
 /** Create a map of the HTML elements */
@@ -83,17 +87,29 @@ export const components: Record<string, FC<Record<string, any>>> = {
   Ecommerce() {
     return <Ecommerce />
   },
+  InlineCheckout() {
+    return <InlineCheckout />
+  },
+  PaymentAPI() {
+    return <PaymentAPI />
+  },
 
   Webhooks() {
     return <Webhooks />
+  },
+  TransferWebHook() {
+    return <TransferWebHook />
+  },
+  ImportantThings() {
+    return <ImportantThings />
+  },
+  TransferAPI() {
+    return <TransferAPI />
   },
 
   /** Below this line contains all reusable UI components */
   LzTable({ head, body }) {
     return <LzTable body={body} head={head} />
-  },
-  TransferWebHook() {
-    return <TransferWebHook />
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />

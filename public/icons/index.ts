@@ -19,6 +19,7 @@ import ThumbsUpIcon from './thumbs-up-icon';
 import TransferIcon from './transfers-icon';
 import UseCasesIcon from './use-cases-icon';
 import HandsWithPenny from 'public/icons/handsWithPenny';
+import { ToggleIcon } from './toggleIcon';
 import { ShopifyIcon } from './shopify-icon';
 import { WordPressIcon } from './wordPress-Icon';
 import { WooCommerceIcon } from './wooCommerce-icon';
@@ -47,5 +48,6 @@ export {
   WooCommerceIcon,
   ShopifyIcon,
   HandsWithPenny,
-  DashboardScreenshot
+  DashboardScreenshot,
+  ToggleIcon
 };

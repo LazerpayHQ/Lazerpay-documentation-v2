@@ -3,17 +3,44 @@ title: Accept Payments
 description: payment introduction page
 ---
 
-# Payments: Demo table component
+# Accept Payments
 
-This is to show the table component Demo
-<Divider className='max-w-100 mb-4' />
+## Inline Checkout - Pop up
 
-<LzTable 
-    head={['Features', 'On site', 'Off site']}
-    body={[
-        ["Payment", "Completed on your checkout page", "Completed on a dashboard.lazerpay.finance redirect page"],
-        ["3DS", "Additional set up and cost with <code>Cardinal</code> Commerce", "We handle 3DS with no extra cost"],
-        ["Payment", "Completed on your checkout page", "Completed on a dashboard.lazerpay.finance redirect page"],
-        ["Local Payment", "Not supported", "Partially supported"],
-    ]} 
-/>
+The Lazerpay popup provides a convenient and easy way for developers to accept payments on
+the web. You can start receiving payments on your website with the checkout easily.
+
+<InlineCheckout/>
+
+<Divider className='w-20'/>
+
+## Initialize Payment API
+
+The initialize payment endpoint allows you to initiate payment directly to Lazerpay by passing in
+the payment details:
+
+<PaymentAPI/>
+
+<Divider className='w-20'/>
+
+## Lazerpay’s Node JS SDK
+
+The SDK allows you to initialise a payment transaction and to confirm payment. It's an NPM 
+package so you can use it in a node environment.
+
+Here's a sample code on how to use the NodeJS SDK:
+
+<CodeBlock options req1='Hide Response' id1='nodeJsSdkSample'/>
+
+<CodeBlock options req1='Response JSON' id1='nodeJsSdkSampleResponse' className='!bg-white code-war-500' lang='json'/>
+
+
+When a payment is successful, Lazerpay sends a <code>DEPOSIT_TRANSACTION</code> When a payment is successful, Lazerpay sends a
+webhook URL that you provide. It is highly recommended that you use webhooks to confirm the 
+payment status before delivering value to your customers.
+
+<Divider className='w-20 mb-12'/>
+
+<Divider className='w-full'/>
+
+<Pagination prevName='Get Started' nextName='Verify Payments'/>
