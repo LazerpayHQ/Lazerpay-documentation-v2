@@ -65,24 +65,24 @@ const sidebar: SidebarItem[] = [
       { type: 'docs', label: 'Plugins', id: 'plugins' },
     ],
   },
-  {
-    type: 'category',
-    label: 'Use Cases',
-    icon: <UseCasesIcon />,
-    id: 'use-cases',
-    redirect: 'use-cases/get-started',
-    children: [
-      { type: 'docs', label: 'Get started', id: 'get-started' },
-      { type: 'docs', label: 'Ecommerce', id: 'ecommerce' },
-    ],
-  },
-  {
-    type: 'docs',
-    label: 'Guides and Tutorials',
-    icon: <GuidesIcon />,
-    id: 'guides',
-    children: [],
-  },
+  // {
+  //   type: 'category',
+  //   label: 'Use Cases',
+  //   icon: <UseCasesIcon />,
+  //   id: 'use-cases',
+  //   redirect: 'use-cases/get-started',
+  //   children: [
+  //     { type: 'docs', label: 'Get started', id: 'get-started' },
+  //     { type: 'docs', label: 'Ecommerce', id: 'ecommerce' },
+  //   ],
+  // },
+  // {
+  //   type: 'docs',
+  //   label: 'Guides and Tutorials',
+  //   icon: <GuidesIcon />,
+  //   id: 'guides',
+  //   children: [],
+  // },
 ]
 
 export default sidebar

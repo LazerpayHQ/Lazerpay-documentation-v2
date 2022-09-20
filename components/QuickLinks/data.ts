@@ -9,14 +9,14 @@ export interface TabsItem {
 export const tabsData: TabsItem[] = [
     {
         title: "Accept Payments",
-        route: "quick-start/payments",
+        route: "payments/accept-payments",
         desc: `Accepting payments on Lazerpay is as seamless as it gets. Simply integrate a payment link or button.`,
         image: '/images/payments.svg',
         label: 'Go to payments'
     },
     {
         title: "Transfers",
-        route: "quick-start/transfers",
+        route: "transfers/get-started",
         desc: `Get almost instant payouts to your local bank account, or crypto wallet`,
         image: '/images/transfers.svg',
         label: 'Go to transfers'
@@ -30,23 +30,23 @@ export const tabsData: TabsItem[] = [
     },
     {
         title: "Libraries",
-        route: "quick-start/libraries",
+        route: "libraries/get-started",
         desc: `These are othe official and community Lazerpay Libraries, APIs and Plugins.`,
         image: '/images/libraries.svg',
         label: 'Go to libraries'
     },
-    {
-        title: "Use Cases",
-        route: "use-cases/get-started",
-        desc: `Learn how we’re powering crypto payments for creators, software providers, stores and startups.`,
-        image: '/images/use-cases.svg',
-        label: 'Go to Use Cases'
-    },
-    {
-        title: "Guides and Tutorials",
-        route: "quick-start/guides",
-        desc: `Step-by-step guide on how to get the best out of your Lazerpay integration and features.`,
-        image: '/images/guides.svg',
-        label: 'Go to guides'
-    },
+    // {
+    //     title: "Use Cases",
+    //     route: "use-cases/get-started",
+    //     desc: `Learn how we’re powering crypto payments for creators, software providers, stores and startups.`,
+    //     image: '/images/use-cases.svg',
+    //     label: 'Go to Use Cases'
+    // },
+    // {
+    //     title: "Guides and Tutorials",
+    //     route: "quick-start/guides",
+    //     desc: `Step-by-step guide on how to get the best out of your Lazerpay integration and features.`,
+    //     image: '/images/guides.svg',
+    //     label: 'Go to guides'
+    // },
 ]

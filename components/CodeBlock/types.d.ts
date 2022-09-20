@@ -9,10 +9,10 @@ export type RequestType = ItemType;
 export type RequestData = {
   method?: 'POST' | 'GET';
   requestData: RequestType;
-  responseData: ItemType;
-  showResponse: boolean;
-  toggleResponse: (boolean) => void;
-  onChange: (i: number) => void;
+  responseData?: ItemType;
+  showResponse?: boolean;
+  toggleResponse?: (boolean) => void;
+  onChange?: (i: number) => void;
 }
 
 export type DataProp = {
