@@ -31,7 +31,7 @@ const InlineCheckout = () => {
         <Divider className='max-w-100 mb-4' />
 
         <LzTable
-          head={['Props', 'FUNCTIONALITY', 'Priority', 'Type']}
+          head={['Props', 'Functionality', 'Priority', 'Type']}
           body={[
             ['name', 'Customers Name', 'optional', `<code>Strings</code>`],
             ['email', 'Customer email', 'optional', `<code>String</code>`],

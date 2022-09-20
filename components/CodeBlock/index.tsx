@@ -117,7 +117,7 @@ const CodeBlock = ({
         <div
           className={classNames(
             Styles.CodeBlock,
-            'flex font-code pb-2 bg-white flex-col',
+            `flex font-code pb-2 bg-white flex-col ${className}`,
           )}
         >
           <div className='flex items-center text-pri-400 px-10 py-4 space-x-5 bg-neu-50 head rounded-t-8'>
