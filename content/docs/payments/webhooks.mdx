@@ -1,0 +1,93 @@
+---
+title: Webhooks
+description: 
+---
+
+# Webhooks
+
+Listen to webhook events whenever certain actions occurs.
+
+<Divider className="max-w-100" />
+
+## What are Webhooks?
+
+Webhooks are a way for you to subscribe to events that occur when an event involving your business occurs. This guide will walk through what webhooks are and how you can use them in order to get started with integrating them into your application.
+
+A webhook URL is an endpoint on your server where you can receive notifications about such events. When an event occurs, we'll make a POST request to that endpoint, with a JSON body containing the details about the event, including the type of event and the data associated with it.
+
+ <Alert 
+    status="info" 
+   
+    className="my-2" 
+    content=' Rather than continuously polling the server to check if the state has changed, webhooks provide information to you as it becomes available, which is a lot more efficient and beneficial for developers.'/>
+
+    Here are some sample webhook paylods for deposit transactions.
+
+     <CodeBlock req='' id='webHookPayload3' className='h-[492px]' />
+
+<Divider className="max-w-100" />
+
+## Enabling Webhooks
+
+You can specify your webhook URL on your dashboard where we would send <code> POST</code> requests
+whenever an event occurs.
+
+Here’s how to set up a webhook on your Lazerpay account:
+
+
+<Webhooks/>
+
+
+<Alert 
+    status="info" 
+    className="my-2" 
+    content=' When testing, you can get an instant webhook URL by visiting webhook.site. This will allow you to inspect the received payload without having to write any code or set up a server.'/>
+
+
+   <Divider className="max-w-100" />
+
+   ## Validating Webhook Signature
+
+   Every webhook event payload will contain a hashed authentication signature in the header which is computed by generating a hash from concatenating your API key and request body, using the HMAC SHA256 hash algorithm. 
+
+In order to verify this signature came from Lazerpay, you simply have to generate the HMAC SHA256 hash and compare it with the signature received. 
+
+<CodeBlock req='' id='webhookpayload4' className='h-[492px]' />
+
+ <Divider className="max-w-100" />
+
+ ## Responding to Wehbooks Request 
+
+ You must respond with a <code> 200 ok</code> status code. Any other response code outside of the <code> 2xx</code> 
+ range, we will consider it will considered as a failure, including <code>3xx</code> codes. <strong> We don’t 
+ care about the response body or headers </strong>
+
+
+<Alert 
+    status="info" 
+    className="my-2" 
+    content=' If we don’t get a 200 ok status  well try the webhook every one minutes for 24 hours.'/>
+
+ <Divider className="max-w-100" />
+
+ ## Supported Wehbooks Types
+
+ Here are the webhook type request we support. Well add more to this list as we keep adding 
+ webhook supports for different API operations in the future
+
+ <LzTable
+head={['Webhook Type', 'Description']}
+body={[
+[
+  `DEPOSIT_TRANSACTION`,
+  `A deposit transaction has occured. It could have a status of <code> incomplete</code> or <code> complete </code>`,
+],
+]}
+/>
+
+<Divider className="max-w-100" />
+
+<Pagination />
+
+
+

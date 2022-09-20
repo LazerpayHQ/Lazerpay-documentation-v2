@@ -30,6 +30,7 @@ import TestPayments from './TestPayments'
 import PaymentAPI from './AcceptPayments/PaymentAPI'
 import InlineCheckout from './AcceptPayments/InlineCheckout'
 import TransferAPI from './Transfer/TransferAPI'
+import Webhooks from './Webhooks'
 
 export {
   LzTable,
@@ -60,5 +61,6 @@ export {
   InlineCheckout,
   PaymentAPI,
   TransferAPI,
-  ImportantThings
+  ImportantThings,
+  Webhooks
 }

@@ -16,8 +16,8 @@ const TestPayments = () => {
 
             <ul className=' space-y-5 mb-6'>
                 <li> <code> 1 </code> Go to the Binance testnet faucet.  </li>
-                <li> <code> 2 </code> Input your BEP20 address..  </li>
-                <li> <code> 3 </code> Click on peggy Tokens and select USDT..  </li>
+                <li> <code> 2 </code> Navigate to the <strong> API Keys and Webhooks tab.</strong>.  </li>
+                <li> <code> 3 </code> Specify your webhook url and click on  <strong>Update.</strong> </li>
             </ul>
 
             <div className='grid md:grid-cols-2 md:space-y-0 space-y-12 sticky'>

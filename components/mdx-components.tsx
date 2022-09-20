@@ -25,6 +25,7 @@ import ImportantThings from './Transfer/Important-things'
 import InlineCheckout from './AcceptPayments/InlineCheckout'
 import PaymentAPI from './AcceptPayments/PaymentAPI'
 import TransferAPI from './Transfer/TransferAPI'
+import Webhooks from './Webhooks'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -93,9 +94,8 @@ export const components: Record<string, FC<Record<string, any>>> = {
     return <PaymentAPI />
   },
 
-  /** Below this line contains all reusable UI components */
-  LzTable({ head, body }) {
-    return <LzTable body={body} head={head} />
+  Webhooks() {
+    return <Webhooks />
   },
   TransferWebHook() {
     return <TransferWebHook />
@@ -105,6 +105,11 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   TransferAPI() {
     return <TransferAPI />
+  },
+
+  /** Below this line contains all reusable UI components */
+  LzTable({ head, body }) {
+    return <LzTable body={body} head={head} />
   },
   p(props) {
     return <p className='paragraph-2 text-neu-800' {...props} />
