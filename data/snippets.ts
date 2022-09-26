@@ -35,59 +35,78 @@ export const snippets = {
 
         paymentForm.addEventListener("submit", payWithLazerpay, false);
     </script>`,
-  customerInfoPostCURL:
-    `   curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+  initializePaymentPostCURL:
+    `  curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+--data-raw '{
+    "customer_name": "Abdulfatai Suleiman",
+    "customer_email": "static@gmail.com",
+    "coin": "USDT",
+    "amount": "10"
+}'`,
+  initializePaymentPostNode:
+    `var https = require('follow-redirects').https;
+var fs = require('fs');
 
-    --header 'x-api-key: YOUR_PUBLIC_KEY' \
+var options = {
+  'method': 'POST',
+  'hostname': 'api.lazerpay.engineering',
+  'path': '/api/v1/transaction/initialize',
+  'headers': {
+  },
+  'maxRedirects': 20
+};
 
-    --data-raw '{
-        "customer_name": "Abdulfatai Suleiman",
-        "customer_email": "static@gmail.com",
-        "currency": "USD",
-        "coin": "USDT",
-        "amount": "10",
-        accept_partial_payment:"true"
-    }’`,
-  customerInfoPostNode:
-    `   suck --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
-    --header 'x-api-key: YOUR_PUBLIC_KEY' \
-    --data-raw '{
-        "customer_name": "Abdulfatai Suleiman",
-        "customer_email": "static@gmail.com",
-        "currency": "USD",
-        "coin": "USDT",
-        "amount": "10",
-        accept_partial_payment:"true"
-    }’`,
-  customerInfoReq201:
+var req = https.request(options, function (res) {
+  var chunks = [];
+
+  res.on("data", function (chunk) {
+    chunks.push(chunk);
+  });
+
+  res.on("end", function (chunk) {
+    var body = Buffer.concat(chunks);
+    console.log(body.toString());
+  });
+
+  res.on("error", function (error) {
+    console.error(error);
+  });
+});
+
+var postData =  "{\n    \"customer_name\": \"Abdulfatai Suleiman\",\n    \"customer_email\": \"static@gmail.com\",\n    \"coin\": \"USDT\",\n    \"amount\": \"10\"\n}";
+
+req.write(postData);
+
+req.end();`,
+  initializePaymentRes201:
     `   {
-        "message": "Transaction initialized successfully",
-        "status": "success",
-        "data": {
-            "reference": "wfqweweqrtwerwrtwer45354545",
-            "businessName": "Lazerpay Finance",
-            "businessEmail": "abdulfataisuleiman67@gmail.com",
-            "businessLogo": "https://res.cloudinary.com/lazer/image/upload/v1637512933/logo-default_ufyz0x.svg",
-            "customerName": "Abdulfatai Suleiman",
-            "customerEmail": "staticdev20046@gmail.com",
-            "address": "0xcA20e971400F81F97fEc5416A963e8FA7F81aaE3",
-            "coin": "BUSD",
-            "cryptoAmount": 50.5,
-            "currency": "USD",
-            "fiatAmount": 50,
-            "feeInCrypto": 0.5,
-            "network": "testnet",
-            "acceptPartialPayment": true
-        }
-        "statusCode": 201
-    }`,
-  customerInfoReq401:
+  "message": "Transaction initialized successfully",
+  "status": "success",
+  "data": {
+    "reference": "wfqweweqrtwerwrtwer45354545",
+    "businessName": "Lazerpay Finance",
+    "businessEmail": "abdulfataisuleiman67@gmail.com",
+    "businessLogo": "https://res.cloudinary.com/lazer/image/upload/v1637512933/logo-default_ufyz0x.svg",
+    "customerName": "Abdulfatai Suleiman",
+    "customerEmail": "staticdev20046@gmail.com",
+    "address": "0xcA20e971400F81F97fEc5416A963e8FA7F81aaE3",
+    "coin": "BUSD",
+    "cryptoAmount": 50.5,
+    "currency": "USD",
+    "fiatAmount": 50,
+    "feeInCrypto": 0.5,
+    "network": "testnet",
+    "acceptPartialPayment": true
+  },
+  "statusCode": 201
+}`,
+  initializePaymentRes401:
     `   {
         "message": "Transaction failed",
         "status": "failed",
         "statusCode": 401
     }`,
-  nodeSDKSample:
+  initializePaymentNodeSDKSample:
     `    const LazerPay = require('lazerpay-node-sdk');
 
     const lazerpay = new LazerPay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);
@@ -109,7 +128,7 @@ export const snippets = {
         } catch (error) {
             console.log(error);
         }`,
-  nodeSDKSampleResponse:
+  initializePaymentNodeSDKSampleResponse:
     `   {
         "reference": "wfqweweqrtwerwrtwer45354545",
         "businessName": "Lazerpay Finance",
@@ -127,45 +146,44 @@ export const snippets = {
         "acceptPartialPayment": true
     }`,
   verifyPaymentGetCURL:
-    `    curl --location --request GET 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
-
-    --header 'x-api-key: YOUR_PUBLIC_KEY' \
+    `   curl --location --request GET 'https://api.lazerpay.engineering/api/v1/transaction/verify/:address_or_reference'
     `,
   verifyPaymentGetResponse200:
-    `{
-        "status": "success",
-        "statusCode": 200,
-        "message": "Verification successful",
-        "data": {
-            "id": "92924b81-11fd-418f-bc4f-3ddab7e79e6b",
-            "reference": "nGfVSuX3IK",
-            "senderAddress": "0x451dEFC27B45808078e875556AF06bCFdC697BA4",
-            "recipientAddress": "0xCfe4e688c47Af0689224da9B9bAB51B4dA38D11c",
-            "actualAmount": 0.51,
-            "amountPaid": 0.51,
-            "amountPaidFiat": 299.7984,
-            "fiatAmount": 300,
-            "amountReceived": 0.52,
-            "amountReceivedFiat": 305.6768,
-            "coin": "BUSD",
-            "currency": "NGN",
-            "hash": "0xc80d9fa8ba4b13c685ad12ffdeb2a6f803f7c3832f51cc0376e5ff9a74c6fd93",
-            "blockNumber": 16684797,
-            "type": "received",
-            "acceptPartialPayment": true,
-            "status": "confirmed",
-            "network": "mainnet",
-            "blockchain": "Binance Smart Chain",
-            "customer": {
-                "id": "1c4d885e-4058-45f0-8d74-ff79fe439e75",
-                "customerName": "Abdulfatai Suleiman",
-                "customerEmail": "abdulfataisuleiman67@gmail.com",
-                "customerPhone": null
-            }
-            "paymentLink": {},
-            "paymentButton": {},
-            "feeInCrypto": 0.01
-        }`,
+    `  "status": "success",
+  "statusCode": 200,
+  "message": "Verification successful",
+  "data": {
+    "id": "d5e8c792-7950-455e-8217-770f5d0716f7",
+    "reference": "wfqweweqrtwerwrtwer45354545",
+    "senderAddress": null,
+    "recipientAddress": "0x65f38151197AfF48a6A2c50A3EE0A6d70369b962",
+    "actualAmount": 50,
+    "amountPaid": null,
+    "amountPaidFiat": null,
+    "fiatAmount": 50,
+    "amountReceived": null,
+    "amountReceivedFiat": null,
+    "coin": "BUSD",
+    "currency": "USD",
+    "hash": null,
+    "blockNumber": null,
+    "type": "received",
+    "acceptPartialPayment": true,
+    "status": "confirmed",
+    "network": "testnet",
+    "blockchain": "Binance Smart Chain",
+    "customer": {
+      "id": "58d85e5c-835d-4a6e-93b4-0fe689cf94fd",
+      "customerName": "Abdulfatai Suleiman",
+      "customerEmail": "staticdev20046@gmail.com",
+      "customerPhone": null,
+      "network": "testnet"
+    },
+    "paymentLink": {},
+    "paymentButton": {},
+    "feeInCrypto": 0.5
+  }
+}`,
   verifyPaymentGetResponse404:
     `{
         "message": "Transaction not found",
