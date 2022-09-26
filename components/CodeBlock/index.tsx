@@ -1,47 +1,44 @@
 import { useEffect } from 'react'
 import Prism from 'prismjs'
+import { FaChevronDown } from 'react-icons/fa'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
-import 'prismjs/components/prism-jsx.js'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
-import Styles from './index.module.scss';
+import Styles from './index.module.scss'
 import { snippets } from 'data/snippets'
 import classNames from 'classnames'
+import BlockWrapper from './BlockWrapper'
 
 interface IProps {
-    id?: string;
-    req?: string;
-    children?: React.ReactNode
+  id?: string
+  req?: string
+  children?: React.ReactNode
 }
 
-const Label = ({ label })=> {
-    const options = {
-        'POST': 'bg-suc-100'
-    }
+export default function CodeBlock({ id }: IProps) {
+  const code =
+    snippets.find((snippet) => snippet.id[id] === id) || 'snippet not found'
 
-    return (
-        <div className={classNames(options[label], 'uppercase text-neu-700 caption-s rounded-8 px-2.5 py-1')}>{label}</div>
-    )
-};
+  // const title = Object.keys(snippets).find(s => s === id);
 
-export default function CodeBlock({ id, req = 'POST' }: IProps) {
-    const codeSnippet = snippets[id] || 'snippet not found';
-    // const title = Object.keys(snippets).find(s => s === id);
+  useEffect(() => {
+    Prism.highlightAll()
+  }, [])
 
-    useEffect(() => {
-        Prism.highlightAll()
-    }, [])
-
-    return (
-        <div className={classNames(Styles.CodeBlock, 'flex pb-2 bg-white flex-col')}>
-            <div className='flex items-center px-10 py-4 space-x-5 bg-neu-50 head rounded-t-8'>
-                <Label label={req} /> 
-            </div>
-            <code>
-                <pre className="!my-0 line-numbers">
-                    <code className="language-jsx">{codeSnippet}</code>
-                </pre>
-            </code>
+  return (
+    <BlockWrapper>
+      {snippets.map((codeSnippet) => {
+        ;<div
+          className={classNames(
+            Styles.CodeBlock,
+            'flex pb-2 bg-white flex-col',
+          )}
+        >
+          <SyntaxHighlighter language={codeSnippet.lang} style={dark}>
+            {code}
+          </SyntaxHighlighter>
         </div>
-    )
+      })}
+    </BlockWrapper>
+  )
 }
