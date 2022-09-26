@@ -1,0 +1,78 @@
+---
+title: Webhooks
+description: Webhooks page
+---
+
+# Webhooks
+
+Listen to webhook events whenever certain actions occurs.
+
+<Divider className='max-w-100 mt-1 mb-8' />
+
+## What are Webhooks?
+
+Webhooks are a way for you to subscribe to events that occur when an event involving your business occurs. This guide will walk through what webhooks are and how you can use them in order to get started with integrating them into your application.
+
+A webhook URL is an endpoint on your server where you can receive notifications about such events. When an event occurs, we'll make a POST request to that endpoint, with a JSON body containing the details about the event, including the type of event and the data associated with it.
+
+<Alert>Rather than continuously polling the server to check if the state has changed, webhooks provide information to you as it becomes available, which is a lot more efficient and beneficial for developers.</Alert>
+
+Here are some sample webhook paylods for deposit transactions.
+
+<CodeBlock
+  data={{type: 'tab', item: {
+    name: ['JAVASCRIPT'], 
+    snippet: ['webhookPayload'], 
+    lang: ['js'] }
+  }} 
+/>
+<Divider className='max-w-100 mt-1 mb-8' />
+<br />
+
+## Enabling Webhooks
+You can specify your webhook URL <a href="#">on your dashboard</a> where we would send <code>POST</code> requests whenever an event occurs.
+
+Here’s how to set up a webhook on your Lazerpay account:
+
+1. Login to your <a href="#">dashboard</a> and click on <strong>Settings</strong>.
+2. Navigate to the <strong>API Keys and Webhooks tab.</strong>
+3. Specify your webhook url and click on <strong>Update.</strong>
+
+![Dashboard API keys and Webhooks tab](/images/keys_and_webhooks.png)
+
+<Alert>When testing, you can get an instant webhook URL by visiting <a href="#">webhook.site</a>. This will allow you to inspect the received payload without having to write any code or set up a server.</Alert>
+<Divider className='max-w-100 mt-1 mb-8' />
+<br />
+
+## Validating Webhook Signature
+
+Every webhook event payload will contain a hashed authentication signature in the header which is computed by generating a hash from concatenating your API key and request body, using the HMAC SHA256 hash algorithm. 
+
+In order to verify this signature came from Lazerpay, you simply have to generate the HMAC SHA256 hash and compare it with the signature received.
+
+<CodeBlock 
+  data={{type: 'tab', item: {
+    name: ['JAVASCRIPT'], 
+    snippet: ['webhookValidateSignature'], 
+    lang: ['js']}
+  }} 
+/>
+<Divider className='max-w-100 mt-1 mb-8' />
+<br />
+
+## Responding to Webhooks Request
+You must respond with a <code>200 OK</code> status code. Any other response code outside of the <code>2xx</code> range, we will consider it will be considered as a failure, including <code>3xx</code> codes. <strong>We don’t care about the response body or headers.</strong>
+
+<br/>
+<Alert>If we don't get a 200 OK status code, we'll retry the webhook every one minute for the next 24 hours.</Alert>
+<Divider className='max-w-100 mt-1 mb-8' />
+<br />
+
+## Supported Webhooks Types
+Here are the webhooks request types we support. We'll add more to this list as we keep adding webhook supports for different API operations in the future.
+
+<LzTable head={["Webhook Type", "Description"]} body={[
+  ['DEPOSIT_TRANSACTION', 'A deposit transaction has occured. It could have a status of of <code>template</code> or <code>complete</code>']
+]}/>
+
+<Divider className='max-w-100 mt-1 mb-8' />

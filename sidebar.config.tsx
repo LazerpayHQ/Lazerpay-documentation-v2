@@ -1,65 +1,88 @@
-import { GuidesIcon, HomeIcon, PaymentsIcon, TransferIcon, UseCasesIcon } from "public/icons"
-import React, { ElementType } from "react"
+import {
+  GuidesIcon,
+  HomeIcon,
+  PaymentsIcon,
+  TransferIcon,
+  UseCasesIcon,
+  LibrariesIcon,
+} from 'public/icons'
+import React, { ElementType } from 'react'
 
 export interface SidebarItem {
   type: string
   icon?: ElementType | React.ReactNode
   id: string
+  redirect?: string
   label: string
-  collapsible?: boolean
-  collapsed?: boolean
   children?: SidebarItem[]
 }
 
 const sidebar: SidebarItem[] = [
   {
-    type: "docs",
-    label: "Quick Start",
+    type: 'docs',
+    label: 'Quick Start',
     icon: <HomeIcon />,
-    id: "quick-start"
+    id: 'quick-start',
   },
   {
-    type: "docs",
-    label: "Payments",
+    type: 'category',
+    label: 'Payments',
     icon: <PaymentsIcon />,
-    id: "payments",
+    id: 'payments',
+    redirect: 'payments/get-started',
     children: [
-      { type: "docs", label: "Get started", id: "get-started" },
-      { type: "docs", label: "Accepts payments", id: "accepts-payments" },
-      { type: "docs", label: "Verify payments", id: "verify-payments" },
-      { type: "docs", label: "Webhooks", id: "webhooks" },
-      { type: "docs", label: "Payment links", id: "payment-links" },
-      { type: "docs", label: "Partial payments", id: "partial-payments" },
-      { type: "docs", label: "Test payments", id: "test-payments" },
+      { type: 'docs', label: 'Get started', id: 'get-started' },
+      { type: 'docs', label: 'Accepts payments', id: 'accept-payments' },
+      { type: 'docs', label: 'Verify payments', id: 'verify-payments' },
+      { type: 'docs', label: 'Webhooks', id: 'webhooks' },
+      { type: 'docs', label: 'Payment links', id: 'payment-links' },
+      { type: 'docs', label: 'Partial payments', id: 'partial-payments' },
+      { type: 'docs', label: 'Test payments', id: 'make-test-payments' },
     ],
   },
   {
-    type: "docs",
-    label: "Transfers",
+    type: 'category',
+    label: 'Transfers',
     icon: <TransferIcon />,
-    id: "transfers",
+    id: 'transfers',
+    redirect: 'transfers/get-started',
     children: [
-      { type: "docs", label: "Introduction", id: "introduction" }
+      { type: 'docs', label: 'Get started', id: 'get-started' },
+      { type: 'docs', label: 'Crypto Transfer', id: 'crypto-transfers' },
+      { type: 'docs', label: 'Bank Transfer', id: 'bank-transfers' },
+      { type: 'docs', label: 'Webhooks', id: 'transfers-webhooks' },
     ],
   },
   {
-    type: "docs",
-    label: "Use Cases",
-    icon: <UseCasesIcon />,
-    id: "use-cases",
+    type: 'category',
+    label: 'Libraries',
+    icon: <LibrariesIcon />,
+    id: 'libraries',
+    redirect: 'libraries/get-started',
     children: [
-      { type: "docs", label: "Introduction", id: "introduction" }
+      { type: 'docs', label: 'Get started', id: 'get-started' },
+      { type: 'docs', label: 'Libraries', id: 'libraries' },
+      { type: 'docs', label: 'Plugins', id: 'plugins' },
     ],
   },
-  {
-    type: "docs",
-    label: "Guides and Tutorials",
-    icon: <GuidesIcon />,
-    id: "guides",
-    children: [
-      { type: "docs", label: "Introduction", id: "introduction" }
-    ],
-  }
+  // {
+  //   type: 'category',
+  //   label: 'Use Cases',
+  //   icon: <UseCasesIcon />,
+  //   id: 'use-cases',
+  //   redirect: 'use-cases/get-started',
+  //   children: [
+  //     { type: 'docs', label: 'Get started', id: 'get-started' },
+  //     { type: 'docs', label: 'Ecommerce', id: 'ecommerce' },
+  //   ],
+  // },
+  // {
+  //   type: 'docs',
+  //   label: 'Guides and Tutorials',
+  //   icon: <GuidesIcon />,
+  //   id: 'guides',
+  //   children: [],
+  // },
 ]
 
 export default sidebar

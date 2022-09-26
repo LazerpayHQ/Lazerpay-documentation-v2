@@ -4,12 +4,154 @@
 @import './components/buttons.scss';
 @import './components/tags.scss';
 @import './components/input.scss';
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400;500;600;700;800&display=swap');
 
 html {
     scroll-behavior: smooth;
-   scroll-padding-top: 100px;
+    scroll-padding-top: 100px;
 }
 
 .break-keep-all {
     word-break: keep-all;
 }
+
+/** Link Anchors **/
+.title-anchor {
+    position: relative;
+
+    &:hover {
+        color: initial !important;
+    }
+
+    &::after {
+        content: "#";
+        position: absolute;
+        left: -35px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: inherit;
+        opacity: .2;
+        padding-left: 10px;
+        visibility: hidden;
+
+        @media (max-width: theme('screens.lg')) {
+            left: -28px;
+            font-size: theme('fontSize.md');
+        }
+
+        @media (max-width: theme('screens.sm')) {
+            left: -25px;
+            font-size: theme('fontSize.md');
+        }
+    }
+
+    &:hover::after {
+        visibility: visible;
+    }
+}
+
+// PRISM OVERRIDES
+.language-html,
+.language-js {
+    & * {
+        color: #F8FAFC !important;
+    }
+}
+
+.language-json.code--red.response {
+    .token.punctuation {
+        @apply text-neu-900;
+    }
+
+    .token.property,
+    .token.operator,
+    .token.string,
+    .token.number,
+    .token.boolean,
+    .token.null {
+        color: #E1386A;
+    }
+}
+
+.language-json.code--default.response {
+    & * {
+        color: #0F172A !important;
+    }
+}
+
+
+.language-curl.code.default {
+    color: #97CD33;
+
+    .token.url {
+        color: #97CD33;
+    }
+
+    .token.method {
+        color: #F92572;
+    }
+
+    .token.curl,
+    .token.option,
+    .token.punctuation {
+        @apply text-neu-50;
+    }
+}
+
+code[class*="language-"].default,
+pre[class*="language-"].default {
+    @apply bg-neu-700 font-code;
+}
+
+code[class*="language-"].response,
+pre[class*="language-"].response {
+    @apply bg-neu-50 font-code;
+}
+
+code {
+    font-size: inherit;
+    padding: 5px 8px;
+    white-space: nowrap;
+    color: theme('colors.pri.500');
+    font-family: theme('fontFamily.code');
+    border-radius: theme('borderRadius.8');
+    background-color: theme('colors.neu.100');
+}
+
+.code {
+    font-size: unset;
+    padding: unset;
+    white-space: unset;
+    color: unset;
+    border-radius: unset;
+    background-color: unset;
+}
+
+.list-custom {
+    position: relative;
+    list-style: none;
+
+    &::marker {
+        content: counter(list-item)"\a0\a0\a0"
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: -23px;
+        width: 16px;
+        height: 23px;
+        z-index: -1;
+        background: #F1F5F9;
+        border-radius: 8px;
+    }
+}
+
+tbody code {
+    background-color: theme('colors.neu.100');
+}
+
+// .code--red {
+//     color: #E1386A !important;
+// }

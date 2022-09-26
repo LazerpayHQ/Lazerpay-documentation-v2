@@ -3,14 +3,14 @@ import classNames from 'classnames'
 import { FaChevronRight } from 'react-icons/fa'
 
 import { tabsData } from './data'
-import LzLink from 'components/UI/Link'
+import LzLink from 'components/UI/link'
 import Styles from './index.module.scss'
 
-export default function QuickLinks():JSX.Element {
+export default function QuickLinks(): JSX.Element {
     return (
         <div className={classNames(Styles.Tabs, 'grid break-keep-all grid-cols-1 md:grid-cols-2 gap-5 gap-y-10 lg:gap-y-8')}>
             {
-                tabsData.map(({ image, desc, title, route, label })=> (
+                tabsData.map(({ image, desc, title, route, label }) => (
                     <div key={route} className="w-full md:max-w-sm">
                         <figure className='overflow-hidden rounded-8'>
                             <Image src={image} width={455} height={220} />

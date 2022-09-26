@@ -1,3 +1,13 @@
-export default function Home(){
-  return <div className="font-bold text-pri-500">Welcome to Lazerpay Documentation V2</div>
+import redirect from "lib/redirect";
+import { GetServerSidePropsContext } from "next";
+
+export default function Home() {
+  return null
+}
+
+export function getServerSideProps(ctx: GetServerSidePropsContext) {
+  redirect(ctx, '/docs/quick-start')
+  return {
+    props: {}
+  }
 }

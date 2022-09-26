@@ -2,7 +2,7 @@
  * Lazerpay Design System - https://www.figma.com/file/1ruX4BnkL8HE2FM4B9SgoI/LazerPay-Design-System?node-id=0%3A1
  */
 
- module.exports = {
+module.exports = {
   content: [
     './components/**/*.{jsx,tsx,js,ts,mdx}',
     './layouts/**/*.{jsx,tsx,js,ts,mdx}',
@@ -142,7 +142,7 @@
         900: "#0b2818"
       },
       war: {
-        50: "#0b2818",
+        50: "#FFFBEB",
         100: "#FEF3C7",
         200: "#FDE68A",
         300: "#FCD34D",

@@ -1,0 +1,133 @@
+---
+title: Accept Payments
+description: payment introduction page
+---
+
+# Accept Payments
+
+
+## Inline Checkout - Popup
+The Lazerpay popup provides a convenient and easy way for developers to accept payments on the web. You can start receiving payments on your website with the checkout easily.
+
+## 1. Add the Inline Checkout
+Add the inline checkout to your website using a script tag, it is delivered through a reliable CDN.
+
+<TextBlock>
+    {'<script> '}
+    <span className="text-pri-500 underline">https://cdn.jsdelivr.net/gh/Lazerpay-Finance/checkout-build@main/checkout@1.0.1/dist/index.min.js</span>
+    {' </script>'}
+</TextBlock>
+
+## 2. Collect user Details
+To receive payments you will need to pass some parameters which include some functions and optional customer information. They include:
+
+<LzTable
+    head={['props', 'Functionality', 'Priority', 'Type']}
+    body={[
+        ["name", "Customers Name", "Optional", "<code>String</code>"],
+        ["email", "Customer email", "Optional", "<code>String</code>"],
+        ["amount", "Customers amount to pay (in USD, AED, GBP, EUR, NGN)", "Required", "<code>String | Number</code>"],
+        ["reference", "Unique case sensitive transaction reference. If you do not pass this parameter, Lazerpay will generate a unique reference for you", "Optional", "<code>String | Number</code>"],
+        ["acceptPartialPayment", "If you want accept partial payment from customers, By default it's false", "Optional", "<code>Boolean</code>"],
+        ["key", 'Lazerpay key. Get you public key from your Lazerpay dashboard. Testnet public keys begin with "pk_test_" and mainnet keys begin with "pk_live_".', "Required", "<code>String</code>"],
+        ["currency", "The currency <code>mount</code> is denominated in. Can be USD, GBP, EUR, AED or NGN", "Required", "<code>String</code>"],
+        ["onClose", "The function called when the payment modal closes", "Optional", "<code>Function</code>"],
+        ["onSuccess", "The function called after the payment is confirmed", "Optional", "<code>Function</code>"],
+        ["onError", "The function that is called if an error occurs during payment confirmation", "Optional", "<code>Function</code>"],
+    ]}
+/>
+
+When you add the inline checkout script, you immediately have access to the <code>LazerCheckout</code> function. Pass the information you get in step 2 to the function in an object inside the <code>payWithLazerpay</code> function
+
+
+The customer information can be retrieved from your database if you already have it stored, or from a form like in the example below:
+<CodeBlock 
+    data={{
+        type: 'tab', 
+        item: {
+            name: ['HTML', 'JAVASCRIPT'], 
+            snippet: ['customerInfoHTML', 'customerInfoJS'], 
+            lang: ['html', 'js']
+            }
+        }} 
+    />
+
+In this sample, notice how:
+
+1. The Lazerpay inline javascript is included using a <code>script</code> tag. This is how you import Lazerpay into your code.
+2. The <code>script</code> and <code>email</code> here can be optional. The PopUp will provide those fields to the customers.
+3. The <code>Pay With Lazerpay</code> button has been tied to an <code>onClick</code> function called <code>Pay With Lazerpay</code>. This is the action that causes the Lazerpay popup to load.
+
+
+
+## Initialize Payment API
+
+The initialize payment endpoint allows you to initiate payment directly to Lazerpay by passing in the payment details:
+
+<LzTable head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Header</strong>', '', ''],
+    ['x-api-key*', '<code>String</code>', 'YOUR_PUBLIC_KEY'],
+    ['<strong>Body</strong>', '', ''],
+    ['reference', '<code>String</code>', 'YOUR_REFERENCE'],
+    ['customer_name*', '<code>String</code>', "Your Customer's name"],
+    ['customer_email*', '<code>String</code>', "Your Customer's email"],
+    ['coin*', '<code>String</code>', 'Stablecoins you want your customers to pay you in'],
+    ['currency*', '<code>String</code>', 'Currency should be in the currency you accept on your store, or application'],
+    ['amount*', '<code>String | Number</code>', 'The amoumt you want to charge the customer in the currency specified above'],
+    ['accept_partial_payment', '<code>Boolean</code>', 'This parameter is set to "false" by default. When you want to accept partial payments and ensure customers complete the required amount they are supposed to pay, it should be set to true'],
+]} />
+
+<br />
+
+<CodeBlock
+    responseTheme="red"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "POST", requestData: {
+            name: ['cURL', 'Node'], 
+            snippet: ['customerInfoPostCURL', 'customerInfoPostNode'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['201: Created', '401: Unauthorized'], 
+            snippet: ['customerInfoReq201', 'customerInfoReq401'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+
+## Important Note
+1. The <code>coin</code> field must either be “BUSD”, “DAI”, “USDT”, or “USDC”.
+2. It's ideal to generate a unique <code>reference</code> from your system for every transaction to avoid duplicate attempts.
+3. The <code>accept_partial_payment</code> field is used to enforce payment completion by your customers. A scenario is when a customer is trying to pay for a service worth a fixed <code>amount</code> of $100 USD. When <code>accept_partial_payment</code> is set to true, the customer must pay the exact amount before the funds will be sent to you. Read more about Partial Payments <a href="#">here</a>.
+4. The <code>amount</code> field should be in your fiat currency. The currencies we support are USD, AED, GBP, EUR and NGN. Please reach out to <a href="#">support@lazerpay.finance</a> if you would want us to support a currency.
+5. The <code>amount</code> during initialization is converted to the <code>coin</code> equivalent of the currency specified.
+
+<Alert status="warning">Never call the Lazerpay API directly from your frontend to avoid exposing your secret key on the frontend. All requests to the Lazerpay API should be initiated from your server, and your frontend gets the response from your server.</Alert>
+<br />
+## Lazerpay’s Node JS SDK
+The SDK allows you to initialise a payment transaction and to confirm payment. It's an NPM package so you can use it in a node environment.
+Here's a sample code on how to use the NodeJS SDK:
+
+<CodeBlock 
+    responseTheme="default" 
+    responseTitle="Response JSON" 
+    data={{
+        type: 'request', 
+        item: { requestData: {
+            name: ['Node'], 
+            snippet: ['nodeSDKSample'], 
+            lang: ['js']
+        }, 
+        responseData: {
+            name: ['201: Created'], 
+            snippet: ['nodeSDKSampleResponse'], 
+            lang: ['json']
+        }} 
+    }} 
+/>
+
+When a payment is successful, Lazerpay sends a <code>DEPOSIT_TRANSACTION</code> webhook event to webhook URL that you provide. It is highly recommended that you use <a href="#">webhooks</a> to confirm the payment status before delivering value to your customers.
+
+<Divider className='max-w-100 mt-1 mb-8' />
