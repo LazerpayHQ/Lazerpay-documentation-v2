@@ -9,6 +9,14 @@ export const snippets = {
         )
     }`,
 
+    getStartedAcceptPaymentPostCURL:
+    `curl https://api.lazerpay.com/transaction/initialize 
+    -H "Authorization: Bearer YOUR_SECRET_KEY"
+    -H "Content-Type: application/json"
+    -X POST
+    
+    `,
+
     acceptPaymentsHTML:
         `<form id="paymentForm">
         <div class="form-group">
@@ -250,7 +258,8 @@ app.post("/my/webhook/url", function(req, res) {
   });
 `,
 
-  webHookPayload3: `      {
+  webHookPayload3: 
+`{
   "id": "378b53b2-28fd-4cbd-8fe1-6786d251b7d4",
   "reference": "MBnOcItpOaP0wkBWzx",,
   "senderAddress": "0x451dEFC27B45808078e875556AF06bCFdC697BA4",

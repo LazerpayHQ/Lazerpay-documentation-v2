@@ -1,28 +1,9 @@
 import React from 'react'
-import { ToggleIcon } from 'public/icons'
-import { FaAngleDown } from 'react-icons/fa'
-import CodeBlock, { Label } from 'components/CodeBlock/components'
+import CodeBlock from 'components/CodeBlock'
 import LzTable from 'components/UI/table'
 
-const RESPONSES = {
-  created: '200: Created',
-  unauthorized: '400: Insufficient Funds',
-}
-const snipId = {
-  success: 'cryptResCode200',
-  failed: 'cryptResCode400',
-}
 
 const TransferAPI = () => {
-  let header = (
-    <div className='flex space-x-5'>
-      <Label label='POST' />{' '}
-      <span className='flex space-x-2 items-center'>
-        cURL
-        <FaAngleDown />
-      </span>
-    </div>
-  )
 
   return (
     <>
@@ -52,35 +33,8 @@ const TransferAPI = () => {
       />
 
       {/* cURL CODEBLOCK */}
-      <CodeBlock
-        options
-        lang='curl'
-        req1={header}
-        sideAct={
-          <span className='flex space-x-2 items-center'>
-            <p> Hide Response</p>
-            <ToggleIcon />
-          </span>
-        }
-        id1='cRULSnippet2'
-      />
 
       {/* RESPONSE CODE */}
-      <CodeBlock
-        options
-        lang='json'
-        req1='Response'
-        sideAct={
-          <select name={'resp'} id={'resp'} className='caption-s border-none '>
-            <option value={RESPONSES.created}>{RESPONSES.created} </option>
-            <option value={RESPONSES.unauthorized}>
-              {RESPONSES.unauthorized}
-            </option>
-          </select>
-        }
-        id1={snipId.failed}
-        className='!bg-white `'
-      />
     </>
   )
 }

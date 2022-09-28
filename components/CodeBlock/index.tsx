@@ -88,7 +88,7 @@ const CodeBlock: FC<CodeBlockProps<DataProp>> = (props) => {
               onChange={(i: number) => onCodeSwitch(i, item as ItemType)}
             />
           )}
-          {type === 'request' && (
+            {type === 'request' && (
             <RequestHead
               showResponse={showResponse}
               toggleResponse={(state: boolean) => setShowResponse(state)}
