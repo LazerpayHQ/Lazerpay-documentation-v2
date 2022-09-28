@@ -40,7 +40,7 @@ const initializePrism = (Prism) => {
             lookbehind: true,
         }],
         'punctuation': /[{}['’\],]/,
-        'method': /(?:POST|GET|PATCH)/g,
+        'method': /(?:POST|GET|PATCH|PUT)/g,
         'option': / *--[a-zA-Z-]*\b/,
     };
 

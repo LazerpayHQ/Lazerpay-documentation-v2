@@ -69,14 +69,14 @@ Get all the payment links using the API.
   responseTheme="red" 
   responseTitle="Response" 
   data={{type: 'request', item: {method: "GET", requestData: {
-    name: ['cURL', 'Node'], 
-    snippet: ['fetchAllPaymentLinkCURL', 'fetchAllPaymentLinkCURL'], 
-    lang: ['curl', 'curl']
+    name: ['cURL', 'Javascript'], 
+    snippet: ['fetchAllPaymentLinkCURL', 'fetchAllPaymentLinkJs'], 
+    lang: ['curl', 'js']
   }, 
   responseData: {
-    name: ['200: OK', '401: Unauthorized'], 
-    snippet: ['fetchAllPaymentLinkResponse200', 'fetchAllPaymentLinkResponse200'], 
-    lang: ['json', 'json']}} 
+    name: ['200: OK'], 
+    snippet: ['fetchAllPaymentLinkResponse200'], 
+    lang: ['json']}} 
   }} 
 />
 
@@ -101,14 +101,14 @@ Using this endpoint, one can fetch the details of a particular payment link.
   responseTheme="red" 
   responseTitle="Response" 
   data={{type: 'request', item: {method: "GET", requestData: {
-    name: ['cURL', 'Node'], 
-    snippet: ['fetchPaymentLinkCURL', 'fetchPaymentLinkCURL'], 
-    lang: ['curl', 'curl']
+    name: ['cURL', 'Javascript'], 
+    snippet: ['fetchPaymentLinkCURL', 'fetchPaymentLinkJs'], 
+    lang: ['curl', 'js']
   }, 
   responseData: {
-    name: ['200: OK', '401: Unauthorized'], 
-    snippet: ['fetchPaymentLinkResponse200', 'fetchPaymentLinkResponse200'], 
-    lang: ['json', 'json']}} 
+    name: ['200: OK'], 
+    snippet: ['fetchPaymentLinkResponse200'], 
+    lang: ['json']}} 
   }}
 />
 
@@ -135,13 +135,13 @@ Update a particular payment link with the following endpoint.
   responseTheme="red" 
   responseTitle="Response" 
   data={{type: 'request', item: {method: "PUT", requestData: {
-    name: ['cURL', 'Node'], 
-    snippet: ['updatePaymentLinkCURL', 'updatePaymentLinkCURL'], 
-    lang: ['curl', 'curl']
+    name: ['cURL', 'Javascript'], 
+    snippet: ['updatePaymentLinkCURL', 'updatePaymentLinkJs'], 
+    lang: ['curl', 'js']
   }, 
   responseData: {
     name: ['200: OK', '401: Unauthorized'], 
-    snippet: ['updatePaymentLinkResponse200', 'updatePaymentLinkResponse200'], 
+    snippet: ['updatePaymentLinkResponse200'], 
     lang: ['json', 'json']}} 
   }} 
 />
@@ -151,5 +151,3 @@ Update a particular payment link with the following endpoint.
 
 ## Official JS SDK
 With the SDK, You can programmatically create payment links and access all the payment link methods available in the API. Find the guide here.
-
-<Divider className='max-w-100 mt-1 mb-8' />

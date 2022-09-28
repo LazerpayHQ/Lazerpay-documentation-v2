@@ -273,41 +273,22 @@ fetch('https://api.lazerpay.engineering/api/v1/payment-links', options)
         `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/payment-links’ \
 
 --header 'Authorization: Bearer YOUR_SECRET_KEY'`,
+    fetchAllPaymentLinkJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'x-api-key': Bearer YOUR_SECRET_KEY
+    }
+}
+fetch('https://api.lazerpay.engineering/api/v1/payment-links', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     fetchAllPaymentLinkResponse200:
         `{
-        "status": "success",
-        "statusCode": 200,
-        "data": [
-            {
-                "id": "5237aa97-56d2-45fc-923e-1265c227f268",
-                "reference": "msdl",
-                "title": "model rocket design and construction",
-                "amount": "100",
-                "currency": "USD",
-                "redirectUrl": "https://example.com",
-                "logo": "https://media.istockphoto.com/photos/dubai-skyline-view-from-the-marasi-marina-in-city-business-bay-area-picture-id1309800132",
-                "type": "standard",
-                "network": "mainnet",
-                "status": "active",
-                "paymentUrl": "https://lazerpay.finance/pay/model-rocket-design-and-construction-msdl",
-                "createdAt": "2022-04-15T17:04:20.492Z",
-                "updatedAt": "2022-04-15T17:04:20.492Z",
-            }
-        ],
-        "count": 1,
-        "currentPage": 1,
-        "nextPage": null,
-        "prevPage": null,
-        "lastPage": 1
-    }`,
-    fetchPaymentLinkCURL:
-        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/transaction/initialize'  \
-
---header 'Authorization: Bearer YOUR_SECRET_KEY'`,
-    fetchPaymentLinkResponse200:
-        `{
-        "message": "Payment link retrieved",
-        "data": {
+    "status": "success",
+    "statusCode": 200,
+    "data": [
+        {
             "id": "5237aa97-56d2-45fc-923e-1265c227f268",
             "reference": "msdl",
             "title": "model rocket design and construction",
@@ -321,17 +302,71 @@ fetch('https://api.lazerpay.engineering/api/v1/payment-links', options)
             "paymentUrl": "https://lazerpay.finance/pay/model-rocket-design-and-construction-msdl",
             "createdAt": "2022-04-15T17:04:20.492Z",
             "updatedAt": "2022-04-15T17:04:20.492Z",
-        },
-        "statusCode": 200,
-        "status": "success"
-    }`,
-    updatePaymentLinkCURL:
-        `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+        }
+    ],
+    "count": 1,
+    "currentPage": 1,
+    "nextPage": null,
+    "prevPage": null,
+    "lastPage": 1
+}`,
+    fetchPaymentLinkCURL:
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/payment-links'  \
 
---header 'Authorization: Bearer YOUR_SECRET_KEY'
+--header 'Authorization': 'Bearer YOUR_SECRET_KEY'
+         'id_or_reference': 'Bearer ID_OR_REFERENCE'`,
+    fetchPaymentLinkJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'x-api- key': Bearer YOUR_SECRET_KEY,
+        'id_or_reference': Bearer ID_OR_REFERENCE
+    }
+}
+fetch('https://api.lazerpay.engineering/api/v1/payment-links', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    fetchPaymentLinkResponse200:
+        `{
+    "message": "Payment link retrieved",
+    "data": {
+        "id": "5237aa97-56d2-45fc-923e-1265c227f268",
+        "reference": "msdl",
+        "title": "model rocket design and construction",
+        "amount": "100",
+        "currency": "USD",
+        "redirectUrl": "https://example.com",
+        "logo": "https://media.istockphoto.com/photos/dubai-skyline-view-from-the-marasi-marina-in-city-business-bay-area-picture-id1309800132",
+        "type": "standard",
+        "network": "mainnet",
+        "status": "active",
+        "paymentUrl": "https://lazerpay.finance/pay/model-rocket-design-and-construction-msdl",
+        "createdAt": "2022-04-15T17:04:20.492Z",
+        "updatedAt": "2022-04-15T17:04:20.492Z",
+    },
+    "statusCode": 200,
+    "status": "success"
+}`,
+    updatePaymentLinkCURL:
+        `curl --location --request PUT 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+
+--header 'x-api- key': Bearer YOUR_SECRET_KEY
 --data-raw '{
     "status": "inactive"
 }'`,
+    updatePaymentLinkJs:
+        `const options = {
+    method: 'PUT',
+    headers: {
+        'x-api- key': Bearer YOUR_SECRET_KEY
+    },
+    body: JSON.stringify({
+        "status": "inactive"
+    })
+}
+fetch('https://api.lazerpay.engineering/api/v1/transaction/initialize', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     updatePaymentLinkResponse200:
         `{
         "message": "Payment link updated",

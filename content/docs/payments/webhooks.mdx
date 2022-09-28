@@ -58,7 +58,6 @@ In order to verify this signature came from Lazerpay, you simply have to generat
   }} 
 />
 <Divider className='max-w-100 mt-1 mb-8' />
-<br />
 
 ## Responding to Webhooks Request
 You must respond with a <code>200 OK</code> status code. Any other response code outside of the <code>2xx</code> range, we will consider it will be considered as a failure, including <code>3xx</code> codes. <strong>We don’t care about the response body or headers.</strong>
@@ -66,7 +65,6 @@ You must respond with a <code>200 OK</code> status code. Any other response code
 <br/>
 <Alert>If we don't get a 200 OK status code, we'll retry the webhook every one minute for the next 24 hours.</Alert>
 <Divider className='max-w-100 mt-1 mb-8' />
-<br />
 
 ## Supported Webhooks Types
 Here are the webhooks request types we support. We'll add more to this list as we keep adding webhook supports for different API operations in the future.
@@ -74,5 +72,3 @@ Here are the webhooks request types we support. We'll add more to this list as w
 <LzTable head={["Webhook Type", "Description"]} body={[
   ['DEPOSIT_TRANSACTION', 'A deposit transaction has occured. It could have a status of of <code>template</code> or <code>complete</code>']
 ]}/>
-
-<Divider className='max-w-100 mt-1 mb-8' />
