@@ -27,8 +27,6 @@ import Ecommerce from './UseCases'
 import TransferWebHook from './Transfer'
 import ImportantThings from './Transfer/Important-things'
 import TestPayments from './TestPayments'
-import PaymentAPI from './AcceptPayments/PaymentAPI'
-import InlineCheckout from './AcceptPayments/InlineCheckout'
 import TransferAPI from './Transfer/TransferAPI'
 import Webhooks from './Webhooks'
 
@@ -58,8 +56,6 @@ export {
   TransferWebHook,
   PlainCard,
   Ecommerce,
-  InlineCheckout,
-  PaymentAPI,
   TransferAPI,
   ImportantThings,
   Webhooks

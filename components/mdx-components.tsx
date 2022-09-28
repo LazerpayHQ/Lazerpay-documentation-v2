@@ -22,8 +22,6 @@ import Ecommerce from './UseCases'
 import LzTable from './UI/table'
 import TransferWebHook from './Transfer'
 import ImportantThings from './Transfer/Important-things'
-import InlineCheckout from './AcceptPayments/InlineCheckout'
-import PaymentAPI from './AcceptPayments/PaymentAPI'
 import TransferAPI from './Transfer/TransferAPI'
 import Webhooks from './Webhooks'
 
@@ -87,13 +85,6 @@ export const components: Record<string, FC<Record<string, any>>> = {
   Ecommerce() {
     return <Ecommerce />
   },
-  InlineCheckout() {
-    return <InlineCheckout />
-  },
-  PaymentAPI() {
-    return <PaymentAPI />
-  },
-
   Webhooks() {
     return <Webhooks />
   },
