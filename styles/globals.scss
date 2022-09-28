@@ -51,10 +51,29 @@ html {
 }
 
 // PRISM OVERRIDES
-.language-html,
-.language-js {
+.language-html {
     & * {
         color: #F8FAFC !important;
+    }
+}
+
+.code.default.language-js {
+    color: #F8FAFC;
+}
+
+.language-js {
+
+    .token.string-property.property,
+    .token.literal-property.property {
+        color: #E1386A;
+    }
+
+    .token.punctuation {
+        color: #F8FAFC;
+    }
+
+    .token.keyword {
+        color: #97CD33;
     }
 }
 

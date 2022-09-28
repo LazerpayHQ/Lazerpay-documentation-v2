@@ -33,7 +33,7 @@ const CodeBlock: FC<CodeBlockProps<DataProp>> = (props) => {
     item,
   })
   const [copied, setCopied] = useState<boolean>(false)
-  const [showResponse, setShowResponse] = useState<boolean>(true)
+  const [showResponse, setShowResponse] = useState<boolean>(false)
 
   const onCodeSwitch = (i: number, items: ItemType | RequestType): void => {
     updateSnippet(

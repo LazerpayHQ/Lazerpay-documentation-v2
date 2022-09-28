@@ -18,7 +18,7 @@ const useStateSnippet = ({ type, item }: StateSnippetProps): StateSnippetTypes =
   const [codeSnippet, setCodeSnippet] = useState<string>("");
   const [language, setLanguage] = useState<string>("jsx");
 
-  const updateSnippet = (snippet, lang) => {
+  const updateSnippet = (snippet, lang: string) => {
     setCodeSnippet(snippet);
     setLanguage(lang);
   }

@@ -8,6 +8,7 @@ import LinkedCard from './GetstartedCard/Cards'
 import { PlainCard } from './GetstartedCard/Cards';
 import LzToggle from './UI/toggle';
 import LzCodeSelect from './UI/codeSelect';
+import LzLoader from './Loader';
 
 // Page Components
 import FooterWrapper from './Footer'
@@ -64,5 +65,6 @@ export {
   Ecommerce,
   LinkCard,
   LibraryGetStarted,
-  LibraryItem
+  LibraryItem,
+  LzLoader
 }

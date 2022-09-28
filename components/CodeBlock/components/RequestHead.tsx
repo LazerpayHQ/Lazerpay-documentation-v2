@@ -1,20 +1,37 @@
-import cn from "classnames";
-import { LzCodeSelect, LzToggle } from "components";
-import { RequestData, RequestType } from "../types";
+import cn from 'classnames'
+import { LzCodeSelect, LzToggle } from 'components'
+import { RequestData, RequestType } from '../types'
 
 const RequestHead = (props: RequestData) => {
-  const { method = undefined, requestData, showResponse, onChange, toggleResponse } = props;
-  const { name } = requestData as RequestType;
+  const {
+    method = undefined,
+    requestData,
+    showResponse,
+    onChange,
+    toggleResponse,
+  } = props
+  const { name } = requestData as RequestType
   const options = {
-    'POST': 'bg-suc-100',
-    'GET': 'bg-pri-500 text-neu-50',
-    'PUT': 'bg-sec-700 text-neu-50'
+    POST: 'bg-suc-100',
+    GET: 'bg-pri-500 text-neu-50',
+    PUT: 'bg-sec-700 text-neu-50',
+    PATCH: 'bg-sec-700 text-neu-50',
+    DELETE: 'bg-err-700 text-neu-50',
   }
   return (
     <div className='bg-neu-50'>
       <div className='px-8 py-2.5 flex justify-between'>
         <div className='flex items-center font-proxima'>
-          {method && <span className={cn('uppercase text-neu-700 caption-s rounded-8 px-2.5 py-1 text-xs h-fit mr-4', options[method])}>{method}</span>}
+          {method && (
+            <span
+              className={cn(
+                'uppercase text-neu-700 caption-s rounded-8 px-2.5 py-1 text-xs h-fit mr-4',
+                options[method],
+              )}
+            >
+              {method}
+            </span>
+          )}
           {name.length > 1 && <LzCodeSelect onChange={onChange} items={name} />}
         </div>
         <div className='flex items-center'>
@@ -28,4 +45,4 @@ const RequestHead = (props: RequestData) => {
   )
 }
 
-export default RequestHead;
+export default RequestHead

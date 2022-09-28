@@ -1,6 +1,124 @@
 ---
-title: Bank Payouts
-description: Bank Payouts page
+title: Bank Transfers
+description: Bank transfers introduction page
 ---
 
-<BankPayouts/>
+# Bank transfers
+
+Transfer directly to bank account using our payouts APIs
+
+<Divider className='max-w-100' />
+
+In other to make bank transfers, you can use our transfers API endpoint or our Node JS SDK.
+
+## Create Bank Payout
+
+Add a new bank account to recieve payouts
+
+<LzTable
+    reverse
+    head={['Parameter name', 'Type', 'Description']}
+    body={[
+        ["<strong>Header</strong>", "", "" ],
+        ["Autorization*", "<code>String</code>", "Bearer YOUR_SECRET_KEY" ],
+        ["<strong>Body</strong>", "", "" ],
+        ["bank_name*", "<code>String</code>", "Name of the bank, you can use Get Banks API to list all the supported banks" ],
+        ["bank_code*", "<code>String</code>", "Bank code" ],
+        ["account_name*", "<code>String</code>", "Account holder name of the account where you want payout" ],
+        ["account_number*", "<code>String | Number</code>", "Account holder number of the account where you want payout" ],
+        ["currency*", "<code>String</code>", "Currency of Payout, use get supported currencies API to list supported currency" ],
+        ["country*", "<code>String</code>", "Country where bank is located, use Get Supported Countries API to list all the supported nations" ],
+        ["default", "<code>Boolean</code>", "boolean" ],
+    ]}
+ />
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL'], snippet: ['createBankPayoutCURL'], lang: ['curl']}, responseData: {name: ['200: OK', '404: Not Found'], snippet: ['createBankPayout200', 'createBankPayout404'], lang: ['json', 'json']}} }} />
+
+## Get all Bank Payouts
+
+Retrieve all the bank payouts associated with your account as Payout IDs
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Node'], snippet: ['getAllBankPayoutsGetCURL', 'getAllBankPayoutsGetNode'], lang: ['curl', 'js']}, responseData: {name: ['200: Success'], snippet: ['getAllBankPayouts200'], lang: ['json']}} }} />
+
+## Delete Bank Payout
+
+Delete one or multiple Bank Payouts by passing Payout Ids as string array to payout end-point
+
+<LzTable
+    reverse
+    head={['Parameter name', 'Type', 'Description']}
+    body={[
+        ["<strong>Header</strong>", "", "" ],
+        ["ids*", "<code>String | Array</code>", 'example : { "ids": ["b406677c-c028-475f-b029-0df0d39c9321"] }' ],
+    ]}
+ />
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "DELETE", requestData: {name: ['cURL'], snippet: ['deleteBankPayoutCURL'], lang: ['curl', 'js']}, responseData: {name: ['200: OK', '401: Unauthorized'], snippet: ['deleteBankPayout200', 'deleteBankPayout401'], lang: ['json', 'json']}} }} />
+
+## Update Bank Payout
+
+Update an existing bank payout associated with your account 
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "PATCH", requestData: {name: ['cURL'], snippet: ['updateBankPayoutCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['updateBankPayout200'], lang: ['json']}} }} />
+
+## Get Supported Payout Countries
+
+Get list of already supported countries that supports bank payouts and respective currencies
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL'], snippet: ['getSupportCountryPayoutCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['getSupportCountryPayout200'], lang: ['json']}} }} />
+
+## Get Supported Payout Currencies
+
+Get a list of all the supported currencies for bank payouts
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL'], snippet: ['getSupportCurrenciesPayoutCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['getSupportCurrenciesPayout200'], lang: ['json']}} }} />
+
+## Get Banks
+
+Get a list of supported banks in a country
+
+<LzTable
+    reverse
+    head={['Parameter name', 'Type', 'Description']}
+    body={[
+        ["<strong>Path</strong>", "", "" ],
+        ["ids*", "<code>String</code>", 'Supported Countries: nigeria, ghana, kenya' ],
+    ]}
+ />
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL'], snippet: ['getBanksCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['getBanks200'], lang: ['json']}} }} />
+
+## Get Payout Exchange Rate
+
+Get current Exchange rates
+
+<LzTable
+    reverse
+    head={['Parameter name', 'Type', 'Description']}
+    body={[
+        ["<strong>Path</strong>", "", "" ],
+        ["coins*", "<code>String</code>", 'supported coin = USDT, DAI, USDC, BUSD' ],
+        ["currency*", "<code>String</code>", 'a supported currency, ex : NGN' ],
+    ]}
+ />
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL'], snippet: ['getPayoutExchangeRateCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['getPayoutExchangeRate200'], lang: ['json']}} }} />
+
+
+## Initiate Bank Payout
+
+Initiate a bank payout
+
+<LzTable
+    reverse
+    head={['Parameter name', 'Type', 'Description']}
+    body={[
+        ["<strong>Body</strong>", "", "" ],
+        ["bank_payout_id*", "<code>String</code>", "bank payout id" ],
+        ["coin*", "<code>String</code>", "ex: USDT" ],
+        ["amount*", "<code>float</code>", "ex: 0.1" ],
+        ["metadata", "<code>String</code>", "string" ]
+    ]}
+ />
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL'], snippet: ['initiateBankPayoutCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['initiateBankPayout200'], lang: ['json']}} }} />

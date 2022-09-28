@@ -61,7 +61,9 @@ const Header = ({ toggleSidebar }: IProps) => {
               </li>
             ))}
           </ul>
-          <LzButton size='md'>Dashboard</LzButton>
+          <LzButton asLink='https://dashboard.lazerpay.finance' size='md'>
+            Dashboard
+          </LzButton>
         </div>
       </div>
     </header>
