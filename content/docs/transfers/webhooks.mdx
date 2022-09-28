@@ -31,7 +31,16 @@ information to you as it becomes available, which is a lot more efficient and be
 
 Here are some sample webhook paylods for deposit transactions
 
-<CodeBlock req='' id='webHookPayload' lang='json' className='h-[492px] ' />
+<CodeBlock 
+   data={{
+      type: 'tab', 
+      item: { 
+         name: [], 
+         snippet: ['webHookPayload'], 
+         lang: ['js']
+         } 
+      }}
+/>
 
 <Divider className='w-20 mt-3' />
 
@@ -49,7 +58,16 @@ using the HMAC SHA256 hash algorithm.
 In order to verify this signature came from Lazerpay, you simply have to generate the HMAC 
 SHA256 hash and compare it with the signature received.
 
-<CodeBlock req='' id='webHookPayload2' lang='js' className='h-[492px]' />
+<CodeBlock 
+   data={{
+      type: 'tab', 
+      item: { 
+         name: [], 
+         snippet: ['webHookPayload2'], 
+         lang: ['js']
+         } 
+      }}
+/>
 
 <Divider className='w-20 mt-3' mb-4 />
 

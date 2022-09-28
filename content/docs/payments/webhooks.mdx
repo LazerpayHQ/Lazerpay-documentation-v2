@@ -15,15 +15,24 @@ Webhooks are a way for you to subscribe to events that occur when an event invol
 
 A webhook URL is an endpoint on your server where you can receive notifications about such events. When an event occurs, we'll make a POST request to that endpoint, with a JSON body containing the details about the event, including the type of event and the data associated with it.
 
- <Alert 
-    status="info" 
-   
-    className="my-2" 
-    content=' Rather than continuously polling the server to check if the state has changed, webhooks provide information to you as it becomes available, which is a lot more efficient and beneficial for developers.'/>
+<Alert 
+   status="info" 
+   className="my-2" 
+   content=' Rather than continuously polling the server to check if the state has changed, webhooks provide information to you as it becomes available, which is a lot more efficient and beneficial for developers.'
+   />
 
-    Here are some sample webhook paylods for deposit transactions.
+Here are some sample webhook paylods for deposit transactions.
 
-     <CodeBlock req='' id='webHookPayload3' className='h-[492px]' />
+<CodeBlock 
+   data={{
+      type: 'tab', 
+      item: { 
+         name: [], 
+         snippet: ['webHookPayload3'], 
+         lang: ['js']
+         } 
+      }}
+/>
 
 <Divider className="max-w-100" />
 
@@ -52,7 +61,17 @@ Here’s how to set up a webhook on your Lazerpay account:
 
 In order to verify this signature came from Lazerpay, you simply have to generate the HMAC SHA256 hash and compare it with the signature received. 
 
-<CodeBlock req='' id='webhookpayload4' className='h-[492px]' />
+
+<CodeBlock 
+   data={{
+      type: 'tab', 
+      item: { 
+         name: [], 
+         snippet: ['webhookpayload4'], 
+         lang: ['js']
+         } 
+      }}
+/>
 
  <Divider className="max-w-100" />
 
@@ -76,13 +95,13 @@ In order to verify this signature came from Lazerpay, you simply have to generat
  webhook supports for different API operations in the future
 
  <LzTable
-head={['Webhook Type', 'Description']}
-body={[
-[
-  `DEPOSIT_TRANSACTION`,
-  `A deposit transaction has occured. It could have a status of <code> incomplete</code> or <code> complete </code>`,
-],
-]}
+   head={['Webhook Type', 'Description']}
+   body={[
+   [
+   `DEPOSIT_TRANSACTION`,
+   `A deposit transaction has occured. It could have a status of <code> incomplete</code> or <code> complete </code>`,
+   ],
+   ]}
 />
 
 <Divider className="max-w-100" />
