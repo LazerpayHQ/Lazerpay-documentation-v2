@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import CodeBlock from 'components/CodeBlock'
 import LzButton from 'components/UI/button'
-import LzLink from 'components/UI/link'
 import Styles from './index.module.scss'
 import { DataProp, ItemType, RequestData } from 'components/CodeBlock/types'
 

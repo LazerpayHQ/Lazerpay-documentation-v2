@@ -6,11 +6,11 @@ const BinanceImage = () => {
         <div className='sm:w-[412px] sm:h-[392px]'>
             <svg width="710" height="400" viewBox="0 0 710 400" fill="none" xmlns="http://www.w3.org2000svg" href="http://www.w3.org/1999/xlink">
                 <g filter="url(#filter0_d_2133_97440)">
-                    <rect x="7" y="4" width="696" height="386" fill="url(#pattern0)" shape-rendering="crispEdges" />
+                    <rect x="7" y="4" width="696" height="386" fill="url(#pattern0)" shapeRendering="crispEdges" />
                 </g>
                 <defs>
-                    <filter id="filter0_d_2133_97440" x="0" y="0" width="710" height="400" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <filter id="filter0_d_2133_97440" x="0" y="0" width="710" height="400" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix" />
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                         <feMorphology radius="1" operator="erode" in="SourceAlpha" result="effect1_dropShadow_2133_97440" />
                         <feOffset dy="3" />
