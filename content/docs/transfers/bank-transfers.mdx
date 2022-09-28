@@ -32,13 +32,13 @@ Add a new bank account to recieve payouts
     ]}
  />
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL'], snippet: ['createBankPayoutCURL'], lang: ['curl']}, responseData: {name: ['200: OK', '404: Not Found'], snippet: ['createBankPayout200', 'createBankPayout404'], lang: ['json', 'json']}} }} />
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL', 'Javascript'], snippet: ['createBankPayoutCURL', 'createBankPayoutJs'], lang: ['curl', 'js']}, responseData: {name: ['200: OK', '404: Not Found'], snippet: ['createBankPayout200', 'createBankPayout404'], lang: ['json', 'json']}} }} />
 
 ## Get all Bank Payouts
 
 Retrieve all the bank payouts associated with your account as Payout IDs
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Node'], snippet: ['getAllBankPayoutsGetCURL', 'getAllBankPayoutsGetNode'], lang: ['curl', 'js']}, responseData: {name: ['200: Success'], snippet: ['getAllBankPayouts200'], lang: ['json']}} }} />
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Javascript'], snippet: ['getAllBankPayoutsGetCURL', 'getAllBankPayoutsGetJs'], lang: ['curl', 'js']}, responseData: {name: ['200: Success'], snippet: ['getAllBankPayouts200'], lang: ['json']}} }} />
 
 ## Delete Bank Payout
 
@@ -53,25 +53,25 @@ Delete one or multiple Bank Payouts by passing Payout Ids as string array to pay
     ]}
  />
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "DELETE", requestData: {name: ['cURL'], snippet: ['deleteBankPayoutCURL'], lang: ['curl', 'js']}, responseData: {name: ['200: OK', '401: Unauthorized'], snippet: ['deleteBankPayout200', 'deleteBankPayout401'], lang: ['json', 'json']}} }} />
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "DELETE", requestData: {name: ['cURL', 'Javascript'], snippet: ['deleteBankPayoutCURL', 'deleteBankPayoutJs'], lang: ['curl', 'js']}, responseData: {name: ['200: OK', '401: Unauthorized'], snippet: ['deleteBankPayout200', 'deleteBankPayout401'], lang: ['json', 'json']}} }} />
 
 ## Update Bank Payout
 
 Update an existing bank payout associated with your account 
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "PATCH", requestData: {name: ['cURL'], snippet: ['updateBankPayoutCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['updateBankPayout200'], lang: ['json']}} }} />
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "PATCH", requestData: {name: ['cURL', 'Javascript'], snippet: ['updateBankPayoutCURL', 'updateBankPayoutJS'], lang: ['curl', 'js']}, responseData: {name: ['200: OK'], snippet: ['updateBankPayout200'], lang: ['json']}} }} />
 
 ## Get Supported Payout Countries
 
 Get list of already supported countries that supports bank payouts and respective currencies
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL'], snippet: ['getSupportCountryPayoutCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['getSupportCountryPayout200'], lang: ['json']}} }} />
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Javascript'], snippet: ['getSupportCountryPayoutCURL', 'getSupportCountryPayoutJs'], lang: ['curl', 'js']}, responseData: {name: ['200: OK'], snippet: ['getSupportCountryPayout200'], lang: ['json']}} }} />
 
 ## Get Supported Payout Currencies
 
 Get a list of all the supported currencies for bank payouts
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL'], snippet: ['getSupportCurrenciesPayoutCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['getSupportCurrenciesPayout200'], lang: ['json']}} }} />
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Javascript'], snippet: ['getSupportCurrenciesPayoutCURL', 'getSupportCurrenciesPayoutJs'], lang: ['curl', 'js']}, responseData: {name: ['200: OK'], snippet: ['getSupportCurrenciesPayout200'], lang: ['json']}} }} />
 
 ## Get Banks
 
@@ -86,7 +86,7 @@ Get a list of supported banks in a country
     ]}
  />
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL'], snippet: ['getBanksCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['getBanks200'], lang: ['json']}} }} />
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Javascript'], snippet: ['getBanksCURL', 'getBanksJs'], lang: ['curl', 'js']}, responseData: {name: ['200: OK'], snippet: ['getBanks200'], lang: ['json']}} }} />
 
 ## Get Payout Exchange Rate
 
@@ -102,7 +102,7 @@ Get current Exchange rates
     ]}
  />
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL'], snippet: ['getPayoutExchangeRateCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['getPayoutExchangeRate200'], lang: ['json']}} }} />
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "GET", requestData: {name: ['cURL', 'Javascript'], snippet: ['getPayoutExchangeRateCURL', 'getPayoutExchangeRateJs'], lang: ['curl', 'js']}, responseData: {name: ['200: OK'], snippet: ['getPayoutExchangeRate200'], lang: ['json']}} }} />
 
 
 ## Initiate Bank Payout
@@ -121,4 +121,4 @@ Initiate a bank payout
     ]}
  />
 
-<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL'], snippet: ['initiateBankPayoutCURL'], lang: ['curl']}, responseData: {name: ['200: OK'], snippet: ['initiateBankPayout200'], lang: ['json']}} }} />
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL', 'Javascript'], snippet: ['initiateBankPayoutCURL', 'initiateBankPayoutJs'], lang: ['curl', 'js']}, responseData: {name: ['200: OK'], snippet: ['initiateBankPayout200'], lang: ['json']}} }} />

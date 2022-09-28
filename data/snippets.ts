@@ -9,32 +9,31 @@ export const snippets = {
         )
     }`,
     customerInfoHTML:
-        `       <form id="paymentForm">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" />
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email-address" />
-            </div>
-            <div class="form-group">
-                <label for="amount">Amount</label>
-                <input type="number" id="amount" required />
-            </div>
-            <div class="form-submit">
-                <button type="submit" onclick="payWithLazerpay()"> Pay with Lazerpay </button>
-            </div>
-        </form>`,
+        `<form id="paymentForm">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email-address" />
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" required />
+    </div>
+    <div class="form-submit">
+        <button type="submit" onclick="payWithLazerpay()"> Pay with Lazerpay </button>
+    </div>
+</form>`,
     customerInfoJS:
-        `   <script>
-        https: //cdn.jsdelivr.net/gh/LazerPay-Finance/checkout-build@main/checkout@1.0.1/dist/index.min.js
-    </script>
-    <script>
-        const paymentForm = document.getElementById('paymentForm');
-
-        paymentForm.addEventListener("submit", payWithLazerpay, false);
-    </script>`,
+        `<script>
+    https: //cdn.jsdelivr.net/gh/LazerPay-Finance/checkout-build@main/checkout@1.0.1/dist/index.min.js
+</script>
+<script>
+    const paymentForm = document.getElementById('paymentForm');
+    paymentForm.addEventListener("submit", payWithLazerpay, false);
+</script>`,
     customerInfoPostCURL:
         `   curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
     
@@ -48,70 +47,31 @@ export const snippets = {
         "amount": "10",
         accept_partial_payment:"true"
     }’`,
-    customerInfoPostNode:
-        `   suck --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
-    --header 'x-api-key: YOUR_PUBLIC_KEY' \
-    --data-raw '{
+    customerInfoPostJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': YOUR_PUBLIC_KEY
+    },
+    body: JSON.stringify({
         "customer_name": "Abdulfatai Suleiman",
         "customer_email": "static@gmail.com",
         "currency": "USD",
         "coin": "USDT",
         "amount": "10",
         accept_partial_payment:"true"
-    }’`,
+    })
+}
+fetch('https://api.lazerpay.engineering/api/v1/transaction/initialize', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     customerInfoReq201:
-        `   {
-        "message": "Transaction initialized successfully",
-        "status": "success",
-        "data": {
-            "reference": "wfqweweqrtwerwrtwer45354545",
-            "businessName": "Lazerpay Finance",
-            "businessEmail": "abdulfataisuleiman67@gmail.com",
-            "businessLogo": "https://res.cloudinary.com/lazer/image/upload/v1637512933/logo-default_ufyz0x.svg",
-            "customerName": "Abdulfatai Suleiman",
-            "customerEmail": "staticdev20046@gmail.com",
-            "address": "0xcA20e971400F81F97fEc5416A963e8FA7F81aaE3",
-            "coin": "BUSD",
-            "cryptoAmount": 50.5,
-            "currency": "USD",
-            "fiatAmount": 50,
-            "feeInCrypto": 0.5,
-            "network": "testnet",
-            "acceptPartialPayment": true
-        }
-        "statusCode": 201
-    }`,
-    customerInfoReq401:
-        `   {
-        "message": "Transaction failed",
-        "status": "failed",
-        "statusCode": 401
-    }`,
-    nodeSDKSample:
-        `    const LazerPay = require('lazerpay-node-sdk');
-
-    const lazerpay = new LazerPay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);
-
-    const payment_tx = async () => {
-        try {
-            const transaction_payload = {
-                reference: 'W6b8hV55l0435t3545435', // Replace with a reference you generated
-                customer_name: 'iamnotstatic.eth',
-                customer_email: 'abdulfataisuleiman67@gmail.com',
-                coin: 'USDC',
-                currency: 'USD',
-                fiatAmount: '100',
-                acceptPartialPayment: true // By default it's false
-            };
-
-            const response = await lazerpay.Payment.initializePayment(transaction_payload);
-            console.log(response);
-        } catch (error) {
-            console.log(error);
-        }`,
-    nodeSDKSampleResponse:
         `{
-    "reference": "wfqweweqrtwerwrtwer45354545",
+    "message": "Transaction initialized successfully",
+    "status": "success",
+    "data": {
+        "reference": "wfqweweqrtwerwrtwer45354545",
         "businessName": "Lazerpay Finance",
         "businessEmail": "abdulfataisuleiman67@gmail.com",
         "businessLogo": "https://res.cloudinary.com/lazer/image/upload/v1637512933/logo-default_ufyz0x.svg",
@@ -123,16 +83,72 @@ export const snippets = {
         "currency": "USD",
         "fiatAmount": 50,
         "feeInCrypto": 0.5,
-        "fiatRate": 0.9988,
-        "cryptoRate": 1.001,
         "network": "testnet",
         "acceptPartialPayment": true
-    }`,
+    }
+    "statusCode": 201
+}`,
+    customerInfoReq401:
+        `{
+    "message": "Transaction failed",
+    "status": "failed",
+    "statusCode": 401
+}`,
+    nodeSDKSample:
+        `const LazerPay = require('lazerpay-node-sdk');
+const lazerpay = new LazerPay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);
+
+const payment_tx = async () => {
+    try {
+        const transaction_payload = {
+            reference: 'W6b8hV55l0435t3545435', // Replace with a reference you generated
+            customer_name: 'iamnotstatic.eth',
+            customer_email: 'abdulfataisuleiman67@gmail.com',
+            coin: 'USDC',
+            currency: 'USD',
+            fiatAmount: '100',
+            acceptPartialPayment: true // By default it's false
+        };
+        const response = await lazerpay.Payment.initializePayment(transaction_payload);
+        console.log(response);
+    } catch (error) {
+        console.log(error);
+    }
+}`,
+    nodeSDKSampleResponse:
+        `{
+    "reference": "wfqweweqrtwerwrtwer45354545",
+    "businessName": "Lazerpay Finance",
+    "businessEmail": "abdulfataisuleiman67@gmail.com",
+    "businessLogo": "https://res.cloudinary.com/lazer/image/upload/v1637512933/logo-default_ufyz0x.svg",
+    "customerName": "Abdulfatai Suleiman",
+    "customerEmail": "staticdev20046@gmail.com",
+    "address": "0xcA20e971400F81F97fEc5416A963e8FA7F81aaE3",
+    "coin": "BUSD",
+    "cryptoAmount": 50.5,
+    "currency": "USD",
+    "fiatAmount": 50,
+    "feeInCrypto": 0.5,
+    "fiatRate": 0.9988,
+    "cryptoRate": 1.001,
+    "network": "testnet",
+    "acceptPartialPayment": true
+}`,
     verifyPaymentGetCURL:
-        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/transaction/verify/:address_or_reference' \
 
 --header 'x-api-key: YOUR_PUBLIC_KEY' \
 `,
+    verifyPaymentGetJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'x-api-key': YOUR_PUBLIC_KEY
+    },
+}
+fetch('https://api.lazerpay.engineering/api/v1/transaction/verify/:address_or_reference', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     verifyPaymentGetResponse200:
         `{
     "status": "success",
@@ -193,7 +209,9 @@ const confirm_tx = async () => {
 `,
     createPaymentLinkCURL:
         `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/payment-links' \
+
 --header 'Authorization: Bearer YOUR_SECRET_KEY' \
+
 --data-raw '{
     "title": "Model Rocket Design and Construction",
     description": "This is for Model Rocket Design and Construction Book",
@@ -203,6 +221,26 @@ const confirm_tx = async () => {
     "currency": "USD",
     "redirect_url": "https://example.com"
 }’`,
+    createPaymentLinkJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': Bearer YOUR_SECRET_KEY
+    },
+    body: JSON.stringify({
+        "title": "Model Rocket Design and Construction",
+        "description": "This is for Model Rocket Design and Construction Book",
+        "amount": 100,
+        "type": "standard",
+        "logo": "https://media.istockphoto.com/photos/dubai-skyline-view-from-the-marasi-marina-in-city-business-bay-area-picture-id1309800132",
+        "currency": "USD",
+        "redirect_url": "https://example.com"
+    })
+}
+fetch('https://api.lazerpay.engineering/api/v1/payment-links', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     createPaymentLinkResponse201:
         `{
     "message": "Payment link created",
@@ -224,6 +262,12 @@ const confirm_tx = async () => {
     },
     "statusCode": 201,
     "status": "success"
+}`,
+    createPaymentLinkResponse401:
+        `{
+    "statusCode": 401,
+    "message": "Unsupported request, Please read our API documentation",
+    "status": "error"
 }`,
     fetchAllPaymentLinkCURL:
         `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/payment-links’ \
@@ -363,62 +407,68 @@ app.post("/my/webhook/url", function(req, res) {
     } 
     res.send(200);
 });
-}`, cryptoTransferPostCurl: `
-    curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transfer'\
+}`,
+    cryptoTransferPostCurl:
+        `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transfer'\
 
-    --header 'x-api-key: YOUR_SECRET_KEY' \
+--header 'x-api-key: YOUR_SECRET_KEY' \
 
-    --data-raw '{
+--data-raw '{
+    "amount": "1",
+    "recipent": "0x0B4d358D349809037003F96A3593ff9015E89efA",
+    "coin": "USDT",
+    "blockchain": "Binance Smart Chain",
+}’`,
+    cryptoTransferPostJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': Bearer YOUR_SECRET_KEY
+    },
+    body: JSON.stringify({
         "amount": "1",
         "recipent": "0x0B4d358D349809037003F96A3593ff9015E89efA",
         "coin": "USDT",
         "blockchain": "Binance Smart Chain",
-    }’
-    `, cryptoTransferRequest401: `
-    {
-        "message": "Insufficient funds, check your balance and try again",
-        "statusCode": 400,
-        "status": "error"
-    }
-    `, cryptoTransferRequest201: `
-    {
-        "message": "Transfer recipient created successfully",
-        "status": "success",
-        "data": {
-            "id": "926492db-7143-480a-8d3e-15395249329f",
-            "createdAt": "2022-03-04T08:23:15.847Z",
-            "updatedAt": "2022-03-15T14:14:02.871Z",
-            "transactionHash": "0x91a2f4dd90f66b5d24f3e7fe1943c28952b9c93b9d4343dc21933ad55bca34bc",
-            "walletAddress": "0xb826Bc3C775B7ec8a673066502E79B5F9104a426",
-            "coin": "USDT",
-            "amount": 1,
-            "reference": "l3X93c4Ks8",
-            "recipient": "0x0B4d358D349809037003F96A3593ff9015E89efA"
-        },
-        "statusCode": 200
-    }
-    `, crytoTransferSnippetJS: `
-    const Lazerpay = require('lazerpay-node-sdk');
+    })
+}
+fetch('https://api.lazerpay.engineering/api/v1/transfer', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    cryptoTransferRequest400:
+        `{
+    "message": "Insufficient funds, check your balance and try again",
+    "statusCode": 400,
+    "status": "error"
+}`,
+    cryptoTransferRequest200:
+        `{
+    "message": "Crypto transfer initiated successfully",
+    "status": "success",
+    "statusCode": 200
+        
+}`,
+    crytoTransferSnippetJS:
+        `const Lazerpay = require('lazerpay-node-sdk');
 
-    const lazerpay = new Lazerpay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);
+const lazerpay = new Lazerpay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);
 
+const crypto_payout_tx = async () => {
     const crypto_payout_tx = async () => {
-        const crypto_payout_tx = async () => {
-            amount: 1,
-            recipient: '0x0B4d358D349809037003F96A3593ff9015E89efA', // address must be a bep20 address
-            coin: 'BUSD',
-            blockchain:’Binance Smart Chain’
-        };
-
-        try {
-            const response = await lazer.Payout.transferCrypto(transaction_payload);
-            console.log(response.error);
-        } catch (e) {
-            console.log(e);
-        }
-
+        amount: 1,
+        recipient: '0x0B4d358D349809037003F96A3593ff9015E89efA', // address must be a bep20 address
+        coin: 'BUSD',
+        blockchain:’Binance Smart Chain’
     };
-    `, depositWebhookJS: `
+    try {
+        const response = await lazer.Payout.transferCrypto(transaction_payload);
+        console.log(response.error);
+    } catch (e) {
+        console.log(e);
+    }
+};`,
+    depositWebhookJS: `
     {
         "id": "183f0a97-9de8-4cdc-b130-e8dd5f06caf4",
         "reference": "3H1WTK8k8PC78p6TWEbKptT",
@@ -428,7 +478,7 @@ app.post("/my/webhook/url", function(req, res) {
         "amountPaid": 100,
         "amountReceived": 100,
         "coin": "USDT",
-        "hash": "0xa3ef6266d29c096eb824112fcb32a90d42276bb1c94f88790f3d47a80992a9d8,
+        "hash": "0xa3ef6266d29c096eb824112fcb32a90d42276bb1c94f88790f3d47a80992a9d8",
         "blockNumber": 19767423,
         "type": "withdrawal",
         "status": "confirmed",
@@ -440,27 +490,23 @@ app.post("/my/webhook/url", function(req, res) {
         "feeInCrypto": 0,
         "webhookType": "CRYPTO_TRANSFER"
     }
-    `, validateWebhookJS: `
-    {
-        var crypto = require('crypto');
-        var secret = process.env.SECRET_KEY;
-        // Using Express
-        app.post("/my/webhook/url", function(req, res) {
-
-            //validate event
-            var hash = crypto.createHmac('sha256', secret).update(JSON.stringify(req.body), 'utf8').digest('hex');
-
-
-            if (hash == req.headers['x-lazerpay-signature']) {
-                // Retrieve the request's body
-                var event = req.body;
-                // Do something with event
-            }
-
-            res.send(200);
-        });
-    }
-    `,
+    `, validateWebhookJS:
+        `{
+    var crypto = require('crypto');
+    var secret = process.env.SECRET_KEY;
+    // Using Express
+    app.post("/my/webhook/url", function(req, res) {
+        //validate event
+        var hash = crypto.createHmac('sha256', secret).update(JSON.stringify(req.body), 'utf8').digest('hex');
+        if (hash == req.headers['x-lazerpay-signature']) {
+            // Retrieve the request's body
+            var event = req.body;
+            // Do something with event
+        }
+        res.send(200);
+    });
+}
+`,
     getStartedAcceptPaymentPostCURL:
         `curl https://api.lazerpay.com/transaction/initialize 
     -H "Authorization: Bearer YOUR_SECRET_KEY"
@@ -480,6 +526,27 @@ app.post("/my/webhook/url", function(req, res) {
         "state": "abuja",
         "default": true
     }’`,
+    createBankPayoutJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': Bearer YOUR_SECRET_KEY
+    },
+    body: JSON.stringify({
+        "bank_name": "FIRST BANK PLC",
+        "bank_code": "11",
+        "account_name": "Abdulfatai Suleiman",
+        "account_number": "3125343111",
+        "currency": "NGN",
+        "country": "nigeria",
+        "state": "abuja",
+        "default": true
+    })
+}
+fetch('https://api.lazerpay.engineering/api/v1/bank/payouts', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     createBankPayout200: `{
         "status": "success",
         "message": "Bank Payout created successfully",
@@ -515,29 +582,16 @@ app.post("/my/webhook/url", function(req, res) {
 
     --header 'x-api-key: YOUR_PUBLIC_KEY' \
     `,
-    getAllBankPayoutsGetNode:
-        `var request = require('request');
-
-var options = {
-    'method': 'POST',
-    'url': 'https://api.lazerpay.engineering/api/v1/bank/payouts',
-    'headers': {
-    },
-    body: '{
-        "bank_name": "Kuda Bank",
-        "bank_code": "090267",
-        "account_name": "suleiman abdulfatai",
-        "account_number": "2001670835",
-        "currency": "NGN",
-        "country": "Nigeria",
-        "default": true
-    }'
-};
-
-request(options, function (error, response) {
-    if (error) throw new Error(error);
-    console.log(response.body);
-});`,
+    getAllBankPayoutsGetJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'x-api-key': Bearer YOUR_SECRET_KEY
+    }
+}
+fetch('https://api.lazerpay.engineering/api/v1/bank/payouts', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     getAllBankPayouts200:
         `   {
         "message": "Bank Payouts retrieved successfully",
@@ -577,8 +631,19 @@ request(options, function (error, response) {
     deleteBankPayoutCURL:
         `curl --location --request DELETE 'https://api.lazerpay.engineering/api/v1/bank/payouts \
 
-    --header 'x-api-key: YOUR_PUBLIC_KEY' \
-    `,
+--header 'x-api-key: YOUR_PUBLIC_KEY' \
+`,
+    deleteBankPayoutJs:
+        `const options = {
+    method: 'DELETE',
+    headers: {
+        'ids': ["b406677c-c028-475f-b029-0df0d39c9321"],
+        'x-api-key': Bearer YOUR_SECRET_KEY
+    }
+}
+fetch('https://api.lazerpay.engineering/api/v1/bank/payouts', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     deleteBankPayout200:
         `   {
         "status": "success",
@@ -589,15 +654,27 @@ request(options, function (error, response) {
         `   {
         // Response
     }`,
-    updateBankPayoutCURL: `
-    curl --location --request PATCH 'https://api.lazerpay.engineering/api/v1/bank/payouts/<bank_payout_id>'\
+    updateBankPayoutCURL:
+        `curl --location --request PATCH 'https://api.lazerpay.engineering/api/v1/bank/payouts/<bank_payout_id>'\
 
-    --header 'x-api-key: YOUR_SECRET_KEY' \
+--header 'x-api-key: YOUR_SECRET_KEY' \
 
-    --data-raw '{
+--data-raw '{
+    "default": true
+}’`,
+    updateBankPayoutJS:
+        `const options = {
+    method: 'PATCH',
+    headers: {
+        'x-api-key': Bearer YOUR_SECRET_KEY
+    },
+    body: JSON.stringify({
         "default": true
-    }’
-    `,
+    })
+}
+fetch('https://api.lazerpay.engineering/api/v1/bank/payouts/<bank_payout_id>', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     updateBankPayout200: `{
         "status": "success",
         "message": "Bank Payout updated successfully",
@@ -630,6 +707,16 @@ request(options, function (error, response) {
 
 --header 'x-api-key: YOUR_SECRET_KEY' \
     `,
+    getSupportCountryPayoutJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'x-api-key': Bearer YOUR_SECRET_KEY
+    }
+}
+fetch('https://api.lazerpay.engineering/api/v1/bank/payouts/countries', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     getSupportCountryPayout200: `{
     "message": "Bank Payout Countries retrieved successfully",
     "data": [
@@ -665,6 +752,16 @@ request(options, function (error, response) {
 
 --header 'x-api-key: YOUR_SECRET_KEY' \
     `,
+    getSupportCurrenciesPayoutJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'x-api-key': Bearer YOUR_SECRET_KEY
+    }
+}
+fetch('https://api.lazerpay.engineering/api/v1/bank/payouts/currencies', options)
+.then((response) => response.json())
+.then((result) => console.log('Success', result))`,
     getSupportCurrenciesPayout200: `{
     "message": "Bank Payout Currencies retrieved successfully",
     "data": [
@@ -688,6 +785,16 @@ request(options, function (error, response) {
 
 --header 'x-api-key: YOUR_SECRET_KEY' \`
 }`,
+    getBanksJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'x-api-key': Bearer YOUR_SECRET_KEY
+    }
+}
+fetch('https://api.lazerpay.engineering/api/v1/bank?country=Nigeria', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     getBanks200: `{
     "status": "success",
     "message": "Banks retrieved successfully",
@@ -711,7 +818,17 @@ request(options, function (error, response) {
     getPayoutExchangeRateCURL: `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/bank/payouts/rate?coin=DAI&currency={supported_currency}'\
 
 --header 'x-api-key: YOUR_SECRET_KEY' \`
-}`,
+`,
+    getPayoutExchangeRateJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'x-api-key': Bearer YOUR_SECRET_KEY
+    }
+}
+fetch('https://api.lazerpay.engineering/api/v1/bank/payouts/rate?coin=DAI&currency={supported_currency}', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     getPayoutExchangeRate200: `{
     "message": "Bank payout exchange rate retrieved",
     "status": "success",
@@ -732,6 +849,21 @@ request(options, function (error, response) {
     "amount": 1
 }’
 `,
+    initiateBankPayoutJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'x-api-key': Bearer YOUR_SECRET_KEY
+    },
+    body: JSON.stringify({
+        "bank_payout_id": "3ad00043-f408-4da8-85e1-cbc28fbe0060",
+        "coin": "USDT",
+        "amount": 1
+    })
+}
+fetch('https://api.lazerpay.engineering/api/v1/bank/payouts/initiate', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
     initiateBankPayout200: `{
     "message": "Bank Payout initiated successfully",
     "status": "success",

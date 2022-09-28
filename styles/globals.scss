@@ -51,7 +51,8 @@ html {
 }
 
 // PRISM OVERRIDES
-.language-html {
+.language-html,
+.code.language-json {
     & * {
         color: #F8FAFC !important;
     }
@@ -60,6 +61,7 @@ html {
 .code.default.language-js {
     color: #F8FAFC;
 }
+
 
 .language-js {
 

@@ -10,22 +10,28 @@ const useSetReaction = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const { asPath } = useRouter();
 
-  const getReactionList = (): string | null => localStorage.getItem(REACTION_PAGES);
-  const setReactionList = (data: string): void => localStorage.setItem(REACTION_PAGES, data);
+  const getReactionList = (): any | null => {
+    let result = document.cookie.match(new RegExp(REACTION_PAGES + '=([^;]+)'));
+    result && (result = JSON.parse(result[1]));
+    return result;
+  };
+  const setReactionList = (data: any): void => {
+    const cookie = `${REACTION_PAGES}=${JSON.stringify(data)}; path=/;`
+    document.cookie = cookie;
+  };
 
   const saveReaction = async (value: boolean) => {
     try {
       setLoading(true);
       await sendReactionRequest(value);
-      const reactionPages: string = getReactionList();
+      const reactionPages: Array<string> | null = getReactionList();
 
       if (!reactionPages) {
-        setReactionList(JSON.stringify([asPath]))
+        setReactionList([asPath]);
       } else {
-        const reactionArr: Array<any> = JSON.parse(reactionPages)
-        if (!reactionArr.includes(asPath)) {
-          reactionArr.push(asPath)
-          setReactionList(JSON.stringify(reactionArr));
+        if (!reactionPages.includes(asPath)) {
+          reactionPages.push(asPath)
+          setReactionList(reactionPages);
         }
       }
       setShowReaction(false)
@@ -47,7 +53,7 @@ const useSetReaction = () => {
   }
 
   useEffect(() => {
-    let reactionPages: string = JSON.parse(getReactionList());
+    let reactionPages: Array<string> | null = getReactionList();
     if (!reactionPages || !reactionPages.includes(asPath)) {
       setShowReaction(true)
     } else {
