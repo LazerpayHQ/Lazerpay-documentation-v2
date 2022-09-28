@@ -89,7 +89,16 @@ function. Pass the information you get in step 2 to the function in an object in
 The customer information can be retrieved from your database if you already have it stored, or 
 from a form like in the example below:
 
-<CodeBlock/>
+<CodeBlock 
+    data={{
+        type: 'tab', 
+        item: {
+            name: ['HTML', 'JAVASCRIPT'], 
+            snippet: ['acceptPaymentsHTML', 'acceptPaymentsJS'], 
+            lang: ['html', 'js']
+            }
+        }} 
+    />
 
 In this sample, notice how:
 
@@ -146,7 +155,25 @@ the payment details:
         ]}
       />
 
-<CodeBlock req1='cURL' />
+{/* <CodeBlock req1='cURL' /> */}
+
+<CodeBlock
+    responseTheme="red"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "POST", requestData: {
+            name: ['cURL', 'Node'], 
+            snippet: ['cRULSnippet', 'cRULSnippet2'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['201: Created', '401: Unauthorized'], 
+            snippet: ['resCode201', 'resCode401'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
 
 ## Important Note
 
@@ -186,7 +213,25 @@ content='Never call the Lazerpay API directly from your frontend to avoid exposi
 The SDK allows you to initialise a payment transaction and to confirm payment. It's an NPM package so you can use it in a node environment.
 Here's a sample code on how to use the NodeJS SDK:
 
-<CodeBlock />
+{/* <CodeBlock /> */}
+
+<CodeBlock 
+    responseTheme="default" 
+    responseTitle="Response JSON" 
+    data={{
+        type: 'request', 
+        item: { requestData: {
+            name: ['Node'], 
+            snippet: ['nodeJsSDKSample'], 
+            lang: ['js']
+        }, 
+        responseData: {
+            name: ['201: Created'], 
+            snippet: ['nodeJsSDKSampleRes'], 
+            lang: ['json']
+        }} 
+    }} 
+/>
 
 When a payment is successful, Lazerpay sends a <code>DEPOSIT_TRANSACTION</code> webhook event to 
 webhook URL that you provide. It is highly recommended that you use <a href="#">webhooks</a> to confirm the 

@@ -142,7 +142,7 @@ cryptResCode200:
     "statusCode": 200
 }`,
 
-    nodeJsSdkSample:
+    nodeJsSDKSample:
     `const LazerPay = require('lazerpay-node-sdk');
 
     const lazerpay = new LazerPay(LAZER_PUBLIC_KEY, LAZER_SECRET_KEY);
@@ -165,7 +165,7 @@ cryptResCode200:
             console.log(error);
     }`,
 
-    nodeJsSdkSampleResponse:
+    nodeJsSDKSampleRes:
         `{
     "reference": "wfqweweqrtwerwrtwer45354545",
     "businessName": "Lazerpay Finance",

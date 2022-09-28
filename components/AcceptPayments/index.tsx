@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import Styles from './index.module.scss'
 import LzButton from 'components/UI/button'
-import CodeBlock from 'components/CodeBlock'
+import CodeBlock from 'components/CodeBlock/components'
 
 export default function AcceptPayments(): JSX.Element {
     return (

@@ -4,8 +4,6 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  @apply bg-neu-700 font-code;
-  border-radius: 0 0 8px 8px;
   color: hsl(230, 8%, 24%);
   direction: ltr;
   text-align: left;
@@ -74,9 +72,7 @@ pre[class*="language-"].line-numbers>code {
 }
 
 /* Token colors */
-.token {
-  color: hsl(210, 40%, 96%) !important;
-}
+
 
 .token.property,
 .token.tag,

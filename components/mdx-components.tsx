@@ -45,8 +45,8 @@ export const components: Record<string, FC<Record<string, any>>> = {
   Divider({ children, ...props }) {
     return <Divider {...props} />
   },
-  CodeBlock(props) {
-    return <CodeBlock {...props} />
+  CodeBlock({ data, ...props }) {
+    return <CodeBlock data={data} {...props} />
   },
   Admonition(props) {
     return <div {...props} />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { ToggleIcon } from 'public/icons'
 import { FaAngleDown } from 'react-icons/fa'
-import CodeBlock, { Label } from 'components/CodeBlock'
+import CodeBlock, { Label } from 'components/CodeBlock/components'
 import LzTable from 'components/UI/table'
 
 const RESPONSES = {
