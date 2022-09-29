@@ -128,7 +128,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
     return <h2 className='heading-5-s group break-keep-all' {...props} />
   },
   h3(props) {
-    return <h3 {...props} />
+    return <h3 className='heading-6-s' {...props} />
   },
   h4(props) {
     return <h4 {...props} />
@@ -139,8 +139,14 @@ export const components: Record<string, FC<Record<string, any>>> = {
   ol(props) {
     return <ol className='list-decimal paragraph-2 text-neu-800' {...props} />
   },
+  ul(props) {
+    return (
+      <ul className='paragraph-2 text-neu-800 leading-4 list-disc' {...props} />
+    )
+  },
   li(props) {
-    return <li className='list-custom text-neu-800' {...props} />
+    // TODO: FIX
+    return <li className='lists-custom text-neu-800' {...props} />
   },
   inlineCode(props) {
     return <code className='prose' {...props} />

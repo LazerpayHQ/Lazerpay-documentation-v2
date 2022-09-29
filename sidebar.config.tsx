@@ -5,6 +5,7 @@ import {
   TransferIcon,
   UseCasesIcon,
   LibrariesIcon,
+  SwapIcon,
 } from 'public/icons'
 import React, { ElementType } from 'react'
 
@@ -51,6 +52,18 @@ const sidebar: SidebarItem[] = [
       { type: 'docs', label: 'Crypto Transfer', id: 'crypto-transfers' },
       { type: 'docs', label: 'Bank Transfer', id: 'bank-transfers' },
       { type: 'docs', label: 'Webhooks', id: 'transfers-webhooks' },
+    ],
+  },
+  {
+    type: 'category',
+    label: 'Swap',
+    icon: <SwapIcon />,
+    id: 'swap',
+    redirect: 'swap/get-started',
+    children: [
+      { type: 'docs', label: 'Get started', id: 'get-started' },
+      { type: 'docs', label: 'Swap Amount', id: 'swap-amount' },
+      { type: 'docs', label: 'Webhooks', id: 'webhooks' },
     ],
   },
   {

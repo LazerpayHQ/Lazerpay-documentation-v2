@@ -903,5 +903,127 @@ fetch('https://api.lazerpay.engineering/api/v1/bank/payouts/initiate', options)
     "message": "Bank Payout initiated successfully",
     "status": "success",
     "statusCode": 200
-}`
+}`,
+    swapPostCURL:
+        `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+
+--header 'x-api-key: YOUR_PUBLIC_KEY' \
+
+--data-raw '{
+    "from_coin": "USDT",
+    "to_coin": "BUSD",
+    "amount": 0.01,
+    "blockchain": "Binance Smart Chain"
+}’`,
+    swapPostJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'x-api-key': Bearer YOUR_PUBLIC_KEY
+    },
+    body: JSON.stringify({
+        "from_coin": "USDT",
+        "to_coin": "BUSD",
+        "amount": 0.01,
+        "blockchain": "Binance Smart Chain"
+    })
+}
+fetch('https://api.lazerpay.engineering/api/v1/transaction/initialize', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))
+`,
+    swap200:
+        `{
+    "message": "Crypto swap initiated successfully",
+    "status": "success",
+    "statusCode": 200
+}
+`,
+    swap400:
+        `{
+    "message": "Insufficient funds, check your balance and try again",
+    "statusCode": 400,
+    "status": "error"
+}`,
+    swapAmountPostCURL:
+        `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/swap/amount-out' \
+
+--header 'Authorization: YOUR_SECRET_KEY' \
+
+--data-raw '{
+    "from_coin": "USDT",
+    "to_coin": "BUSD",
+    "amount": 0.01,
+    "blockchain": "Binance Smart Chain"
+}’`,
+    swapAmountPostJs:
+        `const options = {
+        method: 'POST',
+        headers: {
+            'Authorization': Bearer YOUR_SECRET_KEY
+        },
+        body: JSON.stringify({
+            "from_coin": "USDT",
+            "to_coin": "BUSD",
+            "amount": 0.01,
+            "blockchain": "Binance Smart Chain"
+        })
+    }
+    fetch('https://api.lazerpay.engineering/api/v1/swap/amount-out', options)
+        .then((response) => response.json())
+        .then((result) => console.log('Success', result))
+    `,
+    swapAmountPost201:
+        `{
+    "message": "Crypto swap amount out retrieved successfully",
+    "status": "success",
+    "statusCode": 200,
+    "data": {
+        "fromCoin": "USDT",
+        "toCoin": "BUSD",
+        "amount": 99.68468056751414
+    }
+}`,
+    swapAmountPost400:
+        `{
+    "message": "Insufficient funds, check your balance and try again",
+    "statusCode": 400,
+    "status": "error"
+}`,
+    swapWebhookJson:
+        `{
+    "id": "63a51487-a570-45d5-b4ea-d6a9be46d77a",
+    "reference": "XebhrfHeO5nhkxGgkb2ag7CB1zI6",
+    "senderAddress": "0x8aFDD7Ee323E98adcB59445AE49118673950Ff19",
+    "recipientAddress": "0x8aFDD7Ee323E98adcB59445AE49118673950Ff19",
+    "actualAmount": 100,
+    "amountPaid": 99.98,
+    "hash": "0xd8f4d9badc12cfe0f82adf631eee8fd973a9fa801e4918510275c6e9b641b3dc",
+    "blockNumber": 19767429,
+    "type": "swap",
+    "status": "confirmed",
+    "network": "mainnet",
+    "blockchain": "Binance Smart Chain",
+    "metadata": {},
+    "fromCoin": "USDT",
+    "toCoin": "BUSD",
+    "createdAt": "2022-05-30T20:23:12.979Z",
+    "updatedAt": "2022-05-30T20:23:12.979Z",
+    "feeInCrypto": 0,
+    "webhookType": "CRYPTO_SWAP"
+}`,
+    swapWebhookSample:
+        `var crypto = require('crypto');
+var secret = process.env.SECRET_KEY;
+// Using Express
+app.post("/my/webhook/url", function(req, res) {
+    //validate event
+    var hash = crypto.createHmac('sha256', secret).update(JSON.stringify(req.body), 'utf8').digest('hex');
+    if (hash == req.headers['x-lazerpay-signature']) {
+        // Retrieve the request's body
+        var event = req.body;
+        // Do something with event  
+    }
+    res.send(200);
+});`
 }
