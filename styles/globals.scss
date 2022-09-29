@@ -131,12 +131,13 @@ pre[class*="language-"].response {
 
 code {
     font-size: inherit;
-    padding: 5px 8px;
+    padding: 2px 8px;
     white-space: nowrap;
     color: theme('colors.pri.500');
     font-family: theme('fontFamily.code');
     border-radius: theme('borderRadius.8');
     background-color: theme('colors.neu.100');
+    line-height: 21px;
 }
 
 .code {
@@ -146,6 +147,7 @@ code {
     color: unset;
     border-radius: unset;
     background-color: unset;
+    line-height: unset;
 }
 
 .list-custom {

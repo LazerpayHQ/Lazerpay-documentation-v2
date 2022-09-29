@@ -137,11 +137,19 @@ export const components: Record<string, FC<Record<string, any>>> = {
     return <pre {...props} className={`prose ${props.className}`} />
   },
   ol(props) {
-    return <ol className='list-decimal paragraph-2 text-neu-800' {...props} />
+    return (
+      <ol
+        className='list-decimal list-inside paragraph-2 text-neu-800'
+        {...props}
+      />
+    )
   },
   ul(props) {
     return (
-      <ul className='paragraph-2 text-neu-800 leading-4 list-disc' {...props} />
+      <ul
+        className='paragraph-2 list-inside text-neu-800 leading-4 list-disc'
+        {...props}
+      />
     )
   },
   li(props) {
