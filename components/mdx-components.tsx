@@ -23,7 +23,7 @@ import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
 import LzTable from './UI/table'
 import LinkCard from './LinkCard'
-import { LibraryGetStarted } from './CardList'
+import CardList, { LibraryGetStarted } from './CardList'
 import LibraryItem from './LibraryItem'
 import Webhooks from './Webhooks'
 
@@ -64,6 +64,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
   },
   LibraryGetStarted() {
     return <LibraryGetStarted />
+  },
+  CardList({ items, icon, ...props }) {
+    return <CardList items={items} icon={icon} {...props} />
   },
   LibraryItem({ items, ...props }) {
     return <LibraryItem items={items} {...props} />

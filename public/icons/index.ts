@@ -24,6 +24,9 @@ import SwapIcon from './swap-icon';
 import { ShopifyIcon } from './shopify-icon';
 import { WordPressIcon } from './wordPress-Icon';
 import { WooCommerceIcon } from './wooCommerce-icon';
+import ProductsIcon from './products-icon';
+import TransactionsIcon from './transactions-icon';
+import CustomersIcon from './customers-icon';
 
 export {
   InfoIcon,
@@ -51,5 +54,8 @@ export {
   ShopifyIcon,
   HandsWithPenny,
   DashboardScreenshot,
-  SwapIcon
+  SwapIcon,
+  ProductsIcon,
+  TransactionsIcon,
+  CustomersIcon
 };

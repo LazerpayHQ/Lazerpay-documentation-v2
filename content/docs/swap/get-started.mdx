@@ -17,56 +17,25 @@ The Swaps API allows you to programmatically make fast, Swaps funds in your wall
 
 <Alert status="info" title="Before you begin">To send money on Lazerpay, you need API keys to authenticate your transfers. You can find your keys on the Lazerpay Dashboard under Settings → API Keys & Webhooks</Alert>
 <br/>
-## Stablecoins Swap
+
+## Get started
 
 Swap Stablecoins in your lazerpay account using our APIs
 
-### Introduction
-
-You can make Stablecoins swaps from one coin to another directly from the Lazerpay dashboard or using our Swaps API endpoint.
-
-![Swap Stablecoins](/images/swap_stablecoins.png)
-<br />
-
-## Crypto Swap API
-
-<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
-    ['<strong>Header</strong>', '', ''],
-    ['Authorization*', '<code>String</code>', 'Bearer YOUR_SECRET_KEY'],
-    ['<strong>Body</strong>', '', ''],
-    ['reference', '<code>String | Number</code>', 'YOUR_REFERENCE'],
-    ['amount*', '<code>String | Number</code>', 'The amount you want to send out '],
-    ['from_coin*', '<code>String</code>', 'Crypto you want to swap from'],
-    ['to_coin*', '<code>String</code>', 'Crypto you want to swap to'],
-    ['metadata', '<code>Object</code>', 'Stringified JSON object of custom data. eg  {type: "Crypto swap"}'],
-    ['blockchain*', '<code>String</code>', "The blockchain network you are sending to"]
+<CardList icon={false} items={[
+  {
+    title: 'Preview Swap Amount',
+    desc: 'With payment links, you can share your unique payment link to anyone in the world.',
+    route: 'swap/swap-amount',
+  },
+  {
+    title: 'Stablecoin Swap',
+    desc: 'Accept partial payments from customers on your platform.',
+    route: 'swap/swap-amount',
+  },
+  {
+    title: 'Webhooks',
+    desc: 'Listen to webhook events whenever certain actions occurs.',
+    route: 'swap/swap-amount',
+  },
 ]} />
-
-<CodeBlock
-    responseTheme="default"
-    responseTitle="Response"
-    data={{
-        type: 'request',
-        item: {method: "POST", requestData: {
-            name: ['cURL', 'Javascript'], 
-            snippet: ['swapPostCURL', 'swapPostJs'], 
-            lang: ['curl', 'js']
-        }, 
-        responseData: {
-            name: ['200: Created', '400: Bad Request'], 
-            snippet: ['swap200', 'swap400'], 
-            lang: ['json', 'json']
-        }} 
-    }}
-/>
-<br />
-
-### Important Note
-
-1. The blockchain field must be "Binance Smart Chain".
-2. The <code>from_coin</code> field must either be "BUSD", "DAI", "USDT", or "USDC".
-3. The <code>to_coin</code> field must either be "BUSD", "DAI", "USDT", or "USDC".
-4. The <code>amount</code> field should be in your fiat currency. The currencies we support are USD, AED, GBP, EUR and NGN. Please reach out to support@lazerpay.finance if you would want us to support a currency.
-5. Also <code>to_coin</code> and <code>from_coin</code> cannot be the same.
-
-<Alert status="warning">we only support the Binance smart chain for swaps. we will add more networks in the future.</Alert>

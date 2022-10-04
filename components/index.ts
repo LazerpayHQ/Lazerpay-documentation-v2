@@ -31,7 +31,7 @@ import TransferWebHook from './TransWebhook'
 import TestPayments from './TestPayments'
 import LzTable from './UI/table'
 import LinkCard from './LinkCard'
-import { LibraryGetStarted } from './CardList';
+import CardList, { LibraryGetStarted } from './CardList';
 import LibraryItem from './LibraryItem'
 
 export {
@@ -66,5 +66,6 @@ export {
   LinkCard,
   LibraryGetStarted,
   LibraryItem,
-  LzLoader
+  LzLoader,
+  CardList
 }

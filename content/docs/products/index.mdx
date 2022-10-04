@@ -1,0 +1,259 @@
+---
+title: Products
+description: Products page
+---
+
+# Products
+
+The products API allows you to programmatically interact with your products
+
+## Create Product
+
+<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Body</strong>', '', ''],
+    ['name*', '<code>String</code>', 'ex : "book"'],
+    ['description*', '<code>String</code>', 'ex: Atomic Habits'],
+    ['cover_photo', '<code>String | URL</code>', 'ex: "https://my-fake-cover-image.jpeg"'],
+    ['prices*', '<code>dict</code>', '"prices": [ { "currency": "USD", "amount": 80000 } ]']
+]} />
+
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "POST", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['createProductCurl', 'createProductJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['201: Created', '400: Bad Request'], 
+            snippet: ['createProduct201', 'createProduct400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+
+<br />
+
+## Find Products
+
+<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Path</strong>', '', ''],
+    ['network*', '<code>String</code>', '']
+]} />
+
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "GET", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['findProductsCurl', 'findProductsJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['200: OK', '400: Bad Request'], 
+            snippet: ['findProducts200', 'findProducts400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+
+<br />
+
+## Get Product
+
+<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Path</strong>', '', ''],
+    ['id*', '<code>String</code>', 'Product ID']
+]} />
+
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "GET", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['getProductCurl', 'getProductJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['200: OK', '400: Bad Request'], 
+            snippet: ['getProduct200', 'getProduct400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+
+<br />
+
+## Update Product
+
+<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Body</strong>', '', ''],
+    ['name', '<code>String</code>', ''],
+    ['description', '<code>String</code>', ''],
+    ['cover_photo', '<code>String</code>', ''],
+    ['active', '<code>String</code>', '']
+]} />
+
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "PUT", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['updateProductCurl', 'updateProductJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['200: OK', '400: Bad Request'], 
+            snippet: ['updateProduct200', 'updateProduct400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+
+<br />
+
+## Get Prices
+
+<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Path</strong>', '', ''],
+    ['take*', '<code>String | Number</code>', '3'],
+    ['page*', '<code>String | Number</code>', '1'],
+]} />
+
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "GET", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['getPricesCurl', 'getPricesJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['200: OK', '400: Bad Request'], 
+            snippet: ['getPrices200', 'getPrices400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+
+<br />
+
+## Get links by price
+
+<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Path</strong>', '', ''],
+    ['price_id*', '<code>String | Number</code>', ''],
+]} />
+
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "GET", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['getLinksByPriceCurl', 'getLinksByPriceJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['200: OK', '400: Bad Request'], 
+            snippet: ['getLinksByPrice200', 'getLinksByPrice400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+
+<br />
+
+## Add Price
+
+<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Body</strong>', '', ''],
+    ['amount*', '<code>Float</code>', 'ex : { "amount" : 500000, "currency": "ngn" }'],
+    ['currency*', '<code>Float</code>', 'ex : { "amount" : 500000, "currency": "ngn" }'],
+]} />
+
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "POST", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['addPriceCurl', 'addPriceJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['201: Created', '400: Bad Request'], 
+            snippet: ['addPrice201', 'addPrice400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+
+<br />
+
+## Delete Price
+
+<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Path</strong>', '', ''],
+    ['price_id*', '<code>String</code>', 'price id of the product'],
+]} />
+
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "DELETE", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['deletePriceCurl', 'deletePriceJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['200: OK', '400: Bad Request'], 
+            snippet: ['deletePrice200', 'deletePrice400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+
+<br />
+
+## Delete Product
+
+<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Path</strong>', '', ''],
+    ['id*', '<code>String</code>', 'id of the product'],
+]} />
+
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "DELETE", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['deleteProductCurl', 'deleteProductJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['200: OK', '400: Bad Request'], 
+            snippet: ['deleteProduct200', 'deleteProduct400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+
+<br />

@@ -6,6 +6,9 @@ import {
   UseCasesIcon,
   LibrariesIcon,
   SwapIcon,
+  ProductsIcon,
+  TransactionsIcon,
+  CustomersIcon,
 } from 'public/icons'
 import React, { ElementType } from 'react'
 
@@ -62,9 +65,28 @@ const sidebar: SidebarItem[] = [
     redirect: 'swap/get-started',
     children: [
       { type: 'docs', label: 'Get started', id: 'get-started' },
-      { type: 'docs', label: 'Swap Amount', id: 'swap-amount' },
+      { type: 'docs', label: 'Preview swap amount', id: 'swap-amount' },
+      { type: 'docs', label: 'Stablecoin swap', id: 'stablecoin-swap' },
       { type: 'docs', label: 'Webhooks', id: 'webhooks' },
     ],
+  },
+  {
+    type: 'docs',
+    label: 'Transactions',
+    icon: <TransactionsIcon />,
+    id: 'transactions',
+  },
+  {
+    type: 'docs',
+    label: 'Customers',
+    icon: <CustomersIcon />,
+    id: 'customers',
+  },
+  {
+    type: 'docs',
+    label: 'Products',
+    icon: <ProductsIcon />,
+    id: 'products',
   },
   {
     type: 'category',

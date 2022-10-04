@@ -1025,5 +1025,844 @@ app.post("/my/webhook/url", function(req, res) {
         // Do something with event  
     }
     res.send(200);
-});`
+});`,
+    stableCoinSwapPostCURL:
+        `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/transaction/initialize' \
+
+--header 'x-api-key: YOUR_PUBLIC_KEY' \
+
+--data-raw '{
+    "from_coin": "USDT",
+    "to_coin": "BUSD",
+    "amount": 0.01,
+    "blockchain": "Binance Smart Chain"
+}’`,
+    stableCoinSwapPostJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'x-api-key': Bearer YOUR_PUBLIC_KEY
+    },
+    body: JSON.stringify({
+        "from_coin": "USDT",
+        "to_coin": "BUSD",
+        "amount": 0.01,
+        "blockchain": "Binance Smart Chain"
+    })
+};
+fetch('https://api.lazerpay.engineering/api/v1/transaction/initialize', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))
+`,
+    stableCoinSwapPost201:
+        `{
+    "message": "Crypto swap amount initiated successfully",
+    "status": "success",
+    "statusCode": 200,
+    "data": {
+        "fromCoin": "USDT",
+        "toCoin": "BUSD",
+        "amount": 99.68468056751414
+    }
+}`,
+    stableCoinSwapPost400:
+        `{
+    "message": "Insufficient funds, check your balance and try again",
+    "statusCode": 400,
+    "status": "error"
+}`,
+    allTransactionsPostCurl:
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/transactions' \
+
+--Authorization 'x-api-key: YOUR_PUBLIC_KEY' \
+
+                'Content-Type': 'application/JSON' \
+                    `,
+    allTransactionsPostJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'Authorization': Bearer YOUR_SECRET_KEY
+    }
+};
+fetch('https://api.lazerpay.engineering/api/v1/transaction/initialize', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))
+`,
+    allTransactions200:
+        `{
+    "message": "Transactions retrieved successfully",
+    "status": "success",
+    "statusCode": 200,
+    "data": [
+        {
+            "id": "93754962-XXX-46a2-9858-XXX",
+            "walletId": "XXX-35a2-421f-XXX-d23149572fd7",
+            "externalId": null,
+            "reference": "Vuzr458xTg",
+            "shippingAddress": null,
+            "senderAddress": null,
+            "recipientAddress": "0x79A0cd9390XXXXX1D0651005128d4884094c",
+            "actualAmount": 10,
+            "amountPaid": 0,
+            "amountPaidFiat": 0,
+            "fiatAmount": 10,
+            "amountReceived": 0,
+            "amountReceivedFiat": 0,
+            "fee": 0.1,
+            "coin": "BUSD",
+            "currency": "USD",
+            "hash": null,
+            "blockNumber": null,
+            "type": "received",
+            "acceptPartialPayment": false,
+            "status": "pending",
+            "network": "testnet",
+            "paymentChannel": "crypto_transfer",
+            "blockchain": "Binance Smart Chain",
+            "fiatRate": 1,
+            "cryptoRate": 1,
+            "metadata": {},
+            "fromCoin": null,
+            "toCoin": null,
+            "createdAt": "2022-09-05T22:09:57.119Z",
+            "updatedAt": "2022-09-05T22:09:57.119Z",
+            "customer": {
+                "id": "XXXX-71cc-45e3-8562-XXXX",
+                "walletId": "33cbb77a-XXX-421f-XXX-d23149572fd7",
+                "name": "Abdulfatai Suleiman",
+                "email": "abdulfataisuleiman67@gmail.com",
+                "shippingAddress": null,
+                "phone": null,
+                "network": "testnet",
+                "createdAt": "2022-09-05T22:09:57.119Z",
+                "updatedAt": "2022-09-05T22:09:57.119Z"
+            },
+            "bankPayout": null
+        }
+    ]
+}`,
+    allTransactions400:
+        `{
+    // Response
+}`,
+    getTransactionPostCurl:
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/transactions/:transaction_id' \
+
+--Authorization 'x-api-key: YOUR_PUBLIC_KEY' \
+
+        'Content-Type': 'application/JSON' \
+            `,
+    getTransactionPostJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+    'Authorization': Bearer YOUR_SECRET_KEY
+    }
+};
+fetch('https://api.lazerpay.engineering/api/v1/transaction/:transaction_id', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))
+`,
+    getTransaction200:
+        `{
+    "message": "Transactions retrieved successfully",
+    "status": "success",
+    "statusCode": 200,
+    "data": {
+        "id": "93754962-XXX-46a2-9858-XXX",
+        "walletId": "XXX-35a2-421f-XXX-d23149572fd7",
+        "externalId": null,
+        "reference": "Vuzr458xTg",
+        "shippingAddress": null,
+        "senderAddress": null,
+        "recipientAddress": "0x79A0cd9390XXXXX1D0651005128d4884094c",
+        "actualAmount": 10,
+        "amountPaid": 0,
+        "amountPaidFiat": 0,
+        "fiatAmount": 10,
+        "amountReceived": 0,
+        "amountReceivedFiat": 0,
+        "fee": 0.1,
+        "coin": "BUSD",
+        "currency": "USD",
+        "hash": null,
+        "blockNumber": null,
+        "type": "received",
+        "acceptPartialPayment": false,
+        "status": "pending",
+        "network": "testnet",
+        "paymentChannel": "crypto_transfer",
+        "blockchain": "Binance Smart Chain",
+        "fiatRate": 1,
+        "cryptoRate": 1,
+        "metadata": {},
+        "fromCoin": null,
+        "toCoin": null,
+        "createdAt": "2022-09-05T22:09:57.119Z",
+        "updatedAt": "2022-09-05T22:09:57.119Z",
+        "customer": {
+            "id": "XXXX-71cc-45e3-8562-XXXX",
+            "walletId": "33cbb77a-XXX-421f-XXX-d23149572fd7",
+            "name": "Abdulfatai Suleiman",
+            "email": "abdulfataisuleiman67@gmail.com",
+            "shippingAddress": null,
+            "phone": null,
+            "network": "testnet",
+            "createdAt": "2022-09-05T22:09:57.119Z",
+            "updatedAt": "2022-09-05T22:09:57.119Z"
+        },
+        "bankPayout": null
+    }
+}`,
+    getTransaction400:
+        `{
+    // Response
+}`,
+    allCustomersPostCurl:
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/customers' \
+
+--Authorization 'x-api-key: YOUR_PUBLIC_KEY' \
+
+        'Content-Type': 'application/JSON' \
+            `,
+    allCustomersPostJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+    'Authorization': Bearer YOUR_SECRET_KEY
+    }
+};
+fetch('https://api.lazerpay.engineering/api/v1/transaction/customers', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))
+`,
+    allCustomers200:
+        `{
+    "message": "Customers retrieved successfully",
+    "status": "success",
+    "statusCode": 200,
+    "data": [
+        {
+            "id": "bc48cc84-71cc-XXX-8562-XXXXX",
+            "walletId": "33cbb77a-35a2-421f-a733-XXXXX",
+            "name": "Abdulfatai Suleiman",
+            "email": "abdulfataisuleiman@XXXX.com",
+            "shippingAddress": null,
+            "phone": null,
+            "network": "testnet",
+            "createdAt": "2022-09-05T22:09:57.119Z",
+            "updatedAt": "2022-09-05T22:09:57.119Z",
+            "transactions": [
+                {
+                    "id": "XXXXXX-731e-46a2-XXXX-3495b35d99a6",
+                    "walletId": "XXXXXX-35a2-421f-XXXX-d23149572fd7",
+                    "reference": "Vuzr458xTg",
+                    "senderAddress": null,
+                    "recipientAddress": "0x79A0cd9390384XXXXXXXXX5128d4884094c",
+                    "actualAmount": 10,
+                    "amountPaid": 0,
+                    "amountPaidFiat": 0,
+                    "fiatAmount": 10,
+                    "amountReceived": 0,
+                    "amountReceivedFiat": 0,
+                    "fee": 0.1,
+                    "coin": "BUSD",
+                    "currency": "USD",
+                    "hash": null,
+                    "blockNumber": null,
+                    "type": "received",
+                    "acceptPartialPayment": false,
+                    "status": "pending",
+                    "network": "testnet",
+                    "paymentChannel": "crypto_transfer",
+                    "blockchain": "Binance Smart Chain",
+                    "fiatRate": 1,
+                    "cryptoRate": 1,
+                    "metadata": {},
+                    "fromCoin": null,
+                    "toCoin": null,
+                    "createdAt": "2022-09-05T22:09:57.119Z",
+                    "updatedAt": "2022-09-05T22:09:57.119Z"
+                }
+            ]
+        }
+    ],
+    "count": 1,
+    "currentPage": 1,
+    "nextPage": null,
+    "prevPage": null,
+    "lastPage": 1
+}`,
+    allCustomers400:
+        `{
+    // Response
+}`,
+    getCustomerPostCurl:
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/customers/:customer_id' \
+
+--Authorization 'x-api-key: YOUR_SECRET_KEY' \
+
+'Content-Type': 'application/JSON' \
+    `,
+    getCustomerPostJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'Authorization': Bearer YOUR_SECRET_KEY
+    }
+};
+fetch('https://api.lazerpay.engineering/api/v1/customers/:customer_id', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))
+`,
+    getCustomer200:
+        `{
+    "message": "Customers retrieved successfully",
+    "data": [
+        "id": "bc48cc84-71cc-XXX-8562-XXXXX",
+        "walletId": "33cbb77a-35a2-421f-a733-XXXXX",
+        "name": "Abdulfatai Suleiman",
+        "email": "abdulfataisuleiman@XXXX.com",
+        "shippingAddress": null,
+        "phone": null,
+        "network": "testnet",
+        "createdAt": "2022-09-05T22:09:57.119Z",
+        "updatedAt": "2022-09-05T22:09:57.119Z",
+        "transactions": [
+            {
+                "id": "XXXXXX-731e-46a2-XXXX-3495b35d99a6",
+                "walletId": "XXXXXX-35a2-421f-XXXX-d23149572fd7",
+                "reference": "Vuzr458xTg",
+                "senderAddress": null,
+                "recipientAddress": "0x79A0cd9390384XXXXXXXXX5128d4884094c",
+                "actualAmount": 10,
+                "amountPaid": 0,
+                "amountPaidFiat": 0,
+                "fiatAmount": 10,
+                "amountReceived": 0,
+                "amountReceivedFiat": 0,
+                "fee": 0.1,
+                "coin": "BUSD",
+                "currency": "USD",
+                "hash": null,
+                "blockNumber": null,
+                "type": "received",
+                "acceptPartialPayment": false,
+                "status": "pending",
+                "network": "testnet",
+                "paymentChannel": "crypto_transfer",
+                "blockchain": "Binance Smart Chain",
+                "fiatRate": 1,
+                "cryptoRate": 1,
+                "metadata": {},
+                "fromCoin": null,
+                "toCoin": null,
+                "createdAt": "2022-09-05T22:09:57.119Z",
+                "updatedAt": "2022-09-05T22:09:57.119Z"
+            }
+        ]
+    },
+    "status": "success",
+    "statusCode": 200
+}`,
+    getCustomer400:
+        `{
+    // Response
+}`,
+    createProductCurl:
+        `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/products' \
+
+--header 'x-api-key: YOUR_PUBLIC_KEY' \
+
+--data-raw '{
+    "name": "book",
+    "description": "Atomic Habits",
+    "amount": "https://my-fake-cover-image.jpeg",
+    "blockchain": [ { "currency": "USD", "amount": 80000 } ]
+}’`,
+    createProductJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'Authorization': 'Bearer YOUR_SECRET_KEY',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        "name": "book",
+        "description": "Atomic Habits",
+        "amount": "https://my-fake-cover-image.jpeg",
+        "blockchain": [ { "currency": "USD", "amount": 80000 } ]
+    })
+};
+fetch('https://api.lazerpay.engineering/api/v1/products', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    createProduct201:
+        `{
+    "message": "Product created successfully",
+    "data": {
+        "name": "not fake product",
+        "description": "not fake description",
+        "businessId": "3dc8842d-fbdc-41a8-ad61-c023afc3a391",
+        "network": "testnet",
+        "prices": [
+            {
+                "id": "f024a92c-ff80-40fe-8cc2-e12e8aa1087d",
+                "amount": 80000,
+                "currency": {
+                    "name": "United States Dollar",
+                    "symbol": "USD"
+                },
+                "pricingType": "standard"
+            }
+        ],
+        "image": {
+            "url": "https://my-fake-cover-image.jpeg",
+            "createdAt": "2022-09-05T15:14:36.721Z"
+        },
+        "id": "3a78a41a-305b-4061-aea5-8f0f1994fd00",
+        "createdAt": "2022-09-05T15:14:36.721Z",
+        "updatedAt": "2022-09-05T15:14:36.721Z",
+        "active": true
+    },
+    "statusCode": 201,
+    "status": "success"
+}`,
+    createProduct400:
+        `{
+    "statusCode": 400,
+    "message": [
+        "name must be a string",
+        "name should not be empty",
+        "description must be a string",
+        "description should not be empty"
+    ],
+    "error": "Bad Request"
+}`,
+    findProductsCurl:
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/products?network={}{{network}}' \
+
+--header 'x-api-key: YOUR_PUBLIC_KEY' \
+         
+         'Content-Type': 'application/json'
+`,
+    findProductsJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'Authorization': 'Bearer YOUR_SECRET_KEY',
+        'Content-Type': 'application/json'
+    }
+};
+fetch('https://api.lazerpay.engineering/api/v1/products?network={}{{network}}', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    findProducts200:
+        `{
+    "status": "success",
+    "statusCode": 200,
+    "data": [
+        {
+            "id": "3a78a41a-305b-4061-aea5-XXXX",
+            "name": "Book",
+            "createdAt": "2022-09-05T15:14:36.721Z",
+            "updatedAt": "2022-09-05T15:14:36.721Z",
+            "description": "Atomic Habits",
+            "active": true,
+            "businessId": "3dc8842d-XX-XXX-ad61-c023afc3a391",
+            "network": "testnet",
+            "prices": [
+                {
+                    "id": "XX-ff80-40fe-XX-e12e8aa1087d",
+                    "amount": "80000",
+                    "currency": {
+                        "name": "United States Dollar",
+                        "symbol": "USD"
+                    }
+                }
+            ],
+            "image": {
+                "url": "https://my-fake-cover-image.jpeg",
+                "publicId": "default",
+                "folder": "products"
+            }
+        }
+    ],
+    "count": 1,
+    "currentPage": 1,
+    "nextPage": null,
+    "prevPage": null,
+    "lastPage": 1
+}`,
+    findProducts400:
+        `{
+    // Response
+}`,
+    getProductCurl:
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/products/:id' \
+
+--header 'x-api-key: YOUR_PUBLIC_KEY' \
+         
+         'Content-Type': 'application/json'
+`,
+    getProductJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'Authorization': 'Bearer YOUR_SECRET_KEY',
+        'Content-Type': 'application/json'
+    }
+};
+fetch('https://api.lazerpay.engineering/api/v1/products/:id', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    getProduct200:
+        `{
+    "message": "Product fetched successfully",
+    "data": {
+        "id": "978ba584-839a-4af2-a673-4bc3b814b54a",
+        "name": "Guccie Purse",
+        "createdAt": "2022-07-25T04:56:07.810Z",
+        "updatedAt": "2022-07-25T04:56:07.810Z",
+        "description": "Bag of Guccie Stuff With sun",
+        "active": true,
+        "userId": "51afc3cd-cbb3-43ac-a404-db2897915ecc",
+        "businessId": "e4b23ecf-9d10-4b4f-9582-20700cf00d1b",
+        "network": "testnet",
+        "prices": [
+            {
+                "id": "ec99bcce-7a57-47c2-adc6-b284db779841",
+                "createdAt": "2022-07-25T04:56:07.810Z",
+                "amount": "8.00",
+                "pricingType": "standard",
+                "currency": {
+                    "id": "dedb6fb9-bc74-4a72-a8ce-f6fcc6435de0",
+                    "name": "United States Dollar",
+                    "symbol": "USD",
+                    "logo": null,
+                    "status": "active",
+                    "createdAt": "2022-07-22T09:05:15.164Z",
+                    "updatedAt": "2022-07-22T09:05:15.164Z"
+                },
+                "paymentLinks": []
+            }
+        ],
+        "image": {
+            "id": "b74d0cd5-f972-454f-9d4d-a29a9255098c",
+            "url": "https://res.cloudinary.com/lazer/image/upload/v1654710452/product_img_yfgeb6.png",
+            "publicId": "default",
+            "createdAt": "2022-07-25T04:56:07.810Z",
+            "folder": "products"
+        }
+    },
+    "statusCode": 200,
+    "status": "success"
+}`,
+    getProduct400:
+        `{
+    // Response
+}`,
+    updateProductCurl:
+        `curl --location --request PUT 'https://api.lazerpay.engineering/api/v1/products/:id' \
+
+--header 'Authorization: Bearer YOUR_SECRET_KEY' \
+
+         'Content-Type': 'application/json'
+
+--data-raw '{
+    "name": "fake product name",
+    "description": "fake description",
+    "cover_photo": "https://my-fake-cover-image-update.jpeg",
+    "active": false
+}’`,
+    updateProductJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'Authorization': 'Bearer YOUR_SECRET_KEY',
+        'Content-Type': 'application/json'
+    }
+    body: JSON.stringify({
+        "name": "fake product name",
+        "description": "fake description",
+        "cover_photo": "https://my-fake-cover-image-update.jpeg",
+        "active": false
+    })
+};
+fetch('https://api.lazerpay.engineering/api/v1/products/:id', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    updateProduct200:
+        `{
+    "message": "Product fetched successfully",
+    "data": {
+        "id": "978ba584-839a-4af2-a673-4bc3b814b54a",
+        "name": "Chlorine Bubble Gum",
+        "createdAt": "2022-07-25T04:56:07.810Z",
+        "updatedAt": "2022-07-25T05:01:28.949Z",
+        "description": "Tons Of Gums",
+        "active": false,
+        "userId": "51afc3cd-cbb3-43ac-a404-db2897915ecc",
+        "businessId": "e4b23ecf-9d10-4b4f-9582-20700cf00d1b",
+        "network": "testnet",
+        "prices": [
+            {
+                "id": "ec99bcce-7a57-47c2-adc6-b284db779841",
+                "createdAt": "2022-07-25T04:56:07.810Z",
+                "amount": "8.00",
+                "pricingType": "standard",
+                "currency": {
+                    "id": "dedb6fb9-bc74-4a72-a8ce-f6fcc6435de0",
+                    "name": "United States Dollar",
+                    "symbol": "USD",
+                    "logo": null,
+                    "status": "active",
+                    "createdAt": "2022-07-22T09:05:15.164Z",
+                    "updatedAt": "2022-07-22T09:05:15.164Z"
+                },
+                "paymentLinks": []
+            }
+        ],
+        "image": {
+            "id": "b74d0cd5-f972-454f-9d4d-a29a9255098c",
+            "url": "https://res.cloudinary.com/lazer/image/upload/v1654710452/product_img_yfgeb6.png",
+            "publicId": "default",
+            "createdAt": "2022-07-25T04:56:07.810Z",
+            "folder": "products"
+        }
+    },
+    "statusCode": 200,
+    "status": "success"
+}`,
+    updateProduct400:
+        `{
+    "statusCode": 400,
+    "message": [
+        "description must be a string",
+        "description should not be empty"
+    ],
+    "error": "Bad Request"
+}`,
+    getPricesCurl:
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/products/:product_id/prices?take=3&page=1' \
+
+--header 'x-api-key: YOUR_PUBLIC_KEY' \
+ 
+         'Content-Type': 'application/json'
+`,
+    getPricesJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'Authorization': 'Bearer YOUR_SECRET_KEY',
+        'Content-Type': 'application/json'
+    }
+};
+fetch('https://api.lazerpay.engineering/api/v1/products/:product_id/prices?take=3&page=1', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    getPrices200:
+        `{
+    "status": "success",
+    "statusCode": 200,
+    "data": [
+        {
+            "id": "69d58386-0b29-449d-9401-57ab11ff7c5d",
+            "createdAt": "2022-06-25T17:06:23.531Z",
+            "amount": "20.00",
+            "pricingType": "standard",
+            "currency": {
+                "name": "United Emirates Dirham",
+                "symbol": "AED"
+            },
+            "paymentLinks": [
+                {
+                    "id": "a31b321a-d9cf-4377-bffa-79ffafc3387a",
+                    "createdAt": "2022-06-27T08:20:32.705Z",
+                    "title": "red silver shit",
+                    "slug": "BZa3Suc4",
+                    "isActive": true
+                },
+                {
+                    "id": "331162c3-d9cf-4026-9d22-887b8de5f635",
+                    "createdAt": "2022-07-06T17:25:37.875Z",
+                    "title": "chlorine candy II",
+                    "slug": "J6pkthAE",
+                    "isActive": true
+                },
+                {
+                    "id": "a29af358-a811-44cd-aab8-8638090434a9",
+                    "createdAt": "2022-07-08T18:50:11.315Z",
+                    "title": "chlorine candy II",
+                    "slug": "G_L9l4Z8",
+                    "isActive": true
+                },
+                {
+                    "id": "98ce3ecb-742b-4ded-8420-fee4223cb0a7",
+                    "createdAt": "2022-07-08T18:50:19.247Z",
+                    "title": "chlorine candy II",
+                    "slug": "MDKKrLAC",
+                    "isActive": true
+                }
+            ]
+        }
+    ],
+    "count": 1,
+    "currentPage": 1,
+    "nextPage": null,
+    "prevPage": null,
+    "lastPage": 1
+}`,
+    getPrices400:
+        `{
+    // Response
+}`,
+    getLinksByPriceCurl:
+        `curl --location --request GET 'https://api.lazerpay.engineering/api/v1/products/:price_id' \
+
+--header 'x-api-key: YOUR_PUBLIC_KEY' \
+
+         'Content-Type': 'application/json'
+`,
+    getLinksByPriceJs:
+        `const options = {
+    method: 'GET',
+    headers: {
+        'Authorization': 'Bearer YOUR_SECRET_KEY',
+        'Content-Type': 'application/json'
+    }
+};
+fetch('https://api.lazerpay.engineering/api/v1/products/:price_id', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    getLinksByPrice200:
+        `{
+    "data": [
+        {
+            "id": "XXX-XX-4bf7-af7f-2cceefcc12bb",
+            "createdAt": "2022-06-26T17:30:43.729Z",
+            "title": "Candy II",
+            "slug": "0B7tKYKB",
+            "isActive": true
+        },
+        {
+            "id": "11f0ad05-acd9-XX-99a8-XXXX",
+            "createdAt": "2022-06-28T08:34:32.041Z",
+            "title": "chlorine candy II",
+            "slug": "mEeqzLI3",
+            "isActive": true
+        }
+    ],
+    "status": "success",
+    "statusCode": 200,
+    "message": "Price links fetched successfully"
+}`,
+    getLinksByPrice400:
+        `{
+    // Response
+}`,
+    addPriceCurl:
+        `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/products/:id/pricing' \
+
+--header 'Authorization: Bearer YOUR_SECRET_KEY' \
+
+         'Content-Type': 'application/json'
+
+--data-raw '{
+    "amount" : 500000,
+    "currency": "ngn"
+}’`,
+    addPriceJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'Authorization': 'Bearer YOUR_SECRET_KEY',
+        'Content-Type': 'application/json'
+    }
+    body: JSON.stringify({
+        "amount" : 500000,
+        "currency": "ngn"
+    })
+};
+fetch('https://api.lazerpay.engineering/api/v1/products/:id/pricing', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    addPrice201:
+        `{
+    "message": "Price added successfully",
+    "statusCode": 201,
+    "status": "success",
+    "data": {
+        "amount": 5000,
+        "id": "96688e79-a7b5-4e72-bb67-82bbbfeb6708",
+        "createdAt": "2022-07-25T05:23:41.707Z",
+        "pricingType": "standard",
+        "currency": {
+            "name": "United Emirates Dirham",
+            "symbol": "AED"
+        }
+    }
+}`,
+    addPrice400:
+        `{
+    // Response
+}`,
+    deletePriceCurl:
+        `curl --location --request DELETE 'https://api.lazerpay.engineering/api/v1/products/:price_id' \
+
+--header 'x-api-key: YOUR_PUBLIC_KEY' \
+
+         'Content-Type': 'application/json'
+`,
+    deletePriceJs:
+        `const options = {
+    method: 'DELETE',
+    headers: {
+        'Authorization': 'Bearer YOUR_SECRET_KEY',
+        'Content-Type': 'application/json'
+    }
+};
+fetch('https://api.lazerpay.engineering/api/v1/products/:price_id', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    deletePrice200:
+        `{
+    "message": "Price deleted successfully",
+    "statusCode": 200,
+    "status": "success"
+}`,
+    deletePrice400:
+        `{
+    // Response
+}`,
+    deleteProductCurl:
+        `curl --location --request DELETE 'https://api.lazerpay.engineering/api/v1/products/:id' \
+
+--header 'x-api-key: YOUR_PUBLIC_KEY' \
+
+         'Content-Type': 'application/json'
+`,
+    deleteProductJs:
+        `const options = {
+    method: 'DELETE',
+    headers: {
+        'Authorization': 'Bearer YOUR_SECRET_KEY',
+        'Content-Type': 'application/json'
+    }
+};
+fetch('https://api.lazerpay.engineering/api/v1/products/:id', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    deleteProduct200:
+        `{
+    "message": "Product deleted successfully",
+    "data": "9117c54c-56d6-4ba1-92d3-a92f051c38c1",
+    "statusCode": 200,
+    "status": "success"
+}`,
+    deleteProduct400:
+        `{
+    // Response
+}`
 }
