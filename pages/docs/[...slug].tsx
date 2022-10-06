@@ -5,7 +5,6 @@ import DocsLayout from 'layouts/docs'
 import { getDoc } from 'lib/contentlayer-utils'
 import { GetServerSideProps } from 'next'
 import { Fragment } from 'react'
-import { ToastContainer } from 'react-toastify'
 
 export default function OverviewPage({ doc }: { doc: Docs }) {
   const Component = useMDX(doc?.body?.code)
@@ -13,7 +12,6 @@ export default function OverviewPage({ doc }: { doc: Docs }) {
     <Fragment>
       <NextSeo title={doc?.title} description={doc?.description} />
       <DocsLayout doc={doc}>{Component}</DocsLayout>
-      <ToastContainer hideProgressBar />
     </Fragment>
   )
 }
