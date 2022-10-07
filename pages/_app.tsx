@@ -12,8 +12,6 @@ export default function App({ Component, pageProps }) {
       <Component {...pageProps} />
       <ToastContainer
         className='impct-toast'
-        position='top-center'
-        autoClose={3000}
         hideProgressBar
         newestOnTop
         closeOnClick
