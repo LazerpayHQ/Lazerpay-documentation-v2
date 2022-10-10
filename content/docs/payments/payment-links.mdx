@@ -13,45 +13,170 @@ With payment links, you can share your unique payment link to anyone in the worl
 With Payment Links, you can create a payment page and share a link to it with your customers. Creating Payment links from the dashboard requires no coding and you can share the link as many times as you want on social media, in emails, or any other channel.
 
 You can also create payment links using our APIs or our Libraries.
-<Divider className='max-w-100 mt-1 mb-8' />
+
+<strong>We have two types of payment link creation</strong>
+- Standard payment link
+- Donation payment link
 <br />
 
-## Create Payment Links API
+## Standard Payment link
+
+Standard payment links are shareable links which you can use to receive digital payments from your customers worldwide 
+
+![Swap Stablecoins](/images/standard-payment.png)
+
+<br />
+
+### Create Standard payment link
+Create a new standard payment link with the following endpoint
 
 <LzTable 
   reverse
   head={["Parameter name", "Type", "Description"]}
   body={[
-    ['<strong>Header</strong>', '', ''],
-    ['Authorization*', '<code>String</code>', 'Bearer YOUR_SECRET_KEY'],
     ['<strong>Body</strong>', '', ''],
-    ['title*', '<code>String</code>', 'Bearer The title of the link'],
-    ['description*', '<code>String</code>', 'Description of the payment page'],
-    ['amount', '<code>Number</code>', 'Amount the user will pay'],
-    ['type*', '<code>String</code>', 'Payment links type default is <code>"standard"</code>'],
-    ['logo', '<code>String</code>', 'Your logo URL'],
-    ['currency*', '<code>String</code>', 'Payment page currency'],
-    ['redirect_url', '<code>String</code>', ''],
+    ['title*', '<code>String</code>', 'ex: "Payment for Merchandise With Cash"'],
+    ['description*', '<code>String</code>', 'ex: "Pay for some nice guccie bags"'],
+    ['options*', '<code>Object</code>', 'ex: "options": { "collect_phone": true, "allow_promo": true, "collect_address": true },'],
+    ['action*', '<code>Object</code>', 'ex: "action": { "redirect": true, "redirect_url": "https://local.me", "show_confirmation_page": false, "success_message": "thank you budd!" },'],
+    ['cart*', '<code>Array</code>', 'ex: "cart": []'],
+    ['charge*', '<code>Array</code>', 'ex: "charge": { "amount": 84000, "currency": "NGN" }'],
   ]}
 />
 
 <CodeBlock 
-  responseTheme="red" 
+  responseTheme="default" 
   responseTitle="Response" 
   data={{type: 'request', item: {method: "POST", requestData: {
     name: ['cURL', 'Javascript'], 
-    snippet: ['createPaymentLinkCURL', 'createPaymentLinkJs'], 
+    snippet: ['createStandardPaymentCurl', 'createStandardPaymentJs'], 
     lang: ['curl', 'js']
-    }, 
-    responseData: {
-      name: ['201: Created', '401: Unauthorized'], 
-      snippet: ['createPaymentLinkResponse201', 'createPaymentLinkResponse401'], 
-      lang: ['json', 'json']}} 
-    }} 
-  />
+  }, 
+  responseData: {
+    name: ['201: Created Cart', '201: Created Charge'], 
+    snippet: ['createStandardPayment201Cart', 'createStandardPayment201Charge'], 
+    lang: ['json', 'json']}} 
+  }} 
+/>
+
 <br />
-<Alert>When passing amount you also need to pass currency, same thing when you pass currency, you also need to pass amount</Alert>
+
+### Update an existing standard payment link
+Update an existing standard payment link with the following endpoint
+
+<LzTable 
+  reverse
+  head={["Parameter name", "Type", "Description"]}
+  body={[
+    ['<strong>Body</strong>', '', ''],
+    ['title*', '<code>String</code>', 'ex: "Payment for Merchandise With Cash"'],
+    ['description*', '<code>String</code>', 'ex: "Pay for some nice guccie bags"'],
+    ['options*', '<code>Object</code>', 'ex: "options": { "collect_phone": true, "allow_promo": true, "collect_address": true },'],
+    ['action*', '<code>Object</code>', 'ex: "action": { "redirect": true, "redirect_url": "https://local.me", "show_confirmation_page": false, "success_message": "thank you budd!" },'],
+    ['cart*', '<code>Array</code>', 'ex: "cart": []'],
+    ['charge*', '<code>Array</code>', 'ex: "charge": { "amount": 84000, "currency": "NGN" }'],
+  ]}
+/>
+
+<CodeBlock 
+  responseTheme="default" 
+  responseTitle="Response" 
+  data={{type: 'request', item: {method: "PUT", requestData: {
+    name: ['cURL', 'Javascript'], 
+    snippet: ['updateStandardPaymentCurl', 'updateStandardPaymentJs'], 
+    lang: ['curl', 'js']
+  }, 
+  responseData: {
+    name: ['200: OK Cart', '200: OK Charge'], 
+    snippet: ['updateStandardPayment200Cart', 'updateStandardPayment200Charge'], 
+    lang: ['json', 'json']}} 
+  }} 
+/>
+
 <Divider className='max-w-100 mt-1 mb-8' />
+<br />
+
+## Donation Payment link
+
+Donation payment links can be created for people to support a cause that they care about
+
+![Swap Stablecoins](/images/donation-payment.png)
+
+<br />
+
+### Create Donation payment link
+Create a new donation payment link with the following endpoint
+
+<LzTable 
+  reverse
+  head={["Parameter name", "Type", "Description"]}
+  body={[
+    ['<strong>Body</strong>', '', ''],
+    ['title*', '<code>String</code>', 'ex: "Payment for Merchandise With Cash"'],
+    ['is_active*', '<code>boolean</code>', 'true or false'],
+    ['description*', '<code>String</code>', 'ex : "Donate here"'],
+    ['options*', '<code>Object</code>', 'ex: "options": { "collect_phone": true, "allow_promo": true, "collect_address": true },'],
+    ['action*', '<code>Object</code>', 'ex: "action": { "redirect": false, "redirect_url": "https://local.com/confirm", "show_confirmation_page": false, "success_message": "thank you budd!" },'],
+    ['social_links', '<code>Object</code>', '"social_links": { "facebook":"fb.me/uche", "instagram": "noelukwa", "twitter" :"noelukwa" },'],
+    ['website_link', '<code>String</code>', 'ex: https://uche.com'],
+    ['cover_photo', '<code>String | URL</code>', 'ex: https://random-cover-photo.jpeg'],
+  ]}
+/>
+
+<CodeBlock 
+  responseTheme="default" 
+  responseTitle="Response" 
+  data={{type: 'request', item: {method: "POST", requestData: {
+    name: ['cURL', 'Javascript'], 
+    snippet: ['createDonationPaymentCurl', 'createDonationPaymentJs'], 
+    lang: ['curl', 'js']
+  }, 
+  responseData: {
+    name: ['201: Created'], 
+    snippet: ['createDonationPayment201'], 
+    lang: ['json']}} 
+  }} 
+/>
+
+<br />
+
+### Update Donation payment link
+Update an existing donation payment link with the following endpoint
+
+<LzTable 
+  reverse
+  head={["Parameter name", "Type", "Description"]}
+  body={[
+    ['<strong>Body</strong>', '', ''],
+    ['title*', '<code>String</code>', 'ex: "Payment for Merchandise With Cash"'],
+    ['is_active*', '<code>boolean</code>', 'true or false'],
+    ['description*', '<code>String</code>', 'ex : "Donate here"'],
+    ['options*', '<code>Object</code>', 'ex: "options": { "collect_phone": true, "allow_promo": true, "collect_address": true },'],
+    ['action*', '<code>Object</code>', 'ex: "action": { "redirect": false, "redirect_url": "https://local.com/confirm", "show_confirmation_page": false, "success_message": "thank you budd!" },'],
+    ['social_links', '<code>Object</code>', '"social_links": { "facebook":"fb.me/uche", "instagram": "noelukwa", "twitter" :"noelukwa" },'],
+    ['website_link', '<code>String</code>', 'ex: https://uche.com'],
+    ['cover_photo', '<code>String | URL</code>', 'ex: https://random-cover-photo.jpeg'],
+    ['id*', '<code>String</code>', 'ex: 362e16ce-226b-4e58-92f9-XXXX'],
+  ]}
+/>
+
+<CodeBlock 
+  responseTheme="default" 
+  responseTitle="Response" 
+  data={{type: 'request', item: {method: "PUT", requestData: {
+    name: ['cURL', 'Javascript'], 
+    snippet: ['updateDonationPaymentCurl', 'updateDonationPaymentJs'], 
+    lang: ['curl', 'js']
+  }, 
+  responseData: {
+    name: ['200: OK'], 
+    snippet: ['updateDonationPayment200'], 
+    lang: ['json']}} 
+  }} 
+/>
+
+<Divider className='max-w-100 mt-1 mb-8' />
+<br />
 
 ## Fetch All Payment Links API
 Get all the payment links using the API.
@@ -115,39 +240,6 @@ Using this endpoint, one can fetch the details of a particular payment link.
 <Divider className='max-w-100 mt-1 mb-8' />
 <br />
 
-## Update a Payment Link API
-Update a particular payment link with the following endpoint.
-
-<LzTable 
-  reverse
-  head={["Parameter name", "Type", "Description"]}
-  body={[
-    ['<strong>Path</strong>', '', ''],
-    ['id_or_reference*', '<code>String</code>', 'Bearer id_or_reference'],
-    ['<strong>Header</strong>', '', ''],
-    ['Authorization*', '<code>String</code>', 'Bearer YOUR_SECRET_KEY'],
-    ['<strong>Body</strong>', '', ''],
-    ['status*', '<code>String</code>', 'active or inactive (enum)'],
-  ]}
-/>
-
-<CodeBlock 
-  responseTheme="red" 
-  responseTitle="Response" 
-  data={{type: 'request', item: {method: "PUT", requestData: {
-    name: ['cURL', 'Javascript'], 
-    snippet: ['updatePaymentLinkCURL', 'updatePaymentLinkJs'], 
-    lang: ['curl', 'js']
-  }, 
-  responseData: {
-    name: ['200: OK', '401: Unauthorized'], 
-    snippet: ['updatePaymentLinkResponse200'], 
-    lang: ['json', 'json']}} 
-  }} 
-/>
-
-<Divider className='max-w-100 mt-1 mb-8' />
-<br />
-
 ## Official JS SDK
 With the SDK, You can programmatically create payment links and access all the payment link methods available in the API. Find the guide here.
+

@@ -1864,5 +1864,436 @@ fetch('https://api.lazerpay.engineering/api/v1/products/:id', options)
     deleteProduct400:
         `{
     // Response
+}`,
+    createStandardPaymentCurl:
+        `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/payment_links' \
+
+--data-raw '{
+    "title" : "Payment for Merchandise",
+    "description": "School bags",
+    "options" :{
+        "collect_phone": true,
+        "allow_promo": true,
+        "collect_address":true
+    },
+    "action": {
+        "redirect": true,
+        "redirect_url": "https://local.com",
+        "show_confirmation_page": false,
+        "success_message": "thank you budd!"
+    },
+    "cart": [
+        {
+            "price_id": "4f6a2f7f-3400-4f47-8973-fa8bb2f5d483",
+            "quantity": 10,
+            "quantity_adjustable": false
+        }
+    ]
+}`,
+    createStandardPaymentJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+    body: JSON.stringify({
+        "title" : "Payment for Merchandise",
+        "description": "School bags",
+        "options" :{
+            "collect_phone": true,
+            "allow_promo": true,
+            "collect_address":true
+        },
+        "action": {
+            "redirect": true,
+            "redirect_url": "https://local.com",
+            "show_confirmation_page": false,
+            "success_message": "thank you budd!"
+        },
+        "cart": [
+            {
+                "price_id": "4f6a2f7f-3400-4f47-8973-fa8bb2f5d483",
+                "quantity": 10,
+                "quantity_adjustable": false
+            }
+        ]
+    })
+};
+fetch('https://api.lazerpay.engineering/api/v1/payment_links', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    createStandardPayment201Cart:
+        `{
+    "data": {
+        "charge": {},
+        "cart": {
+            "id": "fb77e4c7-f99f-4eb1-823a-ac63b6022dd4",
+            "createdAt": "2022-09-05T15:45:40.111Z",
+            "updatedAt": "2022-09-05T15:45:40.111Z",
+            "items": [
+                {
+                    "id": 4,
+                    "quantity": 20,
+                    "quantityAdjustable": false,
+                    "price": {
+                        "currency": "NGN",
+                        "amount": "500000",
+                        "id": "d2f6f438-e866-4588-970e-d0e093b4c4ac"
+                    },
+                    "product": {
+                        "id": "3a78a41a-305b-4061-aea5-8f0f1994fd00",
+                        "name": "fake product shit mehhhn",
+                        "description": "fake description",
+                        "image": "https://my-fake-cover-image-update.jpeg"
+                    }
+                }
+            ]
+        },
+        "type": "standard",
+        "isActive": true,
+        "network": "testnet",
+        "slug": "BFxwoXCs",
+        "id": "cf5e68a5-8125-42ec-bbf1-660fc52d0de3",
+        "title": "Payment for Merchandise With Cash",
+        "description": "Pay for some nice guccie bags",
+        "businessId": "3dc8842d-fbdc-41a8-ad61-c023afc3a391",
+        "options": {
+            "collectAddress": true,
+            "collectPhone": true,
+            "allowPromotion": true
+        },
+        "action": {
+            "successMessage": "thank you budd!",
+            "redirectUrl": "https://local.me",
+            "redirect": true,
+            "showConfirmationPage": false
+        },
+        "url": "https://lazerpay.finance/pay/BFxwoXCs",
+        "createdAt": "2022-09-05T15:45:40.111Z",
+        "updatedAt": "2022-09-05T15:45:40.111Z"
+    },
+    "message": "Payment link created successfully",
+    "status": "success",
+    "statusCode": 201
+}`,
+    createStandardPayment201Charge:
+        `{
+    "data": {
+        "charge": {
+            "amount": "84000",
+            "currency": "NGN"
+        },
+        "cart": {},
+        "type": "standard",
+        "isActive": true,
+        "network": "testnet",
+        "slug": "EhnESXox",
+        "id": "ac57979f-7494-467a-95d5-ff01e17b856d",
+        "title": "Payment for Merchandise With Cash",
+        "description": "Pay for some nice guccie bags",
+        "businessId": "3dc8842d-fbdc-41a8-ad61-c023afc3a391",
+        "options": {
+            "collectAddress": true,
+            "collectPhone": true,
+            "allowPromotion": true
+        },
+        "action": {
+            "successMessage": "thank you budd!",
+            "redirectUrl": "https://local.me",
+            "redirect": true,
+            "showConfirmationPage": false
+        },
+        "url": "https://lazerpay.finance/pay/EhnESXox",
+        "createdAt": "2022-09-05T15:51:10.018Z",
+        "updatedAt": "2022-09-05T15:51:10.018Z"
+    },
+    "message": "Payment link created successfully",
+    "status": "success",
+    "statusCode": 201
+}`,
+    updateStandardPaymentCurl:
+        `curl --location --request PUT 'https://api.lazerpay.engineering/api/v1/payment_links' \
+
+--data-raw '{
+    "title": "red silver shit with charge",
+    "is_active": true,
+    "description": "really really good payment stuff",
+    "options": {
+        "collect_phone": true,
+        "allow_promo": true,
+        "collect_address": true
+    },
+    "action": {
+        "redirect": false,
+        "redirect_url": "https://local.com/confirm",
+        "show_confirmation_page": false,
+        "success_message": "thank you budd!"
+    },
+    "charge":{
+        "amount":150,
+        "currency": "USD"
+    },
+    "id": "9228de95-b080-4fe7-aefe-483123a2fc88"
+}`,
+    updateStandardPaymentJs:
+        `const options = {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+    body: JSON.stringify({
+        "title": "red silver shit with charge",
+        "is_active": true,
+        "description": "really really good payment stuff",
+        "options": {
+            "collect_phone": true,
+            "allow_promo": true,
+            "collect_address": true
+        },
+        "action": {
+            "redirect": false,
+            "redirect_url": "https://local.com/confirm",
+            "show_confirmation_page": false,
+            "success_message": "thank you budd!"
+        },
+        "charge":{
+            "amount":150,
+            "currency": "USD"
+        },
+        "id": "9228de95-b080-4fe7-aefe-483123a2fc88"
+    })
+};
+fetch('https://api.lazerpay.engineering/api/v1/payment_links', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    updateStandardPayment200Cart:
+        `{
+    "title" : "red silver shit",
+    "description": "i said my silvers and shit ohh",
+    "options" : {
+        "collect_phone":true,
+        "allow_promo": true,
+        "collect_address":true
+    },
+    "action": {
+        "redirect": true,
+        "redirect_url": "https://local.com/confirm",
+        "confirmation_page": true,
+        "success_message": "thank you budd!"
+    },
+    "cart":
+    [
+            {
+            "item_id": 154,
+            "price_id": "510e0cc5-25af-4b78-9c6c-acdd27f6afcc",
+            "quantity": 70,
+            "quantity_adjustable": true
+        }
+    ],
+    "business_id": "56b4d15d-955b-4186-b2fa-b967dc003926",
+    "network": "{{network}}",
+    "id": "eca28731-f634-4bac-8d72-127d6c9a9555"
+}`,
+    updateStandardPayment200Charge:
+        `{
+    "data": {
+        "linkType": "standard",
+        "isActive": false,
+        "network": "testnet",
+        "slug": "KiSguJ-8",
+        "id": "93c0164c-3a36-42ab-bd82-b5c1e67811a7",
+        "title": "red silver shit",
+        "description": "really really good payment",
+        "businessId": "d94a5c08-151c-410f-8c75-c1f637253599",
+        "options": {
+            "id": "4be5ca58-ca98-4a61-ae57-a5d4e1b152b0",
+            "collectPhone": false,
+            "allowPromo": false,
+            "collectAddress": true,
+            "createdAt": "2022-07-17T16:28:01.348Z",
+            "updatedAt": "2022-07-18T05:48:12.802Z"
+        },
+        "action": {
+            "successMessage": "thank you budd!",
+            "redirectUrl": "https://local.com/confirm",
+            "redirect": false,
+            "confirmationPage": false
+        },
+        "charge": {
+            "amount": "1000000.00",
+            "currency": "USD"
+        },
+        "cart": {},
+        "createdAt": "2022-07-17T16:28:01.348Z",
+        "updatedAt": "2022-07-18T05:48:12.802Z"
+    },
+    "status": "success",
+    "statusCode": 200
+}`,
+    createDonationPaymentCurl:
+        `curl --location --request POST 'https://api.lazerpay.engineering/api/v1/payment_links/donation' \
+
+--form 'title="Save Rhinos"' 
+--form 'description="Help Save Rhinos"' 
+--form 'action[redirect]="false"' 
+--form 'action[redirect_url]="https://rhinos.com"' 
+--form 'action[success_message]="true"' 
+--form 'action[show_confirmation_page]="true"' 
+--form 'options[collect_phone]="true"' 
+--form 'social_links[facebook]="fb.me/uchenoel"' 
+--form 'social_links[twitter]="noelukwa"' 
+--form 'social_links[instagram]="noelukwa"' 
+--form 'cover_photo=@"/Users/waywardgod/Downloads/kids.jpeg"' 
+--form 'business_id="d94a5c08-151c-410f-8c75-c1f637253599"' 
+--form 'website_url="https://noel.com"'`,
+    createDonationPaymentJs:
+        `const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+    body: JSON.stringify({
+        "title" : "Save Rhinos",
+        "description": "Help Save Rhinos",
+        "options" :{
+            "collect_phone": true,
+            "allow_promo": true,
+            "collect_address":true
+        },
+        "action": {
+            "redirect": false,
+            "redirect_url": "https://rhinos.com",
+            "show_confirmation_page": false,
+            "success_message": "thank you budd!"
+        },
+        "social_links": {
+            "facebook": "fb.me/uchenoel",
+            "twitter": "noelukwa",
+            "instagram": "noelukwa",
+        },
+        
+    })
+};
+fetch('https://api.lazerpay.engineering/api/v1/payment_links', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    createDonationPayment201:
+        `{
+    "data": {
+        "isActive": true,
+        "id": "362e16ce-226b-4e58-92f9-3563b0aa04c0",
+        "title": "red silver shit with cart",
+        "description": "really really good payment stuff",
+        "createdAt": "2022-09-05T15:59:00.799Z",
+        "updatedAt": "2022-09-05T15:59:00.799Z",
+        "type": "donation",
+        "network": "testnet",
+        "action": {
+            "showConfirmationPage": false,
+            "redirectUrl": "https://local.com/confirm",
+            "redirect": false,
+            "successMessage": "thank you budd!"
+        },
+        "slug": "zPHupwbJpsk3",
+        "socialLinks": {
+            "facebook": "fb.me/uche",
+            "twitter": "noelukwa",
+            "instagram": "noelukwa"
+        },
+        "businessId": "3dc8842d-fbdc-41a8-ad61-c023afc3a391",
+        "options": {
+            "collectPhone": true
+        },
+        "url": "https://lazerpay.finance/pay/zPHupwbJpsk3",
+        "websiteUrl": "https://uche.com",
+        "image": "https://random-cover-photo.jpeg",
+        "sessions": []
+    },
+    "message": "Payment link created successfully",
+    "status": "success",
+    "statusCode": 201
+}`,
+    updateDonationPaymentCurl:
+        `curl --location --request PUT 'https://api.lazerpay.engineering/api/v1/payment_links/donation' \
+
+--form 'title="Save Rhinos"' 
+--form 'description="Help Save Rhinos"' 
+--form 'action[redirect]="false"' 
+--form 'action[redirect_url]="https://rhinos.com"' 
+--form 'action[success_message]="true"' 
+--form 'action[show_confirmation_page]="true"' 
+--form 'options[collect_phone]="true"' 
+--form 'social_links[facebook]="fb.me/uchenoel"' 
+--form 'social_links[twitter]="noelukwa"' 
+--form 'social_links[instagram]="noelukwa"' 
+--form 'cover_photo=@"/Users/waywardgod/Downloads/kids.jpeg"' 
+--form 'business_id="d94a5c08-151c-410f-8c75-c1f637253599"' 
+--form 'website_url="https://noel.com"'
+--form 'id="362e16ce-226b-4e58-92f9-XXXX"'`,
+    updateDonationPaymentJs:
+        `const options = {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+    body: JSON.stringify({
+        "title" : "Save Rhinos",
+        "description": "Help Save Rhinos",
+        "options" :{
+            "collect_phone": true,
+            "allow_promo": true,
+            "collect_address":true
+        },
+        "action": {
+            "redirect": false,
+            "redirect_url": "https://rhinos.com",
+            "show_confirmation_page": false,
+            "success_message": "thank you budd!"
+        },
+        "social_links": {
+            "facebook": "fb.me/uchenoel",
+            "twitter": "noelukwa",
+            "instagram": "noelukwa",
+        },
+        "id": "362e16ce-226b-4e58-92f9-XXXX"
+    })
+};
+fetch('https://api.lazerpay.engineering/api/v1/payment_links', options)
+    .then((response) => response.json())
+    .then((result) => console.log('Success', result))`,
+    updateDonationPayment200:
+        `{
+    "data": {
+        "isActive": true,
+        "id": "362e16ce-226b-4e58-92f9-3563b0aa04c0",
+        "title": "red silver shit with cart",
+        "description": "really really good payment stuff",
+        "createdAt": "2022-09-05T15:59:00.799Z",
+        "updatedAt": "2022-09-05T16:01:43.139Z",
+        "type": "donation",
+        "network": "testnet",
+        "action": {
+            "showConfirmationPage": false,
+            "redirectUrl": "https://local.com/confirm",
+            "redirect": false,
+            "successMessage": "thank you budd!"
+        },
+        "slug": "zPHupwbJpsk3",
+        "socialLinks": {
+            "facebook": "fb.me/uche",
+            "twitter": "noelukwa",
+            "instagram": "noelukwa"
+        },
+        "businessId": "3dc8842d-fbdc-41a8-ad61-c023afc3a391",
+        "options": {
+            "collectPhone": true
+        },
+        "url": "https://lazerpay.finance/pay/zPHupwbJpsk3",
+        "websiteUrl": "https://uche.com",
+        "image": "https://random-cover-photo.jpeg",
+        "sessions": []
+    },
+    "status": "success",
+    "statusCode": 200
 }`
 }
