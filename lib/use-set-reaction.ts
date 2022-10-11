@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 const REACTION_PAGES = 'lz-reacted-pages';
 
-const useSetReaction = (showToast) => {
+const useSetReaction = () => {
   const [showReaction, setShowReaction] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const { asPath } = useRouter();
@@ -36,8 +36,7 @@ const useSetReaction = (showToast) => {
       }
       setShowReaction(false)
     } catch (error) {
-      showToast('error', 'Something went wrong!')
-      // toast.error('Something went wrong!')
+      toast.error('Something went wrong!')
     } finally {
       setLoading(false)
     }
@@ -49,14 +48,14 @@ const useSetReaction = (showToast) => {
       "is_helpful": value
     });
     if (response?.status === 200) {
-      showToast('success', response?.data?.message)
-      // toast.success(response?.data?.message, {
-      //   position: toast.POSITION.TOP_RIGHT
-      // });
+      toast.success(response?.data?.message, {
+        position: toast.POSITION.TOP_RIGHT
+      });
     }
   }
 
   useEffect(() => {
+    toast.success('na test be this')
     let reactionPages: Array<string> | null = getReactionList();
     if (!reactionPages || !reactionPages.includes(asPath)) {
       setShowReaction(true)
