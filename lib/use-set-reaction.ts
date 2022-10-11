@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const REACTION_PAGES = 'lz-reacted-pages';
 
-const useSetReaction = () => {
+const useSetReaction = (showToast) => {
   const [showReaction, setShowReaction] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const { asPath } = useRouter();
@@ -36,7 +36,8 @@ const useSetReaction = () => {
       }
       setShowReaction(false)
     } catch (error) {
-      toast.error('Something went wrong!')
+      showToast('error', 'Something went wrong!')
+      // toast.error('Something went wrong!')
     } finally {
       setLoading(false)
     }
@@ -48,9 +49,10 @@ const useSetReaction = () => {
       "is_helpful": value
     });
     if (response?.status === 200) {
-      toast.success(response?.data?.message, {
-        position: toast.POSITION.TOP_RIGHT
-      });
+      showToast('success', response?.data?.message)
+      // toast.success(response?.data?.message, {
+      //   position: toast.POSITION.TOP_RIGHT
+      // });
     }
   }
 

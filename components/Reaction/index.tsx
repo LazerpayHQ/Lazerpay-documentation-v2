@@ -2,14 +2,14 @@ import { LzButton } from 'components'
 import { ThumbsDownIcon, ThumbsUpIcon } from 'public/icons'
 import useSetReaction from 'lib/use-set-reaction'
 import { LzLoader } from 'components'
-import { useEffect } from 'react'
 import { toast } from 'react-toastify'
 
 const Reaction = (): JSX.Element => {
-  useEffect(() => {
-    toast('uueuwueuw')
-  }, [])
-  const { showReaction, saveReaction, loading } = useSetReaction()
+  const showToast = (type, message) => {
+    toast[type](message)
+  }
+
+  const { showReaction, saveReaction, loading } = useSetReaction(showToast)
 
   if (!showReaction) return null
 
