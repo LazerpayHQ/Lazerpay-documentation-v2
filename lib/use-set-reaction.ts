@@ -36,7 +36,7 @@ const useSetReaction = () => {
       }
       setShowReaction(false)
     } catch (error) {
-      toast.error('Something went wrong!')
+      toast('Something went wrong!')
     } finally {
       setLoading(false)
     }
@@ -48,7 +48,7 @@ const useSetReaction = () => {
       "is_helpful": value
     });
     if (response?.status === 200) {
-      toast.success(response?.data?.message);
+      toast(response?.data?.message);
     }
   }
 
