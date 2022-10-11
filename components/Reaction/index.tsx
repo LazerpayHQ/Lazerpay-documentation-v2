@@ -2,7 +2,6 @@ import { LzButton } from 'components'
 import { ThumbsDownIcon, ThumbsUpIcon } from 'public/icons'
 import useSetReaction from 'lib/use-set-reaction'
 import { LzLoader } from 'components'
-import { ToastContainer } from 'react-toastify'
 
 const Reaction = (): JSX.Element => {
   const { showReaction, saveReaction, loading } = useSetReaction()
@@ -37,13 +36,6 @@ const Reaction = (): JSX.Element => {
           No
         </LzButton>
       </div>
-      <ToastContainer
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        draggable={false}
-        pauseOnHover
-      />
     </div>
   )
 }
