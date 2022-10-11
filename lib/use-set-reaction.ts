@@ -24,7 +24,7 @@ const useSetReaction = () => {
     try {
       setLoading(true);
       const response = await sendReactionRequest(value);
-      toast.success(response)
+      toast.success(response);
       const reactionPages: Array<string> | null = getReactionList();
 
       if (!reactionPages) {
@@ -44,7 +44,7 @@ const useSetReaction = () => {
   }
 
   const sendReactionRequest = async (value: boolean) => {
-    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/documentation/eedback`, {
+    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/documentation/feedback`, {
       "page": asPath.slice(6),
       "is_helpful": value
     });
