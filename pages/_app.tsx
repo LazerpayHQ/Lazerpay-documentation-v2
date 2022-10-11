@@ -1,5 +1,5 @@
 import { DefaultSeo } from 'next-seo'
-import { ToastContainer, Slide } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import '../styles/prism.scss'
 import '../styles/globals.scss'
 import 'react-toastify/dist/ReactToastify.css'
@@ -10,18 +10,6 @@ export default function App({ Component, pageProps }) {
     <>
       <DefaultSeo {...siteConfig.seo} />
       <Component {...pageProps} />
-      <ToastContainer
-        className='impct-toast'
-        position='top-center'
-        autoClose={3000}
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        draggable={false}
-        pauseOnHover
-        transition={Slide}
-      />
     </>
   )
 }
