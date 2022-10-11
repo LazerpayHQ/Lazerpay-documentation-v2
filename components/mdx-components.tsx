@@ -26,6 +26,7 @@ import LinkCard from './LinkCard'
 import CardList, { LibraryGetStarted } from './CardList'
 import LibraryItem from './LibraryItem'
 import Webhooks from './Webhooks'
+import Reaction from './Reaction'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -105,6 +106,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
 
   Webhooks() {
     return <Webhooks />
+  },
+  Reaction() {
+    return <Reaction />
   },
 
   /** Below this line contains all reusable UI components */
