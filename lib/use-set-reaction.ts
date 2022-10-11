@@ -21,26 +21,26 @@ const useSetReaction = () => {
   };
 
   const saveReaction = async (value: boolean) => {
-    toast.success('toast is succesful');
-    // try {
-    //   setLoading(true);
-    //   await sendReactionRequest(value);
-    //   const reactionPages: Array<string> | null = getReactionList();
+    try {
+      setLoading(true);
+      const response = await sendReactionRequest(value);
+      toast.success(response)
+      const reactionPages: Array<string> | null = getReactionList();
 
-    //   if (!reactionPages) {
-    //     setReactionList([asPath]);
-    //   } else {
-    //     if (!reactionPages.includes(asPath)) {
-    //       reactionPages.push(asPath)
-    //       setReactionList(reactionPages);
-    //     }
-    //   }
-    //   setShowReaction(false)
-    // } catch (error) {
-    //   toast.error('Something went wrong!')
-    // } finally {
-    //   setLoading(false)
-    // }
+      if (!reactionPages) {
+        setReactionList([asPath]);
+      } else {
+        if (!reactionPages.includes(asPath)) {
+          reactionPages.push(asPath)
+          setReactionList(reactionPages);
+        }
+      }
+      setShowReaction(false)
+    } catch (error) {
+      toast.error('Something went wrong!')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const sendReactionRequest = async (value: boolean) => {
@@ -49,8 +49,9 @@ const useSetReaction = () => {
       "is_helpful": value
     });
     if (response?.status === 200) {
-      toast.success(response?.data?.message);
+      return response?.data?.message || "Your feedback has been sent successfully";
     }
+    return "Your feedback has been sent successfully";
   }
 
   useEffect(() => {
