@@ -5,7 +5,10 @@ description: Products page
 
 # Products
 
-The products API allows you to programmatically interact with your products
+To enable the payment link creation process more interesting, merchants can now display their goods as Products without having a website.
+<Divider className='max-w-100 mt-1 mb-8' />
+You can interact (add, update, remove) with Products using Lazerpay Dashboard or our API which  allows you to programmatically interact with your products. 
+Products can be created and seen on the dashboard more like a store inventory, They can be hidden when no longer available or for sale. There are no limitations as to the number of products you add on the products page as the pagination feature would help product data spread across different pages automatically. 
 
 ## Create Product
 
@@ -34,6 +37,18 @@ The products API allows you to programmatically interact with your products
         }} 
     }}
 />
+
+<br />
+
+![Swap Stablecoins](/images/create-product.png)
+
+<Alert>You can add a Payment link and associate it with your Product using the Payments Link API and passing product_id as payload </Alert>
+
+![Swap Stablecoins](/images/link-information.png)
+
+Once Payment link is associated with the Product you can use the link or QR code to collect payments along with other information such as shipping address and redirect users to your website after a successful payment
+
+![Swap Stablecoins](/images/qr-preview.png)
 
 <br />
 

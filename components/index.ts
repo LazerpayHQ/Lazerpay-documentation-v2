@@ -33,6 +33,8 @@ import LzTable from './UI/table'
 import LinkCard from './LinkCard'
 import CardList, { LibraryGetStarted } from './CardList';
 import LibraryItem from './LibraryItem'
+import NotFound from './NotFound'
+import YoutubePlayer from './YoutubePlayer'
 
 export {
   LzTable,
@@ -67,5 +69,7 @@ export {
   LibraryGetStarted,
   LibraryItem,
   LzLoader,
-  CardList
+  CardList,
+  NotFound,
+  YoutubePlayer
 }

@@ -5,9 +5,10 @@ import DocsLayout from 'layouts/docs'
 import { getDoc } from 'lib/contentlayer-utils'
 import { GetServerSideProps } from 'next'
 import { Fragment } from 'react'
+import { NotFound } from 'components'
 
 export default function OverviewPage({ doc }: { doc: Docs }) {
-  const Component = useMDX(doc?.body?.code)
+  const Component = useMDX(doc?.body?.code) || <NotFound />
   return (
     <Fragment>
       <NextSeo title={doc?.title} description={doc?.description} />

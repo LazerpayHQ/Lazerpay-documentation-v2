@@ -27,6 +27,7 @@ import CardList, { LibraryGetStarted } from './CardList'
 import LibraryItem from './LibraryItem'
 import Webhooks from './Webhooks'
 import Reaction from './Reaction'
+import YoutubePlayer from './YoutubePlayer'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -110,7 +111,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
   Reaction() {
     return <Reaction />
   },
-
+  YoutubePlayer(props) {
+    return <YoutubePlayer {...props} />
+  },
   /** Below this line contains all reusable UI components */
   LzTable({ head, body, reverse }) {
     return <LzTable body={body} head={head} reverse={reverse} />

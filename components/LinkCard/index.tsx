@@ -1,6 +1,7 @@
 import LzLink from 'components/UI/link'
 import LinkIcon from 'public/icons/link-icon'
 import ArrowRightIcon from 'public/icons/arrow-right-icon'
+import cn from 'classnames'
 
 interface MyProps {
   desc: string
@@ -16,7 +17,9 @@ const LinkCard = (props: MyProps) => {
       <LzLink className='my-2' to={route}>
         <div
           key={route}
-          className='bg-white mb-2 p-6 md:pt-9 drop-shadow-xs rounded-8 lg:rounded-8 h-[166px] lg:w-92 z-10'
+          className={`bg-white mb-2 p-6 md:pt-9 drop-shadow-xs rounded-8 lg:rounded-8 ${
+            icon ? 'h-[210px]' : 'h-[185px]'
+          } lg:w-92 z-10`}
         >
           {icon && <LinkIcon />}
           <h5 className='py-2 text-pri-500 md:py-4 paragraph-2 md:paragraph-3-s'>
