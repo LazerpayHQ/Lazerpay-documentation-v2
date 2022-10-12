@@ -31,7 +31,7 @@ export const tabsData: TabsItem[] = [
     {
         title: "Libraries",
         route: "libraries/get-started",
-        desc: `These are othe official and community Lazerpay Libraries, APIs and Plugins.`,
+        desc: `Find the official and community Lazerpay Libraries, APIs and Plugins here.`,
         image: '/images/libraries.svg',
         label: 'Go to libraries'
     },
