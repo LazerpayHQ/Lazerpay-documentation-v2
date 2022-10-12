@@ -44,7 +44,7 @@ const useSetReaction = () => {
   }
 
   const sendReactionRequest = async (value: boolean) => {
-    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/documentation/feedback`, {
+    const response = await axios.post(`https://api.lazerpay.engineering/api/v1/documentation/feedback`, {
       "page": asPath.slice(6),
       "is_helpful": value
     });
