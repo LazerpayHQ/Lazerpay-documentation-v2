@@ -7,7 +7,7 @@ description: payment introduction page
 
 Listen to webhook events whenever certain actions occurs.
 
-<Divider className='max-w-100 mb-4' />
+<Divider className='max-w-100 mb-2' />
 
 ## What are Webhooks?
 
@@ -22,7 +22,7 @@ Here are some sample webhook paylods for deposit transactions.
 
 <CodeBlock data={{type: 'tab', item: {name: [], snippet: ['depositWebhookJS'], lang: ['json']}}} />
 
-<Divider className='max-w-100 mb-4' />
+<Divider className='max-w-100 mb-2' />
 
 ## Enabling Webhooks
 
@@ -36,7 +36,7 @@ Here’s how to set up a webhook on your Lazerpay account:
 
 <Alert status="info">When testing, you can get an instant webhook URL by visiting webhook.site. This will allow you to inspect the received payload without having to write any code or set up a server.</Alert>
 
-<Divider className='max-w-100 mb-4' />
+<Divider className='max-w-100 mb-2' />
 
 ## Validating Webhook Signature
 
@@ -46,7 +46,7 @@ In order to verify this signature came from Lazerpay, you simply have to generat
 
 <CodeBlock data={{type: 'tab', item: {name: [], snippet: ['validateWebhookJS'], lang: ['js']}}} />
 
-<Divider className='max-w-100 mb-4' />
+<Divider className='max-w-100 mb-2' />
 
 ## Responding to webhooks request
 
@@ -54,7 +54,7 @@ You must respond with a <code>200 OK</code> status code. Any other response code
 
 <Alert status="info">If we don't get a 200 OK status code, we'll retry the webhook every one minute for the next 24 hours.</Alert>
 
-<Divider className='max-w-100 mb-4' />
+<Divider className='max-w-100 mb-2' />
 
 
 ## Supported Webhooks Types
