@@ -12,9 +12,9 @@ export const channels: IChannel[] = [
     icon: <NewsPaperIcon />,
     title: 'News',
     options: [
-      //   { title: 'Developer Newsletter', link: '' },
-      { title: 'Tech blog', link: 'https://lazerpay.finance/blog/' },
-      { title: '_', link: '#' },
+      { title: 'Blog', link: 'https://lazerpay.finance/blog/' },
+      { title: 'Telegram channel', link: 'https://t.me/lazerpay' },
+      { title: 'Lazerpay Github', link: 'https://github.com/LazerPay-Finance' },
     ],
   },
   {
@@ -22,6 +22,11 @@ export const channels: IChannel[] = [
     title: 'Social',
     options: [
       { title: 'Twitter', link: 'https://twitter.com/lazerpay' },
+      {
+        title: 'Youtube',
+        link: 'https://www.youtube.com/channel/UC4vVYSFK--pbguoqsuuNowQ',
+      },
+      { title: 'Instagram', link: 'https://www.instagram.com/lazerpay/' },
       {
         title: 'Developer Slack',
         link: 'https://join.slack.com/t/lazerpay/shared_invite/zt-1gw00chsy-ql5C2aQww6xidhAtpXZm9w',
@@ -32,9 +37,8 @@ export const channels: IChannel[] = [
     icon: <SupportIcon />,
     title: 'Help',
     options: [
-      { title: 'Forum', link: 'https://forum.lazerpay.finance/' },
-      { title: '_', link: '#' },
-      //   { title: 'FAQs', link: '' },
+      { title: 'Forums', link: 'https://forum.lazerpay.finance/' },
+      { title: 'Support email', link: 'mailto:support@lazerpay.finance' },
     ],
   },
 ]
