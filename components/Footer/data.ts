@@ -7,10 +7,10 @@ export const footerData = {
   ],
   Resources: [
     { title: 'Docs', route: '/' },
-    { title: 'API Reference', route: 'products' },
-    { title: 'API Explorer', route: 'pricing' },
-    { title: 'SDK Reference', route: 'careers' },
-    { title: 'Sample Apps', route: 'careers' },
+    { title: 'API Reference', route: 'https://documenter.getpostman.com/view/20216295/2s7ZE7L42K' },
+    // { title: 'API Explorer', route: 'pricing' },
+    { title: 'SDK Reference', route: 'libraries/libraries' },
+    // { title: 'Sample Apps', route: 'careers' },
   ],
   Support: [
     { title: 'Developer Forum', route: 'https://forum.lazerpay.finance/' },
