@@ -1,0 +1,70 @@
+---
+title: Swap Webhooks
+description: Swap webhooks page
+---
+
+# Webhooks
+
+Listen to webhook events whenever certain actions occurs
+<br />
+
+## What are webhooks? 
+
+Webhooks are a way for you to subscribe to events that occur when an event involving your business occurs. This guide will walk through what webhooks are and how you can use them in order to get started with integrating them into your application.
+
+A webhook URL is an endpoint on your server where you can receive notifications about such events. When an event occurs, we'll make a POST request to that endpoint, with a JSON body containing the details about the event, including the type of event and the data associated with it.
+
+<Alert status="info">Rather than continuously polling the server to check if the state has changed, webhooks provide information to you as it becomes available, which is a lot more efficient and beneficial for developers.</Alert>
+
+Here are some sample webhook payloads for deposit transactions:
+
+<CodeBlock 
+  data={{type: 'tab', item: {
+    name: [], 
+    snippet: ['swapWebhookJson'], 
+    lang: ['json']}
+  }} 
+/>
+
+## Enabling webhooks
+
+You can specify your webhook URL on your dashboard where we would send POST requests to whenever an event occurs.
+
+Here's how to set up a webhook on your Lazerpay account:
+
+- Login to your dashboard and click on the Settings
+- Navigate to the API Keys and Webhooks tab
+- specify your webhook url and click on Update
+
+![Swap Stablecoins](/images/swap_stablecoins.png)
+<br />
+
+<Alert status="info">When testing, you can get an instant webhook URL by visiting webhook.site. This will allow you to inspect the received payload without having to write any code or set up a server.</Alert>
+<br/>
+## Validating webhooks
+
+Every webhook event payload will contain a hashed authentication signature in the header which is computed by generating a hash from concatenating your API key and request body, using the HMAC SHA256 hash algorithm. 
+
+In order to verify this signature came from Lazerpay, you simply have to generate the HMAC SHA256 hash and compare it with the signature received.
+
+<CodeBlock 
+  data={{type: 'tab', item: {
+    name: [], 
+    snippet: ['swapWebhookSample'], 
+    lang: ['js']}
+  }} 
+/>
+
+## Responding to webhook request
+
+You must respond with a 200 OK status code. Any other response codes outside of the 2xx range, we will consider it will be considered as a failure, including 3xx codes. We don't care about the response body or headers.
+
+<Alert status="info">If we don't get a 200 OK status code, we'll retry the webhook every one minute for the next 24 hours.</Alert>
+<br/>
+## Supporting Webhook Types
+
+Here are the webhooks request types we support. We'll add more to this list as we keep adding webhook supports for different API operations in the future.
+
+<LzTable head={['Webhook Type', 'Description']} body={[
+    ['CRYPTO_SWAP', 'A swap has occurred. It could have a status of <code>confirmed</code> or <code>failed</code>'],
+]} />

@@ -1,0 +1,62 @@
+---
+title: Transactions
+description: Transactions page
+---
+
+# Customers
+
+Keep track of all your customers with this API endpoint. You can use it to  programmatically fetch and list all the customers linked to your Lazerpay account.
+
+## All Customers
+
+List all the transactions associated with your Lazerpay account. 
+
+<br />
+
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "POST", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['allCustomersPostCurl', 'allCustomersPostJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['200: OK', '400: Bad Request'], 
+            snippet: ['allCustomers200', 'allCustomers400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+
+<br />
+
+## Get transaction by transaction ID
+
+Fetch a specific transaction using its transaction ID.
+
+<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Path</strong>', '', ''],
+    [':transaction_id*', '<code>String</code>', 'Supply a transaction ID'],
+]} />
+
+<br />
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "POST", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['getCustomerPostCurl', 'getCustomerPostJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['200: OK', '400: Bad Request'], 
+            snippet: ['getCustomer200', 'getCustomer400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>

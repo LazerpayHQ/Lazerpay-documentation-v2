@@ -1,5 +1,6 @@
 import DashboardScreenshot from 'public/icons/dashboardScreenshot';
 import AlertIcon from './alert-icon';
+import ArrowDown from './arrow-down';
 import CommunityIcon from './community-icon';
 import ErrorIcon from './error-icon';
 import GuidesIcon from './guides-icon';
@@ -19,13 +20,18 @@ import ThumbsUpIcon from './thumbs-up-icon';
 import TransferIcon from './transfers-icon';
 import UseCasesIcon from './use-cases-icon';
 import HandsWithPenny from 'public/icons/handsWithPenny';
+import SwapIcon from './swap-icon';
 import { ShopifyIcon } from './shopify-icon';
 import { WordPressIcon } from './wordPress-Icon';
 import { WooCommerceIcon } from './wooCommerce-icon';
+import ProductsIcon from './products-icon';
+import TransactionsIcon from './transactions-icon';
+import CustomersIcon from './customers-icon';
 
 export {
   InfoIcon,
   AlertIcon,
+  ArrowDown,
   SuccessIcon,
   ErrorIcon,
   SearchIcon,
@@ -47,5 +53,9 @@ export {
   WooCommerceIcon,
   ShopifyIcon,
   HandsWithPenny,
-  DashboardScreenshot
+  DashboardScreenshot,
+  SwapIcon,
+  ProductsIcon,
+  TransactionsIcon,
+  CustomersIcon
 };

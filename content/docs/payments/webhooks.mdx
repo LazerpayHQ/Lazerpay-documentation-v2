@@ -1,13 +1,13 @@
 ---
 title: Webhooks
-description: 
+description: Webhooks page
 ---
 
 # Webhooks
 
 Listen to webhook events whenever certain actions occurs.
 
-<Divider className="max-w-100" />
+<Divider className='max-w-100 mt-1 mb-1' />
 
 ## What are Webhooks?
 
@@ -15,79 +15,58 @@ Webhooks are a way for you to subscribe to events that occur when an event invol
 
 A webhook URL is an endpoint on your server where you can receive notifications about such events. When an event occurs, we'll make a POST request to that endpoint, with a JSON body containing the details about the event, including the type of event and the data associated with it.
 
- <Alert 
-    status="info" 
-   
-    className="my-2" 
-    content=' Rather than continuously polling the server to check if the state has changed, webhooks provide information to you as it becomes available, which is a lot more efficient and beneficial for developers.'/>
+<Alert>Rather than continuously polling the server to check if the state has changed, webhooks provide information to you as it becomes available, which is a lot more efficient and beneficial for developers.</Alert>
 
-    Here are some sample webhook paylods for deposit transactions.
+Here are some sample webhook paylods for deposit transactions.
 
-     <CodeBlock req='' id='webHookPayload3' className='h-[492px]' />
-
-<Divider className="max-w-100" />
+<CodeBlock
+  data={{type: 'tab', item: {
+    name: [], 
+    snippet: ['webhookPayload'], 
+    lang: ['json'] }
+  }} 
+/>
+<Divider className='max-w-100 mt-1 mb-2' />
 
 ## Enabling Webhooks
-
-You can specify your webhook URL on your dashboard where we would send <code> POST</code> requests
-whenever an event occurs.
+You can specify your webhook URL <a href="#">on your dashboard</a> where we would send <code>POST</code> requests whenever an event occurs.
 
 Here’s how to set up a webhook on your Lazerpay account:
 
+1. Login to your <a href="#">dashboard</a> and click on <strong>Settings</strong>.
+2. Navigate to the <strong>API Keys and Webhooks tab.</strong>
+3. Specify your webhook url and click on <strong>Update.</strong>
 
-<Webhooks/>
+![Dashboard API keys and Webhooks tab](/images/keys_and_webhooks.png)
 
+<Alert>When testing, you can get an instant webhook URL by visiting <a href="#">webhook.site</a>. This will allow you to inspect the received payload without having to write any code or set up a server.</Alert>
+<Divider className='max-w-100 mt-1 mb-2' />
 
-<Alert 
-    status="info" 
-    className="my-2" 
-    content=' When testing, you can get an instant webhook URL by visiting webhook.site. This will allow you to inspect the received payload without having to write any code or set up a server.'/>
+## Validating Webhook Signature
 
+Every webhook event payload will contain a hashed authentication signature in the header which is computed by generating a hash from concatenating your API key and request body, using the HMAC SHA256 hash algorithm. 
 
-   <Divider className="max-w-100" />
+In order to verify this signature came from Lazerpay, you simply have to generate the HMAC SHA256 hash and compare it with the signature received.
 
-   ## Validating Webhook Signature
-
-   Every webhook event payload will contain a hashed authentication signature in the header which is computed by generating a hash from concatenating your API key and request body, using the HMAC SHA256 hash algorithm. 
-
-In order to verify this signature came from Lazerpay, you simply have to generate the HMAC SHA256 hash and compare it with the signature received. 
-
-<CodeBlock req='' id='webhookpayload4' className='h-[492px]' />
-
- <Divider className="max-w-100" />
-
- ## Responding to Wehbooks Request 
-
- You must respond with a <code> 200 ok</code> status code. Any other response code outside of the <code> 2xx</code> 
- range, we will consider it will considered as a failure, including <code>3xx</code> codes. <strong> We don’t 
- care about the response body or headers </strong>
-
-
-<Alert 
-    status="info" 
-    className="my-2" 
-    content=' If we don’t get a 200 ok status  well try the webhook every one minutes for 24 hours.'/>
-
- <Divider className="max-w-100" />
-
- ## Supported Wehbooks Types
-
- Here are the webhook type request we support. Well add more to this list as we keep adding 
- webhook supports for different API operations in the future
-
- <LzTable
-head={['Webhook Type', 'Description']}
-body={[
-[
-  `DEPOSIT_TRANSACTION`,
-  `A deposit transaction has occured. It could have a status of <code> incomplete</code> or <code> complete </code>`,
-],
-]}
+<CodeBlock 
+  data={{type: 'tab', item: {
+    name: [], 
+    snippet: ['webhookValidateSignature'], 
+    lang: ['js']}
+  }} 
 />
+<Divider className='max-w-100 mt-1 mb-2' />
 
-<Divider className="max-w-100" />
+## Responding to Webhooks Request
+You must respond with a <code>200 OK</code> status code. Any other response code outside of the <code>2xx</code> range, we will consider it will be considered as a failure, including <code>3xx</code> codes. <strong>We don’t care about the response body or headers.</strong>
 
-<Pagination />
+<br/>
+<Alert>If we don't get a 200 OK status code, we'll retry the webhook every one minute for the next 24 hours.</Alert>
+<Divider className='max-w-100 mt-1 mb-2' />
 
+## Supported Webhooks Types
+Here are the webhooks request types we support. We'll add more to this list as we keep adding webhook supports for different API operations in the future.
 
-
+<LzTable head={["Webhook Type", "Description"]} body={[
+  ['DEPOSIT_TRANSACTION', 'A deposit transaction has occured. It could have a status of of <code>template</code> or <code>complete</code>']
+]}/>

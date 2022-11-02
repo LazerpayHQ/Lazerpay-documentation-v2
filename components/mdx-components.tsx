@@ -4,6 +4,7 @@ import LzLink from './UI/link'
 import QuickLinks from './QuickLinks'
 import Divider from './Divider'
 import CodeBlock from './CodeBlock'
+import TextBlock from './TextBlock'
 import GetstartedCard, {
   CompleteIntegration,
   TestAndGoLive,
@@ -21,7 +22,12 @@ import TransferWebHook from './TransWebhook'
 import TestPayments from './TestPayments'
 import Ecommerce from './UseCases'
 import LzTable from './UI/table'
+import LinkCard from './LinkCard'
+import CardList, { LibraryGetStarted } from './CardList'
+import LibraryItem from './LibraryItem'
 import Webhooks from './Webhooks'
+import Reaction from './Reaction'
+import YoutubePlayer from './YoutubePlayer'
 
 /** Create a map of the HTML elements */
 export const components: Record<string, FC<Record<string, any>>> = {
@@ -43,8 +49,11 @@ export const components: Record<string, FC<Record<string, any>>> = {
   Divider({ children, ...props }) {
     return <Divider {...props} />
   },
-  CodeBlock(props) {
-    return <CodeBlock {...props} />
+  CodeBlock({ data, ...props }) {
+    return <CodeBlock data={data} {...props} />
+  },
+  TextBlock(props) {
+    return <TextBlock {...props} />
   },
   Admonition(props) {
     return <div {...props} />
@@ -55,6 +64,15 @@ export const components: Record<string, FC<Record<string, any>>> = {
   GetstartedCard() {
     return <GetstartedCard />
   },
+  LibraryGetStarted() {
+    return <LibraryGetStarted />
+  },
+  CardList({ items, icon, ...props }) {
+    return <CardList items={items} icon={icon} {...props} />
+  },
+  LibraryItem({ items, ...props }) {
+    return <LibraryItem items={items} {...props} />
+  },
   TransferCard() {
     return <TransferCard />
   },
@@ -64,8 +82,8 @@ export const components: Record<string, FC<Record<string, any>>> = {
   TestAndGoLive() {
     return <TestAndGoLive />
   },
-  Pagination(IProps) {
-    return <Pagination {...IProps} />
+  Pagination({ children, props }) {
+    return <Pagination children={children} {...props} />
   },
   BankPayouts() {
     return <BankPayouts />
@@ -77,6 +95,9 @@ export const components: Record<string, FC<Record<string, any>>> = {
   LinkedCard(MyProps) {
     return <LinkedCard {...MyProps} />
   },
+  LinkCard({ children, prop }) {
+    return <LinkCard children={children} {...prop} />
+  },
   PlainCard(MyProps) {
     return <PlainCard {...MyProps} />
   },
@@ -87,10 +108,15 @@ export const components: Record<string, FC<Record<string, any>>> = {
   Webhooks() {
     return <Webhooks />
   },
-
+  Reaction() {
+    return <Reaction />
+  },
+  YoutubePlayer(props) {
+    return <YoutubePlayer {...props} />
+  },
   /** Below this line contains all reusable UI components */
-  LzTable({ head, body }) {
-    return <LzTable body={body} head={head} />
+  LzTable({ head, body, reverse }) {
+    return <LzTable body={body} head={head} reverse={reverse} />
   },
   TransferWebHook() {
     return <TransferWebHook />
@@ -112,7 +138,7 @@ export const components: Record<string, FC<Record<string, any>>> = {
     return <h2 className='heading-5-s group break-keep-all' {...props} />
   },
   h3(props) {
-    return <h3 {...props} />
+    return <h3 className='heading-6-s' {...props} />
   },
   h4(props) {
     return <h4 {...props} />
@@ -120,8 +146,25 @@ export const components: Record<string, FC<Record<string, any>>> = {
   pre(props) {
     return <pre {...props} className={`prose ${props.className}`} />
   },
+  ol(props) {
+    return (
+      <ol
+        className='list-decimal list-inside paragraph-2 text-neu-800'
+        {...props}
+      />
+    )
+  },
+  ul(props) {
+    return (
+      <ul
+        className='paragraph-2 list-inside text-neu-800 leading-4 list-disc'
+        {...props}
+      />
+    )
+  },
   li(props) {
-    return <li {...props} />
+    // TODO: FIX
+    return <li className='lists-custom text-neu-800' {...props} />
   },
   inlineCode(props) {
     return <code className='prose' {...props} />

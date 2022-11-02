@@ -1,25 +1,39 @@
-import sidebar from "sidebar.config"
+import sidebar from "sidebar.config";
+
+export type PaginationType = {
+  label: string;
+  url: string;
+  path: string;
+}
 
 export function getPaginationData() {
-  const result: { label: string; url: string }[] = []
+  const result: PaginationType[] = []
   for (const group of sidebar) {
-    if (group.type !== "category") continue
-    const childrens = group.children.map(({ label, id }) => ({
-      label: label,
-      url: id,
-    }))
-    result.push(...childrens)
+    if (group.type !== "category") {
+      result.push({ label: group.label, url: group.id, path: group.id })
+    } else {
+      const childrens = group.children.map(({ label, id }) => ({
+        label: label,
+        url: id,
+        path: `${group.id}/${id}`
+      }))
+      result.push(...childrens)
+    }
   }
-  return result
+  return result;
 }
 
 type PaginationData = { framework: string; current: string }
 
 export function paginate({ current }: PaginationData) {
-  const data = getPaginationData()
-  const index = data.map((child) => child.url).indexOf(current)
-  if (index === -1) return { prev: undefined, next: undefined }
-  const prev = index > 0 ? data[index - 1] : undefined
-  const next = index < data.length - 1 ? data[index + 1] : undefined
-  return { prev, next }
+  const data: PaginationType[] = getPaginationData();
+  let currentPage: string = "";
+  data.forEach((child: PaginationType) => {
+    if (current.includes(child.path)) currentPage = child.path;
+  })
+  const index: number = data.map((child: PaginationType) => child.path).indexOf(currentPage);
+  if (index === -1) return { prev: undefined, next: undefined };
+  const prev: PaginationType | undefined = index > 0 ? data[index - 1] : undefined;
+  const next: PaginationType | undefined = index < data.length - 1 ? data[index + 1] : undefined;
+  return { prev, next };
 }

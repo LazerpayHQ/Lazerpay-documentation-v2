@@ -1,5 +1,5 @@
-import classNames from "classnames"
-import { useScrollSpy } from "../../lib/use-scrollspy"
+import classNames from 'classnames'
+import { useScrollSpy } from '../../lib/use-scrollspy'
 import Styles from './index.module.scss'
 
 type TOC = Array<{
@@ -13,21 +13,25 @@ export function TableOfContents({ data = [] }: { data: TOC }) {
 
   return (
     <div className={classNames(Styles.TOC)}>
-      <h4 className="paragraph-2-s text-neu-900">On this page</h4>
-      <ul className="mt-5 text-right">
+      <h4 className='paragraph-2-s text-neu-900'>On this page</h4>
+      <ul className='mt-5 text-left'>
         {data.map((item) => {
-          const content = item.content.length > 20 ? `${item.content.slice(0, 20)}...` : item.content;
+          const content =
+            item.content.length > 20
+              ? `${item.content.slice(0, 20)}...`
+              : item.content
           return (
             <li
-              className="py-1.5 border-l paragraph-1 text-neu-800 border-pri-50 first-letter:capitalize"
+              className='py-1.5 border-l paragraph-1 text-neu-800 border-pri-50 first-letter:capitalize pl-5'
               data-selected={activeId === item.slug || undefined}
-              key={item.slug}>
+              key={item.slug}
+            >
               <a href={`#${item.slug}`}>
-                <span>{item.lvl > 2 ? "—" : null}</span>{" "}
-                {content}
+                <span>{item.lvl > 2 ? '—' : null}</span> {content}
               </a>
             </li>
-          )})}
+          )
+        })}
       </ul>
     </div>
   )

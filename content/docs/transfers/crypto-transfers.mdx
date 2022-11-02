@@ -1,0 +1,45 @@
+---
+title: Crypto Transfers
+description: Crypto transfers introduction page
+---
+
+# Crypto transfers
+
+Send crypto to an external wallet using our APIs
+
+<Divider className='max-w-100' />
+
+In other to make crypto transfers, you can use our transfers API endpoint or our Node JS SDK.
+
+## Crypto Transfer API
+
+<LzTable
+    reverse
+    head={['Parameter name', 'Type', 'Description']}
+    body={[
+        ["<strong>Header</strong>", "", "" ],
+        ["Autorization*", "<code>String</code>", "Bearer YOUR_SECRET_KEY" ],
+        ["<strong>Body</strong>", "", "" ],
+        ["amount*", "<code>String | Number</code>", "The amount you want to send out" ],
+        ["recipient*", "<code>String</code>", "Wallet address of the recipient" ],
+        ["coin*", "<code>String</code>", "Crypto you want to transfer" ],
+        ["blockchain*", "<code>String</code>", "The blockchain network you are sending to" ],
+    ]}
+ />
+
+<CodeBlock responseTheme="red" responseTitle="Response" data={{type: 'request', item: {method: "POST", requestData: {name: ['cURL', 'Javascript'], snippet: ['cryptoTransferPostCurl', 'cryptoTransferPostJs'], lang: ['curl', 'js']}, responseData: {name: ['200: OK', '400: Bad Request'], snippet: ['cryptoTransferRequest200', 'cryptoTransferRequest400'], lang: ['json', 'json']}} }} />
+
+## Important things to Note
+1. The <code>blockchain</code> field must be <code>"Binance Smart Chain"</code>.
+2. The <code>coin</code> field must either be "BUSD", "DAI", "USDT", or "USDC".
+
+<Alert status="warning">We only support the Binance smart chain for withdrawals. We will add more networks in the future.</Alert>
+
+<Divider className='max-w-100' />
+
+## From Official JS SDK
+
+With the JS SDK, you can transfer the crypto in your Lazerpay balance to an external address.
+See sample code below:
+
+<CodeBlock data={{type: 'tab', item: {name: [], snippet: ['crytoTransferSnippetJS'], lang: ['js']}}} />

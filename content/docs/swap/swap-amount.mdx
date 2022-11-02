@@ -1,0 +1,53 @@
+---
+title: Swap Amount
+description: Swap amount page
+---
+
+# Swap Crypto
+
+Get the amount you will receive on swap even before initiating the swap
+
+<br />
+## Crypto Swap API
+
+<LzTable reverse head={['Parameter name', 'Type', 'Description']} body={[
+    ['<strong>Header</strong>', '', ''],
+    ['Authorization*', '<code>String</code>', 'Bearer YOUR_SECRET_KEY'],
+    ['<strong>Body</strong>', '', ''],
+    ['amount*', '<code>String | Number</code>', 'The amount you want to send out '],
+    ['from_coin*', '<code>String</code>', 'Crypto you want to swap from'],
+    ['to_coin*', '<code>String</code>', 'Crypto you want to swap to'],
+    ['blockchain*', '<code>String</code>', "The blockchain network you are sending to"]
+]} />
+
+<CodeBlock
+    responseTheme="default"
+    responseTitle="Response"
+    data={{
+        type: 'request',
+        item: {method: "POST", requestData: {
+            name: ['cURL', 'Javascript'], 
+            snippet: ['swapAmountPostCURL', 'swapAmountPostJs'], 
+            lang: ['curl', 'js']
+        }, 
+        responseData: {
+            name: ['201: Created', '400: Bad Request'], 
+            snippet: ['swapAmountPost201', 'swapAmountPost400'], 
+            lang: ['json', 'json']
+        }} 
+    }}
+/>
+<br />
+
+![Swap Stablecoins](/images/swap_stablecoins.png)
+<br />
+
+### Important Note
+
+1. The blockchain field must be "Binance Smart Chain".
+2. The <code>from_coin</code> field must either be "BUSD", "DAI", "USDT", or "USDC".
+3. The <code>to_coin</code> field must either be "BUSD", "DAI", "USDT", or "USDC".
+4. The <code>amount</code> field should be in your fiat currency. The currencies we support are USD, AED, GBP, EUR and NGN. Please reach out to support@lazerpay.finance if you would want us to support a currency.
+5. Also <code>to_coin</code> and <code>from_coin</code> cannot be the same.
+
+<Alert status="warning">we only support the Binance smart chain for swaps. we will add more networks in the future.</Alert>

@@ -6,9 +6,9 @@ import LzLink from './UI/link'
 import LzAlert from './UI/alert'
 import LinkedCard from './GetstartedCard/Cards'
 import { PlainCard } from './GetstartedCard/Cards';
-import { ShopifyIcon } from './../public/icons/shopify-icon';
-import { WordPressIcon } from './../public/icons/wordPress-Icon';
-import { WooCommerceIcon } from './../public/icons/wooCommerce-icon';
+import LzToggle from './UI/toggle';
+import LzCodeSelect from './UI/codeSelect';
+import LzLoader from './Loader';
 
 // Page Components
 import FooterWrapper from './Footer'
@@ -18,6 +18,7 @@ import Reaction from './Reaction'
 import { TableOfContents } from './TOC'
 import QuickLinks from './QuickLinks'
 import CodeBlock from './CodeBlock'
+import TextBlock from './TextBlock'
 import AcceptPayments from './AcceptPayments'
 import ExploreDemo from './ExploreDemo'
 import WhatsNew from './WhatsNew'
@@ -29,16 +30,23 @@ import Ecommerce from './UseCases'
 import TransferWebHook from './TransWebhook'
 import TestPayments from './TestPayments'
 import LzTable from './UI/table'
-import Webhooks from './Webhooks'
+import LinkCard from './LinkCard'
+import CardList, { LibraryGetStarted } from './CardList';
+import LibraryItem from './LibraryItem'
+import NotFound from './NotFound'
+import YoutubePlayer from './YoutubePlayer'
 
 export {
   LzTable,
   LzInput,
   LzAlert,
+  LzToggle,
+  LzCodeSelect,
   WhatsNew,
   ExploreDemo,
   AcceptPayments,
   CodeBlock,
+  TextBlock,
   QuickLinks,
   TableOfContents,
   Sidebar,
@@ -57,5 +65,11 @@ export {
   TransferWebHook,
   PlainCard,
   Ecommerce,
-  Webhooks
+  LinkCard,
+  LibraryGetStarted,
+  LibraryItem,
+  LzLoader,
+  CardList,
+  NotFound,
+  YoutubePlayer
 }
